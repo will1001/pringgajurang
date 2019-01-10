@@ -1,0 +1,154 @@
+html {
+   height: 1023px;
+}
+
+body{
+   background-image: url("/images/bg.jpg");
+
+   /* Full height */
+   height: 1023px; 
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   font-family: Lemon;
+   font-size: 0.8rem;
+}
+
+
+
+#logotext{
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 46px;
+    font-size: 33px;
+}
+
+#logotext2{
+	text-transform: uppercase;
+    font-size: 16px;
+    line-height: 5px;
+    font-weight: bold;
+}
+
+#spacetextlogo{
+	display: inline-grid;
+}
+
+#boxtext{
+	font-weight: bold;
+	line-height: 46px;
+    font-size: 28px;
+    color: black;
+}
+
+.bg-light{
+	background-color: transparent!important;
+}
+
+a.nav-link {
+	display: inline-grid;
+    font-weight: bold;
+    color: black!important;
+    width: 105px;
+    margin: 0px 15px;
+    line-height: 16px;
+}
+
+.navbar-brand {
+    padding-top: 2.5rem;
+    margin-left: -2.3rem;
+}
+
+dl, ol, ul {
+    margin-top: 1.5rem;
+}
+
+a.dropdown-toggle{
+	font-weight: bold;
+    color: black!important;
+    top: 19px;
+    position: relative;
+    left: 31px;
+}
+
+.row {
+    margin-right: -40px;
+    margin-left: -40px;
+}
+
+.tentang_desa{
+	background-color: rgba(100, 203, 135, 0.5);
+}
+.berita_terbaru{
+	background-color: rgba(127, 162, 221, 0.5);
+}
+.pengumuman{
+	background-color: rgba(221, 217, 127, 0.5);
+}
+
+
+#kotak1 .inner{
+	height: 317px;
+	margin: 0px -11px;
+}
+
+#kotak2 .inner img{
+	height: 230px;
+	width: 345px;
+    margin: 18px -11px;
+    
+}
+
+#kotak2 .inner2 img{
+	height: 230px;
+    width: 230px;
+    margin: 18px -52px;
+}
+
+#kotak1{
+	padding-top: 40px;
+}
+
+#kotak3{
+	background-color: rgba(196, 196, 196, 0.5);
+	height: 90px;
+	margin: 15px 107px;
+	
+}
+
+
+#kotak3 i{
+	font-size: 51px;
+	margin: 7px 37px;
+}
+
+
+.h4, h4 {
+    font-size: 0.85rem;
+    color:  black;
+}
+
+.fa, .fab, .fal, .far, .fas {
+    line-height: 1;
+    color: black;
+}
+
+p {
+    margin-bottom: 0rem;
+}
+
+.container-fluid {
+    padding-right: 110px;
+    padding-left: 110px;
+}
+
+
+footer{
+	background-color: rgba(0, 0, 0, 0.7);
+	top: 65px;
+    position: relative;
+}
+
