@@ -64,17 +64,22 @@
     <div class="row">
         <div class="col-md-4">
             <div class="tentang_desa inner">
-                <h4><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur doloribus nihil voluptas voluptatem velit magni nulla, eos sequi modi repudiandae quasi tempore, laborum accusamus sit error at ducimus aperiam sapiente.</strong></h4>
+                <h2 class="text-center">Tentang Desa</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="berita_terbaru inner">
-                <h4><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis nobis molestiae perferendis distinctio exercitationem labore iste, et sapiente. Voluptate aperiam dolorum iure vitae quam deleniti, impedit similique ex ratione iste!</strong></h4>
+                <h2 class="text-center">Berita Terbaru</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
+                <br>
+                <p class="text-right">admin,21/1/2019</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="pengumuman inner">
-                <h4><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aut iste obcaecati esse quisquam autem explicabo quo. Adipisci deleniti amet libero officiis laboriosam, vel, beatae sapiente facere labore in facilis!</strong></h4>
+                <h2 class="text-center">Pengumuman</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
             </div>
         </div>
     </div>
