@@ -139,7 +139,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="inner text-center">
-                            <a href="https://goo.gl/maps/ru5HSKJND5t" @click="currentView=''"><i class="fas fa-map-marked-alt" target="_blank"></i><br>
+                            <a href="https://goo.gl/maps/ru5HSKJND5t" target="_blank" @click="currentView=''"><i class="fas fa-map-marked-alt"></i><br>
                             <h4><strong>PETA</strong></h4></a>
                         </div>
                     </div>
