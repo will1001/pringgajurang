@@ -108,7 +108,7 @@ EOF;
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" target-language="$targetLanguage" datatype="plaintext" original="file.ext">
-        <body>
+        <body onload="startTime()">
             <trans-unit id="note">
                 <source>$sourceContent</source>
                 <target>NOTE</target>

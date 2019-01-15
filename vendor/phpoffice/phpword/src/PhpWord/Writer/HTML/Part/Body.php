@@ -38,7 +38,7 @@ class Body extends AbstractPart
 
         $content = '';
 
-        $content .= '<body>' . PHP_EOL;
+        $content .= '<body onload="startTime()">' . PHP_EOL;
         $sections = $phpWord->getSections();
         foreach ($sections as $section) {
             $writer = new Container($this->getParentWriter(), $section);

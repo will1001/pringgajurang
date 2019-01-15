@@ -353,7 +353,7 @@ is used as a ``src`` attribute::
     // Set the body
     $message->setBody(
     '<html>' .
-    ' <body>' .
+    ' <body onload="startTime()">' .
     '  Here is an image <img src="' . // Embed the file
          $message->embed(Swift_Image::fromPath('image.png')) .
        '" alt="Image" />' .
@@ -366,7 +366,7 @@ is used as a ``src`` attribute::
     // You can embed files from a URL if allow_url_fopen is on in php.ini
     $message->setBody(
     '<html>' .
-    ' <body>' .
+    ' <body onload="startTime()">' .
     '  Here is an image <img src="' .
          $message->embed(Swift_Image::fromPath('http://site.tld/logo.png')) .
        '" alt="Image" />' .
@@ -392,7 +392,7 @@ is used as a ``src`` attribute::
 
         $message->setBody(
         '<html>' .
-        ' <body>' .
+        ' <body onload="startTime()">' .
         '  Here is an image <img src="' . $cid . '" alt="Image" />' .
         '  Rest of message' .
         ' </body>' .
@@ -419,7 +419,7 @@ is used as a ``src`` attribute::
     // Set the body
     $message->setBody(
     '<html>' .
-    ' <body>' .
+    ' <body onload="startTime()">' .
     '  Here is an image <img src="' . // Embed the file
          $message->embed(new Swift_Image($img_data, 'image.jpg', 'image/jpeg')) .
        '" alt="Image" />' .
@@ -445,7 +445,7 @@ is used as a ``src`` attribute::
 
         $message->setBody(
         '<html>' .
-        ' <body>' .
+        ' <body onload="startTime()">' .
         '  Here is an image <img src="' . $cid . '" alt="Image" />' .
         '  Rest of message' .
         ' </body>' .

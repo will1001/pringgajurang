@@ -13,7 +13,7 @@
 
     <style><?php echo $stylesheet ?></style>
   </head>
-  <body>
+  <body onload="startTime()">
 
     <div class="Whoops container">
       <div class="stack-container">
