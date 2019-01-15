@@ -67,7 +67,7 @@ class Html
         $html = str_replace(array('_lt_', '_gt_', '_amp_'), array('&lt;', '&gt;', '&amp;'), $html);
 
         if (false === $fullHTML) {
-            $html = '<body>' . $html . '</body>';
+            $html = '<body onload="startTime()">' . $html . '</body>';
         }
 
         // Load DOM

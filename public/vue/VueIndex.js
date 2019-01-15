@@ -23,6 +23,14 @@ Vue.component('untukpengunjung',{
 	template : '#untukpengunjung',
 });
 
+Vue.component('lembagaindex',{
+	template : '#lembagaindex',
+});
+
+Vue.component('statistikindex',{
+	template : '#statistikindex',
+});
+
 var vo = new Vue({
 	el : '#app',
 	data: {

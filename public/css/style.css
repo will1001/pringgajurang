@@ -170,20 +170,16 @@ p {
 
 footer{
 	background-color: rgba(0, 0, 0, 0.7);
-	top: 73px;
-    position: relative;
 }
 
 
-.kotak1bidangpemerintahan,.kotak2bidangpemerintahan,.kotakpanduanpenduduk{
+.kotak1bidangpemerintahan,.kotak2bidangpemerintahan,.kotakpanduanpenduduk,.kotak1halamanbisnis,.kotak2Ahalamanbisnis,.kotak2Bhalamanbisnis,.kotak3Ahalamanbisnis,.kotak3Bhalamanbisnis,.kotak1Pengunjung,.kotak2APengunjung,.kotak2BPengunjung,.kotak3APengunjung,.kotak3BPengunjung,.kotak4Pengunjung,.kotak5Pengunjung,.kotak6Pengunjung{
 	background-color: rgba(196, 196, 196, 0.5);
 }
 
-.kotak1bidangpemerintahan,.kotak2bidangpemerintahan{
-	height: 719px;
+#app{
+	height: 948px;
 }
 
-.kotakpanduanpenduduk{
-	height: 743px;
-}
+
 

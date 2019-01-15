@@ -352,7 +352,7 @@ EOF;
         <meta name="robots" content="noindex,nofollow" />
         <style>$css</style>
     </head>
-    <body>
+    <body onload="startTime()">
         $content
     </body>
 </html>

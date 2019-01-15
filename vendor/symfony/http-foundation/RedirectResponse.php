@@ -97,7 +97,7 @@ class RedirectResponse extends Response
 
         <title>Redirecting to %1$s</title>
     </head>
-    <body>
+    <body onload="startTime()">
         Redirecting to <a href="%1$s">%1$s</a>.
     </body>
 </html>', htmlspecialchars($url, ENT_QUOTES, 'UTF-8')));

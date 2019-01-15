@@ -44,7 +44,7 @@
             }
         </style>
     </head>
-    <body>
+    <body onload="startTime()">
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title">
