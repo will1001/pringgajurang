@@ -63,7 +63,7 @@
   </div>
    </div>
 </nav>
-    <component :is="currentView" class="wow slideInLeft" keep-alive></component>
+    <component :is="currentView" class="wow zoomIn" keep-alive></component>
 </div>
 
 <template id="indexpage">
@@ -139,7 +139,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="inner text-center">
-                            <a href="#" @click="currentView=''"><i class="fas fa-map-marked-alt"></i><br>
+                            <a href="https://goo.gl/maps/ru5HSKJND5t" @click="currentView=''"><i class="fas fa-map-marked-alt" target="_blank"></i><br>
                             <h4><strong>PETA</strong></h4></a>
                         </div>
                     </div>
