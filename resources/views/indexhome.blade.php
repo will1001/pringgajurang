@@ -63,7 +63,7 @@
   </div>
    </div>
 </nav>
-    <component :is="currentView" class="wow slideInRight" keep-alive></component>
+    <component :is="currentView" class="wow zoomIn" keep-alive></component>
     <section id="kotak3" v-if="!isHidden">
                 <div class="container">
                 <div class="row">
