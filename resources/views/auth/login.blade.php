@@ -7,17 +7,17 @@
             <div class="card">
                 <div class="card-header">Welcome</div>
                        
-                <div class="card-body">
+                <div class="card-body text-center">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
                             <div class="input-group-prepend">
-                                 <span class="input-group-text col-xs-4 col-4 col-sm-4 col-form-label text-md-right"><i class="fas fa-user"></i></span>
+                                 <span class="input-group-text col-xs-6 col-6 col-sm-6 col-form-label text-md-right"><i class="fas fa-user"></i></span>
                             </div>
 
 
-                            <div class="col-xs-8 col-6 col-sm-6 col-md-6">
+                            <div class="col-xs-6 col-6 col-sm-6 col-md-6">
                                 <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
@@ -30,10 +30,10 @@
 
                         <div class="form-group row">
                             <div class="input-group-prepend">
-                                <span class="input-group-text col-xs-4 col-4 col-sm-4 col-form-label text-md-right"><i class="fas fa-key"></i></span>
+                                <span class="input-group-text col-xs-6 col-6 col-sm-6 col-form-label text-md-right"><i class="fas fa-key"></i></span>
                             </div>
 
-                            <div class="col-xs-8 col-6 col-sm-6 col-md-6">
+                            <div class="col-xs-6 col-6 col-sm-6 col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))

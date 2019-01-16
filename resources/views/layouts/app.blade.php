@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lemon">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/loginregister.css')}}">
+    <link rel="stylesheet" href="{{asset('css/responsiveloginregister.css')}}">
     
 </head>
 
@@ -27,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <div class="container">
-   <a class="navbar-brand" href="#" @click="currentView='indexpage';activate(0);">
+   <a class="navbar-brand" href="{{ url('/') }}" @click="currentView='indexpage';activate(0);">
     <img src="/images/kabupaten-lombok-timur-ntb.png" width="55" height="70" class="d-inline-block align-top" alt="">
     <div id="spacetextlogo">
     <span id="logotext">Pringgajurang</span>

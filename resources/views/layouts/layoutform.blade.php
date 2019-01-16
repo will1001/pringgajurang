@@ -25,7 +25,7 @@
 
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <div class="container">
-   <a class="navbar-brand" href="#" @click="currentView='indexpage';activate(0);">
+   <a class="navbar-brand" href="{{ url('/') }}" @click="currentView='indexpage';activate(0);">
     <img src="/images/kabupaten-lombok-timur-ntb.png" width="55" height="70" class="d-inline-block align-top" alt="">
     <div id="spacetextlogo">
     <span id="logotext">Pringgajurang</span>

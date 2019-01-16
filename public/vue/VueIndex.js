@@ -31,11 +31,14 @@ Vue.component('statistikindex',{
 	template : '#statistikindex',
 });
 
+
+
 var vo = new Vue({
 	el : '#app',
 	data: {
 		currentView : "indexpage",
-		active_el : 0
+		active_el : 0,
+		pesan : "oke"
 	},
 	methods:{
     activate:function(el){

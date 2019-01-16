@@ -23,7 +23,7 @@
 <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <div class="container">
-   <a class="navbar-brand" href="#" @click="currentView='indexpage';activate(0);">
+   <a class="navbar-brand" href="#" @click="currentView='indexpage';activate(0);isHidden = false">
     <img src="/images/kabupaten-lombok-timur-ntb.png" width="55" height="70" class="d-inline-block align-top" alt="">
     <div id="spacetextlogo">
     <span id="logotext">Pringgajurang</span>
@@ -37,16 +37,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#" @click="currentView='bidangpemerintahan';activate(1);" :class="{ active : active_el == 1 }">Bidang PEMERINTAHAN</a>
+        <a class="nav-link" href="#" @click="currentView='bidangpemerintahan';activate(1);isHidden = true" :class="{ active : active_el == 1 }">Bidang PEMERINTAHAN</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" @click="currentView='panduanpenduduk';activate(2);" :class="{ active : active_el == 2 }">Panduan PENDUDUK</a>
+        <a class="nav-link" href="#" @click="currentView='panduanpenduduk';activate(2);isHidden = true" :class="{ active : active_el == 2 }">Panduan PENDUDUK</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" @click="currentView='halamanbisnis';activate(3);" :class="{ active : active_el == 3 }">Halaman BISNIS</a>
+        <a class="nav-link" href="#" @click="currentView='halamanbisnis';activate(3);isHidden = true" :class="{ active : active_el == 3 }">Halaman BISNIS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" @click="currentView='untukpengunjung';activate(4);" :class="{ active : active_el == 4 }">Untuk PENGUNJUNG</a>
+        <a class="nav-link" href="#" @click="currentView='untukpengunjung';activate(4);isHidden = true" :class="{ active : active_el == 4 }">Untuk PENGUNJUNG</a>
       </li>
       <li class="nav-item dropdown">
         <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,7 +63,44 @@
   </div>
    </div>
 </nav>
-    <component :is="currentView" class="wow slideInLeft" keep-alive></component>
+    <component :is="currentView" class="wow slideInRight" keep-alive></component>
+    <section id="kotak3" v-if="!isHidden">
+                <div class="container">
+                <div class="row">
+                    <div class="col-md-2 offset-md-1">
+                        <div class="inner text-center">
+                            <a href="#" @click="currentView='lembagaindex';isHidden = true"><i class="fas fa-sitemap"></i><br>
+                            <h4><strong>LEMBAGA</strong></h4></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="inner text-center">
+                            <a href="#"><i class="fas fa-users"></i><br>
+                            <h4><strong>SOTK</strong></h4></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="inner text-center">
+                            <a href="#"><i class="fas fa-map-marked-alt"></i><br>
+                            <h4><strong>PETA</strong></h4></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="inner text-center">
+                            <a href="#" @click="currentView='agenda';isHidden = true"><i class="fas fa-calendar-alt"></i><br>
+                            <h4><strong>AGENDA</strong></h4></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="inner text-center">
+                            <a href="#" @click="currentView='statistikindex';isHidden = true"><i class="fas fa-chart-bar"></i><br>
+                            <h4><strong>DATA</strong></h4></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            
 </div>
 
 <template id="indexpage">
@@ -122,42 +159,7 @@
             </div>
             </section>
 
-            <section id="kotak3">
-                <div class="container">
-                <div class="row">
-                    <div class="col-md-2 offset-md-1">
-                        <div class="inner text-center">
-                            <a href="#" @click="currentView='lembagaindex'"><i class="fas fa-sitemap"></i><br>
-                            <h4><strong>LEMBAGA</strong></h4></a>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="inner text-center">
-                            <a href="#" @click="currentView=''"><i class="fas fa-users"></i><br>
-                            <h4><strong>SOTK</strong></h4></a>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="inner text-center">
-                            <a href="#" @click="currentView=''"><i class="fas fa-map-marked-alt"></i><br>
-                            <h4><strong>PETA</strong></h4></a>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="inner text-center">
-                            <a href="#" @click="currentView='agenda'"><i class="fas fa-calendar-alt"></i><br>
-                            <h4><strong>AGENDA</strong></h4></a>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="inner text-center">
-                            <a href="#" @click="currentView='statistikindex'"><i class="fas fa-chart-bar"></i><br>
-                            <h4><strong>DATA</strong></h4></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </section>
+            
         </div>
 </template>
 
@@ -169,28 +171,21 @@
                 <div class="col-md-4">
                     <div class="kotak1bidangpemerintahan">
                         <ul>
-                        <li>Pemerintahan</li>
-                        <li>Kesejahteraan</li>
-                        <li>Pelayanan</li>
-                        <li>Tata Usaha dan Umum</li>
-                        <li>Keuangan</li>
-                        <li>Perencanaan</li>
-                        <li>Kewilayahan</li>
-                        <li>Pembangunan</li>
+                        <li><a href="#" @click.native="activate(9)" :class="{ active : active_el == 9 }">Pemerintahan</a></li>
+                        <li><a href="#">Kesejahteraan</a></li>
+                        <li><a href="#">Pelayanan</a></li>
+                        <li><a href="#">Tata Usaha dan Umum</a></li>
+                        <li><a href="#">Keuangan</a></li>
+                        <li><a href="#">Perencanaan</a></li>
+                        <li><a href="#">Kewilayahan</a></li>
+                        <li><a href="#">Pembangunan</a></li>
                     </ul>
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="kotak2bidangpemerintahan">
+                    <div class="kotak2bidangpemerintahan" id="app2">
                       <ul>
-                        <li>Pemerintahan</li>
-                        <li>Kesejahteraan</li>
-                        <li>Pelayanan</li>
-                        <li>Tata Usaha dan Umum</li>
-                        <li>Keuangan</li>
-                        <li>Perencanaan</li>
-                        <li>Kewilayahan</li>
-                        <li>Pembangunan</li>
+                        <li>@{{ pesan }}</li>
                     </ul>
                     </div>
                 </div>
@@ -436,6 +431,7 @@
     <script src="{{ asset('/js/date.js') }}" type="text/javascript" charset="utf-8" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
     <script src="{{ asset('/vue/VueIndex.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/vue/VueIndex2.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/script.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/wow.min.js') }}" type="text/javascript"></script>
   </body>
