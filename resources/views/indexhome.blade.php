@@ -240,10 +240,10 @@
                 <div class="kotak3Bhalamanbisnis">
                 <h2>Lowongan Kerja</h2>
                 <ul>
-                    <li><a href="https//id.indeed.com/">https//id.indeed.com/</a></li>
-                    <li><a href="https//freelancer.com/">https//freelancer.com/</a></li>
-                    <li><a href="https//glassdoor.com/">https//glassdoor.com/</a></li>
-                    <li><a href="https//idealist.com/">https//idealist.com/</a></li>
+                    <li><a target="_blank" href="https://id.indeed.com/">https//id.indeed.com/</a></li>
+                    <li><a target="_blank" href="https://freelancer.com/">https//freelancer.com/</a></li>
+                    <li><a target="_blank" href="https://glassdoor.com/">https//glassdoor.com/</a></li>
+                    <li><a target="_blank" href="https://idealist.com/">https//idealist.com/</a></li>
                 </ul>
                 </div>
             </div>
