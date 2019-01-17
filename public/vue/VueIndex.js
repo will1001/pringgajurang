@@ -7,11 +7,24 @@ Vue.component('indexpage',{
 
 
 Vue.component('bidangpemerintahan',{
-	template : '#bidangpemerintahan'
+	template : '#bidangpemerintahan',
+	data:function () {
+  		return {
+	    	active_elcomp: 0,
+	    	currentViewBidangPemerintahan : "pemerintahan",
+	  	}
+	},
 	methods:{
-    testing:function(){
-        console.log("alhamdulillah");
+    testing(el){
+        this.active_elcomp = el;
+        console.log(this.active_elcomp);
     }
+}
+});
+
+//sub componen pemerintahan
+Vue.component('pemerintahan',{
+	template : '#pemerintahan',
 });
 
 Vue.component('panduanpenduduk',{
@@ -47,4 +60,8 @@ var vo = new Vue({
 	methods:{
     activate:function(el){
         this.active_el = el;
-        consol
+        console.log(this.active_el);
+    }
+  }
+});
+

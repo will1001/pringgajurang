@@ -63,7 +63,7 @@
   </div>
    </div>
 </nav>
-    <component :is="currentView" class="wow zoomIn" keep-alive></component>
+    <component  :is="currentView" class="wow zoomIn"  keep-alive></component>
     <section id="kotak3" v-if="!isHidden">
                 <div class="container">
                 <div class="row">
@@ -171,22 +171,20 @@
                 <div class="col-md-4">
                     <div class="kotak1bidangpemerintahan">
                         <ul>
-                        <li><button  v-on:click="testing()">Pemerintahan</button></li>
-                        <li><a href="#">Kesejahteraan</a></li>
-                        <li><a href="#">Pelayanan</a></li>
-                        <li><a href="#">Tata Usaha dan Umum</a></li>
-                        <li><a href="#">Keuangan</a></li>
-                        <li><a href="#">Perencanaan</a></li>
-                        <li><a href="#">Kewilayahan</a></li>
-                        <li><a href="#">Pembangunan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(5)" :class="{ active : active_elcomp == 5 }">Pemerintahan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(6)" :class="{ active : active_elcomp == 6 }">Kesejahteraan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(7)" :class="{ active : active_elcomp == 7 }">Pelayanan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(8)" :class="{ active : active_elcomp == 8 }">Tata Usaha dan Umum</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(9)" :class="{ active : active_elcomp == 9 }">Keuangan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(10)" :class="{ active : active_elcomp == 10 }">Perencanaan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(11)" :class="{ active : active_elcomp == 11 }">Kewilayahan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(12)" :class="{ active : active_elcomp == 12 }">Pembangunan</a></li>
                     </ul>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="kotak2bidangpemerintahan">
-                      <ul>
-                        <li>@{{ pesan }}</li>
-                    </ul>
+                      <component  :is="currentViewBidangPemerintahan" class="wow zoomIn"  keep-alive></component>
                     </div>
                 </div>
             </div>
