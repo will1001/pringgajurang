@@ -8,7 +8,7 @@ $(window).scroll(function () {
 
 $(document).ready(function(){
   $(".nav-link").on('click', function(event) {
-console.log("oke");
+
 
     if (this.hash !== "") {
       event.preventDefault();
@@ -34,7 +34,6 @@ $("#logBPD").hover(function(){
  });
 
 $("#logLPMD").hover(function(){
-	console.log("oke");
     $('#LPMDshow').fadeToggle(1000);
  });
 
@@ -144,7 +143,6 @@ var skipdata=0;
 
 $(document).ready(function(){
   $('#pilihankadus').change(function () {
-    console.log("oke");
     skipdata=0;
     nomor=skipdata+1;
     $.get('reloadtabeldatapendudukajax/'+$('#pilihankadus option:selected').val()+'/'+skipdata,loadTabelDataPenduduk);

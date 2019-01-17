@@ -81,7 +81,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="inner text-center">
-                            <a href="#"><i class="fas fa-map-marked-alt"></i><br>
+                            <a href="https://goo.gl/maps/ru5HSKJND5t"><i class="fas fa-map-marked-alt"></i><br>
                             <h4><strong>PETA</strong></h4></a>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
                 <div class="col-md-4">
                     <div class="kotak1bidangpemerintahan">
                         <ul>
-                        <li><a href="#" @click.native="activate(9)" :class="{ active : active_el == 9 }">Pemerintahan</a></li>
+                        <li><button  v-on:click="testing()">Pemerintahan</button></li>
                         <li><a href="#">Kesejahteraan</a></li>
                         <li><a href="#">Pelayanan</a></li>
                         <li><a href="#">Tata Usaha dan Umum</a></li>
@@ -183,7 +183,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="kotak2bidangpemerintahan" id="app2">
+                    <div class="kotak2bidangpemerintahan">
                       <ul>
                         <li>@{{ pesan }}</li>
                     </ul>
@@ -431,7 +431,6 @@
     <script src="{{ asset('/js/date.js') }}" type="text/javascript" charset="utf-8" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
     <script src="{{ asset('/vue/VueIndex.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/vue/VueIndex2.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/script.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/wow.min.js') }}" type="text/javascript"></script>
   </body>

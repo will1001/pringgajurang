@@ -7,7 +7,11 @@ Vue.component('indexpage',{
 
 
 Vue.component('bidangpemerintahan',{
-	template : '#bidangpemerintahan',
+	template : '#bidangpemerintahan'
+	methods:{
+    testing:function(){
+        console.log("alhamdulillah");
+    }
 });
 
 Vue.component('panduanpenduduk',{
@@ -38,11 +42,9 @@ var vo = new Vue({
 	data: {
 		currentView : "indexpage",
 		active_el : 0,
-		pesan : "oke"
+		isHidden : false
 	},
 	methods:{
     activate:function(el){
         this.active_el = el;
-    }
-  }
-});
+        consol
