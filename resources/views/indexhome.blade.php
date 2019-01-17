@@ -320,29 +320,20 @@
                 <div class="col-md-4">
                     <div class="kotak1bidangpemerintahan">
                         <ul>
-                        <li>Pemerintahan</li>
-                        <li>Kesejahteraan</li>
-                        <li>Pelayanan</li>
-                        <li>Tata Usaha dan Umum</li>
-                        <li>Keuangan</li>
-                        <li>Perencanaan</li>
-                        <li>Kewilayahan</li>
-                        <li>Pembangunan</li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(5);currentViewBidangPemerintahan='Pemerintahan'" :class="{ active : active_elcomp == 5 }">Pemerintahan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(6);currentViewBidangPemerintahan='Kesejahteraan'" :class="{ active : active_elcomp == 6 }">Kesejahteraan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(7);currentViewBidangPemerintahan='Pelayanan'" :class="{ active : active_elcomp == 7 }">Pelayanan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(8);currentViewBidangPemerintahan='Tata_Usaha_dan_Umum'" :class="{ active : active_elcomp == 8 }">Tata Usaha dan Umum</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(9);currentViewBidangPemerintahan='Keuangan'" :class="{ active : active_elcomp == 9 }">Keuangan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(10);currentViewBidangPemerintahan='Perencanaan'" :class="{ active : active_elcomp == 10 }">Perencanaan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(11);currentViewBidangPemerintahan='Kewilayahan'" :class="{ active : active_elcomp == 11 }">Kewilayahan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(12);currentViewBidangPemerintahan='Pembangunan'" :class="{ active : active_elcomp == 12 }">Pembangunan</a></li>
                     </ul>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="kotak2bidangpemerintahan">
-                      <ul>
-                        <li>Pemerintahan</li>
-                        <li>Kesejahteraan</li>
-                        <li>Pelayanan</li>
-                        <li>Tata Usaha dan Umum</li>
-                        <li>Keuangan</li>
-                        <li>Perencanaan</li>
-                        <li>Kewilayahan</li>
-                        <li>Pembangunan</li>
-                    </ul>
+                      <component  :is="currentViewlembagaidex" class="wow zoomIn"  keep-alive></component>
                     </div>
                 </div>
             </div>

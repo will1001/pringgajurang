@@ -73,6 +73,18 @@ Vue.component('untukpengunjung',{
 
 Vue.component('lembagaindex',{
 	template : '#lembagaindex',
+	data:function () {
+  		return {
+	    	active_elcomp: 0,
+	    	currentViewlembagaidex : "pemerintahan",
+	  	}
+	},
+	methods:{
+    testing(el){
+        this.active_elcomp = el;
+        console.log(this.active_elcomp);
+    }
+}
 });
 
 Vue.component('statistikindex',{
