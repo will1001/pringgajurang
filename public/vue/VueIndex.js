@@ -23,9 +23,40 @@ Vue.component('bidangpemerintahan',{
 });
 
 //sub componen pemerintahan
-Vue.component('pemerintahan',{
-	template : '#pemerintahan',
+Vue.component('Pemerintahan',{
+	template : '#Pemerintahan',
 });
+
+Vue.component('Kesejahteraan',{
+	template : '#Kesejahteraan',
+});
+
+Vue.component('Pelayanan',{
+	template : '#Pelayanan',
+});
+
+Vue.component('Tata_Usaha_dan_Umum',{
+	template : '#Tata_Usaha_dan_Umum',
+});
+
+Vue.component('Keuangan',{
+	template : '#Keuangan',
+});
+
+Vue.component('Perencanaan',{
+	template : '#Perencanaan',
+});
+
+Vue.component('Kewilayahan',{
+	template : '#Kewilayahan',
+});
+
+Vue.component('Pembangunan',{
+	template : '#Pembangunan',
+});
+
+
+// ---------------------
 
 Vue.component('panduanpenduduk',{
 	template : '#panduanpenduduk',

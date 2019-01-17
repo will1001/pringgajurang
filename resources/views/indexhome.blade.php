@@ -171,14 +171,14 @@
                 <div class="col-md-4">
                     <div class="kotak1bidangpemerintahan">
                         <ul>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(5)" :class="{ active : active_elcomp == 5 }">Pemerintahan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(6)" :class="{ active : active_elcomp == 6 }">Kesejahteraan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(7)" :class="{ active : active_elcomp == 7 }">Pelayanan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(8)" :class="{ active : active_elcomp == 8 }">Tata Usaha dan Umum</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(9)" :class="{ active : active_elcomp == 9 }">Keuangan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(10)" :class="{ active : active_elcomp == 10 }">Perencanaan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(11)" :class="{ active : active_elcomp == 11 }">Kewilayahan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(12)" :class="{ active : active_elcomp == 12 }">Pembangunan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(5);currentViewBidangPemerintahan='Pemerintahan'" :class="{ active : active_elcomp == 5 }">Pemerintahan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(6);currentViewBidangPemerintahan='Kesejahteraan'" :class="{ active : active_elcomp == 6 }">Kesejahteraan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(7);currentViewBidangPemerintahan='Pelayanan'" :class="{ active : active_elcomp == 7 }">Pelayanan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(8);currentViewBidangPemerintahan='Tata_Usaha_dan_Umum'" :class="{ active : active_elcomp == 8 }">Tata Usaha dan Umum</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(9);currentViewBidangPemerintahan='Keuangan'" :class="{ active : active_elcomp == 9 }">Keuangan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(10);currentViewBidangPemerintahan='Perencanaan'" :class="{ active : active_elcomp == 10 }">Perencanaan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(11);currentViewBidangPemerintahan='Kewilayahan'" :class="{ active : active_elcomp == 11 }">Kewilayahan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(12);currentViewBidangPemerintahan='Pembangunan'" :class="{ active : active_elcomp == 12 }">Pembangunan</a></li>
                     </ul>
                     </div>
                 </div>
@@ -395,6 +395,33 @@
             </div>
         </div>
     </div>
+</template>
+
+{{-- //sub componen pemerintahan --}}
+<template id="Pemerintahan">
+    <h3>Pemerintahan</h3>
+</template>
+
+<template id="Kesejahteraan">
+    <h3>Kesejahteraan</h3>
+</template>
+<template id="Pelayanan">
+    <h3>Pelayanan</h3>
+</template>
+<template id="Tata_Usaha_dan_Umum">
+    <h3>Tata Usaha dan Umum</h3>
+</template>
+<template id="Keuangan">
+    <h3>Keuangan</h3>
+</template>
+<template id="Perencanaan">
+    <h3>Perencanaan</h3>
+</template>
+<template id="Kewilayahan">
+    <h3>Kewilayahan</h3>
+</template>
+<template id="Pembangunan">
+    <h3>Pembangunan</h3>
 </template>
 
 <footer>
