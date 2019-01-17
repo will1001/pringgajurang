@@ -193,5 +193,22 @@ footer{
     text-decoration: none;
 }
 
+.kotak2bidangpemerintahan{
+  margin: 25px 0px;
+}
+.kotak1Pengunjung,.kotak2APengunjung,.kotak2BPengunjung,.kotak3APengunjung,.kotak3BPengunjung,.kotak4Pengunjung,.kotak5Pengunjung,.kotak6Pengunjung{
+  width: 315px
+}
+
+.kotak5Pengunjung,.kotak6Pengunjung{
+  margin: 0px -25px;
+}
+
+.kotak3Bhalamanbisnis li a{
+  font-size: 19px;
+  text-decoration: none;
+  color: #000000;
+}
+
 
 
