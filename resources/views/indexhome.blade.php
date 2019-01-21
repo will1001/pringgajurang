@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/responsive.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lemon">
 
     <title>Pringgajurang</title>
@@ -108,13 +109,13 @@
             <section id="kotak1">
                 <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="tentang_desa inner">
                             <h2>Tentang Desa</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="berita_terbaru inner">
                             <h2>Berita Terbaru</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
@@ -122,7 +123,7 @@
                             <p class="text-right">admin,21/1/2019</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="pengumuman inner">
                             <h2>Pengumuman</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
@@ -135,22 +136,22 @@
             <section id="kotak2">
                 <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="inner">
                             <img src="/images/ntp-pangan.jpg" alt="">
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-2">
                         <div class="inner2">
                             <img src="/images/Screenshot from 2018-10-16 17-11-07.jpg" alt="">
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="inner">
                             <img src="/images/Grafik-Bonus-Demografi.jpg" alt="">
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-2">
                         <div class="inner2">
                             <img src="/images/kopi.jpg" alt="">
                         </div>
@@ -424,18 +425,18 @@
 <footer>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 text-light text-left">
+            <div class="col-12 col-xs-12 col-sm-12 col-md-4 text-light text-left infofooter">
                 <p><i class="text-light fas fa-map-marker"></i> Jl. Jurusan Kotaraja - Montong Gading, 83663</p>
                 <p><i class="text-light fas fa-phone"></i> +62 877-6344-4202</p>
                 <p class="text-light text-left"><i class="text-light fas fa-envelope"></i> pringgajurang@gmail.com</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                 <br>
                 <br>
                 <br>
                 <p class="text-light text-center">&copy; Copyright 2019 by <a class="text-light" href="https://winchy.tech">Winchy.tech</a></p>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                 <br>
                 <p class="text-light text-right" id="date"></p>
                 <p class="text-light text-right" id="txt"></p>

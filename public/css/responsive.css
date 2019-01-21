@@ -350,170 +350,89 @@
     
     @media only screen and (min-width: 320px) and (max-width: 479px) {
     
-    body {
+    html,body {
+        font-size: 13px;
+        width: 100%;
+        background-color: #F47E24;
+        background-image: url("/images/bg.jpg");
+    }
+
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+        margin: -29px 24px;
+    }
+
+    #logotext{
+        font-size: 25px;
+    }
+
+    #logotext2{
         font-size: 13px;
     }
 
-    h2{
-        font-size: 20px;
+    #spacetextlogo {
+        margin: -6px 0px;
     }
-    .header-area {
-        padding-top: 120px;
-        padding-bottom: 100px;
-        height: auto;
+
+    nav img{
+        width: 45px;
+        height: 53px;
     }
-    .page-title h2,
-    .header-text h2 ,h3{
-        font-size: 20px;
+
+    button.navbar-toggler {
+        position: relative;
+        position: relative;
+        top: 14px;
+        left: 19px;
     }
-    .mainmenu-area .navbar-toggle {
-        margin-top: 20px;
-    }
-    .mainmenu-area .navbar-toggle .icon-bar {
-        background-color: #ffffff;
-    }
-    .mainmenu-area #primary-menu {
-        background-color: #138FC2;
-    }
-    .mainmenu-area #primary-menu ul {
-        overflow-y: auto;
-        max-height: 70vh;
-        margin: 0;
-    }
-    .mainmenu-area #primary-menu > ul > li > a {
-        padding: 15px;
-        overflow: hidden;
-    }
-    .box {
-        padding: 30px 15px;
-    }
-    .box .box-icon {
-        height: auto;
-    }
-    .single-blog,
-    .single-team,
-    .price-table.active {
-        margin-top: 30px;
-    }
-    .form-double input {
+
+    section{
         width: 100%;
     }
-    .footer-top {
-        margin-bottom: 50px;
-    }
-    .x-left {
-        text-align: left;
-    }
-   
-    .screen-slider .owl-controls .owl-nav {
-    margin-top: 0vw;
-    margin-left: 25vw;
+
+    #app{
+        height: 2797px;
     }
 
-    .Selengkapnyabutton2 {
-    right: 22vw;
-    margin-top: 44px;
+    #kotak1 .inner {
+        height: 317px;
+        margin: 7px 0px;
+        padding: 11px 17px;
     }
 
-    .screen-box {
-    margin-left: -17vw;
-    width: 83vw;
+    #kotak2 .inner img {
+        height: 230px;
+        width: 345px;
+        margin: 18px 19px;
     }
 
-    .Selengkapnyabutton {
-    right: 25vw;
+    #kotak2 .inner2 img {
+        height: 230px;
+        width: 345px;
+        margin: 18px 19px;
     }
 
-
-   
-
-
-
-    #tentang-desa img {
-    margin-right: 0vw;
-    width: 83vw;
-    height: 32vh;
+    #kotak3{
+        margin: 0px 0px;
+        height: auto;   
     }
 
-    #tentang-desa p {
-    font-size: 11px;
+    footer{
+        width: 100%;
+        font-size: 17px;
+        white-space: nowrap;
+        display: block;
     }
-
-    #tentang-desa h1 {
-    font-size: 24px;
-    }
-
-    #tentang-desa #bgprofil{
-    
-    left: 0vw;
+    .infofooter p{
+        margin: 10px -59px;
     }
 
 
-    .loginregform form {
-    left: 9vw;
+    #date,#txt{
+        display: inline-block;
     }
 
-
-    .loginregform .card-body {
-    width: 81vw;
-    left: 0vw;
-    bottom: 18vw;
+    .dropdown-menu.show {
+        margin: 19px 13px;
     }
-
-    .row {
-    margin-right: 0px;
-    margin-left: 0px;
-    }
-
-
-    #logo {
-     
-        height: 7vh;
-        margin-right: 1vw;
-        bottom: 2vh;
-    }
-
-
-    .mainmenu-area .logo h5 {
-    width: 82vw;
-    padding-left: 0vw;
-    bottom: 1vh;
-    left: -16px;
-    }
-
-
-    .mainmenu-area .logo h2 {
-    width: 63vw;
-    position: relative;
-    top: -1vh;
-    }
-
-    #visimisi img {
-    margin-left: 1vw;
-    }
-
-     .search{
-        margin: 5px 0px;
-        
-        padding: 2px 0px;
-        width: 236px;
-        
-    }
-
-    #tombol_search{
-        
-        padding: 0px 17px;
-        margin: 5px 0px;
-        background-color: #138FC2;
-        
-    }
-
-    .search-posisi{
-        text-align: left;
-    }
-
-
-
-    
 
 }
