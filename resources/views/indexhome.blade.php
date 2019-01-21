@@ -137,23 +137,35 @@
                 <div class="container">
                 <div class="row">
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
-                        <div class="inner">
+                        <div class="outter">
                             <img src="/images/ntp-pangan.jpg" alt="">
+                            <div class="inner1">
+                                <h3>PRODUK WARGA</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-2">
-                        <div class="inner2">
+                        <div class="outter2">
                             <img src="/images/Screenshot from 2018-10-16 17-11-07.jpg" alt="">
+                            <div class="inner2">
+                                <h3>DANA DESA</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
-                        <div class="inner">
+                        <div class="outter">
                             <img src="/images/Grafik-Bonus-Demografi.jpg" alt="">
+                            <div class="inner3">
+                                <h3>STATISTIK</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-2">
-                        <div class="inner2">
+                        <div class="outter2">
                             <img src="/images/kopi.jpg" alt="">
+                            <div class="inner4">
+                                <h3>GALERY</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -167,7 +179,7 @@
 
 <template id="bidangpemerintahan">
     <div>
-        <div class="container">
+        <div class="container" style="padding-top: 40px;">
             <div class="row">
                 <div class="col-md-4">
                     <div class="kotak1bidangpemerintahan">
@@ -194,7 +206,7 @@
 </template>
 
 <template id="panduanpenduduk">
-         <div class="container">
+         <div class="container" style="padding-top: 40px;">
             <div class="row">
                 <div class="col-md-12">
                     <div class="kotakpanduanpenduduk">
@@ -211,7 +223,7 @@
 </template>
 
 <template id="halamanbisnis">
-    <div class="container">
+    <div class="container" style="padding-top: 40px;">
         <div class="row">
             <div class="col-md-12">
                 <div class="kotak1halamanbisnis">
@@ -253,7 +265,7 @@
 </template>
 
 <template id="untukpengunjung">
-    <div class="container">
+    <div class="container" style="padding-top: 40px;">
         <div class="row">
             <div class="col-md-4">
                 <div class="kotak1Pengunjung">
@@ -316,7 +328,7 @@
 
 <template id="lembagaindex">
     <div>
-        <div class="container">
+        <div class="container" style="padding-top: 40px;">
             <div class="row">
                 <div class="col-md-4">
                     <div class="kotak1bidangpemerintahan">
@@ -343,7 +355,7 @@
 </template>
 
 <template id="statistikindex">
-         <div class="container">
+         <div class="container" style="padding-top: 40px;">
             <div class="row">
                 <div class="col-md-12">
                     <div class="kotakpanduanpenduduk">
@@ -360,7 +372,7 @@
 </template>
 
 <template id="halamanbisnis">
-    <div class="container">
+    <div class="container" style="padding-top: 40px;">
         <div class="row">
             <div class="col-md-12">
                 <div class="kotak1halamanbisnis">
