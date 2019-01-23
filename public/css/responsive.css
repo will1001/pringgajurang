@@ -352,7 +352,7 @@
     
     html,body {
         font-size: 13px;
-        width: auto;
+        background-color: transparent;
         
     }
 
@@ -389,7 +389,7 @@
     }
 
     #app{
-        height: 2135px;
+        height: 2203px;
     }
 
     #kotak1 .inner {
@@ -400,14 +400,14 @@
     }
 
     #kotak2 .outter img {
-        height: 230px;
-        width: 345px;
+        height: 247px;
+        width: 300px;
         margin: 18px 19px;
     }
 
     #kotak2 .outter2 img {
-        height: 230px;
-        width: 345px;
+        height: 247px;
+        width: 300px;
         margin: 18px 19px;
     }
 
@@ -436,24 +436,24 @@
     }
 
     #kotak2 .inner1 {
-    right: 188px;
+    right: 171px;
     }
     #kotak2 .inner2 {
-    right: 234px;
+    right: 223px;
     }
     #kotak2 .inner3 {
-    right: 256px;
+    right: 245px;
     }
     #kotak2 .inner4 {
-    right: 280px;
+    right: 271px;
     }
 
     #kotak2 .outter{
-        margin: 0px 16px;
+        margin: 0px 28px;
     }
 
     #kotak2 .outter2{
-        margin: 0px 16px;
+        margin: 0px 28px;
     }
 
     #kotak3 i {
