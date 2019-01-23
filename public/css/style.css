@@ -1,10 +1,10 @@
 html {
    height: 1023px;
-   background-image: url("/images/bg.jpg");
+   
 }
 
 body{
-   
+   background-image: url("/images/bg.jpg");
 
    /* Full height */
    height: 1023px;
