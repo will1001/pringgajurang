@@ -352,9 +352,8 @@
     
     html,body {
         font-size: 13px;
-        width: 100%;
-        background-color: #F47E24;
-        background-image: url("/images/bg.jpg");
+        width: auto;
+        
     }
 
     nav.navbar.navbar-expand-lg.navbar-light.bg-light {
@@ -390,12 +389,13 @@
     }
 
     #app{
-        height: 2797px;
+        height: 2135px;
     }
 
     #kotak1 .inner {
-        height: 317px;
-        margin: 7px 0px;
+        height: 247px;
+        width: 300px;
+        margin: 7px 47px;
         padding: 11px 17px;
     }
 
@@ -433,6 +433,27 @@
 
     .dropdown-menu.show {
         margin: 19px 13px;
+    }
+
+    #kotak2 .inner1 {
+    right: 188px;
+    }
+    #kotak2 .inner2 {
+    right: 234px;
+    }
+    #kotak2 .inner3 {
+    right: 256px;
+    }
+    #kotak2 .inner4 {
+    right: 280px;
+    }
+
+    #kotak2 .outter{
+        margin: 0px 16px;
+    }
+
+    #kotak2 .outter2{
+        margin: 0px 16px;
     }
 
 }

@@ -68,31 +68,31 @@
     <section id="kotak3" v-if="!isHidden">
                 <div class="container">
                 <div class="row">
-                    <div class="col-md-2 offset-md-1">
+                    <div class="col-4 col-xs-4 col-sm-4 col-md-2 offset-md-1">
                         <div class="inner text-center">
                             <a href="#" @click="currentView='lembagaindex';isHidden = true"><i class="fas fa-sitemap"></i><br>
                             <h4><strong>LEMBAGA</strong></h4></a>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-4 col-xs-4 col-sm-4 col-md-2">
                         <div class="inner text-center">
                             <a href="#"><i class="fas fa-users"></i><br>
                             <h4><strong>SOTK</strong></h4></a>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-4 col-xs-4 col-sm-4 col-md-2">
                         <div class="inner text-center">
                             <a href="https://goo.gl/maps/ru5HSKJND5t"><i class="fas fa-map-marked-alt"></i><br>
                             <h4><strong>PETA</strong></h4></a>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-4 col-xs-4 col-sm-4 col-md-2">
                         <div class="inner text-center">
                             <a href="#" @click="currentView='agenda';isHidden = true"><i class="fas fa-calendar-alt"></i><br>
                             <h4><strong>AGENDA</strong></h4></a>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-4 col-xs-4 col-sm-4 col-md-2">
                         <div class="inner text-center">
                             <a href="#" @click="currentView='statistikindex';isHidden = true"><i class="fas fa-chart-bar"></i><br>
                             <h4><strong>DATA</strong></h4></a>
@@ -110,13 +110,13 @@
                 <div class="container">
                 <div class="row">
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
-                        <div class="tentang_desa inner">
+                        <div class="tentang_desa inner text-center">
                             <h2>Tentang Desa</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
                         </div>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
-                        <div class="berita_terbaru inner">
+                        <div class="berita_terbaru inner text-center">
                             <h2>Berita Terbaru</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
                             <br>
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
-                        <div class="pengumuman inner">
+                        <div class="pengumuman inner text-center">
                             <h2>Pengumuman</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
                         </div>
