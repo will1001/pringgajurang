@@ -357,15 +357,15 @@
     }
 
     nav.navbar.navbar-expand-lg.navbar-light.bg-light {
-        margin: -29px 24px;
+        margin: -29px 21px;
     }
 
     #logotext{
-        font-size: 25px;
+        font-size: 23px;
     }
 
     #logotext2{
-        font-size: 13px;
+        font-size: 12px;
     }
 
     #spacetextlogo {
@@ -389,7 +389,7 @@
     }
 
     #app{
-        height: 2203px;
+        height: 2253px;
     }
 
     #kotak1 .inner {
@@ -420,7 +420,7 @@
         width: 100%;
         font-size: 17px;
         white-space: nowrap;
-        display: block;
+        position: absolute;
     }
     .infofooter p{
         margin: 10px -59px;
@@ -459,5 +459,6 @@
     #kotak3 i {
     margin: 7px 15px;
    }
+
 
 }
