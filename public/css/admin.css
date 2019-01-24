@@ -1,3 +1,20 @@
+body{
+    background-image: none;
+}
+
+.bg-light{
+    background-color: blue!important;
+}
+
+a.nav-link {
+    display: block;
+    font-weight: bold;
+    color: black;
+    width: auto;
+    margin: 0px 0px;
+    line-height: 0px;
+}
+
 .mainmenu-area {
     background-color: #138fc2;
 }
