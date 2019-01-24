@@ -424,7 +424,7 @@
 
     footer{
         width: 100%;
-        font-size: 11px;
+        font-size: 17px;
         white-space: nowrap;
         position: absolute;
     }
@@ -442,16 +442,16 @@
     }
 
     #kotak2 .inner1 {
-    right: 171px;
+    right: 162px;
     }
     #kotak2 .inner2 {
-    right: 223px;
+    right: 214px;
     }
     #kotak2 .inner3 {
-    right: 245px;
+    right: 236px;
     }
     #kotak2 .inner4 {
-    right: 271px;
+    right: 262px;
     }
 
     #kotak2 .outter{
