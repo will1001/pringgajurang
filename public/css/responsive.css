@@ -353,17 +353,19 @@
     html{
         background-image: url("/images/bg.jpg");
         font-size: 13px;
+        width: 100%;
     }
 
     body {
         font-size: 13px;
         background-color: transparent;
         background-image: none;
+        width: 100%;
         
     }
 
     nav.navbar.navbar-expand-lg.navbar-light.bg-light {
-        margin: -29px 21px;
+        margin: -29px 0px;
     }
 
     #logotext{
@@ -401,25 +403,26 @@
     #kotak1 .inner {
         height: 149px;
         width: 300px;
-        margin: 7px 47px;
+        margin: 7px 0px;
         padding: 11px 17px;
     }
 
     #kotak2 .outter img {
         height: 247px;
         width: 300px;
-        margin: 18px 19px;
+        margin: 18px 0px;
     }
 
     #kotak2 .outter2 img {
         height: 247px;
         width: 300px;
-        margin: 18px 19px;
+        margin: 18px 0px;
     }
 
     #kotak3{
-        margin: 0px 0px;
-        height: auto;   
+    width: 299px;
+    height: auto;
+    margin: 0px 0px;
     }
 
     footer{
@@ -429,7 +432,7 @@
         position: absolute;
     }
     .infofooter p{
-        margin: 10px -59px;
+        margin: 10px 0px;
     }
 
 
@@ -438,7 +441,7 @@
     }
 
     .dropdown-menu.show {
-        margin: 19px 13px;
+        margin: 19px 0px;
     }
 
     #kotak2 .inner1 {
@@ -455,15 +458,15 @@
     }
 
     #kotak2 .outter{
-        margin: 0px 28px;
+        margin: 0px 0px;
     }
 
     #kotak2 .outter2{
-        margin: 0px 28px;
+        margin: 0px 0px;
     }
 
     #kotak3 i {
-    margin: 7px 15px;
+    margin: 7px 0px;
    }
 
 

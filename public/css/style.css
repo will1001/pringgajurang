@@ -76,7 +76,7 @@ a.nav-link {
     font-weight: bold;
     color: black;
     width: 105px;
-    margin: 0px 15px;
+    margin: 0px 0px;
     line-height: 16px;
 }
 
@@ -97,10 +97,7 @@ a.dropdown-toggle{
     left: 31px;
 }
 
-.row {
-    margin-right: -40px;
-    margin-left: -40px;
-}
+  
 
 .tentang_desa{
 	background-color: rgba(100, 203, 135, 0.5);
@@ -115,20 +112,20 @@ a.dropdown-toggle{
 
 #kotak1 .inner{
 	height: 317px;
-	margin: 0px -11px;
+	margin: 0px 0px;
 }
 
 #kotak2 .outter img{
 	height: 230px;
 	width: 345px;
-    margin: 18px -11px;
+    margin: 18px 0px;
     
 }
 
 #kotak2 .outter2 img{
 	height: 230px;
     width: 230px;
-    margin: 18px -52px;
+    margin: 18px 0px;
 }
 
 #kotak2 .inner1{
@@ -173,20 +170,20 @@ a.dropdown-toggle{
 
 
 #kotak1 p{
-	margin: 0px 10px;
+	margin: 0px 0px;
 }
 
 #kotak3{
 	background-color: rgba(196, 196, 196, 0.5);
 	height: 90px;
-	margin: 15px 107px;
+	margin: 15px 0px;
 	
 }
 
 
 #kotak3 i{
 	font-size: 51px;
-	margin: 7px 37px;
+	margin: 7px 0px;
 }
 
 
