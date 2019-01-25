@@ -421,11 +421,13 @@
     }
 
     #logotext{
-        font-size: 23px;
+        font-size: 19px;
+        line-height: 41px
     }
 
     #logotext2{
-        font-size: 12px;
+        font-size: 9px;
+        line-height: 0px
     }
 
     #spacetextlogo {
@@ -433,8 +435,8 @@
     }
 
     nav img{
-        width: 45px;
-        height: 53px;
+        width: 39px;
+        height: 45px;
     }
 
     button.navbar-toggler {
@@ -450,10 +452,12 @@
     
     
     footer{
-        margin-top: 91px;
-        font-size: 14px;
+        font-size: 10px;
         white-space: nowrap;
         position: absolute;
+        width: 100%;
+        bottom: 0;
+        margin-bottom: 0 !important;
     }
 
     .infofooter p{

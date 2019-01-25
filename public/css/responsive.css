@@ -428,6 +428,8 @@
         font-size: 14px;
         white-space: nowrap;
         position: absolute;
+        bottom: 0;
+        margin-bottom: 0 !important;
     }
 
     .infofooter p{
