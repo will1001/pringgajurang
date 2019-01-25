@@ -428,8 +428,6 @@
         font-size: 14px;
         white-space: nowrap;
         position: absolute;
-        bottom: 0;
-        margin-bottom: 0 !important;
     }
 
     .infofooter p{
@@ -457,10 +455,16 @@
     }
 
     #kotak2 .inner1 {
-    right: 17px;
+    right: 37px;
+    height: 247px;
+    width: 311px;
+    padding: 0px 10px;
     }
     #kotak2 .inner2 {
-    right: 105px;
+    right: 37px;
+    height: 247px;
+    width: 311px;
+    padding: 0px 10px;
     }
    
 
