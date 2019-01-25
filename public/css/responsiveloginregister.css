@@ -403,185 +403,104 @@
     
     @media only screen and (min-width: 320px) and (max-width: 479px) {
     
-    body {
+    html{
+        background-image: url("/images/bg.jpg");
         font-size: 13px;
+        width: 100%;
+        height: 100%;
+
     }
 
-    h2{
-        font-size: 20px;
+    body {
+        background-color: transparent;
+        background-image: none;
+        width: 97%;
+        font-family: Lato;
+        height: 100%;
+        
     }
-    .header-area {
-        padding-top: 120px;
-        padding-bottom: 100px;
-        height: auto;
+
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+        margin: -29px 0px;
     }
-    .page-title h2,
-    .header-text h2 ,h3{
-        font-size: 20px;
+
+    #logotext{
+        font-size: 23px;
+        line-height: 44px;
     }
-    .mainmenu-area .navbar-toggle {
-        margin-top: 20px;
+
+    #logotext2{
+        font-size: 12px;
+        line-height: 0px;
     }
-    .mainmenu-area .navbar-toggle .icon-bar {
-        background-color: #ffffff;
+
+    #spacetextlogo {
+        margin: -6px 0px;
     }
-    .mainmenu-area #primary-menu {
-        background-color: #138FC2;
+
+    nav img{
+        width: 45px;
+        height: 53px;
     }
-    .mainmenu-area #primary-menu ul {
-        overflow-y: auto;
-        max-height: 70vh;
-        margin: 0;
+
+    button.navbar-toggler {
+        position: relative;
+        position: relative;
+        top: 14px;
+        left: 19px;
     }
-    .mainmenu-area #primary-menu > ul > li > a {
-        padding: 15px;
-        overflow: hidden;
-    }
-    .box {
-        padding: 30px 15px;
-    }
-    .box .box-icon {
-        height: auto;
-    }
-    .single-blog,
-    .single-team,
-    .price-table.active {
-        margin-top: 30px;
-    }
-    .form-double input {
+
+    section{
         width: 100%;
     }
-    .footer-top {
-        margin-bottom: 50px;
-    }
-    .x-left {
-        text-align: left;
-    }
-   
-    .screen-slider .owl-controls .owl-nav {
-    margin-top: 0vw;
-    margin-left: 25vw;
+
+    footer{
+        width: 100%;
+        font-size: 14px;
+        white-space: nowrap;
+        position: absolute;
     }
 
-    .Selengkapnyabutton2 {
-    right: 22vw;
-    margin-top: 44px;
+    .infofooter p{
+            margin: 0px -61px;
     }
 
-    .screen-box {
-    margin-left: -17vw;
-    width: 83vw;
+    .Copyrightfooter p{
+            margin: 0px -21px;
     }
 
-    .Selengkapnyabutton {
-    right: 25vw;
+    .tanggalfooter{
+            margin: 0px -9px;
     }
 
-
-   
-
-
-
-    #tentang-desa img {
-    margin-right: 0vw;
-    width: 83vw;
-    height: 32vh;
-    }
-
-    #tentang-desa p {
-    font-size: 11px;
-    }
-
-    #tentang-desa h1 {
-    font-size: 24px;
-    }
-
-    #tentang-desa #bgprofil{
     
-    left: 0vw;
+    #date,#txt{
+        display: inline-block;
     }
 
+    .loginregform .card {
+    width: 299px;
+    margin: 67px -76px;
+    }
+
+    .loginregform .card-body.text-center {
+    margin: 0px 9px;
+    }
 
     .loginregform form {
-    left: 9vw;
+    width: 453px;
+    }
+
+    .input-group-prepend {
+    margin-right: -45px;
+    }
+    .loginregform span.input-group-text.col-xs-6.col-6.col-sm-6.col-form-label.text-md-right {
+    width: 73px;
     }
 
 
-    .loginregform .card-body {
-    width: 81vw;
-    left: 0vw;
-    bottom: 18vw;
-    }
-
-    .row {
-    margin-right: 0px;
-    margin-left: 0px;
-    }
 
 
-    #logo {
-     
-        height: 7vh;
-        margin-right: 1vw;
-        bottom: 2vh;
-    }
-
-
-    .mainmenu-area .logo h5 {
-    width: 82vw;
-    padding-left: 0vw;
-    bottom: 1vh;
-    }
-
-
-    .mainmenu-area .logo h2 {
-    width: 63vw;
-    position: relative;
-    top: -1vh;
-    }
-
-    #visimisi img {
-    margin-left: 1vw;
-    }
-
-     .search{
-        margin: 5px 0px;
-        
-        padding: 2px 0px;
-        width: 236px;
-        
-    }
-
-    #tombol_search{
-        
-        padding: 0px 17px;
-        margin: 5px 0px;
-        background-color: #138FC2;
-        
-    }
-
-    .search-posisi{
-        text-align: left;
-    }
-
-    .loginregform .btn {
-    left: 13vw;
-    }
-
-    a.btn.btn-link {
-    left: 9vw;
-    }
-
-    .navbar-brand p {
-    right: -9vw;
-    bottom: 9vh;
-    }
-
-   .navbar-brand span {
-    left: 13vw;
-    bottom: 11vh;
-    font-size: 19px;
-    }
 
     
 
