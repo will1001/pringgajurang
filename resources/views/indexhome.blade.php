@@ -438,9 +438,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-xs-12 col-sm-12 col-md-4 text-light text-left infofooter">
-                <p><i class="text-light fas fa-map-marker"></i> Jl. Jurusan Kotaraja - Montong Gading, 83663</p>
-                <p><i class="text-light fas fa-phone"></i> +62 877-6344-4202</p>
-                <p class="text-light text-left"><i class="text-light fas fa-envelope"></i> pringgajurang@gmail.com</p>
+                <p class="text-left"><i class="text-light fas fa-map-marker"></i> Jl. Jurusan Kotaraja - Montong Gading, 83663</p>
+                <p class="text-left"><i class="text-light fas fa-phone"></i> +62 877-6344-4202</p>
+                <p class="text-left"><i class="text-light fas fa-envelope"></i> pringgajurang@gmail.com</p>
             </div>
             <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                 <br>
