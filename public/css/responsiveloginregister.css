@@ -505,8 +505,8 @@
 
     .loginregform .form-group.row.mb-0 {
     position: relative;
-    right: 115px;
-    width: 395px;
+    right: 97px;
+    width: 375px;
     }
 
     .input-group-prepend {
@@ -519,5 +519,8 @@
     .form-control{
         width: 213px;
     }
+    a.btn.btn-link {
+    font-size: 10px;
+   }
 
 }
