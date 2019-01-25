@@ -62,15 +62,15 @@
             @yield('content')
         </main>
 
-<footer class="mt-auto">
+<footer>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 text-light text-left">
+            <div class="col-md-4 text-light text-left infofooter">
                 <p><i class="text-light fas fa-map-marker"></i> Jl. Jurusan Kotaraja - Montong Gading, 83663</p>
                 <p><i class="text-light fas fa-phone"></i> +62 877-6344-4202</p>
                 <p class="text-light text-left"><i class="text-light fas fa-envelope"></i> pringgajurang@gmail.com</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 Copyrightfooter">
                 <br>
                 <br>
                 <br>
@@ -78,8 +78,10 @@
             </div>
             <div class="col-md-4">
                 <br>
+                <div class="tanggalfooter">
                 <p class="text-light text-right" id="date"></p>
                 <p class="text-light text-right" id="txt"></p>
+                </div>
             </div>
         </div>
     </div>
