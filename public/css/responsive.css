@@ -431,9 +431,21 @@
         white-space: nowrap;
         position: absolute;
     }
+
     .infofooter p{
-            margin: 0px -85px;
+            margin: 0px -33px;
     }
+
+    .Copyrightfooter p{
+            margin: 0px -21px;
+    }
+
+    .tanggalfooter{
+            margin: 0px -9px;
+    }
+
+    
+
 
 
     #date,#txt{
