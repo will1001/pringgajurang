@@ -117,7 +117,7 @@ a.dropdown-toggle{
 
 #kotak2 .outter img{
 	height: 230px;
-	width: 345px;
+	width: 319px;
     margin: 18px 0px;
     
 }
@@ -125,13 +125,16 @@ a.dropdown-toggle{
 #kotak2 .outter2 img{
 	height: 230px;
     width: 230px;
-    margin: 18px 0px;
+    margin: 18px -49px;
 }
 
 #kotak2 .inner1{
   position: absolute;
+  height: 230px;
+  width: 319px;
   bottom: 20px;
-  right: 167px;
+  right: 48px;
+  padding: 0px 10px;
   color: #000000;
   white-space: nowrap;
   text-shadow: -1px 0 rgba(255,255,255,.7), 0 1px rgba(255,255,255,.7), 1px 0 black, 0 -1px rgba(255,255,255,.7);
@@ -139,26 +142,11 @@ a.dropdown-toggle{
 
 #kotak2 .inner2{
   position: absolute;
+  width: 230px;
+  height: 230px;
   bottom: 20px;
-  right: 71px;
-  color: #000000;
-  white-space: nowrap;
-  text-shadow: -1px 0 rgba(255,255,255,.7), 0 1px rgba(255,255,255,.7), 1px 0 black, 0 -1px rgba(255,255,255,.7);
-}
-
-#kotak2 .inner3{
-  position: absolute;
-  bottom: 20px;
-  right: 255px;
-  color: #000000;
-  white-space: nowrap;
-  font-size: 23PX;
-}
-
-#kotak2 .inner4{
-  position: absolute;
-  bottom: 20px;
-  right: 119px;
+  right: -7px;
+  padding: 0px 10px;
   color: #000000;
   white-space: nowrap;
   text-shadow: -1px 0 rgba(255,255,255,.7), 0 1px rgba(255,255,255,.7), 1px 0 black, 0 -1px rgba(255,255,255,.7);

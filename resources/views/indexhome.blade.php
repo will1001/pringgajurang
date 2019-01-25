@@ -139,32 +139,32 @@
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="outter">
                             <img src="/images/ntp-pangan.jpg" alt="">
-                            <div class="inner1">
-                                <h3>PRODUK WARGA</h3>
+                            <div class="inner1 d-flex flex-last">
+                                <h3 class="mt-auto">PRODUK WARGA</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-2">
                         <div class="outter2">
                             <img src="/images/Screenshot from 2018-10-16 17-11-07.jpg" alt="">
-                            <div class="inner2">
-                                <h3>DANA DESA</h3>
+                            <div class="inner2 d-flex flex-last">
+                                <h3 class="mt-auto">DANA DESA</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="outter">
                             <img src="/images/Grafik-Bonus-Demografi.jpg" alt="">
-                            <div class="inner3">
-                                <h3>STATISTIK</h3>
+                            <div class="inner1 d-flex flex-last">
+                                <h3 class="mt-auto">STATISTIK</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-2">
                         <div class="outter2">
                             <img src="/images/kopi.jpg" alt="">
-                            <div class="inner4">
-                                <h3>GALERY</h3>
+                            <div class="inner2 d-flex flex-last">
+                                <h3 class="mt-auto">GALERY</h3>
                             </div>
                         </div>
                     </div>
