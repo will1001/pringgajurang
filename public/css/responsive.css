@@ -368,11 +368,13 @@
     }
 
     #logotext{
-        font-size: 23px;
+        font-size: 19px;
+        line-height: 41px
     }
 
     #logotext2{
-        font-size: 12px;
+        font-size: 9px;
+        line-height: 0px
     }
 
     #spacetextlogo {
@@ -380,8 +382,8 @@
     }
 
     nav img{
-        width: 45px;
-        height: 53px;
+        width: 39px;
+        height: 45px;
     }
 
     button.navbar-toggler {
@@ -455,13 +457,13 @@
     }
 
     #kotak2 .inner1 {
-    right: 37px;
+    right: 7px;
     height: 247px;
     width: 311px;
     padding: 0px 10px;
     }
     #kotak2 .inner2 {
-    right: 37px;
+    right: 7px;
     height: 247px;
     width: 311px;
     padding: 0px 10px;
