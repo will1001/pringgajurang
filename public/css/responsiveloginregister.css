@@ -482,6 +482,7 @@
 
     .dropdown-menu.show {
         margin: 19px 0px;
+        margin-bottom: 39px;
     }
 
     
@@ -540,6 +541,10 @@
    .registerform input {
     width: 171px;
    }
+
+   li.nav-item.dropdown {
+    margin: -43px 16px;
+    }
 
 
 
