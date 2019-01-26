@@ -452,7 +452,7 @@
     
     
     footer{
-        font-size: 10px;
+        font-size: 13px;
         white-space: nowrap;
         position: absolute;
         width: 100%;
@@ -495,6 +495,10 @@
     margin: 67px -76px;
     }
 
+    .registerform .card {
+    margin: 29px 0px;
+    }
+
     .loginregform .card-body.text-center {
     margin: 0px 9px;
     }
@@ -516,9 +520,15 @@
     width: 73px;
     }
 
-    .form-control{
+    #loginregform .form-control{
         width: 213px;
     }
+
+    #registerform .form-control{
+        width: 213px;
+        margin: 0px -35px;
+    }
+
     a.btn.btn-link {
     font-size: 10px;
    }
