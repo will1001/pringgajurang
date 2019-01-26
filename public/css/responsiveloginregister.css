@@ -496,7 +496,7 @@
     }
 
     .registerform .card {
-    margin: 29px 0px;
+    margin: 14px 0px;
     }
 
     .loginregform .card-body.text-center {
@@ -520,11 +520,11 @@
     width: 73px;
     }
 
-    #loginregform .form-control{
+    .loginregform .form-control{
         width: 213px;
     }
 
-    #registerform .form-control{
+    .registerform .form-control{
         width: 213px;
         margin: 0px -35px;
     }
@@ -532,5 +532,15 @@
     a.btn.btn-link {
     font-size: 10px;
    }
+
+   .loginregform input {
+    width: 215px;
+   }
+
+   .registerform input {
+    width: 171px;
+   }
+
+
 
 }
