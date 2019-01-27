@@ -297,7 +297,7 @@
     position: relative;
     left: 3px;
     top: 9px;
-    width: 35vw;
+    width: 32vw;
     float: left;
     }
 
@@ -305,11 +305,11 @@
     position: relative;
     right: 3px;
     bottom: -3px;
-    width: 34vw;
+    width: 33vw;
    }
 
    input#search {
-    width: 33vw;
+    width: 31vw;
     }
 
     #logo {
