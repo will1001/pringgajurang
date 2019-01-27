@@ -337,6 +337,10 @@
     input#NIKsurat {
     margin: 15px 0px;
    }
+
+   a.next {
+    margin: 0px 43px;
+   }
     
 
 }
