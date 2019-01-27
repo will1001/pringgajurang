@@ -342,6 +342,10 @@
    a.next {
     margin: 0px 43px;
    }
+
+   li.nav-item {
+    padding: 3vh 0vw;
+    }
     
 
 }
