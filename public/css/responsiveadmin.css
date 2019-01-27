@@ -289,7 +289,7 @@
 
     #tombol_search {
     position: relative;
-    right: 19px;
+    right: 7px;
     top: 10px;
     }
 
@@ -297,18 +297,18 @@
     position: relative;
     left: 3px;
     top: 9px;
-    width: 121px;
+    width: 115px;
     float: left;
     }
 
     #filter {
     position: relative;
-    right: 23px;
+    right: 3px;
     bottom: -3px;
    }
 
    input#search {
-    width: 119px;
+    width: 109px;
     }
 
     #logo {
