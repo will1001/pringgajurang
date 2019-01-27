@@ -98,8 +98,11 @@ class webcontroller extends Controller
        $barangdesas = barangdesa::orderBy("created_at","desc")->take(4)->get();
        $barangdesas2 = barangdesa::orderBy("created_at","desc")->take(4)->skip(4)->get();
        $barangdesas3 = barangdesa::orderBy("created_at","desc")->take(4)->skip(8)->get();
+       $bumdess = bumdes::orderBy("created_at","desc")->take(4)->get();
+       $bumdess2 = bumdes::orderBy("created_at","desc")->take(4)->skip(4)->get();
+       $bumdess3 = bumdes::orderBy("created_at","desc")->take(4)->skip(8)->get();
 
-       return view('indexhome', ['beritas' => $beritas,'beritas2' => $beritas2,'beritas3' => $beritas3, 'pengumumans' => $pengumumans, 'SOTKs' => $SOTKs, 'barangdesas' => $barangdesas, 'barangdesas2' => $barangdesas2, 'barangdesas3' => $barangdesas3]);
+       return view('indexhome', ['beritas' => $beritas,'beritas2' => $beritas2,'beritas3' => $beritas3, 'pengumumans' => $pengumumans, 'SOTKs' => $SOTKs, 'barangdesas' => $barangdesas, 'barangdesas2' => $barangdesas2, 'barangdesas3' => $barangdesas3,'bumdess' => $bumdess,'bumdess2' => $bumdess2,'bumdess3' => $bumdess3]);
     }
 
 
@@ -151,14 +154,24 @@ class webcontroller extends Controller
 
     public function detailbarangdesa($id)
     {
-    	# code...
+        # code...
         $barangdesas= barangdesa::find($id);
         $users= User::find($barangdesas->id_pemilik);
         $data_penduduks= data_penduduk::where('NIK',$users->NIK)->get();
         
 
+        
+        return view('detailbarangdesa',['barangdesas' => $barangdesas,'users' => $users,'data_penduduks' => $data_penduduks]);
+    }
+
+    public function detailbumdes($id)
+    {
+    	# code...
+        $bumdes= bumdes::find($id);
+        
+
     	
-    	return view('detailbarangdesa',['barangdesas' => $barangdesas,'users' => $users,'data_penduduks' => $data_penduduks]);
+    	return view('detailbumdes',['bumdes' => $bumdes]);
     }
 
     public function transparansi($id)

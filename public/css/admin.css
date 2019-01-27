@@ -4,6 +4,7 @@ body{
 
 .bg-light{
     background-color: blue!important;
+        width: 103%;
 }
 
 a.nav-link {
@@ -239,3 +240,15 @@ a.nav-link {
     margin: 4px 5px;
     height: 24px;
    }
+
+   .setkopsurat{
+    font-weight: bold;
+    color: black!important;
+    top: 22px;
+    position: relative;
+    left: 31px;
+   }
+
+   .dropdown-menu.dropdown-menu-bottom.show {
+    margin: 20px 35px;
+    }

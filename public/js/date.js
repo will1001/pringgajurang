@@ -24,6 +24,7 @@ const dayNames = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu",
 ];
 
 var today = new Date();
+var dday = today.getDay();
 var dd = today.getDate();
 var mm = today.getMonth() + 1; //January is 0!
 var yyyy = today.getFullYear();
@@ -36,5 +37,9 @@ if (mm < 10) {
   mm = '0' + mm;
 }
 
-today = dayNames[today.getDay()-1] + ',' + dd + '  ' + monthNames[today.getMonth()] + '  ' + yyyy;
+if (dday == 0) {
+  dday =7;
+}
+
+today = dayNames[dday-1] + ',' + dd + '  ' + monthNames[today.getMonth()] + '  ' + yyyy;
 document.getElementById("date").innerHTML = today;

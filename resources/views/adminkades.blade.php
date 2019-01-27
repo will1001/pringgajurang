@@ -41,7 +41,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto text-uppercase">
       @guest
               <li>
                   <a href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -49,13 +49,13 @@
         @else
 
               <li class="nav-item">
-                <a class="nav-link dropdown-toggle" href="{{url('formsettingkopsurat')}}" >Setting Kop Surat</a>
+                <a class="nav-link setkopsurat" href="{{url('formsettingkopsurat')}}" >Setting Kop Surat</a>
               </li>
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     upload dokumen <span class="caret"></span>
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-menu dropdown-menu-bottom" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{url('formuploadapbd/apbd')}}">APBD Desa</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{url('formuploadapbd/rkp')}}">RKP Desa</a>
@@ -72,7 +72,7 @@
                       {{ Auth::user()->email }} <span class="caret"></span>
                   </a>
 
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-menu dropdown-menu-bottom" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="{{ route('logout') }}"
                                          onclick="event.preventDefault();
                                                        document.getElementById('logout-form').submit();">
@@ -363,37 +363,44 @@
 
     <section id="profildesaadmin" class="section-padding">
       <div class="container">
-         <h2>SOTK</h2>
-         @if ($errors->any())
-        <h3 class="text-center text-danger">{{ implode('', $errors->all(':message')) }}</h3>
-        @endif
-        {{-- <div class="row">
-           <div class="col-md-12">
-           
-            <form action="{{ url('editdeskripsiprofildesa') }}" method="post" enctype="multipart/form-data" style="padding-top: 1px;">
-                {{ csrf_field() }}
-                <textarea  rows="10" name="deskripsiprofildesa">{{ $SOTKs[0]->desripsiprofildesa }}</textarea>
-                <input class="button white" type="submit" value="Edit" id="edutbuttondeskripsi">
-              </form>
-
-            </div>
-          </div> --}}
-          <div class="row text-center">
-
-
-            @foreach($SOTKs as $SOTK)
-           <div class="col-12 col-xs-12 col-sm-12 col-md-3">
-            <img src="{{ $SOTK->urlgambar }}" alt="">
-            <h1 class="text-center" >{{ $SOTK->Nama }}</h1>
-            <h3 class="text-center">{{ $SOTK->Jabatan }}</h3>
-            <a href="{{url('formeditSOTK/'.$SOTK->id)}}">Ganti</a>
-            </div>
-            @endforeach
-
-       
-
+        <div class="text-center">
+           <h2>SOTK</h2>
+         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div style="overflow: auto;max-height: 400px;position: relative;  ">
+                <table id="tabeldatakadus">
+                <thead>
+                  <col width="1000px">
+                  <col width="1000px">
+                  <col width="1000px">
+                  <col width="1000px">
+                  <tr>
+                    <th>Nama</th>
+                    <th>Jabatan</th>
+                    <th>Foto</th>
+                    <th>edit</th> 
+                    <th>hapus</th> 
+                  </tr>
+                </thead>
+                 <tbody>
+                  @foreach($SOTKs as $SOTK)
+                    <tr>
+                      <td>{{ $SOTK->Nama }}</td>
+                      <td>{{ $SOTK->Jabatan }}</td>
+                      <td><a href="{{ $SOTK->urlgambar }}">Lihat</a></td>
+                      <td><a href={{ url('formeditSOTK/' .  $SOTK->id ) }}>edit</a></td>
+                      <td><a href={{ url('deleteSOTK/' .  $SOTK->id ) }}>hapus</a></td>
+                    </tr>
+                  @endforeach
+                </tbody>
+              </table>
+          </div>
+                <a href="{{url('formaddSOTK')}}" class="tomboladd">Tambah Data</a>                      
+                
           </div>
         </div>
+      </div>
     </section>
 
 
@@ -438,70 +445,7 @@
 
 
 
- 
 
-   <footer class="footer-area relative sky-bg" id="contact-page">
-        <div class="absolute footer-bg"></div>
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                        <address class="side-icon-boxes">
-                            <div class="side-icon-box">
-                                <div class="side-icon">
-                                    <img src="{{asset('images/location-arrow.png')}}" alt="">
-                                </div>
-                                <p><strong>Alamat: </strong>Jl. Jurusan Montong Gading - Pringgajurang, Km 4, Desa Pringgajurang.Kode Pos 83664</p>
-                            </div>
-                            <div class="side-icon-box">
-                                <div class="side-icon">
-                                    <img src="{{asset('images/phone-arrow.png')}}" alt="">
-                                </div>
-                                <p><strong>Telpon: </strong>
-                                    08123456789
-                                </p>
-                            </div>
-                            <div class="side-icon-box">
-                                <div class="side-icon">
-                                    <img src="{{asset('images/mail-arrow.png')}}" alt="">
-                                </div>
-                                <p><strong>E-mail: </strong>
-                                    <a href="mailto:youremail@example.com">kantor@desaPringgajurang.id</a>
-                                    
-                                </p>
-                            </div>
-                        </address>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-middle">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 pull-right">
-                        <ul class="social-menu text-right x-left">
-                            <li><a href="#"><i class="ti-facebook"></i></a></li>
-                            <li><a href="#"><i class="ti-twitter"></i></a></li>
-                            <li><a href="#"><i class="ti-google"></i></a></li>
-                            <li><a href="#"><i class="ti-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <p>&copy;Copyright 2018.made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://winchy.tech">winchy.tech</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
 
 

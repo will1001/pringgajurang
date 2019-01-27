@@ -65,11 +65,11 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+            {
 
         $data_penduduks=data_penduduk::where('NIK',$data['NIK'])->get();
-        // dd($data_penduduks[0]->NIK);
-
+        
+        if($data_penduduks->count()>0){
 
             if($data['NIK'] == $data_penduduks[0]->NIK){
 
@@ -85,6 +85,11 @@ class RegisterController extends Controller
 
 
             }
+
+        }
+
+
+            
         
 
         

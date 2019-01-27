@@ -532,6 +532,75 @@ class admincontroller extends Controller
 
     }
 
+    public function formaddSOTK()
+    {
+        if(Auth::user()->roles == "kades"){
+        return view('adminCRUD/addSOTK');
+    }else{
+        
+        return redirect('admin');
+    }
+
+    }
+
+    public function deleteSOTK($id)
+    {
+        # code...
+
+        if(Auth::user()->roles == "kades"){
+        
+        sotk::where('id',$id)->delete();
+        $var="Data berhasil di hapus";
+        return redirect('admin')->with('message', 'data berhasil di hapus');
+        }else{
+        
+            return redirect('admin');
+        }
+
+
+    }
+
+
+public function addSOTK(Request $request)
+    {
+
+
+        if(Auth::user()->roles == "kades"){
+            $validator = Validator::make(request()->all(), [
+                'url_gambar' => 'required|image|max:1000',
+            ]);
+            if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors());;
+             }
+
+            if($request->hasfile('url_gambar')){
+
+           
+                       
+            $data = new sotk();
+            $data->Nama = $request->Nama;
+            $data->Jabatan = $request->Jabatan;
+            $fileName = $request->url_gambar->getClientOriginalName();
+            $path = public_path().'/uploadsgambar';
+            $upload = $request->url_gambar->move($path,$fileName);
+            $data->urlgambar ='/uploadsgambar/'.$fileName;
+            $data->save();
+
+           
+            return redirect('admin')->with('message', 'data berhasil di simpan');
+
+            }else{
+               
+                return redirect('formeditpengumuman')->with('message', 'Tolong upload gambar');
+            }
+
+        }else{
+        
+            return redirect('admin');
+        }
+
+
+    }
 
 
     public function editSOTK(Request $request,$id)
@@ -557,6 +626,7 @@ class admincontroller extends Controller
             $upload = $request->urlgambar->move($path,$fileName);
             SOTK::find($id)->update([
             'Nama' => $request->Nama,
+            'Jabatan' => $request->Jabatan,
             'urlgambar' => '/uploadsgambar/'.$fileName
          ]);    
 
@@ -596,7 +666,6 @@ class admincontroller extends Controller
                        
             $data = new barangdesa();
             $data->nama = $request->nama_barang;
-            $data->kategori = $request->get('kategori');
             $data->harga = $request->harga;
             $data->jumlah = $request->jumlah;
             $data->id_pemilik = Auth::user()->id;
@@ -932,13 +1001,11 @@ class admincontroller extends Controller
                 $filesebelumnya = barangdesa::find($id);
                 File::delete('storage/'.basename($filesebelumnya->urlgambar));
 
-
                 $fileName = $request->url_gambar->getClientOriginalName();
                 $path = public_path().'/uploadsgambar';
                 $upload = $request->url_gambar->move($path,$fileName);
                 barangdesa::find($id)->update([
                 'nama' => $request->nama_barang,
-                'kategori' => $request->get('kategori'),
                 'harga' => $request->harga,
                 'jumlah' => $request->jumlah,
                 'deskripsi' => $request->deskripsi_barang,
@@ -1022,14 +1089,14 @@ class admincontroller extends Controller
             if($request->hasfile('url_gambar')){
 
             $validator = Validator::make(request()->all(), [
-                'url_gambar' => 'required|image|max:1000',
+                'url_gambar' => 'required',
             ]);
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;
              }
 
             $filesebelumnya = pengumumandesa::find($id);
-            File::delete('storage/'.basename($filesebelumnya->urlgambar));
+            File::delete('uploadsgambar/'.basename($filesebelumnya->urlgambar));
            
             
             $fileName = $request->url_gambar->getClientOriginalName();
@@ -1038,7 +1105,7 @@ class admincontroller extends Controller
             pengumumandesa::find($id)->update([
             'judulpengumuman' => $request->judul_pengumuman,
             'deskripsi' => $request->isi_pengumuman,
-            'url_gambar' => '/uploadsgambar/'.$fileName
+            'urlgambar' => '/uploadsgambar/'.$fileName
          ]);    
 
             
@@ -1356,7 +1423,28 @@ class admincontroller extends Controller
             return redirect('admin');
         }
  
-    } 
+    }
+
+    public function deaktifasiakun($id)
+    {
+
+
+        if(Auth::user()->roles == "kades"){
+            User::find($id)->update([
+            'status' => "tidak aktif"
+         ]);    
+
+            
+            return redirect('admin#dataakundesa')->with('message', 'akun telah di aktifkan');
+
+            
+
+        }else{
+        
+            return redirect('admin');
+        }
+ 
+    }  
 
 
 

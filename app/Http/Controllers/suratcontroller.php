@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use Auth;	
 use PhpOffice\PhpWord\PhpWord;
 use App\data_penduduk;
-use App\SOTK;
 use App\kode_area_dusun;
 use App\kopsurat;
 use Carbon;
@@ -38,8 +37,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
-
 
           $mytime = Carbon\Carbon::now();
         
@@ -90,7 +87,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -154,7 +150,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
   
 
           $mytime = Carbon\Carbon::now();
@@ -206,7 +201,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
   
 
           $mytime = Carbon\Carbon::now();
@@ -279,7 +273,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -327,7 +320,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -385,7 +377,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -419,7 +410,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -464,7 +454,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -501,7 +490,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -546,7 +534,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -580,7 +567,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -624,7 +610,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -657,7 +642,7 @@ class suratcontroller extends Controller
 
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
-          $kopsurats=kopsurat::all();$SOTKs=SOTK::all();
+          $kopsurats=kopsurat::all();
 
           
           
@@ -701,7 +686,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -732,7 +716,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           
           
@@ -770,7 +753,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -829,7 +811,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -901,7 +882,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -951,7 +931,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1013,7 +992,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1063,7 +1041,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1126,7 +1103,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1176,7 +1152,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1239,7 +1214,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1269,7 +1243,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1309,7 +1282,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1354,7 +1326,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1409,7 +1380,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1459,7 +1429,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1520,7 +1489,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1566,7 +1534,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1623,7 +1590,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1669,7 +1635,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1726,7 +1691,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1772,7 +1736,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1829,7 +1792,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1876,7 +1838,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1935,7 +1896,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -1981,7 +1941,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2038,7 +1997,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2068,7 +2026,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2111,7 +2068,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2161,7 +2117,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2223,7 +2178,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2268,7 +2222,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2325,7 +2278,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2370,7 +2322,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2427,7 +2378,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2473,7 +2423,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2532,7 +2481,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2579,7 +2527,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2638,7 +2585,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2687,7 +2633,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2748,7 +2693,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2795,7 +2739,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2853,7 +2796,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2901,7 +2843,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -2961,7 +2902,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -3008,7 +2948,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -3065,7 +3004,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
@@ -3112,7 +3050,6 @@ class suratcontroller extends Controller
           $data_penduduks=data_penduduk::where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
-          $SOTKs=SOTK::all();
 
           $mytime = Carbon\Carbon::now();
         
