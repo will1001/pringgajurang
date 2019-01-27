@@ -147,7 +147,7 @@
     }
 
     h1{
-        font-size: 21px;
+        font-size: 19px;
         white-space: nowrap;
     }
 
@@ -333,6 +333,10 @@
     span.icon-bar {
     background-color: white;
     }
+
+    input#NIKsurat {
+    margin: 15px 0px;
+   }
     
 
 }
