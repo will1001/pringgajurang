@@ -456,8 +456,7 @@
         white-space: nowrap;
         position: absolute;
         width: 100%;
-        bottom: 0;
-        margin-bottom: 0 !important;
+        margin-top: 116px;
     }
 
     .infofooter p{
