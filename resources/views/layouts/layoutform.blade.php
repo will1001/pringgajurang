@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lemon">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/admin.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/responsiveform.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
   
 
