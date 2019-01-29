@@ -25,7 +25,7 @@
           Nama :<br>
           <input type="text" name="Nama" value="{{$data_penduduks[0]->Nama}}"><br><br>
           Nomor KK :<br>
-          <input type="text" name="Nomor_KK" value="{{$data_penduduks[0]->No_KK}}"><br><br>
+          <input type="text" name="Nomor_KK" value="{{$data_penduduks[0]->Nomor_KK}}"><br><br>
           Nomor NIK :<br>
           <input type="text" name="NIK" value="{{$data_penduduks[0]->NIK}}"><br><br>
           Jenis Kelamin :<br>
