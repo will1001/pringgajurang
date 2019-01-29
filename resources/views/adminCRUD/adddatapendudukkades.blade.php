@@ -38,6 +38,7 @@
            <input type="date" id="formattanggal" name="Tanggal_Lahir" placeholder="Tanggal Lahir"><br><br>
           Agama :<br>
           <select name="Agama">
+            <option selected="true" disabled="disabled">Agama</option>                 
                <option value="Islam">Islam</option>
                <option value="Kristen">Kristen</option>
                <option value="Katolik">Katolik</option>
@@ -50,10 +51,12 @@
           <input type="text" name="Jenis_Pekerjaan" placeholder="Jenis Pekerjaan"><br><br>
           Status Perkawinan :<br>
           <select name="Status_Perkawinan">
+            <option selected="true" disabled="disabled">Status Perkawinan</option>                 
                <option value="Kawin">Kawin</option>
                <option value="Belum Kawin">Belum Kawin</option>
           </select><br><br>
           Status Hubungan Dalam Keluarga :<br>
+          <option selected="true" disabled="disabled">Status Hubungan Dalam Keluarga</option>                 
           <select name="Status_Hubungan_Dalam_Keluarga">
                <option value="Kepala Keluarga">Kepala Keluarga</option>
                <option value="Istri">Istri</option>
@@ -61,6 +64,7 @@
           </select><br><br>
           Kewarganegaraan :<br>
           <select name="Kewarganegaraan">
+            <option selected="true" disabled="disabled">Kewarganegaraan</option>
                <option value="WNI">WNI</option>
                <option value="WNA">WNA</option>
           </select><br><br>
@@ -70,6 +74,7 @@
           <input type="text" name="Nama_Ibu" placeholder="Nama Ibu"><br><br>
           Golongan darah :<br>
           <select name="Golongan_Darah">
+            <option selected="true" disabled="disabled">Golongan Darah</option>                 
                <option value="A">A</option>
                <option value="B">B</option>
                <option value="AB">AB</option>
