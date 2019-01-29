@@ -35,6 +35,10 @@ body{
   color:#ffffff;
 }
 
+li.nav-item {
+    margin: 0px 15px;
+}
+
 a.bidangpemerintahan_link.active{
  color:#ffffff; 
 }

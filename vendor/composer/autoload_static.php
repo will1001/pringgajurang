@@ -399,6 +399,7 @@ class ComposerStaticInit4e84650865bdc67c8574f2cebcef2828
         'App\\data_penduduk_kadus' => __DIR__ . '/../..' . '/app/data_penduduk_kadus.php',
         'App\\jmlpend' => __DIR__ . '/../..' . '/app/jmlpend.php',
         'App\\kode_area_dusun' => __DIR__ . '/../..' . '/app/kode_area_dusun.php',
+        'App\\kopsurat' => __DIR__ . '/../..' . '/app/kopsurat.php',
         'App\\pengumumandesa' => __DIR__ . '/../..' . '/app/pengumumandesa.php',
         'App\\profil_desa' => __DIR__ . '/../..' . '/app/profil_desa.php',
         'App\\profildesa' => __DIR__ . '/../..' . '/app/profildesa.php',

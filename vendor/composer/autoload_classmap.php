@@ -47,6 +47,7 @@ return array(
     'App\\data_penduduk_kadus' => $baseDir . '/app/data_penduduk_kadus.php',
     'App\\jmlpend' => $baseDir . '/app/jmlpend.php',
     'App\\kode_area_dusun' => $baseDir . '/app/kode_area_dusun.php',
+    'App\\kopsurat' => $baseDir . '/app/kopsurat.php',
     'App\\pengumumandesa' => $baseDir . '/app/pengumumandesa.php',
     'App\\profil_desa' => $baseDir . '/app/profil_desa.php',
     'App\\profildesa' => $baseDir . '/app/profildesa.php',

@@ -1496,7 +1496,7 @@ public function addSOTK(Request $request)
         # code...
         if(Auth::user()->roles == "kades"){
         $data_penduduks=data_penduduk::where('Id_Dusun',$id2)->where('NIK',$id)->get();
-        $kode_area_dusuns=kode_area_dusun::where('Id_Dusun',$id2)->get();
+        $kode_area_dusuns=kode_area_dusun::all();
         return view('adminCRUD/editdatapendudukkades',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns]);
         }else{
         
