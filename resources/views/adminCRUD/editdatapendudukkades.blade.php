@@ -13,7 +13,7 @@
           <input type="text" name="Alamat" value="{{$data_penduduks[0]->Alamat}}"><br><br>
           Dusun :<br>
           <select name="Id_Dusun">
-                 <option selected="true" disabled="disabled">Dusun</option>
+                 <option selected="true" value="{{ $kode_area_dusun_defaults[0]->id_dusun }}">{{ $kode_area_dusun_defaults[0]->Nama_Dusun }}</option>
                  @foreach ($kode_area_dusuns as $kode_area_dusun)
                     <option value="{{ $kode_area_dusun->id_dusun }}">{{ $kode_area_dusun->Nama_Dusun }}</option>
                  @endforeach
