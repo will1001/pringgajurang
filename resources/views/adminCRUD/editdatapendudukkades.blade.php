@@ -103,6 +103,11 @@
           <input type="text" name="Cara_KB" value="{{$data_penduduks[0]->Cara_KB}}"><br><br>
           Hamil :<br>
           <input type="text" name="Hamil" value="{{$data_penduduks[0]->Hamil}}"><br><br>
+          Upload foto KTP : <br><br>
+          <input type="file" name="foto_ktp" id="foto_ktp"><br><br>
+          Upload foto KK : <br><br>
+          <input type="file" name="foto_kk" id="foto_kk">
+          <br><br>
 
           
           

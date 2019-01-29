@@ -95,6 +95,11 @@ function loadTabelDataPenduduk(data) {
         $('#trtabel'+j+'').append('<td id="Hamil'+j+'"></td>');
         $('#trtabel'+j+'').append('<td id="Status_kependudukan'+j+'"></td>');
         $('#trtabel'+j+'').append('<td id="Keterangan'+j+'"></td>');        
+        $('#trtabel'+j+'').append('<td id="tempat_mendapatkan_air_bersih'+j+'"></td>');        
+        $('#trtabel'+j+'').append('<td id="status_gizi_balita'+j+'"></td>');        
+        $('#trtabel'+j+'').append('<td id="kebiasaan_berobat_bila_sakit'+j+'"></td>');        
+        $('#trtabel'+j+'').append('<td id="foto_ktp'+j+'"><a href="'+this.foto_ktp+'">lihat</a></td>');        
+        $('#trtabel'+j+'').append('<td id="foto_kk'+j+'"><a href="'+this.foto_kk+'">lihat</a></td>');        
         $('#trtabel'+j+'').append('<td><a href="formeditdatapendudukkades/'+this.NIK+'/'+this.Id_Dusun+'">edit</a></td>');        
         $('#trtabel'+j+'').append('<td><a href="deletedatapendudukkades/'+this.NIK+'/'+this.Id_Dusun+'">hapus</a></td>');        
 
@@ -133,7 +138,10 @@ function loadTabelDataPenduduk(data) {
         $('#Hamil'+j+'').append(this.Hamil);
         $('#Status_kependudukan'+j+'').append(this.Status_kependudukan);
         $('#Keterangan'+j+'').append(this.Keterangan);
-
+        $('#tempat_mendapatkan_air_bersih'+j+'').append(this.tempat_mendapatkan_air_bersih);
+        $('#status_gizi_balita'+j+'').append(this.status_gizi_balita);
+        $('#kebiasaan_berobat_bila_sakit'+j+'').append(this.kebiasaan_berobat_bila_sakit);
+ 
         j++;
         nomor++;
       });

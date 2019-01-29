@@ -101,6 +101,10 @@
           <input type="text" name="Cara_KB" placeholder="Cara KB"><br><br>
           Hamil :<br>
           <input type="text" name="Hamil" placeholder="Hamil"><br><br>
+          Upload foto KTP : <br><br>
+          <input type="file" name="foto_ktp" id="foto_ktp">
+          Upload foto KK : <br><br>
+          <input type="file" name="foto_kk" id="foto_kk">
           
           <input type="submit" value="Submit">
         </form>

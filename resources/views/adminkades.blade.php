@@ -171,6 +171,9 @@
         <col width="1000px">
         <col width="1000px">
         <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
         <tr>
                   <th>No</th>
                   <th>Alamat</th>
@@ -207,6 +210,11 @@
                   <th>Hamil</th> 
                   <th>Status kependudukan</th> 
                   <th>Keterangan</th>  
+                  <th>Tempat Mendapatkan Air Bersih</th>  
+                  <th>Status Gizi Balita</th>  
+                  <th>Kebiasaan Berobat Bila Sakit</th> 
+                  <th>Foto KTP</th>  
+                  <th>Foto KK</th>   
                   <th>edit</th> 
                   <th>hapus</th> 
         </tr>
