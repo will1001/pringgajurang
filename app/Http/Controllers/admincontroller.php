@@ -1709,9 +1709,11 @@ public function adddatapendudukkadus(Request $request)
             $validator = Validator::make(request()->all(), [
                 'NIK' => 'required',
                 'Id_Dusun' => 'required',
+                'foto_ktp' => 'max:5000',
+                'foto_kk' => 'max:5000',
             ]);
             if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator->errors());;
+            return redirect()->back()->withErrors($validator->errors());
              }
 
 
