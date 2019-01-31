@@ -142,6 +142,7 @@ Route::get('/formeditbarangdesa/{id}', 'admincontroller@formeditbarangdesa')->mi
 Route::get('/formeditbumdes/{id}', 'admincontroller@formeditbumdes')->middleware('auth');
 Route::get('/formeditdatapendudukkadus/{id}', 'admincontroller@formeditdatapendudukkadus')->middleware('auth');
 Route::get('/formeditdatapendudukkades/{id}/{id2}', 'admincontroller@formeditdatapendudukkades')->middleware('auth');
+Route::get('/formeditdatapendudukwarga/{id}/{id2}', 'admincontroller@formeditdatapendudukwarga')->middleware('auth');
 
 
 
@@ -188,6 +189,7 @@ Route::post('/editbarangdesa/{id}', 'admincontroller@editbarangdesa');
 Route::post('/editbumdes/{id}', 'admincontroller@editbumdes');
 Route::post('/editdatapendudukkadus/{id}', 'admincontroller@editdatapendudukkadus');
 Route::post('/editdatapendudukkades/{id}/{id2}', 'admincontroller@editdatapendudukkades');
+Route::post('/editdatapendudukwarga/{id}/{id2}', 'admincontroller@editdatapendudukwarga');
 Route::post('/editdeskripsiSOTK', 'admincontroller@editdeskripsiSOTK');
 Route::get('/penduduk_keluar/{id}', 'admincontroller@penduduk_keluar');
 Route::post('/postpenduduk_keluar/{id}', 'admincontroller@postpenduduk_keluar');
@@ -303,9 +305,9 @@ Route::get('/admin', function(){
 		$users= \App\User::find(Auth::user()->id);
 		$barangdesas= \App\barangdesa::where('id_pemilik',Auth::user()->id)->get();
 		$jmlbarang=$barangdesas->count();
-		$data_penduduks=App\data_penduduk::where('NIK',Auth::user()->NIK)->get();
+		$data_penduduks=App\data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->get();
 		$kode_area_dusuns=App\kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
-		// 
+		
 		
 		return view('adminwarga',['users'=>$users,'barangdesas'=>$barangdesas,'jmlbarang'=>$jmlbarang,'data_penduduks' => $data_penduduks,'kode_area_dusuns' => $kode_area_dusuns]);
 

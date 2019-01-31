@@ -7,7 +7,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-     <form action="{{ url('editdatapendudukkades/' .  $data_penduduks[0]->NIK .'/'.$data_penduduks[0]->Id_Dusun ) }}" method="post" enctype="multipart/form-data" style="padding-top: 100px;">
+     <form action="{{ url('editdatapendudukwarga/' .  $data_penduduks[0]->NIK .'/'.$data_penduduks[0]->Id_Dusun ) }}" method="post" enctype="multipart/form-data" style="padding-top: 100px;">
           {{ csrf_field() }}
           Alamat :<br>
           <input type="text" name="Alamat" value="{{$data_penduduks[0]->Alamat}}"><br><br>
@@ -32,7 +32,7 @@
           <select name="jenis_kelamin">
                <option selected="true" disabled="disabled">Jenis Kelamin</option>                 
                <option value="laki-laki">laki-laki</option>
-               <option value="perempuan">prempuan</option>
+               <option value="prempuan">perempuan</option>
           </select><br><br>
           Tempat Lahir :<br>
           <input type="text" name="Tempat_Lahir" value="{{$data_penduduks[0]->Tempat_Lahir}}"><br><br>

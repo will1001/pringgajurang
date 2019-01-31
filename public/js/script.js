@@ -99,7 +99,7 @@ function loadTabelDataPenduduk(data) {
         $('#trtabel'+j+'').append('<td id="status_gizi_balita'+j+'"></td>');        
         $('#trtabel'+j+'').append('<td id="kebiasaan_berobat_bila_sakit'+j+'"></td>');  
 
-        if(this.foto_ktp==null && this.foto_kk==null){
+        if(this.foto_ktp==null && this.foto_kk==null ){
         $('#trtabel'+j+'').append('<td id="foto_ktp'+j+'"><a href="'+this.foto_ktp+'"></a></td>');        
         $('#trtabel'+j+'').append('<td id="foto_kk'+j+'"><a href="'+this.foto_kk+'"></a></td>');
         }

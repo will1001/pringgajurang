@@ -26,14 +26,14 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="NIK" class="col-xs-4 col-4 col-sm-4 col-md-4 col-form-label text-md-right">NIK</label>
+                            <label for="Nomor_KK" class="col-xs-4 col-4 col-sm-4 col-md-4 col-form-label text-md-right">Nomor KK</label>
 
                             <div class="col-xs-6 col-6 col-sm-6 col-md-6">
-                                <input id="NIK" type="text" class="form-control{{ $errors->has('NIK') ? ' is-invalid' : '' }}" name="NIK" value="{{ old('NIK') }}" required placeholder="  NIK">
+                                <input id="Nomor_KK" type="text" class="form-control{{ $errors->has('Nomor_KK') ? ' is-invalid' : '' }}" name="Nomor_KK" value="{{ old('Nomor_KK') }}" required placeholder="  Nomor_KK">
 
-                                @if ($errors->has('NIK'))
+                                @if ($errors->has('Nomor_KK'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('NIK') }}</strong>
+                                        <strong>{{ $errors->first('Nomor_KK') }}</strong>
                                     </span>
                                 @endif
                             </div>

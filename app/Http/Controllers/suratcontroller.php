@@ -18,7 +18,7 @@ class suratcontroller extends Controller
      public function formsurat($id)
     {
         if(Auth::user()->roles == "member"){
-        $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+        $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
         $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
         return view("surat/".$id,['data_penduduks' => $data_penduduks,'kode_area_dusuns' => $kode_area_dusuns]);
         }else{
@@ -34,7 +34,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -147,7 +147,7 @@ class suratcontroller extends Controller
         if(Auth::user()->roles == "member"){
 
         
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
   
@@ -270,7 +270,7 @@ class suratcontroller extends Controller
           $hasil   = public_path('storage/surat/nikah/surat_izin_keramaian_.docx');
           $phpWord = new PhpWord();
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -374,7 +374,7 @@ class suratcontroller extends Controller
           $hasil   = public_path('storage/surat/nikah/surat_kehendak_nikah_.docx');
           $phpWord = new PhpWord();
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -451,7 +451,7 @@ class suratcontroller extends Controller
           $hasil   = public_path('storage/surat/nikah/surat_ket_nikah_.docx');
           $phpWord = new PhpWord();
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -531,7 +531,7 @@ class suratcontroller extends Controller
           $hasil   = public_path('storage/surat/nikah/surat_ket_wali_.docx');
           $phpWord = new PhpWord();
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -607,7 +607,7 @@ class suratcontroller extends Controller
           $hasil   = public_path('storage/surat/nikah/surat_ket_wali_hakim_.docx');
           $phpWord = new PhpWord();
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -683,7 +683,7 @@ class suratcontroller extends Controller
           $hasil   = public_path('storage/surat/nikah/surat_persetujuan_mempelai_.docx');
           $phpWord = new PhpWord();
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -750,7 +750,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -879,7 +879,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -989,7 +989,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1100,7 +1100,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1211,7 +1211,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1279,7 +1279,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1377,7 +1377,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1486,7 +1486,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1587,7 +1587,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1688,7 +1688,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1789,7 +1789,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1893,7 +1893,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -1994,7 +1994,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -2065,7 +2065,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -2175,7 +2175,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -2275,7 +2275,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -2375,7 +2375,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -2478,7 +2478,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -2582,7 +2582,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -2690,7 +2690,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -2793,7 +2793,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -2899,7 +2899,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 
@@ -3001,7 +3001,7 @@ class suratcontroller extends Controller
 
         if(Auth::user()->roles == "member"){
 
-          $data_penduduks=data_penduduk::where('NIK',Auth::user()->NIK)->get();
+          $data_penduduks=data_penduduk::where('Nomor_KK',Auth::user()->Nomor_KK)->where('NIK',$NIK)->get();
           $kode_area_dusuns=kode_area_dusun::where('id_dusun',$data_penduduks[0]->Id_Dusun)->get();
           $kopsurats=kopsurat::all();
 

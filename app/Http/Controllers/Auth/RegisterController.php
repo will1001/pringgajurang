@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             // 'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'NIK' => 'required|string|max:255',
+            'Nomor_KK' => 'required|string|max:255',
             'Alamat' => 'required|string|max:255',
         ]);
     }
@@ -67,16 +67,19 @@ class RegisterController extends Controller
     protected function create(array $data)
             {
 
-        $data_penduduks=data_penduduk::where('NIK',$data['NIK'])->get();
+        $data_penduduks=data_penduduk::where('Nomor_KK',$data['Nomor_KK'])->get();
+        
         
         if($data_penduduks->count()>0){
+            
 
-            if($data['NIK'] == $data_penduduks[0]->NIK){
+            if($data['Nomor_KK'] == $data_penduduks[0]->Nomor_KK){
+
 
             return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'NIK' => $data['NIK'],
+            'Nomor_KK' => $data['Nomor_KK'],
             'No_HP' => $data['No_HP'],
             'Alamat' => $data['Alamat'],
             'password' => Hash::make($data['password']),

@@ -1483,13 +1483,17 @@ public function addSOTK(Request $request)
         # code...
         if(Auth::user()->roles == "kadus"){
         $data_penduduks=data_penduduk::where('NIK',$id)->get();
+        $kode_area_dusun_defaults=kode_area_dusun::where('Id_Dusun',$id2)->get();
         return view('adminCRUD/editdatapendudukkadus',['data_penduduks' => $data_penduduks]);
         }else{
         
             return redirect('admin');
         }
         
-    } 
+    }
+
+
+
 
     public function formeditdatapendudukkades($id,$id2)
     {
@@ -1497,8 +1501,23 @@ public function addSOTK(Request $request)
         if(Auth::user()->roles == "kades"){
         $data_penduduks=data_penduduk::where('Id_Dusun',$id2)->where('NIK',$id)->get();
         $kode_area_dusun_defaults=kode_area_dusun::where('Id_Dusun',$id2)->get();
-        $kode_area_dusuns=kode_area_dusun::all();
+        $kode_area_dusuns=kode_area_dusun::where('Id_Dusun','!=',$id2)->get();
         return view('adminCRUD/editdatapendudukkades',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults]);
+        }else{
+        
+            return redirect('admin');
+        }
+        
+    }
+
+    public function formeditdatapendudukwarga($id,$id2)
+    {
+        # code...
+        if(Auth::user()->roles == "member"){
+        $data_penduduks=data_penduduk::where('Id_Dusun',$id2)->where('NIK',$id)->get();
+        $kode_area_dusun_defaults=kode_area_dusun::where('Id_Dusun',$id2)->get();
+        $kode_area_dusuns=kode_area_dusun::where('Id_Dusun','!=',$id2)->get();
+        return view('adminCRUD/editdatapendudukwarga',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults]);
         }else{
         
             return redirect('admin');
@@ -1691,6 +1710,235 @@ public function adddatapendudukkadus(Request $request)
 
             $var="Data berhasil di ubah";
             return redirect('admin')->with('key', $var);
+        }else{
+        
+            return redirect('admin');
+        }
+
+    }
+
+
+    
+
+    public function editdatapendudukwarga(Request $request,$id,$id2)
+    {
+        # code...
+
+        
+        if(Auth::user()->roles == "member"){
+            
+
+            $validator = Validator::make(request()->all(), [
+                'NIK' => 'required',
+                'Id_Dusun' => 'required',
+                'foto_ktp' => 'max:5000',
+                'foto_kk' => 'max:5000',
+            ]);
+            if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors());
+             }
+
+
+             if($request->hasfile('foto_ktp') && $request->hasfile('foto_kk')){
+
+
+             $filesebelumnya = data_penduduk::where('NIK',$id)->get();
+            File::delete('storage/'.basename($filesebelumnya[0]->foto_ktp));
+            File::delete('storage/'.basename($filesebelumnya[0]->foto_kk));
+            $fileNamektp = $request->foto_ktp->getClientOriginalName();
+            $fileNamekk = $request->foto_kk->getClientOriginalName();
+            $pathktp = public_path().'/uploadsgambar';
+            $pathkk = public_path().'/uploadsgambar';
+
+            $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
+            $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
+
+            
+
+           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+            'Alamat' => $request->Alamat,
+            'Id_Dusun' => $request->get('Id_Dusun'),
+            'RW' => $request->RW,
+            'RT' => $request->RT,
+            'Nama' => $request->Nama,
+            'Nomor_KK' => $request->Nomor_KK,
+            'NIK' => $request->NIK,
+            'Jenis_Kelamin' => $request->get('jenis_kelamin'),
+            'Tempat_Lahir' => $request->Tempat_Lahir,
+            'Tanggal_Lahir' => $request->Tanggal_Lahir,
+            'Agama' => $request->get('Agama'),
+            'Pendidikan' => $request->Pendidikan,
+            'Jenis_Pekerjaan' => $request->Jenis_Pekerjaan,
+            'Status_Perkawinan' => $request->get('Status_Perkawinan'),
+            'Status_Hubungan_Dalam_Keluarga' => $request->get('Status_Hubungan_Dalam_Keluarga'),
+            'Kewarganegaraan' => $request->get('Kewarganegaraan'),
+            'Nama_Ayah' => $request->Nama_Ayah,
+            'Nama_Ibu' => $request->Nama_Ibu,
+            'Golongan_Darah' => $request->get('Golongan_Darah'),
+            'Akta_Lahir' => $request->Akta_Lahir,
+            'No_Paspor' => $request->No_Paspor,
+            'Tanggal_akhir_Paspor' => $request->Tanggal_akhir_Paspor,
+            'No_KITAS' => $request->No_KITAS,
+            'NIK_Ayah' => $request->NIK_Ayah,
+            'NIK_Ibu' => $request->NIK_Ibu,
+            'No_Akta_Perkawinan' => $request->No_Akta_Perkawinan,
+            'Tanggal_Perkawinan' => $request->Tanggal_Perkawinan,
+            'No_Akta_Perceraian' => $request->No_Akta_Perceraian,
+            'Tanggal_Perceraian' => $request->Tanggal_Perceraian,
+            'Cacat' => $request->Cacat,
+            'Cara_KB' => $request->Cara_KB,
+            'Hamil' => $request->Hamil,
+            'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
+            'foto_kk' => '/uploadsgambar/'.$fileNamekk
+            
+         ]);   
+
+            $var="Data berhasil di ubah";
+            return redirect('admin')->with('key', $var);
+
+            }elseif($request->hasfile('foto_ktp')){
+
+             $filesebelumnya = data_penduduk::where('NIK',$id)->get();
+            File::delete('storage/'.basename($filesebelumnya[0]->foto_ktp));
+            $fileNamektp = $request->foto_ktp->getClientOriginalName();
+            $pathktp = public_path().'/uploadsgambar';
+            $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
+            
+
+           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+            'Alamat' => $request->Alamat,
+            'Id_Dusun' => $request->get('Id_Dusun'),
+            'RW' => $request->RW,
+            'RT' => $request->RT,
+            'Nama' => $request->Nama,
+            'Nomor_KK' => $request->Nomor_KK,
+            'NIK' => $request->NIK,
+            'Jenis_Kelamin' => $request->get('jenis_kelamin'),
+            'Tempat_Lahir' => $request->Tempat_Lahir,
+            'Tanggal_Lahir' => $request->Tanggal_Lahir,
+            'Agama' => $request->get('Agama'),
+            'Pendidikan' => $request->Pendidikan,
+            'Jenis_Pekerjaan' => $request->Jenis_Pekerjaan,
+            'Status_Perkawinan' => $request->get('Status_Perkawinan'),
+            'Status_Hubungan_Dalam_Keluarga' => $request->get('Status_Hubungan_Dalam_Keluarga'),
+            'Kewarganegaraan' => $request->get('Kewarganegaraan'),
+            'Nama_Ayah' => $request->Nama_Ayah,
+            'Nama_Ibu' => $request->Nama_Ibu,
+            'Golongan_Darah' => $request->get('Golongan_Darah'),
+            'Akta_Lahir' => $request->Akta_Lahir,
+            'No_Paspor' => $request->No_Paspor,
+            'Tanggal_akhir_Paspor' => $request->Tanggal_akhir_Paspor,
+            'No_KITAS' => $request->No_KITAS,
+            'NIK_Ayah' => $request->NIK_Ayah,
+            'NIK_Ibu' => $request->NIK_Ibu,
+            'No_Akta_Perkawinan' => $request->No_Akta_Perkawinan,
+            'Tanggal_Perkawinan' => $request->Tanggal_Perkawinan,
+            'No_Akta_Perceraian' => $request->No_Akta_Perceraian,
+            'Tanggal_Perceraian' => $request->Tanggal_Perceraian,
+            'Cacat' => $request->Cacat,
+            'Cara_KB' => $request->Cara_KB,
+            'Hamil' => $request->Hamil,
+            'foto_ktp' => '/uploadsgambar/'.$fileNamektp
+            
+         ]);   
+
+            $var="Data berhasil di ubah";
+            return redirect('admin')->with('key', $var);
+
+            }elseif($request->hasfile('foto_kk')){
+
+             $filesebelumnya = data_penduduk::where('NIK',$id)->get();
+            File::delete('storage/'.basename($filesebelumnya[0]->foto_kk));
+            $fileNamekk = $request->foto_kk->getClientOriginalName();
+            $pathkk = public_path().'/uploadsgambar';
+            $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
+            
+
+           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+            'Alamat' => $request->Alamat,
+            'Id_Dusun' => $request->get('Id_Dusun'),
+            'RW' => $request->RW,
+            'RT' => $request->RT,
+            'Nama' => $request->Nama,
+            'Nomor_KK' => $request->Nomor_KK,
+            'NIK' => $request->NIK,
+            'Jenis_Kelamin' => $request->get('jenis_kelamin'),
+            'Tempat_Lahir' => $request->Tempat_Lahir,
+            'Tanggal_Lahir' => $request->Tanggal_Lahir,
+            'Agama' => $request->get('Agama'),
+            'Pendidikan' => $request->Pendidikan,
+            'Jenis_Pekerjaan' => $request->Jenis_Pekerjaan,
+            'Status_Perkawinan' => $request->get('Status_Perkawinan'),
+            'Status_Hubungan_Dalam_Keluarga' => $request->get('Status_Hubungan_Dalam_Keluarga'),
+            'Kewarganegaraan' => $request->get('Kewarganegaraan'),
+            'Nama_Ayah' => $request->Nama_Ayah,
+            'Nama_Ibu' => $request->Nama_Ibu,
+            'Golongan_Darah' => $request->get('Golongan_Darah'),
+            'Akta_Lahir' => $request->Akta_Lahir,
+            'No_Paspor' => $request->No_Paspor,
+            'Tanggal_akhir_Paspor' => $request->Tanggal_akhir_Paspor,
+            'No_KITAS' => $request->No_KITAS,
+            'NIK_Ayah' => $request->NIK_Ayah,
+            'NIK_Ibu' => $request->NIK_Ibu,
+            'No_Akta_Perkawinan' => $request->No_Akta_Perkawinan,
+            'Tanggal_Perkawinan' => $request->Tanggal_Perkawinan,
+            'No_Akta_Perceraian' => $request->No_Akta_Perceraian,
+            'Tanggal_Perceraian' => $request->Tanggal_Perceraian,
+            'Cacat' => $request->Cacat,
+            'Cara_KB' => $request->Cara_KB,
+            'Hamil' => $request->Hamil,
+            'foto_kk' => '/uploadsgambar/'.$fileNamekk
+            
+         ]);   
+
+            $var="Data berhasil di ubah";
+            return redirect('admin')->with('key', $var);
+
+            }else{
+               
+                data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+            'Alamat' => $request->Alamat,
+            'Id_Dusun' => $request->get('Id_Dusun'),
+            'RW' => $request->RW,
+            'RT' => $request->RT,
+            'Nama' => $request->Nama,
+            'Nomor_KK' => $request->Nomor_KK,
+            'NIK' => $request->NIK,
+            'Jenis_Kelamin' => $request->get('jenis_kelamin'),
+            'Tempat_Lahir' => $request->Tempat_Lahir,
+            'Tanggal_Lahir' => $request->Tanggal_Lahir,
+            'Agama' => $request->get('Agama'),
+            'Pendidikan' => $request->Pendidikan,
+            'Jenis_Pekerjaan' => $request->Jenis_Pekerjaan,
+            'Status_Perkawinan' => $request->get('Status_Perkawinan'),
+            'Status_Hubungan_Dalam_Keluarga' => $request->get('Status_Hubungan_Dalam_Keluarga'),
+            'Kewarganegaraan' => $request->get('Kewarganegaraan'),
+            'Nama_Ayah' => $request->Nama_Ayah,
+            'Nama_Ibu' => $request->Nama_Ibu,
+            'Golongan_Darah' => $request->get('Golongan_Darah'),
+            'Akta_Lahir' => $request->Akta_Lahir,
+            'No_Paspor' => $request->No_Paspor,
+            'Tanggal_akhir_Paspor' => $request->Tanggal_akhir_Paspor,
+            'No_KITAS' => $request->No_KITAS,
+            'NIK_Ayah' => $request->NIK_Ayah,
+            'NIK_Ibu' => $request->NIK_Ibu,
+            'No_Akta_Perkawinan' => $request->No_Akta_Perkawinan,
+            'Tanggal_Perkawinan' => $request->Tanggal_Perkawinan,
+            'No_Akta_Perceraian' => $request->No_Akta_Perceraian,
+            'Tanggal_Perceraian' => $request->Tanggal_Perceraian,
+            'Cacat' => $request->Cacat,
+            'Cara_KB' => $request->Cara_KB,
+            'Hamil' => $request->Hamil,
+            
+         ]);   
+
+            $var="Data berhasil di ubah";
+            return redirect('admin')->with('key', $var);
+            }
+
+
+
+            
         }else{
         
             return redirect('admin');

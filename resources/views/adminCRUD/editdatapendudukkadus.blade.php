@@ -24,7 +24,7 @@
           Jenis Kelamin :<br>
           <select name="jenis_kelamin">
                <option value="laki-laki">laki-laki</option>
-               <option value="prempuan">prempuan</option>
+               <option value="perempuan">prempuan</option>
           </select><br><br>
           Tempat Lahir :<br>
           <input type="text" name="Tempat_Lahir" value="{{$data_penduduks[0]->Tempat_Lahir}}"><br><br>
