@@ -3,7 +3,7 @@ body{
 }
 
 .bg-light{
-    background-color: blue!important;
+    background-color: #138FC2!important;
         width: 103%;
 }
 
@@ -155,6 +155,10 @@ a.nav-link {
 
     section{
         padding-top: 100px;
+    }
+
+    #biodata{
+        padding-top: 0px;
     }
 
 
