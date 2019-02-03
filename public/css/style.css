@@ -19,6 +19,11 @@ body{
    font-size: 0.8rem;
 }
 
+#kotak1 h2{
+      font-size: 19px;
+    font-weight: bold;
+}
+
 .navbar-light .navbar-nav .nav-link{
 	color: #000000;
 }
@@ -43,7 +48,9 @@ a.bidangpemerintahan_link.active{
  color:#ffffff; 
 }
 
-
+p.text-right.footsign{
+        padding: 0px 47px;
+    }
 
 
 #logotext{
@@ -237,5 +244,52 @@ footer{
   color: #000000;
 }
 
+.pasaronlineslideshow .carousel-control-next {
+    margin: 0px -135px;
+    
+
+}
+
+.pasaronlineslideshow .carousel-control-prev{
+  margin: 0px -135px;
+  
+}
+
+#kotak1 .carousel-control-next {
+    margin-top: 50%;
+    
+
+}
+
+#kotak1 .carousel-control-prev{
+  margin-top: 50%;
+  
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.pasaronlineslideshow img.card-img-top {
+  margin: 5px 5px;
+  width: 215px;
+    height: 111px;
+}
+
+.pasaronlineslideshow{
+  margin: 10px 0px;
+}
+
+.kotak1halamanbisnis{
+  padding: 11px 26px; 
+}
+
+.berita_terbaru a{
+  text-decoration: none;
+}
 
 

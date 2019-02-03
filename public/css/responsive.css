@@ -486,5 +486,17 @@
     margin-left: 1px;
     }
 
+    #kotak1 .carousel-control-next {
+    display: none;
+    }
+
+    #kotak1 .carousel-control-prev{
+      display: none;
+    }
+
+    p.text-right.footsign{
+        padding: 0px 47px;
+    }
+
 
 }

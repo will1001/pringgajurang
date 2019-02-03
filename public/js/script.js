@@ -245,3 +245,4 @@ $(document).ready(function(){
     document.getElementById("tombolbuatsurat").href= $('#pilihsurat option:selected').val()+"/"+document.getElementById("NIKsurat").value; 
  });
 });
+
