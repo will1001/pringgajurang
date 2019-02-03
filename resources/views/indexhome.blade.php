@@ -155,13 +155,13 @@
                               <div class="carousel-inner">
                                 <div class="carousel-item active">
                                   <h2>{{ $pengumumans[0]->judulpengumuman }}</h2>
-                                    <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumumans[0]->judulpengumuman) }}">{{ substr($pengumumans[0]->deskripsi,0,200) }}</a></p>
+                                    <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumumans[0]->judulpengumuman) }}">{{ substr($pengumumans[0]->deskripsi,0,100) }} . . .</a></p>
                                 </div>
                                 @foreach($pengumumans as $key => $pengumuman)
                                 @if($key > 0)
                                 <div class="carousel-item">
                                   <h2>{{ $pengumumans[0]->judulpengumuman }}</h2>
-                                    <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumuman->judulpengumuman) }}">{{ substr($pengumumans[0]->deskripsi,0,200) }}</a></p>
+                                    <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumuman->judulpengumuman) }}">{{ substr($pengumumans[0]->deskripsi,0,100) }}</a></p>
                                 </div>
                              @endif
                              @endforeach
