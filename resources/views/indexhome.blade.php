@@ -320,7 +320,7 @@
                     <div class="carousel-item">
                       <div class="row">
                         @foreach($barangdesas3 as $barangdesa)
-                                            <div class="col-xs-12 col-12 col-sm-6 col-md-3">
+                                            <div class="col-xs-6 col-6 col-sm-6 col-md-3">
                                                 <div class="card">
                                                   <img class="card-img-top" src="{{$barangdesa->urlgambar}}" alt="Card image cap">
                                                   <div class="card-body text-center">
@@ -350,6 +350,10 @@
             <div class="col-md-8">
                 <div class="kotak2Ahalamanbisnis">
                 <h2>Pelaku Usaha :</h2>
+                <ul>
+                    <li>UD Ondak Jaya (Las dan Teknologi tepat guna)</li>
+                    <li>UD Kurnia (Print dan Photocopy)</li>
+                </ul>
                 </div>
             </div>
             <div class="col-md-4">

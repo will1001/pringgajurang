@@ -504,5 +504,25 @@
     height: 0px;
     }
 
+    .pasaronlineslideshow .card{
+        margin: 5px 0px;
+    }
+
+    .pasaronlineslideshow .carousel-control-next {
+    margin: 0px -67px;
+    
+
+    }
+
+    .pasaronlineslideshow .carousel-control-prev{
+      margin: 0px -61px;
+      
+    }
+
+    h5.card-title {
+    font-size: 11px;
+    white-space: nowrap;
+    }
+
 
 }
