@@ -378,8 +378,12 @@
                   <col width="1000px">
                   <col width="1000px">
                   <col width="1000px">
+                  <col width="1000px">
+                  <col width="1000px">
                   <tr>
                     <th>Nama Barang</th>
+                    <th>Nama Harga</th>
+                    <th>Nama Jumlah</th>
                     <th>Deskripsi</th>
                     <th>edit</th> 
                     <th>hapus</th> 

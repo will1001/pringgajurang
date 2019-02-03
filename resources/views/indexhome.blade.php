@@ -26,7 +26,7 @@
 <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <div class="container">
-   <a class="navbar-brand" href="{{ url('/') }}" @click="currentView='indexpage';activate(0);isHidden = false">
+   <a class="navbar-brand" href="#" @click="currentView='indexpage';activate(0);isHidden = false">
     <img src="/images/kabupaten-lombok-timur-ntb.png" width="55" height="70" class="d-inline-block align-top" alt="">
     <div id="spacetextlogo">
     <span id="logotext">Pringgajurang</span>
@@ -122,16 +122,16 @@
                             <div id="carouselExampleControls" class="carousel slide my-carousel" data-ride="carousel">
                               <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                  <h2><a class="text-dark" href="{{ url('detailberitadesa/' .  $beritas[0]->judulberita ) }}">{{ substr($beritas[0]->judulberita,0,100) }}</a></h2>
-                                    <p>{{ substr($beritas[0]->deskripsi,0,300) }}</p>
+                                  <h2>Berita Terbaru</h2>
+                                    <h3><a class="text-dark" href="{{ url('detailberitadesa/' .  $beritas[0]->judulberita ) }}">{{ substr($beritas[0]->judulberita,0,100) }}</a></h3>
                                     <br>
                                     <p class="text-right footsign">admin,{{ date("d F Y", strtotime($beritas[0]->created_at)) }}</p>
                                 </div>
                                 @foreach($beritas as $key => $berita)
                                 @if($key > 0)
                                 <div class="carousel-item">
-                                  <h2><a class="text-dark" href="{{ url('detailberitadesa/' .  $beritas[0]->judulberita ) }}">{{ substr($beritas[0]->judulberita,0,100) }}</a></h2>
-                                    <p>{{ substr($beritas[0]->deskripsi,0,300) }}</p>
+                                  <h2>Berita Terbaru</h2>
+                                    <h3><a class="text-dark" href="{{ url('detailberitadesa/' .  $beritas[0]->judulberita ) }}">{{ substr($beritas[0]->judulberita,0,100) }}</a></h3>
                                     <br>
                                     <p class="text-right footsign">admin,{{ date("d F Y", strtotime($beritas[0]->created_at)) }}</p>
                                 </div>
@@ -154,14 +154,14 @@
                                 <div id="carouselExampleControls" class="carousel slide my-carousel" data-ride="carousel">
                               <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                  <h2><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumumans[0]->judulpengumuman) }}">{{ $pengumumans[0]->judulpengumuman }}</a></h2>
-                                    <p>{{ substr($pengumumans[0]->deskripsi,0,300) }}</p>
+                                  <h2>{{ $pengumumans[0]->judulpengumuman }}</h2>
+                                    <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumumans[0]->judulpengumuman) }}">{{ substr($pengumumans[0]->deskripsi,0,200) }}</a></p>
                                 </div>
                                 @foreach($pengumumans as $key => $pengumuman)
                                 @if($key > 0)
                                 <div class="carousel-item">
-                                  <h2><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumuman->judulpengumuman) }}">{{ $pengumumans[0]->judulpengumuman }}</a></h2>
-                                    <p>{{ substr($pengumumans[0]->deskripsi,0,300) }}</p>
+                                  <h2>{{ $pengumumans[0]->judulpengumuman }}</h2>
+                                    <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumuman->judulpengumuman) }}">{{ substr($pengumumans[0]->deskripsi,0,200) }}</a></p>
                                 </div>
                              @endif
                              @endforeach
@@ -288,7 +288,7 @@
                     <div class="carousel-item active">
                       <div class="row">
                             @foreach($barangdesas as $barangdesa)
-                                                <div class="col-xs-12 col-12 col-sm-6 col-md-3">
+                                                <div class="col-xs-6 col-6 col-sm-6 col-md-3">
                                                     <div class="card">
                                                       <img class="card-img-top" src="{{$barangdesa->urlgambar}}" alt="Card image cap">
                                                       <div class="card-body text-center">
@@ -304,7 +304,7 @@
                     <div class="carousel-item">
                       <div class="row">
                         @foreach($barangdesas2 as $barangdesa)
-                                            <div class="col-xs-12 col-12 col-sm-6 col-md-3">
+                                            <div class="col-xs-6 col-6 col-sm-6 col-md-3">
                                                 <div class="card">
                                                   <img class="card-img-top" src="{{$barangdesa->urlgambar}}" alt="Card image cap">
                                                   <div class="card-body text-center">

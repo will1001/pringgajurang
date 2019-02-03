@@ -288,8 +288,13 @@ footer{
   padding: 11px 26px; 
 }
 
-.berita_terbaru a{
+#kotak1 a{
   text-decoration: none;
+}
+
+
+#kotak1 h2{
+  color: #000;
 }
 
 
