@@ -360,7 +360,7 @@
             </div>
             <div class="col-md-4">
                 <div class="kotak2Bhalamanbisnis">
-                <h2>Panduan :</h2>
+                <h2>Panduan Bisnis:</h2>
                 </div>
             </div>
         </div>
