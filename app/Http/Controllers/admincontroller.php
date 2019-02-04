@@ -1006,6 +1006,7 @@ public function addSOTK(Request $request)
                 $upload = $request->url_gambar->move($path,$fileName);
                 barangdesa::find($id)->update([
                 'nama' => $request->nama_barang,
+                'kategori' => $request->get('kategori'),
                 'harga' => $request->harga,
                 'jumlah' => $request->jumlah,
                 'deskripsi' => $request->deskripsi_barang,
