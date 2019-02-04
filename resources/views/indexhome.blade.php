@@ -113,7 +113,7 @@
                 <div class="row">
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="tentang_desa inner text-center">
-                            <h2>Tentang Desa</h2>
+                            <h2>Selayang Pandang</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
                         </div>
                     </div>
