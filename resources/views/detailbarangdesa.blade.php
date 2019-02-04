@@ -1,6 +1,5 @@
 @extends('layouts.layouthalamanlain')
 @section('content')
-<br><br><br><br>
  <section id="barang-desa">
       <div class="container">
         <div class="row">

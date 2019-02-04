@@ -360,7 +360,12 @@
             </div>
             <div class="col-md-4">
                 <div class="kotak2Bhalamanbisnis">
-                <h2>Panduan Bisnis:</h2>
+                <h2>Panduan Bisnis</h2>
+                <ul>
+                    <li>Panduan mungurus UD,CV,dan PT</li>
+                    <li>Panduan mengurus SIUP,dan TDP</li>
+                    <li>Panduan Membayar Pajak Secara Online</li>
+                </ul>
                 </div>
             </div>
         </div>
