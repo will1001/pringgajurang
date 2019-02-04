@@ -157,7 +157,7 @@ class webcontroller extends Controller
         # code...
         $barangdesas= barangdesa::find($id);
         $users= User::find($barangdesas->id_pemilik);
-        $data_penduduks= data_penduduk::where('NIK',$users->NIK)->get();
+        $data_penduduks= data_penduduk::where('Nomor_KK',$users->Nomor_KK)->get();
         
 
         

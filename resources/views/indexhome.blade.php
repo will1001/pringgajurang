@@ -289,14 +289,15 @@
                       <div class="row">
                             @foreach($barangdesas as $barangdesa)
                                                 <div class="col-xs-6 col-6 col-sm-6 col-md-3">
+                                                    <a href="{{ url('detailbarangdesa/' .  $barangdesa->id ) }}" class="tombol_produk">
                                                     <div class="card">
                                                       <img class="card-img-top" src="{{$barangdesa->urlgambar}}" alt="Card image cap">
                                                       <div class="card-body text-center">
                                                         <h5 class="card-title">{{ substr($barangdesa->nama,0,23) }}</h5>
                                                         <p class="card-text">{{$barangdesa->harga}}</p>
-                                                        <a href="{{ url('detailbarangdesa/' .  $barangdesa->id ) }}" class="tombol_produk">Lihat Produk</a>
                                                       </div>
                                                     </div>
+                                                </a>
                                                 </div>
                                                 @endforeach
                           </div>
@@ -305,14 +306,15 @@
                       <div class="row">
                         @foreach($barangdesas2 as $barangdesa)
                                             <div class="col-xs-6 col-6 col-sm-6 col-md-3">
+                                                <a href="{{ url('detailbarangdesa/' .  $barangdesa->id ) }}" class="tombol_produk">
                                                 <div class="card">
                                                   <img class="card-img-top" src="{{$barangdesa->urlgambar}}" alt="Card image cap">
                                                   <div class="card-body text-center">
                                                     <h5 class="card-title">{{ substr($barangdesa->nama,0,23) }}</h5>
                                                     <p class="card-text">{{$barangdesa->harga}}</p>
-                                                    <a href="{{ url('detailbarangdesa/' .  $barangdesa->id ) }}" class="tombol_produk">Lihat Produk</a>
                                                   </div>
                                                 </div>
+                                            </a>
                                             </div>
                                             @endforeach
                       </div>
