@@ -30,6 +30,13 @@ class webcontroller extends Controller
         return view("bumdes",['bumdess' => $bumdess]);
     } 
 
+    public function kktidakada()
+    {
+        # code...
+        
+        return view("kktidakada");
+    } 
+
 
     public function statistik()
     {
