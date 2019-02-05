@@ -257,13 +257,13 @@ footer{
 }
 
 #kotak1 .carousel-control-next {
-    margin-top: 50%;
+    margin-top: 52%;
     
 
 }
 
 #kotak1 .carousel-control-prev{
-  margin-top: 50%;
+  margin-top: 52%;
   
 }
 
@@ -304,6 +304,11 @@ footer{
 
 .kotak2Ahalamanbisnis{
   font-size: 19px;
+}
+
+
+#kotak1 .inner{
+  height: 199px;
 }
 
 

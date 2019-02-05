@@ -91,7 +91,7 @@ class RegisterController extends Controller
 
         }else{
             dd("Maaf Nomor KK anda tidak terdaftar");
-            // return redirect('kktidakada');
+            // reurn redirect('kktidakada');
         }
 
 

@@ -529,5 +529,10 @@
      font-size: 19px
     }
 
+    #kotak1 p{
+    margin: 0px 0px;
+    font-size: 12px;
+    }
+
 
 }
