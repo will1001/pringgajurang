@@ -124,6 +124,8 @@ Route::get('/formaddbarangdesa/{id}', 'admincontroller@formaddbarangdesa')->midd
 Route::get('/formaddbumdes/{id}', 'admincontroller@formaddbumdes')->middleware('auth');
 Route::get('/formsettingkopsurat', 'admincontroller@formsettingkopsurat')->middleware('auth');
 Route::post('/settingkopsurat', 'admincontroller@settingkopsurat')->middleware('auth');
+Route::get('/formaddSOTK', 'admincontroller@formaddSOTK')->middleware('auth');
+
 
 
 
@@ -143,6 +145,9 @@ Route::get('/formeditbumdes/{id}', 'admincontroller@formeditbumdes')->middleware
 Route::get('/formeditdatapendudukkadus/{id}', 'admincontroller@formeditdatapendudukkadus')->middleware('auth');
 Route::get('/formeditdatapendudukkades/{id}/{id2}', 'admincontroller@formeditdatapendudukkades')->middleware('auth');
 Route::get('/formeditdatapendudukwarga/{id}/{id2}', 'admincontroller@formeditdatapendudukwarga')->middleware('auth');
+Route::get('/formeditSOTK/{id}', 'admincontroller@formeditSOTK')->middleware('auth');
+Route::get('/deleteSOTK/{id}', 'admincontroller@deleteSOTK');
+
 
 
 

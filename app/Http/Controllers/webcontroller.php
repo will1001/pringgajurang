@@ -140,7 +140,7 @@ class webcontroller extends Controller
     public function barangdesa()
     {
         # code...
-        $barangdesas = barangdesa::paginate(30);
+        $barangdesas = barangdesa::orderBy('created_at', 'desc')->paginate(30);
         return view('barangdesa',['barangdesas' => $barangdesas]);
     }
 
