@@ -35,13 +35,16 @@ Route::get('/cari/{kategori}/{id}',function($kategori,$id)
 	}
 });
 
-Route::get('/caridatakadus/{id}/{id_dusun}',function($id,$id_dusun)
+Route::get('/caridatakadus/{kategori}/{id}',function($kategori,$id)
 {
+	
 	if(Request::ajax()){
-	 $data_penduduk_kadus_ajax=App\data_penduduk::where('Id_Dusun',$id_dusun)->where('Nama','LIKE','%'.$id.'%')->orWhere('NIK','LIKE','%'.$id.'%')->get();
+		// $kode_area_dusuns=App\kode_area_dusun::where('id_kadus',Auth::user()->id)->get();
+	 $data_penduduk_kadus_ajax=App\data_penduduk::where($kategori,'LIKE','%'.$id.'%')->get();
 
         return $data_penduduk_kadus_ajax;
 	}
+
 });
 
 

@@ -86,11 +86,22 @@
     <section id="tabeldatapendudukkadus"  class="section-padding">
       <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12 col-6 col-md-6">
-            <div class="searchkadus text-left">
-                <input type="text"  id="searchkadus" name="searchkadus" placeholder="Masukan NIK atau Nama" ></input>
+            <div class="col-xs-12 col-12 col -sm-12 col-md-6">
+              <select id="filterkadus">
+                 <option selected="true" disabled="disabled">Cari Berdasarkan</option>
+                  <option value="Nama">Nama</option>
+                  <option value="NIK">NIK</option>
+                  <option value="Nomor_kk">Nomor KK</option>
+                  <option value="Pendidikan">Pendidikan</option>
+                  <option value="Status_Perkawinan">status Perkawinan</option>
+                  <option value="Golongan_Darah">Golongan Darah</option>
+            </select>
+             <div class="searchkadus">
+            <input type="text"  id="searchkadus" name="searchkadus" placeholder=". . ." ></input>
             </div>
-            <button id="tombol_searchkadus" value="{{$kode_area_dusuns[0]->id_dusun}}">Search</button>  
+           <button id="tombol_searchkadus">Search</button>  
+           
+            
             </div>
         </div>
         <div class="row">

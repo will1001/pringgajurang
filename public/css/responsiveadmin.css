@@ -346,6 +346,10 @@
    li.nav-item {
     padding: 3vh 0vw;
     }
+
+    #filterkadus,#tombol_searchkadus{
+        margin: 5px 0px;
+    }
     
 
 }
