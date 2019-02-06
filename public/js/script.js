@@ -235,7 +235,7 @@ $(document).ready(function(){
  $('#tombol_searchkadus').on('click', function() {
     console.log(this.value);
     nomor=1;
-    $.get('caridatakadus/'+document.getElementById("search").value+'/'+this.value,loadTabelDataPenduduk);
+    $.get('caridatakadus/'+document.getElementById("searchkadus").value+'/'+this.value,loadTabelDataPenduduk);
  });
 });
 
