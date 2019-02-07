@@ -40,22 +40,31 @@
            <input type="date" id="formattanggal" name="Tanggal_Lahir" value="{{$data_penduduks[0]->Tanggal_Lahir}}"><br><br>
           Agama :<br>
           <select name="Agama">
-               <option selected="true" disabled="disabled">Agama</option>                 
-               <option value="Islam">Islam</option>
-               <option value="Kristen">Kristen</option>
-               <option value="Katolik">Katolik</option>
-               <option value="Hindu">Hindu</option>
-               <option value="Budha">Budha</option>
+            <option selected="true" value="{{ $tabel_agama_defaults[0]->id }}">{{ $tabel_agama_defaults[0]->agama }}</option>
+               @foreach ($tabel_agamas as $tabel_agama)
+                    <option value="{{ $tabel_agama->id }}">{{ $tabel_agama->agama }}</option>
+                 @endforeach
           </select><br><br>
           Pendidikan :<br>
-          <input type="text" name="Pendidikan" value="{{$data_penduduks[0]->Pendidikan}}"><br><br>
+          <select name="Pendidikan">
+            <option selected="true" value="{{ $tabel_pendidikan_defaults[0]->id }}">{{ $tabel_pendidikan_defaults[0]->pendidikan }}</option>
+               @foreach ($tabel_pendidikans as $tabel_pendidikan)
+                    <option value="{{ $tabel_pendidikan->id }}">{{ $tabel_pendidikan->pendidikan }}</option>
+                 @endforeach
+          </select><br><br>
           Jenis Pekerjaan :<br>
-          <input type="text" name="Jenis_Pekerjaan" value="{{$data_penduduks[0]->Jenis_Pekerjaan}}"><br><br>
+          <select name="Jenis_Pekerjaan">
+            <option selected="true" value="{{ $tabel_jenis_pekerjaan_defaults[0]->id }}">{{ $tabel_jenis_pekerjaan_defaults[0]->jenis_pekerjaan }}</option>
+               @foreach ($tabel_jenis_pekerjaans as $tabel_jenis_pekerjaan)
+                    <option value="{{ $tabel_jenis_pekerjaan->id }}">{{ $tabel_jenis_pekerjaan->jenis_pekerjaan }}</option>
+                 @endforeach
+          </select><br><br>
           Status Perkawinan :<br>
           <select name="Status_Perkawinan">
-               <option selected="true" disabled="disabled">Status Perkawinan</option>                 
-               <option value="Kawin">Kawin</option>
-               <option value="Belum Kawin">Belum Kawin</option>
+            <option selected="true" value="{{ $tabel_status_perkawinan_defaults[0]->id }}">{{ $tabel_status_perkawinan_defaults[0]->status_perkawinan }}</option>
+               @foreach ($tabel_status_perkawinans as $tabel_status_perkawinan)
+                    <option value="{{ $tabel_status_perkawinan->id }}">{{ $tabel_status_perkawinan->status_perkawinan }}</option>
+                 @endforeach
           </select><br><br>
           Status Hubungan Dalam Keluarga :<br>
           <select name="Status_Hubungan_Dalam_Keluarga">
@@ -66,9 +75,10 @@
           </select><br><br>
           Kewarganegaraan :<br>
           <select name="Kewarganegaraan">
-               <option selected="true" disabled="disabled">Kewarganegaraan</option>
-               <option value="WNI">WNI</option>
-               <option value="WNA">WNA</option>
+            <option selected="true" value="{{ $tabel_kewarganegaraan_defaults[0]->id }}">{{ $tabel_kewarganegaraan_defaults[0]->kewarganegaraan }}</option>
+                @foreach ($tabel_kewarganegaraans as $tabel_kewarganegaraan)
+                    <option value="{{ $tabel_kewarganegaraan->id }}">{{ $tabel_kewarganegaraan->kewarganegaraan }}</option>
+                 @endforeach
           </select><br><br>
           Nama Ayah :<br>
           <input type="text" name="Nama_Ayah" value="{{$data_penduduks[0]->Nama_Ayah}}"><br><br>
@@ -76,11 +86,10 @@
           <input type="text" name="Nama_Ibu" value="{{$data_penduduks[0]->Nama_Ibu}}"><br><br>
           Golongan darah :<br>
           <select name="Golongan_Darah">
-               <option selected="true" disabled="disabled">Golongan Darah</option>                 
-               <option value="A">A</option>
-               <option value="B">B</option>
-               <option value="AB">AB</option>
-               <option value="O">O</option>
+            <option selected="true" value="{{ $tabel_golongan_darah_defaults[0]->id }}">{{ $tabel_golongan_darah_defaults[0]->golongan_darah }}</option>
+                @foreach ($tabel_golongan_darahs as $tabel_golongan_darah)
+                    <option value="{{ $tabel_golongan_darah->id }}">{{ $tabel_golongan_darah->golongan_darah }}</option>
+                 @endforeach
           </select><br><br>
           Akta Lahir :<br>
           <input type="text" name="Akta_Lahir" value="{{$data_penduduks[0]->Akta_Lahir}}"><br><br>
@@ -108,11 +117,43 @@
           <input type="text" name="Cara_KB" value="{{$data_penduduks[0]->Cara_KB}}"><br><br>
           Hamil :<br>
           <input type="text" name="Hamil" value="{{$data_penduduks[0]->Hamil}}"><br><br>
+          Tempat Mendapaykan Air Bersih :<br>
+          <select name="tempat_mendapatkan_air_bersih">
+               <option selected="true" value="{{$data_penduduks[0]->tempat_mendapatkan_air_bersih}}">Tempat Mendapaykan Air Bersih</option>                 
+               <option value="PAM">PAM</option>
+               <option value="Aumur Gali">Aumur Gali</option>
+               <option value="Penampungan air hujan">Penampungan air hujan</option>
+               <option value="Air sungai">Air sungai</option>
+               <option value="Embung">Embung</option>
+               <option value="Sumur pompa">Sumur pompa</option>
+               <option value="Perpipaan air keran">Perpipaan air keran</option>
+               <option value="Hidran umum">Hidran umum</option>
+               <option value="Mata air">Mata air</option>
+               <option value="Air laut">Air laut</option>
+          </select><br><br>
+          Status Gizi Balita :<br>
+          <select name="status_gizi_balita">
+               <option selected="true" value="{{$data_penduduks[0]->status_gizi_balita}}">Status Gizi Balita</option>                 
+               <option value="Baik">Baik</option>
+               <option value="Buruk">Buruk</option>
+               <option value="Kurang">Kurang</option>
+               <option value="Lebih">Lebih</option>
+          </select><br><br>
+          Kebiasaan Berobat Bila Sakit :<br>
+          <select name="kebiasaan_berobat_bila_sakit">
+               <option selected="true" value="{{$data_penduduks[0]->kebiasaan_berobat_bila_sakit}}">Kebiasaan Berobat Bila Sakit</option>                 
+               <option value="Dokter">Dokter</option>
+               <option value="Dukun terlatih">Dukun terlatih</option>
+               <option value="Keluarga sendiri">Keluarga sendiri</option>
+               <option value="Paranormal">Paranormal</option>
+               <option value="Tidak berobat">Tidak berobat</option>
+          </select><br><br>
           Upload foto KTP : <br><br>
           <input type="file" name="foto_ktp" id="foto_ktp"><br><br>
           Upload foto KK : <br><br>
           <input type="file" name="foto_kk" id="foto_kk">
           <br><br>
+
 
           
           

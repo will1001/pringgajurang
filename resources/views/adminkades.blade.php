@@ -215,14 +215,14 @@
                   <th rowspan="2">Tempat Mendapatkan Air Bersih</th>  
                   <th rowspan="2">Status Gizi Balita</th>  
                   <th rowspan="2">Kebiasaan Berobat Bila Sakit</th>   
-                  <th colspan="5">Pendapatan Perkapita</th>   
-                  <th colspan="5">Pendapatan Rill Keluarga</th>   
+                  <!-- <th colspan="5">Pendapatan Perkapita</th>    -->
+                  <!-- <th colspan="5">Pendapatan Rill Keluarga</th>    -->
                   <th rowspan="2">Foto KTP</th>  
                   <th rowspan="2">Foto KK</th>   
                   <th rowspan="2">edit</th> 
                   <th rowspan="2">hapus</th> 
         </tr>
-        <tr>
+     <!--    <tr>
     <th scope="col">Pertanian</th>
     <th scope="col">Perkebunan</th>
     <th scope="col">Peternakan</th>
@@ -231,7 +231,7 @@
     <th scope="col">Pendapatan kepala keluarga</th>
     <th scope="col">Pendapatan selain kepala keluarga
 </th>
-  </tr>
+  </tr> -->
       </thead>
        <tbody id="tbodytabel">
       </tbody>

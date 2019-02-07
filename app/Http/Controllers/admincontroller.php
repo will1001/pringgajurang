@@ -27,6 +27,11 @@ use App\kode_area_dusun;
 use App\data_penduduk;
 use App\kopsurat;
 use App\tabel_agama;
+use App\tabel_golongan_darah;
+use App\tabel_jenis_pekerjaan;
+use App\tabel_kewarganegaraan;
+use App\tabel_pendidikan;
+use App\tabel_status_perkawinan;
 use Validator;
 use PhpOffice\PhpWord\PhpWord;
 
@@ -1470,8 +1475,14 @@ public function addSOTK(Request $request)
         if(Auth::user()->roles == "kades"){
 
             $kode_area_dusuns=kode_area_dusun::all();
+             $tabel_agamas= tabel_agama::all();
+        $tabel_golongan_darahs= tabel_golongan_darah::all();
+        $tabel_jenis_pekerjaans= tabel_jenis_pekerjaan::all();
+        $tabel_kewarganegaraans= tabel_kewarganegaraan::all();
+        $tabel_pendidikans= tabel_pendidikan::all();
+        $tabel_status_perkawinans= tabel_status_perkawinan::all();
         
-        return view('adminCRUD/adddatapendudukkades',['kode_area_dusuns'=> $kode_area_dusuns]);
+        return view('adminCRUD/adddatapendudukkades',['kode_area_dusuns'=> $kode_area_dusuns,'tabel_agamas' => $tabel_agamas,'tabel_golongan_darahs' => $tabel_golongan_darahs,'tabel_jenis_pekerjaans' => $tabel_jenis_pekerjaans,'tabel_kewarganegaraans' => $tabel_kewarganegaraans,'tabel_pendidikans' => $tabel_pendidikans,'tabel_status_perkawinans' => $tabel_status_perkawinans]);
     }else{
         
         return redirect('admin');
@@ -1503,8 +1514,20 @@ public function addSOTK(Request $request)
         if(Auth::user()->roles == "kades"){
         $data_penduduks=data_penduduk::where('Id_Dusun',$id2)->where('NIK',$id)->get();
         $kode_area_dusun_defaults=kode_area_dusun::where('Id_Dusun',$id2)->get();
+        $tabel_agama_defaults=tabel_agama::where('id',$data_penduduks[0]->Agama)->get();
+        $tabel_golongan_darah_defaults=tabel_golongan_darah::where('id',$data_penduduks[0]->Golongan_Darah)->get();
+        $tabel_jenis_pekerjaan_defaults=tabel_jenis_pekerjaan::where('id',$data_penduduks[0]->Jenis_Pekerjaan)->get();
+        $tabel_kewarganegaraan_defaults=tabel_kewarganegaraan::where('id',$data_penduduks[0]->Kewarganegaraan)->get();
+        $tabel_pendidikan_defaults=tabel_pendidikan::where('id',$data_penduduks[0]->Pendidikan)->get();
+        $tabel_status_perkawinan_defaults=tabel_status_perkawinan::where('id',$data_penduduks[0]->Status_Perkawinan)->get();
         $kode_area_dusuns=kode_area_dusun::where('Id_Dusun','!=',$id2)->get();
-        return view('adminCRUD/editdatapendudukkades',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults]);
+        $tabel_agamas= tabel_agama::all();
+        $tabel_golongan_darahs= tabel_golongan_darah::all();
+        $tabel_jenis_pekerjaans= tabel_jenis_pekerjaan::all();
+        $tabel_kewarganegaraans= tabel_kewarganegaraan::all();
+        $tabel_pendidikans= tabel_pendidikan::all();
+        $tabel_status_perkawinans= tabel_status_perkawinan::all();
+        return view('adminCRUD/editdatapendudukkades',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults,'tabel_agamas'=> $tabel_agamas,'tabel_agama_defaults'=> $tabel_agama_defaults,'tabel_golongan_darahs'=> $tabel_golongan_darahs,'tabel_golongan_darah_defaults'=> $tabel_golongan_darah_defaults,'tabel_jenis_pekerjaans'=> $tabel_jenis_pekerjaans,'tabel_jenis_pekerjaan_defaults'=> $tabel_jenis_pekerjaan_defaults,'tabel_kewarganegaraans'=> $tabel_kewarganegaraans,'tabel_kewarganegaraan_defaults'=> $tabel_kewarganegaraan_defaults,'tabel_pendidikans'=> $tabel_pendidikans,'tabel_pendidikan_defaults'=> $tabel_pendidikan_defaults,'tabel_status_perkawinans'=> $tabel_status_perkawinans,'tabel_status_perkawinan_defaults'=> $tabel_status_perkawinan_defaults]);
         }else{
         
             return redirect('admin');
@@ -1608,6 +1631,20 @@ public function adddatapendudukkadus(Request $request)
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;
              }
+
+              if($request->hasfile('foto_ktp') && $request->hasfile('foto_kk')){
+
+
+             $filesebelumnya = data_penduduk::where('NIK',$id)->get();
+            File::delete('storage/'.basename($filesebelumnya[0]->foto_ktp));
+            File::delete('storage/'.basename($filesebelumnya[0]->foto_kk));
+            $fileNamektp = $request->foto_ktp->getClientOriginalName();
+            $fileNamekk = $request->foto_kk->getClientOriginalName();
+            $pathktp = public_path().'/uploadsgambar';
+            $pathkk = public_path().'/uploadsgambar';
+
+            $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
+            $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
             
 
             $data = new data_penduduk();
@@ -1643,8 +1680,148 @@ public function adddatapendudukkadus(Request $request)
             $data->Cacat = $request->Cacat;
             $data->Cara_KB = $request->Cara_KB;
             $data->Hamil = $request->Hamil;
+            $data->tempat_mendapatkan_air_bersih = $request->get('tempat_mendapatkan_air_bersih');
+            $data->status_gizi_balita = $request->get('status_gizi_balita');
+            $data->kebiasaan_berobat_bila_sakit = $request->get('kebiasaan_berobat_bila_sakit');
+            $data->foto_ktp =  '/uploadsgambar/'.$fileNamektp;
+            $data->foto_kk = '/uploadsgambar/'.$fileNamekk;
             
             $data->save();
+        }elseif($request->hasfile('foto_ktp')){
+
+             $filesebelumnya = data_penduduk::where('NIK',$id)->get();
+            File::delete('storage/'.basename($filesebelumnya[0]->foto_ktp));
+            $fileNamektp = $request->foto_ktp->getClientOriginalName();
+            $pathktp = public_path().'/uploadsgambar';
+            $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
+
+            $data = new data_penduduk();
+            $data->Alamat = $request->Alamat;
+            $data->Id_Dusun = $request->get('Id_Dusun');
+            $data->RW = $request->RW;
+            $data->RT = $request->RT;
+            $data->Nama =$request->Nama ;
+            $data->Nomor_KK =$request->Nomor_KK ;
+            $data->NIK = $request->NIK;
+            $data->Jenis_Kelamin = $request->get('jenis_kelamin');
+            $data->Tempat_Lahir = $request->Tempat_Lahir;
+            $data->Tanggal_Lahir = $request->Tanggal_Lahir;
+            $data->Agama = $request->get('Agama');
+            $data->Pendidikan = $request->Pendidikan;
+            $data->Jenis_Pekerjaan = $request->Jenis_Pekerjaan;
+            $data->Status_Perkawinan = $request->get('Status_Perkawinan');
+            $data->Status_Hubungan_Dalam_Keluarga = $request->get('Status_Hubungan_Dalam_Keluarga');
+            $data->Kewarganegaraan = $request->get('Kewarganegaraan');
+            $data->Nama_Ayah = $request->Nama_Ayah;
+            $data->Nama_Ibu = $request->Nama_Ibu;
+            $data->Golongan_Darah = $request->get('Golongan_Darah');
+            $data->Akta_Lahir = $request->Akta_Lahir;
+            $data->No_Paspor = $request->No_Paspor;
+            $data->Tanggal_akhir_Paspor = $request->Tanggal_akhir_Paspor;
+            $data->No_KITAS = $request->No_KITAS;
+            $data->NIK_Ayah = $request->NIK_Ayah;
+            $data->NIK_Ibu = $request->NIK_Ibu;
+            $data->No_Akta_Perkawinan = $request->No_Akta_Perkawinan;
+            $data->Tanggal_Perkawinan = $request->Tanggal_Perkawinan;
+            $data->No_Akta_Perceraian = $request->No_Akta_Perceraian;
+            $data->Tanggal_Perceraian = $request->Tanggal_Perceraian;
+            $data->Cacat = $request->Cacat;
+            $data->Cara_KB = $request->Cara_KB;
+            $data->Hamil = $request->Hamil;
+            $data->tempat_mendapatkan_air_bersih = $request->get('tempat_mendapatkan_air_bersih');
+            $data->status_gizi_balita = $request->get('status_gizi_balita');
+            $data->kebiasaan_berobat_bila_sakit = $request->get('kebiasaan_berobat_bila_sakit');
+            $data->foto_ktp =  '/uploadsgambar/'.$fileNamektp;
+            
+            $data->save();
+        }elseif($request->hasfile('foto_kk')){
+
+                         $filesebelumnya = data_penduduk::where('NIK',$id)->get();
+                        File::delete('storage/'.basename($filesebelumnya[0]->foto_kk));
+                        $fileNamekk = $request->foto_kk->getClientOriginalName();
+                        $pathkk = public_path().'/uploadsgambar';
+                        $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
+                    $data = new data_penduduk();
+            $data->Alamat = $request->Alamat;
+            $data->Id_Dusun = $request->get('Id_Dusun');
+            $data->RW = $request->RW;
+            $data->RT = $request->RT;
+            $data->Nama =$request->Nama ;
+            $data->Nomor_KK =$request->Nomor_KK ;
+            $data->NIK = $request->NIK;
+            $data->Jenis_Kelamin = $request->get('jenis_kelamin');
+            $data->Tempat_Lahir = $request->Tempat_Lahir;
+            $data->Tanggal_Lahir = $request->Tanggal_Lahir;
+            $data->Agama = $request->get('Agama');
+            $data->Pendidikan = $request->Pendidikan;
+            $data->Jenis_Pekerjaan = $request->Jenis_Pekerjaan;
+            $data->Status_Perkawinan = $request->get('Status_Perkawinan');
+            $data->Status_Hubungan_Dalam_Keluarga = $request->get('Status_Hubungan_Dalam_Keluarga');
+            $data->Kewarganegaraan = $request->get('Kewarganegaraan');
+            $data->Nama_Ayah = $request->Nama_Ayah;
+            $data->Nama_Ibu = $request->Nama_Ibu;
+            $data->Golongan_Darah = $request->get('Golongan_Darah');
+            $data->Akta_Lahir = $request->Akta_Lahir;
+            $data->No_Paspor = $request->No_Paspor;
+            $data->Tanggal_akhir_Paspor = $request->Tanggal_akhir_Paspor;
+            $data->No_KITAS = $request->No_KITAS;
+            $data->NIK_Ayah = $request->NIK_Ayah;
+            $data->NIK_Ibu = $request->NIK_Ibu;
+            $data->No_Akta_Perkawinan = $request->No_Akta_Perkawinan;
+            $data->Tanggal_Perkawinan = $request->Tanggal_Perkawinan;
+            $data->No_Akta_Perceraian = $request->No_Akta_Perceraian;
+            $data->Tanggal_Perceraian = $request->Tanggal_Perceraian;
+            $data->Cacat = $request->Cacat;
+            $data->Cara_KB = $request->Cara_KB;
+            $data->Hamil = $request->Hamil;
+            $data->tempat_mendapatkan_air_bersih = $request->get('tempat_mendapatkan_air_bersih');
+            $data->status_gizi_balita = $request->get('status_gizi_balita');
+            $data->kebiasaan_berobat_bila_sakit = $request->get('kebiasaan_berobat_bila_sakit');
+            $data->foto_kk = '/uploadsgambar/'.$fileNamekk;
+            
+            $data->save();
+        }else{
+            $data = new data_penduduk();
+            $data->Alamat = $request->Alamat;
+            $data->Id_Dusun = $request->get('Id_Dusun');
+            $data->RW = $request->RW;
+            $data->RT = $request->RT;
+            $data->Nama =$request->Nama ;
+            $data->Nomor_KK =$request->Nomor_KK ;
+            $data->NIK = $request->NIK;
+            $data->Jenis_Kelamin = $request->get('jenis_kelamin');
+            $data->Tempat_Lahir = $request->Tempat_Lahir;
+            $data->Tanggal_Lahir = $request->Tanggal_Lahir;
+            $data->Agama = $request->get('Agama');
+            $data->Pendidikan = $request->Pendidikan;
+            $data->Jenis_Pekerjaan = $request->Jenis_Pekerjaan;
+            $data->Status_Perkawinan = $request->get('Status_Perkawinan');
+            $data->Status_Hubungan_Dalam_Keluarga = $request->get('Status_Hubungan_Dalam_Keluarga');
+            $data->Kewarganegaraan = $request->get('Kewarganegaraan');
+            $data->Nama_Ayah = $request->Nama_Ayah;
+            $data->Nama_Ibu = $request->Nama_Ibu;
+            $data->Golongan_Darah = $request->get('Golongan_Darah');
+            $data->Akta_Lahir = $request->Akta_Lahir;
+            $data->No_Paspor = $request->No_Paspor;
+            $data->Tanggal_akhir_Paspor = $request->Tanggal_akhir_Paspor;
+            $data->No_KITAS = $request->No_KITAS;
+            $data->NIK_Ayah = $request->NIK_Ayah;
+            $data->NIK_Ibu = $request->NIK_Ibu;
+            $data->No_Akta_Perkawinan = $request->No_Akta_Perkawinan;
+            $data->Tanggal_Perkawinan = $request->Tanggal_Perkawinan;
+            $data->No_Akta_Perceraian = $request->No_Akta_Perceraian;
+            $data->Tanggal_Perceraian = $request->Tanggal_Perceraian;
+            $data->Cacat = $request->Cacat;
+            $data->Cara_KB = $request->Cara_KB;
+            $data->Hamil = $request->Hamil;
+            $data->tempat_mendapatkan_air_bersih = $request->get('tempat_mendapatkan_air_bersih');
+            $data->status_gizi_balita = $request->get('status_gizi_balita');
+            $data->kebiasaan_berobat_bila_sakit = $request->get('kebiasaan_berobat_bila_sakit');
+            
+            $data->save();
+        }
+
+
 
             $var="data berhasil di simpan";
             return redirect('admin')->with('key', $var);
@@ -1790,6 +1967,9 @@ public function adddatapendudukkadus(Request $request)
             'Cacat' => $request->Cacat,
             'Cara_KB' => $request->Cara_KB,
             'Hamil' => $request->Hamil,
+            'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
+            'status_gizi_balita' => $request->get('status_gizi_balita'),
+            'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
             'foto_kk' => '/uploadsgambar/'.$fileNamekk
             
@@ -1840,6 +2020,9 @@ public function adddatapendudukkadus(Request $request)
             'Cacat' => $request->Cacat,
             'Cara_KB' => $request->Cara_KB,
             'Hamil' => $request->Hamil,
+            'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
+            'status_gizi_balita' => $request->get('status_gizi_balita'),
+            'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_ktp' => '/uploadsgambar/'.$fileNamektp
             
          ]);   
@@ -1889,6 +2072,9 @@ public function adddatapendudukkadus(Request $request)
             'Cacat' => $request->Cacat,
             'Cara_KB' => $request->Cara_KB,
             'Hamil' => $request->Hamil,
+            'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
+            'status_gizi_balita' => $request->get('status_gizi_balita'),
+            'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_kk' => '/uploadsgambar/'.$fileNamekk
             
          ]);   
@@ -1931,6 +2117,9 @@ public function adddatapendudukkadus(Request $request)
             'Cacat' => $request->Cacat,
             'Cara_KB' => $request->Cara_KB,
             'Hamil' => $request->Hamil,
+            'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
+            'status_gizi_balita' => $request->get('status_gizi_balita'),
+            'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             
          ]);   
 
@@ -1995,8 +2184,8 @@ public function adddatapendudukkadus(Request $request)
             'Tempat_Lahir' => $request->Tempat_Lahir,
             'Tanggal_Lahir' => $request->Tanggal_Lahir,
             'Agama' => $request->get('Agama'),
-            'Pendidikan' => $request->Pendidikan,
-            'Jenis_Pekerjaan' => $request->Jenis_Pekerjaan,
+            'Pendidikan' => $request->get('Pendidikan'),
+            'Jenis_Pekerjaan' => $request->get('Jenis_Pekerjaan'),
             'Status_Perkawinan' => $request->get('Status_Perkawinan'),
             'Status_Hubungan_Dalam_Keluarga' => $request->get('Status_Hubungan_Dalam_Keluarga'),
             'Kewarganegaraan' => $request->get('Kewarganegaraan'),
@@ -2016,6 +2205,9 @@ public function adddatapendudukkadus(Request $request)
             'Cacat' => $request->Cacat,
             'Cara_KB' => $request->Cara_KB,
             'Hamil' => $request->Hamil,
+            'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
+            'status_gizi_balita' => $request->get('status_gizi_balita'),
+            'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
             'foto_kk' => '/uploadsgambar/'.$fileNamekk
             
@@ -2066,6 +2258,9 @@ public function adddatapendudukkadus(Request $request)
             'Cacat' => $request->Cacat,
             'Cara_KB' => $request->Cara_KB,
             'Hamil' => $request->Hamil,
+            'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
+            'status_gizi_balita' => $request->get('status_gizi_balita'),
+            'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_ktp' => '/uploadsgambar/'.$fileNamektp
             
          ]);   
@@ -2115,6 +2310,9 @@ public function adddatapendudukkadus(Request $request)
             'Cacat' => $request->Cacat,
             'Cara_KB' => $request->Cara_KB,
             'Hamil' => $request->Hamil,
+            'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
+            'status_gizi_balita' => $request->get('status_gizi_balita'),
+            'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_kk' => '/uploadsgambar/'.$fileNamekk
             
          ]);   
@@ -2157,6 +2355,9 @@ public function adddatapendudukkadus(Request $request)
             'Cacat' => $request->Cacat,
             'Cara_KB' => $request->Cara_KB,
             'Hamil' => $request->Hamil,
+            'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
+            'status_gizi_balita' => $request->get('status_gizi_balita'),
+            'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             
          ]);   
 

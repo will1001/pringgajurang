@@ -39,21 +39,30 @@
           Agama :<br>
           <select name="Agama">
             <option selected="true" disabled="disabled">Agama</option>                 
-               <option value="Islam">Islam</option>
-               <option value="Kristen">Kristen</option>
-               <option value="Katolik">Katolik</option>
-               <option value="Hindu">Hindu</option>
-               <option value="Budha">Budha</option>
+               @foreach ($tabel_agamas as $tabel_agama)
+                    <option value="{{ $tabel_agama->id }}">{{ $tabel_agama->agama }}</option>
+                 @endforeach
           </select><br><br>
           Pendidikan :<br>
-          <input type="text" name="Pendidikan" placeholder="Pendidikan"><br><br>
+          <select name="Pendidikan">
+            <option selected="true" disabled="disabled">Pendidikan</option>                 
+               @foreach ($tabel_pendidikans as $tabel_pendidikan)
+                    <option value="{{ $tabel_pendidikan->id }}">{{ $tabel_pendidikan->pendidikan }}</option>
+                 @endforeach
+          </select><br><br>
           Jenis Pekerjaan :<br>
-          <input type="text" name="Jenis_Pekerjaan" placeholder="Jenis Pekerjaan"><br><br>
+          <select name="Jenis_Pekerjaan">
+            <option selected="true" disabled="disabled">Jenis Pekerjaan</option>                 
+               @foreach ($tabel_jenis_pekerjaans as $tabel_jenis_pekerjaan)
+                    <option value="{{ $tabel_jenis_pekerjaan->id }}">{{ $tabel_jenis_pekerjaan->jenis_pekerjaan }}</option>
+                 @endforeach
+          </select><br><br>
           Status Perkawinan :<br>
           <select name="Status_Perkawinan">
             <option selected="true" disabled="disabled">Status Perkawinan</option>                 
-               <option value="Kawin">Kawin</option>
-               <option value="Belum Kawin">Belum Kawin</option>
+               @foreach ($tabel_status_perkawinans as $tabel_status_perkawinan)
+                    <option value="{{ $tabel_status_perkawinan->id }}">{{ $tabel_status_perkawinan->status_perkawinan }}</option>
+                 @endforeach
           </select><br><br>
           Status Hubungan Dalam Keluarga :<br>
           <option selected="true" disabled="disabled">Status Hubungan Dalam Keluarga</option>                 
@@ -65,8 +74,9 @@
           Kewarganegaraan :<br>
           <select name="Kewarganegaraan">
             <option selected="true" disabled="disabled">Kewarganegaraan</option>
-               <option value="WNI">WNI</option>
-               <option value="WNA">WNA</option>
+                @foreach ($tabel_kewarganegaraans as $tabel_kewarganegaraan)
+                    <option value="{{ $tabel_kewarganegaraan->id }}">{{ $tabel_kewarganegaraan->kewarganegaraan }}</option>
+                 @endforeach
           </select><br><br>
           Nama Ayah :<br>
           <input type="text" name="Nama_Ayah" placeholder="Nama Ayah"><br><br>
@@ -75,10 +85,9 @@
           Golongan darah :<br>
           <select name="Golongan_Darah">
             <option selected="true" disabled="disabled">Golongan Darah</option>                 
-               <option value="A">A</option>
-               <option value="B">B</option>
-               <option value="AB">AB</option>
-               <option value="O">O</option>
+                @foreach ($tabel_golongan_darahs as $tabel_golongan_darah)
+                    <option value="{{ $tabel_golongan_darah->id }}">{{ $tabel_golongan_darah->golongan_darah }}</option>
+                 @endforeach
           </select><br><br>
           Akta Lahir :<br>
           <input type="text" name="Akta_Lahir" placeholder="Akta Lahir"><br><br>
@@ -106,11 +115,43 @@
           <input type="text" name="Cara_KB" placeholder="Cara KB"><br><br>
           Hamil :<br>
           <input type="text" name="Hamil" placeholder="Hamil"><br><br>
+          Tempat Mendapaykan Air Bersih :<br>
+          <select name="tempat_mendapatkan_air_bersih">
+               <option selected="true" disabled="disabled">Tempat Mendapaykan Air Bersih</option>                 
+               <option value="PAM">PAM</option>
+               <option value="Aumur Gali">Aumur Gali</option>
+               <option value="Penampungan air hujan">Penampungan air hujan</option>
+               <option value="Air sungai">Air sungai</option>
+               <option value="Embung">Embung</option>
+               <option value="Sumur pompa">Sumur pompa</option>
+               <option value="Perpipaan air keran">Perpipaan air keran</option>
+               <option value="Hidran umum">Hidran umum</option>
+               <option value="Mata air">Mata air</option>
+               <option value="Air laut">Air laut</option>
+          </select><br><br>
+          Status Gizi Balita :<br>
+          <select name="status_gizi_balita">
+               <option selected="true" disabled="disabled">Status Gizi Balita</option>                 
+               <option value="Baik">Baik</option>
+               <option value="Buruk">Buruk</option>
+               <option value="Kurang">Kurang</option>
+               <option value="Lebih">Lebih</option>
+          </select><br><br>
+          Kebiasaan Berobat Bila Sakit :<br>
+          <select name="kebiasaan_berobat_bila_sakit">
+               <option selected="true" disabled="disabled">Kebiasaan Berobat Bila Sakit</option>                 
+               <option value="Dokter">Dokter</option>
+               <option value="Dukun terlatih">Dukun terlatih</option>
+               <option value="Keluarga sendiri">Keluarga sendiri</option>
+               <option value="Paranormal">Paranormal</option>
+               <option value="Tidak berobat">Tidak berobat</option>
+          </select><br><br>
           Upload foto KTP : <br><br>
           <input type="file" name="foto_ktp" id="foto_ktp">
           Upload foto KK : <br><br>
-          <input type="file" name="foto_kk" id="foto_kk">
-          
+          <input type="file" name="foto_kk" id="foto_kk"><br><br>
+
+
           <input type="submit" value="Submit">
         </form>
         @if ($errors->any())
