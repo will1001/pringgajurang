@@ -26,6 +26,7 @@ use App\statistik_desa;
 use App\kode_area_dusun;
 use App\data_penduduk;
 use App\kopsurat;
+use App\tabel_agama;
 use Validator;
 use PhpOffice\PhpWord\PhpWord;
 

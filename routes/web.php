@@ -18,7 +18,16 @@ Route::get('/updateumur', 'admincontroller@updateumur');
 Route::get('/reloadtabeldatapendudukajax/{id}/{skipdata}',function($id,$skipdata)
 {
 	if(Request::ajax()){
-		$data_penduduk_kadus_ajax=App\data_penduduk::where('id_dusun',$id)->take(25)->skip($skipdata)->get();
+		// $data_penduduk_kadus_ajax=App\data_penduduk::where('id_dusun',$id)->take(25)->skip($skipdata)->get();
+		$data_penduduk_kadus_ajax = DB::table('data_penduduks')
+	            ->join('tabel_agamas', 'data_penduduks.Agama', '=', 'tabel_agamas.id')
+	            ->join('tabel_jenis_pekerjaans', 'data_penduduks.Jenis_Pekerjaan', '=', 'tabel_jenis_pekerjaans.id')
+	            ->join('tabel_golongan_darahs', 'data_penduduks.Golongan_Darah', '=', 'tabel_golongan_darahs.id')
+	            ->join('tabel_kewarganegaraans', 'data_penduduks.Kewarganegaraan', '=', 'tabel_kewarganegaraans.id')
+	            ->join('tabel_status_perkawinans', 'data_penduduks.Status_Perkawinan', '=', 'tabel_status_perkawinans.id')
+	            ->join('tabel_pendidikans', 'data_penduduks.Pendidikan', '=', 'tabel_pendidikans.id')
+	            ->select('data_penduduks.*', 'tabel_agamas.agama','tabel_jenis_pekerjaans.jenis_pekerjaan','tabel_golongan_darahs.golongan_darah','tabel_kewarganegaraans.kewarganegaraan','tabel_status_perkawinans.status_perkawinan','tabel_pendidikans.pendidikan')
+	            ->take(25)->skip($skipdata)->get();
 
         return $data_penduduk_kadus_ajax;
 	}

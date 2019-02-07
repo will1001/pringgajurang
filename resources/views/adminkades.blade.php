@@ -21,9 +21,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/responsiveadmin.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/table.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lemon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 </head>
 
-<body onload="startTime()" data-spy="scroll" data-target="#primary-menu">
+<body  data-spy="scroll" data-target="#primary-menu">
 
 
 
@@ -176,49 +177,61 @@
         <col width="1000px">
         <col width="1000px">
         <tr>
-                  <th>No</th>
-                  <th>Alamat</th>
-                  <th>RW</th>
-                  <th>RT</th>
-                  <th id="nama_tombol">Nama</th>
-                  <th>Nomor KK</th>
-                  <th>Nomor NIK</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Tempat Lahir</th>
-                  <th>Tanggal Lahir</th>
-                  <th>Usia</th>
-                  <th>Agama</th>
-                  <th>Pendidikan</th>
-                  <th>Jenis Pekerjaan</th> 
-                  <th>Status Perkawinan</th> 
-                  <th>Status Hubungan Dalam Keluarga</th> 
-                  <th>Kewarganegaraan</th> 
-                  <th>Nama Ayah</th> 
-                  <th>Nama Ibu</th> 
-                  <th>Golongan Darah</th> 
-                  <th>Akta Lahir</th> 
-                  <th>Nomor Dokumen Paspor</th>
-                  <th>Tanggal Akhir Paspor</th>  
-                  <th>Nomor Dokumen KITAS</th>             
-                  <th>NIK Ayah</th> 
-                  <th>NIK Ibu</th> 
-                  <th>No Akta Perkawinan</th> 
-                  <th>Tanggal Perkawinan</th> 
-                  <th>No Akta Perceraian</th> 
-                  <th>Tanggal Perceraian</th> 
-                  <th>Cacat</th> 
-                  <th>Cara KB</th> 
-                  <th>Hamil</th> 
-                  <th>Status kependudukan</th> 
-                  <th>Keterangan</th>  
-                  <th>Tempat Mendapatkan Air Bersih</th>  
-                  <th>Status Gizi Balita</th>  
-                  <th>Kebiasaan Berobat Bila Sakit</th> 
-                  <th>Foto KTP</th>  
-                  <th>Foto KK</th>   
-                  <th>edit</th> 
-                  <th>hapus</th> 
+                  <th rowspan="2">No</th>
+                  <th rowspan="2">Alamat</th>
+                  <th rowspan="2">RW</th>
+                  <th rowspan="2">RT</th>
+                  <th rowspan="2">Nama</th>
+                  <th rowspan="2">Nomor KK</th>
+                  <th rowspan="2">Nomor NIK</th>
+                  <th rowspan="2">Jenis Kelamin</th>
+                  <th rowspan="2">Tempat Lahir</th>
+                  <th rowspan="2">Tanggal Lahir</th>
+                  <th rowspan="2">Usia</th>
+                  <th rowspan="2">Agama</th>
+                  <th rowspan="2">Pendidikan</th>
+                  <th rowspan="2">Jenis Pekerjaan</th> 
+                  <th rowspan="2">Status Perkawinan</th> 
+                  <th rowspan="2">Status Hubungan Dalam Keluarga</th> 
+                  <th rowspan="2">Kewarganegaraan</th> 
+                  <th rowspan="2">Nama Ayah</th> 
+                  <th rowspan="2">Nama Ibu</th> 
+                  <th rowspan="2">Golongan Darah</th> 
+                  <th rowspan="2">Akta Lahir</th> 
+                  <th rowspan="2">Nomor Dokumen Paspor</th>
+                  <th rowspan="2">Tanggal Akhir Paspor</th>  
+                  <th rowspan="2">Nomor Dokumen KITAS</th>             
+                  <th rowspan="2">NIK Ayah</th> 
+                  <th rowspan="2">NIK Ibu</th> 
+                  <th rowspan="2">No Akta Perkawinan</th> 
+                  <th rowspan="2">Tanggal Perkawinan</th> 
+                  <th rowspan="2">No Akta Perceraian</th> 
+                  <th rowspan="2">Tanggal Perceraian</th> 
+                  <th rowspan="2">Cacat</th> 
+                  <th rowspan="2">Cara KB</th> 
+                  <th rowspan="2">Hamil</th> 
+                  <th rowspan="2">Status kependudukan</th> 
+                  <th rowspan="2">Keterangan</th>  
+                  <th rowspan="2">Tempat Mendapatkan Air Bersih</th>  
+                  <th rowspan="2">Status Gizi Balita</th>  
+                  <th rowspan="2">Kebiasaan Berobat Bila Sakit</th>   
+                  <th colspan="5">Pendapatan Perkapita</th>   
+                  <th colspan="5">Pendapatan Rill Keluarga</th>   
+                  <th rowspan="2">Foto KTP</th>  
+                  <th rowspan="2">Foto KK</th>   
+                  <th rowspan="2">edit</th> 
+                  <th rowspan="2">hapus</th> 
         </tr>
+        <tr>
+    <th scope="col">Pertanian</th>
+    <th scope="col">Perkebunan</th>
+    <th scope="col">Peternakan</th>
+    <th scope="col">Perikanan</th>
+    <th scope="col">Kerajinan</th>
+    <th scope="col">Pendapatan kepala keluarga</th>
+    <th scope="col">Pendapatan selain kepala keluarga
+</th>
+  </tr>
       </thead>
        <tbody id="tbodytabel">
       </tbody>
@@ -464,7 +477,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{{ asset('/js/date.js') }}" type="text/javascript" charset="utf-8" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
     {{-- <script src="{{ asset('/vue/VueIndex.js') }}" type="text/javascript"></script> --}}
     <script src="{{ asset('/js/script.js') }}" type="text/javascript"></script>
