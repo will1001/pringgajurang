@@ -121,7 +121,8 @@ Route::get('/cekumur/{id}', function($id)
         
     }
 });
-
+Route::post('/editnmrhp/{id}', 'admincontroller@editnmrhp')->middleware('auth');
+Route::get('/formeditnmrhp/{id}', 'admincontroller@formeditnmrhp')->middleware('auth');
 
 // form rute
 Route::get('/formaddberita', 'admincontroller@formaddberita')->middleware('auth');

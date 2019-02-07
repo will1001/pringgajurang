@@ -2319,6 +2319,47 @@ public function adddatapendudukkadus(Request $request)
             return redirect('admin');
         }
 
+    }
+
+     public function formeditnmrhp($id)
+    {
+        # code...
+        if(Auth::user()->roles == "member"){
+        
+        $users=User::where('Nomor_KK',$id)->get();
+        return view('adminCRUD/editnmrhp',['users' => $users]);
+        }else{
+        
+            return redirect('admin');
+        }
+        
+    }
+
+
+
+ public function editnmrhp(Request $request,$id)
+    {
+
+
+        if(Auth::user()->roles == "member"){
+
+            User::find($id)->update([
+            'No_HP' => $request->nmrhp
+         ]);    
+
+            
+            return redirect('admin')->with('message', 'data berhasil di simpan');
+
+
+        }else{
+        
+            return redirect('admin');
+        }
+ 
     }   
     
 }
+
+
+
+ 

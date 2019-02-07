@@ -55,74 +55,10 @@
                               <a href="{{ route('login') }}">{{ __('Login') }}</a>
                           </li>
                     @else
-                          
-                          <!--  <li class="nav-item dropdown">
-                                      <a class="nav-link dropdown-toggle" href="{{url('/')}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        Surat <span class="caret"></span>
-                                      </a>
-                                      <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown" style="overflow-y: scroll;font-size:15px;width: 400px;max-height:300px;">
-                                        <a class="dropdown-item" href="{{url('surat_ket_domisili/'.$data_penduduks[0]->NIK)}}">Surat Keterang Domisili</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_pindah_penduduk/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Pindah</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_nikah/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Nikah</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_izin_keramaian/'.$data_penduduks[0]->NIK)}}">Surat Izin Keramaian</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_kehendak_nikah/'.$data_penduduks[0]->NIK)}}">Surat Kehendak Nikah</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_wali/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Wali</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_wali_hakim/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Wali Hakim</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_persetujuan_mempelai/'.$data_penduduks[0]->NIK)}}">Surat Persetujuan Mempelai</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_bio_penduduk/'.$data_penduduks[0]->NIK)}}">Surat Bio Penduduk</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_izin_pengangkutan_kayu/'.$data_penduduks[0]->NIK)}}">Surat izin pengangkutan kayu</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_izin_pengangkutan_tanah_urug/'.$data_penduduks[0]->NIK)}}">Surat izin pengangkutan Tanah Urug</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_beda_identitas_kis/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Beda Identitas KIS</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_beda_nama/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Beda Nama</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_catatan_kriminal/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Catatan Kriminal</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_cerai/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Cerai</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_domisili_usaha/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Domisili Usaha</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_harga_tanah/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Harga Tanah</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_jamkesos/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Jamkesos</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_kehilangan/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Kehilangan</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_jual_beli/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Jual Beli</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_kelakuan_baik/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Kelakuan Baik</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_kepemilikan_kendaraan/'.$data_penduduks[0]->NIK)}}">Surat Kepemilikan Kendaraan</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_kepemilikan_tanah/'.$data_penduduks[0]->NIK)}}">Surat Kepemilikan Tanah</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_kurang_mampu/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Kurang Mampu</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_luar_daerah/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Luar daerah</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_luar_negeri/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Luar Negeri</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_penduduk/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Luar Penduduk</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_tidak_memiliki_jamkesos/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Tidak Memiliki JAMKESOS</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_usaha/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Usaha</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('surat_ket_yatim/'.$data_penduduks[0]->NIK)}}">Surat Keterangan Yatim</a>
-                                        <div class="dropdown-divider"></div>
-                                      </div>
-                                  </li> -->
+                           <li class="nav-item dropdown">
+                              <a class="nav-link mt-4" href="{{ url('formeditnmrhp/'.$data_penduduks[0]->Nomor_KK) }}">edit nomor HP</a>
+                          </li>
+                        
                           <li class="nav-item dropdown">
                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                   {{ Auth::user()->Nomor_KK }} <span class="caret"></span>
