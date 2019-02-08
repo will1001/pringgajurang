@@ -30,14 +30,15 @@
           <input type="text" name="NIK" value="{{$data_penduduks[0]->NIK}}"><br><br>
           Jenis Kelamin :<br>
           <select name="jenis_kelamin">
-               <option selected="true" disabled="disabled">Jenis Kelamin</option>                 
-               <option value="laki-laki">laki-laki</option>
-               <option value="perempuan">prempuan</option>
+            <option selected="true" value="{{ $tabel_jenis_kelamin_defaults[0]->id }}">{{ $tabel_jenis_kelamin_defaults[0]->jenis_kelamin }}</option>
+               @foreach ($tabel_jenis_kelamins as $tabel_jenis_kelamin)
+                    <option value="{{ $tabel_jenis_kelamin->id }}">{{ $tabel_jenis_kelamin->jenis_kelamin }}</option>
+                 @endforeach
           </select><br><br>
           Tempat Lahir :<br>
           <input type="text" name="Tempat_Lahir" value="{{$data_penduduks[0]->Tempat_Lahir}}"><br><br>
           Tanggal Lahir :<br>
-           <input type="date" id="formattanggal" name="Tanggal_Lahir" value="{{$data_penduduks[0]->Tanggal_Lahir}}"><br><br>
+           <input type="date" id="formattanggal" name="Tanggal_Lahir" value="{{date('Y-m-d', strtotime($data_penduduks[0]->Tanggal_Lahir))}}"><br><br>
           Agama :<br>
           <select name="Agama">
             <option selected="true" value="{{ $tabel_agama_defaults[0]->id }}">{{ $tabel_agama_defaults[0]->agama }}</option>
@@ -96,7 +97,7 @@
           Nomor Dokumen Paspor :<br>
           <input type="text" name="No_Paspor" value="{{$data_penduduks[0]->No_Paspor}}"><br><br>
           Tanggal akhir Paspor :<br>
-          <input type="date" name="Tanggal_akhir_Paspor" value="{{$data_penduduks[0]->Tanggal_akhir_Paspor}}"><br><br>
+          <input type="date" name="Tanggal_akhir_Paspor" value="{{date('Y-m-d', strtotime($data_penduduks[0]->Tanggal_akhir_Paspor))}}"><br><br>
           Nomor Dokumen KITAS :<br>
           <input type="text" name="No_KITAS" value="{{$data_penduduks[0]->No_KITAS}}"><br><br>
           NIK Ayah :<br>
@@ -106,20 +107,29 @@
           No Akta Perkawinan :<br>
           <input type="text" name="No_Akta_Perkawinan" value="{{$data_penduduks[0]->No_Akta_Perkawinan}}"><br><br>
           Tanggal Perkawinan :<br>
-          <input type="date" name="Tanggal_Perkawinan" value="{{$data_penduduks[0]->Tanggal_Perkawinan}}"><br><br>
+          <input type="date" name="Tanggal_Perkawinan" value="{{date('Y-m-d', strtotime($data_penduduks[0]->Tanggal_Perkawinan))}}"><br><br>
           No Akta Perceraian :<br>
           <input type="text" name="No_Akta_Perceraian" value="{{$data_penduduks[0]->No_Akta_Perceraian}}"><br><br>
           Tanggal Perceraian :<br>
-          <input type="date" name="Tanggal_Perceraian" value="{{$data_penduduks[0]->Tanggal_Perceraian}}"><br><br>
+          <input type="date" name="Tanggal_Perceraian" value="{{date('Y-m-d', strtotime($data_penduduks[0]->Tanggal_Perceraian))}}"><br><br>
           Cacat :<br>
           <input type="text" name="Cacat" value="{{$data_penduduks[0]->Cacat}}"><br><br>
-          Cara KB :<br>
-          <input type="text" name="Cara_KB" value="{{$data_penduduks[0]->Cara_KB}}"><br><br>
+          Cara KB :<br>     
+          <select name="Cara_KB">
+            <option selected="true" value="{{$data_penduduks[0]->Cara_KB}}">{{$data_penduduks[0]->Cara_KB}}</option>
+              <option value="PAM">Pil</option>
+              <option value="PAM">IUD</option>
+              <option value="PAM">Suntik</option>
+              <option value="PAM">Kondom</option>
+              <option value="PAM">Susuk KB</option>
+              <option value="PAM">Sterilisasi Wanita</option>
+              <option value="PAM">Sterilisasi Pria</option>
+               </select><br><br>
           Hamil :<br>
           <input type="text" name="Hamil" value="{{$data_penduduks[0]->Hamil}}"><br><br>
           Tempat Mendapaykan Air Bersih :<br>
           <select name="tempat_mendapatkan_air_bersih">
-               <option selected="true" value="{{$data_penduduks[0]->tempat_mendapatkan_air_bersih}}">Tempat Mendapaykan Air Bersih</option>                 
+               <option selected="true" value="{{$data_penduduks[0]->tempat_mendapatkan_air_bersih}}">{{$data_penduduks[0]->tempat_mendapatkan_air_bersih}}</option>                 
                <option value="PAM">PAM</option>
                <option value="Aumur Gali">Aumur Gali</option>
                <option value="Penampungan air hujan">Penampungan air hujan</option>
@@ -133,7 +143,7 @@
           </select><br><br>
           Status Gizi Balita :<br>
           <select name="status_gizi_balita">
-               <option selected="true" value="{{$data_penduduks[0]->status_gizi_balita}}">Status Gizi Balita</option>                 
+               <option selected="true" value="{{$data_penduduks[0]->status_gizi_balita}}">{{$data_penduduks[0]->status_gizi_balita}}</option>                 
                <option value="Baik">Baik</option>
                <option value="Buruk">Buruk</option>
                <option value="Kurang">Kurang</option>
@@ -141,7 +151,7 @@
           </select><br><br>
           Kebiasaan Berobat Bila Sakit :<br>
           <select name="kebiasaan_berobat_bila_sakit">
-               <option selected="true" value="{{$data_penduduks[0]->kebiasaan_berobat_bila_sakit}}">Kebiasaan Berobat Bila Sakit</option>                 
+               <option selected="true" value="{{$data_penduduks[0]->kebiasaan_berobat_bila_sakit}}">{{$data_penduduks[0]->kebiasaan_berobat_bila_sakit}}</option>                 
                <option value="Dokter">Dokter</option>
                <option value="Dukun terlatih">Dukun terlatih</option>
                <option value="Keluarga sendiri">Keluarga sendiri</option>

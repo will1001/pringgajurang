@@ -29,8 +29,9 @@
           Jenis Kelamin :<br>
           <select name="jenis_kelamin">
                <option selected="true" disabled="disabled">Jenis Kelamin</option>                 
-               <option value="laki-laki">laki-laki</option>
-               <option value="prempuan">prempuan</option>
+               @foreach ($tabel_jenis_kelamins as $tabel_jenis_kelamin)
+                    <option value="{{ $tabel_jenis_kelamin->id }}">{{ $tabel_jenis_kelamin->jenis_kelamin }}</option>
+                 @endforeach
           </select><br><br>
           Tempat Lahir :<br>
           <input type="text" name="Tempat_Lahir" placeholder="Tempat Lahir"><br><br>
@@ -112,7 +113,15 @@
           Cacat :<br>
           <input type="text" name="Cacat" placeholder="Cacat"><br><br>
           Cara KB :<br>
-          <input type="text" name="Cara_KB" placeholder="Cara KB"><br><br>
+          <select name="Cara_KB">
+              <option value="PAM">Pil</option>
+              <option value="PAM">IUD</option>
+              <option value="PAM">Suntik</option>
+              <option value="PAM">Kondom</option>
+              <option value="PAM">Susuk KB</option>
+              <option value="PAM">Sterilisasi Wanita</option>
+              <option value="PAM">Sterilisasi Pria</option>
+               </select><br><br>
           Hamil :<br>
           <input type="text" name="Hamil" placeholder="Hamil"><br><br>
           Tempat Mendapaykan Air Bersih :<br>

@@ -126,7 +126,7 @@ function loadTabelDataPenduduk(data) {
         $('#Nama'+j+'').append(this.Nama);
         $('#Nomor_KK'+j+'').append(this.Nomor_KK);
         $('#NIK'+j+'').append(this.NIK);
-        $('#Jenis_Kelamin'+j+'').append(this.Jenis_Kelamin);
+        $('#Jenis_Kelamin'+j+'').append(this.jenis_kelamin);
         $('#Tempat_Lahir'+j+'').append(this.Tempat_Lahir);
         $('#Tanggal_Lahir'+j+'').append(this.Tanggal_Lahir);
         $('#Usia'+j+'').append(this.Usia);

@@ -32,6 +32,7 @@ use App\tabel_jenis_pekerjaan;
 use App\tabel_kewarganegaraan;
 use App\tabel_pendidikan;
 use App\tabel_status_perkawinan;
+use App\tabel_jenis_kelamin;
 use Validator;
 use PhpOffice\PhpWord\PhpWord;
 
@@ -1520,14 +1521,16 @@ public function addSOTK(Request $request)
         $tabel_kewarganegaraan_defaults=tabel_kewarganegaraan::where('id',$data_penduduks[0]->Kewarganegaraan)->get();
         $tabel_pendidikan_defaults=tabel_pendidikan::where('id',$data_penduduks[0]->Pendidikan)->get();
         $tabel_status_perkawinan_defaults=tabel_status_perkawinan::where('id',$data_penduduks[0]->Status_Perkawinan)->get();
+        $tabel_jenis_kelamin_defaults=tabel_jenis_kelamin::where('id',$data_penduduks[0]->Jenis_Kelamin)->get();
         $kode_area_dusuns=kode_area_dusun::where('Id_Dusun','!=',$id2)->get();
-        $tabel_agamas= tabel_agama::all();
-        $tabel_golongan_darahs= tabel_golongan_darah::all();
-        $tabel_jenis_pekerjaans= tabel_jenis_pekerjaan::all();
-        $tabel_kewarganegaraans= tabel_kewarganegaraan::all();
-        $tabel_pendidikans= tabel_pendidikan::all();
-        $tabel_status_perkawinans= tabel_status_perkawinan::all();
-        return view('adminCRUD/editdatapendudukkades',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults,'tabel_agamas'=> $tabel_agamas,'tabel_agama_defaults'=> $tabel_agama_defaults,'tabel_golongan_darahs'=> $tabel_golongan_darahs,'tabel_golongan_darah_defaults'=> $tabel_golongan_darah_defaults,'tabel_jenis_pekerjaans'=> $tabel_jenis_pekerjaans,'tabel_jenis_pekerjaan_defaults'=> $tabel_jenis_pekerjaan_defaults,'tabel_kewarganegaraans'=> $tabel_kewarganegaraans,'tabel_kewarganegaraan_defaults'=> $tabel_kewarganegaraan_defaults,'tabel_pendidikans'=> $tabel_pendidikans,'tabel_pendidikan_defaults'=> $tabel_pendidikan_defaults,'tabel_status_perkawinans'=> $tabel_status_perkawinans,'tabel_status_perkawinan_defaults'=> $tabel_status_perkawinan_defaults]);
+        $tabel_agamas= tabel_agama::where('id','!=',$data_penduduks[0]->Agama)->where('id','!=',0)->get();
+        $tabel_golongan_darahs= tabel_golongan_darah::where('id','!=',$data_penduduks[0]->Golongan_Darah)->where('id','!=',0)->get();
+        $tabel_jenis_pekerjaans= tabel_jenis_pekerjaan::where('id','!=',$data_penduduks[0]->Jenis_Pekerjaan)->where('id','!=',0)->get();
+        $tabel_kewarganegaraans= tabel_kewarganegaraan::where('id','!=',$data_penduduks[0]->Kewarganegaraan)->where('id','!=',0)->get();
+        $tabel_pendidikans= tabel_pendidikan::where('id','!=',$data_penduduks[0]->Pendidikan)->where('id','!=',0)->get();
+        $tabel_status_perkawinans= tabel_status_perkawinan::where('id','!=',$data_penduduks[0]->Status_Perkawinan)->where('id','!=',0)->get();
+        $tabel_jenis_kelamins= tabel_jenis_kelamin::where('id','!=',$data_penduduks[0]->Jenis_Kelamin)->where('id','!=',0)->get();
+        return view('adminCRUD/editdatapendudukkades',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults,'tabel_agamas'=> $tabel_agamas,'tabel_agama_defaults'=> $tabel_agama_defaults,'tabel_golongan_darahs'=> $tabel_golongan_darahs,'tabel_golongan_darah_defaults'=> $tabel_golongan_darah_defaults,'tabel_jenis_pekerjaans'=> $tabel_jenis_pekerjaans,'tabel_jenis_pekerjaan_defaults'=> $tabel_jenis_pekerjaan_defaults,'tabel_kewarganegaraans'=> $tabel_kewarganegaraans,'tabel_kewarganegaraan_defaults'=> $tabel_kewarganegaraan_defaults,'tabel_pendidikans'=> $tabel_pendidikans,'tabel_pendidikan_defaults'=> $tabel_pendidikan_defaults,'tabel_status_perkawinans'=> $tabel_status_perkawinans,'tabel_status_perkawinan_defaults'=> $tabel_status_perkawinan_defaults,'tabel_jenis_kelamins'=> $tabel_jenis_kelamins,'tabel_jenis_kelamin_defaults'=> $tabel_jenis_kelamin_defaults]);
         }else{
         
             return redirect('admin');
@@ -2203,7 +2206,7 @@ public function adddatapendudukkadus(Request $request)
             'No_Akta_Perceraian' => $request->No_Akta_Perceraian,
             'Tanggal_Perceraian' => $request->Tanggal_Perceraian,
             'Cacat' => $request->Cacat,
-            'Cara_KB' => $request->Cara_KB,
+            'Cara_KB' => $request->get('Cara_KB'),
             'Hamil' => $request->Hamil,
             'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
             'status_gizi_balita' => $request->get('status_gizi_balita'),
