@@ -2051,9 +2051,9 @@ public function adddatapendudukkadus(Request $request)
 
             
 
-           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+           data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
-            'Id_Dusun' => $request->$Id_Dusun[0]->id_dusun,
+            // 'Id_Dusun' => $request->$Id_Dusun[0]->id_dusun,
             'RW' => $request->RW,
             'RT' => $request->RT,
             'Nama' => $request->Nama,
@@ -2104,9 +2104,9 @@ public function adddatapendudukkadus(Request $request)
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
             
 
-           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+           data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
-            'Id_Dusun' => $request->$Id_Dusun[0]->id_dusun,
+            // 'Id_Dusun' => $request->$Id_Dusun[0]->id_dusun,
             'RW' => $request->RW,
             'RT' => $request->RT,
             'Nama' => $request->Nama,
@@ -2156,9 +2156,9 @@ public function adddatapendudukkadus(Request $request)
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
             
 
-           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+           data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
-            'Id_Dusun' => $request->$Id_Dusun[0]->id_dusun,
+            // 'Id_Dusun' => $request->$Id_Dusun[0]->id_dusun,
             'RW' => $request->RW,
             'RT' => $request->RT,
             'Nama' => $request->Nama,
@@ -2201,9 +2201,9 @@ public function adddatapendudukkadus(Request $request)
 
             }else{
                
-                data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+                data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
-            'Id_Dusun' => $request->$Id_Dusun[0]->id_dusun,
+            // 'Id_Dusun' => $request->$Id_Dusun[0]->id_dusun,
             'RW' => $request->RW,
             'RT' => $request->RT,
             'Nama' => $request->Nama,
@@ -2288,7 +2288,7 @@ public function adddatapendudukkadus(Request $request)
 
             
 
-           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+           data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
             'Id_Dusun' => $request->get('Id_Dusun'),
             'RW' => $request->RW,
@@ -2341,7 +2341,7 @@ public function adddatapendudukkadus(Request $request)
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
             
 
-           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+           data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
             'Id_Dusun' => $request->get('Id_Dusun'),
             'RW' => $request->RW,
@@ -2393,7 +2393,7 @@ public function adddatapendudukkadus(Request $request)
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
             
 
-           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+           data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
             'Id_Dusun' => $request->get('Id_Dusun'),
             'RW' => $request->RW,
@@ -2438,7 +2438,7 @@ public function adddatapendudukkadus(Request $request)
 
             }else{
                
-                data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+                data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
             'Id_Dusun' => $request->get('Id_Dusun'),
             'RW' => $request->RW,
@@ -2526,7 +2526,7 @@ public function adddatapendudukkadus(Request $request)
 
             
 
-           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+           data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
             'Id_Dusun' => $request->get('Id_Dusun'),
             'RW' => $request->RW,
@@ -2579,7 +2579,7 @@ public function adddatapendudukkadus(Request $request)
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
             
 
-           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+           data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
             'Id_Dusun' => $request->get('Id_Dusun'),
             'RW' => $request->RW,
@@ -2631,7 +2631,7 @@ public function adddatapendudukkadus(Request $request)
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
             
 
-           data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+           data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
             'Id_Dusun' => $request->get('Id_Dusun'),
             'RW' => $request->RW,
@@ -2676,7 +2676,7 @@ public function adddatapendudukkadus(Request $request)
 
             }else{
                
-                data_penduduk::where('NIK',$id)->where('Id_Dusun',$id2)->update([
+                data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
             'Id_Dusun' => $request->get('Id_Dusun'),
             'RW' => $request->RW,

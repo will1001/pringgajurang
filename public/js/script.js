@@ -138,7 +138,7 @@ function loadTabelDataPenduduk(data) {
         $('#Kewarganegaraan'+j+'').append(this.kewarganegaraan);
         $('#Nama_Ayah'+j+'').append(this.Nama_Ayah);
         $('#Nama_Ibu'+j+'').append(this.Nama_Ibu);
-        $('#Golongan_Darah'+j+'').append(this.golongan_Darah);
+        $('#Golongan_Darah'+j+'').append(this.golongan_darah);
         $('#Akta_Lahir'+j+'').append(this.Akta_Lahir);
         $('#No_Paspor'+j+'').append(this.No_Paspor);
         $('#Tanggal_akhir_Paspor'+j+'').append(this.Tanggal_akhir_Paspor);

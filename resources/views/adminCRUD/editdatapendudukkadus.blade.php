@@ -167,6 +167,8 @@
           Upload foto KTP : <br><br>
           <input type="file" name="foto_ktp" id="foto_ktp"><br><br>
           Upload foto KK : <br><br>
+          <input type="file" name="foto_kk" id="foto_kk">
+          <br><br>
           <input type="submit" value="Submit">
         </form>
         

@@ -192,8 +192,7 @@
                   <!-- <th colspan="5">Pendapatan Rill Keluarga</th>    -->
                   <th rowspan="2">Foto KTP</th>  
                   <th rowspan="2">Foto KK</th>   
-                  <th rowspan="2">edit</th> 
-                  <th rowspan="2">hapus</th> 
+                  <th rowspan="2">edit</th>  
         </tr>
       </thead>
       <tbody id="tbodytabel">
@@ -209,18 +208,19 @@
             <td>{{ $data_penduduk->Nama }}</td>
             <td>{{ $data_penduduk->Nomor_KK }}</td>
             <td>{{ $data_penduduk->NIK }}</td>
-            <td>{{ $data_penduduk->Jenis_Kelamin }}</td>
+            <td>{{ $data_penduduk->jenis_kelamin }}</td>
             <td>{{ $data_penduduk->Tempat_Lahir }}</td>
             <td>{{ $data_penduduk->Tanggal_Lahir }}</td>
-            <td>{{ $data_penduduk->Agama }}</td>
-            <td>{{ $data_penduduk->Pendidikan }}</td>
-            <td>{{ $data_penduduk->Jenis_Pekerjaan }}</td>
-            <td>{{ $data_penduduk->Status_Perkawinan }}</td>
-            <td>{{ $data_penduduk->Status_Hubungan_Dalam_Keluarga }}</td>
-            <td>{{ $data_penduduk->Kewarganegaraan }}</td>
+            <td>{{ $data_penduduk->Usia }}</td>
+            <td>{{ $data_penduduk->agama }}</td>
+            <td>{{ $data_penduduk->pendidikan }}</td>
+            <td>{{ $data_penduduk->jenis_pekerjaan }}</td>
+            <td>{{ $data_penduduk->status_perkawinan }}</td>
+            <td>{{ $data_penduduk->status_hubungan_dalam_keluarga }}</td>
+            <td>{{ $data_penduduk->kewarganegaraan }}</td>
             <td>{{ $data_penduduk->Nama_Ayah }}</td>
             <td>{{ $data_penduduk->Nama_Ibu }}</td>
-            <td>{{ $data_penduduk->Golongan_Darah }}</td>
+            <td>{{ $data_penduduk->golongan_darah }}</td>
             <td>{{ $data_penduduk->Akta_Lahir }}</td>
             <td>{{ $data_penduduk->No_Paspor }}</td>
             <td>{{ $data_penduduk->Tanggal_akhir_Paspor }}</td>
@@ -236,6 +236,25 @@
             <td>{{ $data_penduduk->Hamil }}</td>
             <td>{{ $data_penduduk->Status_kependudukan }}</td>
             <td>{{ $data_penduduk->Keterangan }}</td>
+            <td>{{ $data_penduduk->tempat_mendapatkan_air_bersih }}</td>
+            <td>{{ $data_penduduk->status_gizi_balita }}</td>
+            <td>{{ $data_penduduk->kebiasaan_berobat_bila_sakit }}</td>
+            @if($data_penduduk->foto_ktp==null && $data_penduduk->foto_kk==null )
+            <td ><a href="{{$data_penduduk->foto_ktp}}"></a></td>        
+            <td ><a href="{{$data_penduduk->foto_kk}}"></a></td>
+            @endif
+            @if($data_penduduk->foto_ktp==null && $data_penduduk->foto_kk!=null)
+            <td ><a href="{{$data_penduduk->foto_ktp}}"></a></td>        
+            <td ><a href="{{$data_penduduk->foto_kk}}">lihat</a></td>
+            @endif
+            @if($data_penduduk->foto_ktp!=null && $data_penduduk->foto_kk==null)
+            <td ><a href="{{$data_penduduk->foto_ktp}}">lihat</a></td>        
+            <td ><a href="{{$data_penduduk->foto_kk}}"></a></td>
+            @endif
+            @if($data_penduduk->foto_ktp!=null && $data_penduduk->foto_kk!=null)
+            <td ><a href="{{$data_penduduk->foto_ktp}}">lihat</a></td>        
+            <td ><a href="{{$data_penduduk->foto_kk}}">lihat</a></td>
+            @endif      
             <td><a href="formeditdatapendudukkadus/{{ $data_penduduk->NIK }}">edit</a></td>
           </tr>
         @endforeach
