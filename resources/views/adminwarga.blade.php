@@ -254,7 +254,7 @@
             <td ><a href="{{$data_penduduk->foto_ktp}}">lihat</a></td>        
             <td ><a href="{{$data_penduduk->foto_kk}}">lihat</a></td>
             @endif      
-            <td><a href="formeditdatapendudukkadus/{{ $data_penduduk->NIK }}">edit</a></td>
+            <td><a href="formeditdatapendudukwarga/{{ $data_penduduk->NIK }}/{{ $data_penduduk->Id_Dusun }}">edit</a></td>
           </tr>
         @endforeach
       </tbody>
