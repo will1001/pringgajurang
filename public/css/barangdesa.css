@@ -16,7 +16,8 @@ a{
 
 #barang-desa img{
     width: 100%;
-    height: 100px;
+    height: auto;
+    margin-bottom: 15px;
 }
 
 
@@ -38,3 +39,7 @@ margin: 27px 0px;
     margin: 10px 10px;
 }
 
+
+footer{
+    margin-top: 154px;
+}
