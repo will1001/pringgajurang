@@ -7,6 +7,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
+      @if ($errors->any())
+        <h3 class="text-center text-danger">{{ implode('', $errors->all(':message')) }}</h3>
+        @endif
      <form action="{{ url('editdatapendudukwarga/' .  $data_penduduks[0]->NIK .'/'.$data_penduduks[0]->Id_Dusun ) }}" method="post" enctype="multipart/form-data" style="padding-top: 100px;">
           {{ csrf_field() }}
           Alamat :<br>
@@ -69,10 +72,10 @@
           </select><br><br>
           Status Hubungan Dalam Keluarga :<br>
           <select name="Status_Hubungan_Dalam_Keluarga">
-               <option selected="true" disabled="disabled">Status Hubungan Dalam Keluarga</option>                 
-               <option value="Kepala Keluarga">Kepala Keluarga</option>
-               <option value="Istri">Istri</option>
-               <option value="Anak">Anak</option>
+               <option selected="true" value="{{ $tabel_status_hubungan_dalam_keluarga_defaults[0]->id }}">{{ $tabel_status_hubungan_dalam_keluarga_defaults[0]->status_hubungan_dalam_keluarga }}</option>
+               @foreach ($tabel_status_hubungan_dalam_keluargas as $tabel_status_hubungan_dalam_keluarga)
+                    <option value="{{ $tabel_status_hubungan_dalam_keluarga->id }}">{{ $tabel_status_hubungan_dalam_keluarga->status_hubungan_dalam_keluarga }}</option>
+                 @endforeach
           </select><br><br>
           Kewarganegaraan :<br>
           <select name="Kewarganegaraan">
@@ -168,9 +171,7 @@
           
           <input type="submit" value="Submit">
         </form>
-        @if ($errors->any())
-        <h3 class="text-center text-danger">{{ implode('', $errors->all(':message')) }}</h3>
-        @endif
+        
     </div>
   </div>
 </div>

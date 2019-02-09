@@ -148,52 +148,53 @@
         <col width="1000px">
         <col width="1000px">
         <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-      
         <tr>
-                  <th>No</th>
-                  <th>Alamat</th>
-                  <th>RW</th>
-                  <th>RT</th>
-                  <th id="nama_tombol">Nama</th>
-                  <th>Nomor KK</th>
-                  <th>Nomor NIK</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Tempat Lahir</th>
-                  <th>Tanggal Lahir</th>
-                  <th>Agama</th>
-                  <th>Pendidikan</th>
-                  <th>Jenis Pekerjaan</th> 
-                  <th>Status Perkawinan</th> 
-                  <th>Status Hubungan Dalam Keluarga</th> 
-                  <th>Kewarganegaraan</th> 
-                  <th>Nama Ayah</th> 
-                  <th>Nama Ibu</th> 
-                  <th>Golongan Darah</th> 
-                  <th>Akta Lahir</th> 
-                  <th>Nomor Dokumen Paspor</th>
-                  <th>Tanggal Akhir Paspor</th>  
-                  <th>Nomor Dokumen KITAS</th>             
-                  <th>NIK Ayah</th> 
-                  <th>NIK Ibu</th> 
-                  <th>No Akta Perkawinan</th> 
-                  <th>Tanggal Perkawinan</th> 
-                  <th>No Akta Perceraian</th> 
-                  <th>Tanggal Perceraian</th> 
-                  <th>Cacat</th> 
-                  <th>Cara KB</th> 
-                  <th>Hamil</th> 
-                  <th>Status kependudukan</th> 
-                  <th>Keterangan</th>
-                  <th>Usia</th>  
-                  <th>Tempat Mendapatkan Air Bersih</th>  
-                  <th>Status Gizi Balita</th>  
-                  <th>Kebiasaan Berobat Bila Sakit</th>       
-                  <th>edit</th> 
+                  <th rowspan="2">No</th>
+                  <th rowspan="2">Alamat</th>
+                  <th rowspan="2">RW</th>
+                  <th rowspan="2">RT</th>
+                  <th rowspan="2">Nama</th>
+                  <th rowspan="2">Nomor KK</th>
+                  <th rowspan="2">Nomor NIK</th>
+                  <th rowspan="2">Jenis Kelamin</th>
+                  <th rowspan="2">Tempat Lahir</th>
+                  <th rowspan="2">Tanggal Lahir</th>
+                  <th rowspan="2">Usia</th>
+                  <th rowspan="2">Agama</th>
+                  <th rowspan="2">Pendidikan</th>
+                  <th rowspan="2">Jenis Pekerjaan</th> 
+                  <th rowspan="2">Status Perkawinan</th> 
+                  <th rowspan="2">Status Hubungan Dalam Keluarga</th> 
+                  <th rowspan="2">Kewarganegaraan</th> 
+                  <th rowspan="2">Nama Ayah</th> 
+                  <th rowspan="2">Nama Ibu</th> 
+                  <th rowspan="2">Golongan Darah</th> 
+                  <th rowspan="2">Akta Lahir</th> 
+                  <th rowspan="2">Nomor Dokumen Paspor</th>
+                  <th rowspan="2">Tanggal Akhir Paspor</th>  
+                  <th rowspan="2">Nomor Dokumen KITAS</th>             
+                  <th rowspan="2">NIK Ayah</th> 
+                  <th rowspan="2">NIK Ibu</th> 
+                  <th rowspan="2">No Akta Perkawinan</th> 
+                  <th rowspan="2">Tanggal Perkawinan</th> 
+                  <th rowspan="2">No Akta Perceraian</th> 
+                  <th rowspan="2">Tanggal Perceraian</th> 
+                  <th rowspan="2">Cacat</th> 
+                  <th rowspan="2">Cara KB</th> 
+                  <th rowspan="2">Hamil</th> 
+                  <th rowspan="2">Status kependudukan</th> 
+                  <th rowspan="2">Keterangan</th>  
+                  <th rowspan="2">Tempat Mendapatkan Air Bersih</th>  
+                  <th rowspan="2">Status Gizi Balita</th>  
+                  <th rowspan="2">Kebiasaan Berobat Bila Sakit</th>   
+                  <!-- <th colspan="5">Pendapatan Perkapita</th>    -->
+                  <!-- <th colspan="5">Pendapatan Rill Keluarga</th>    -->
+                  <th rowspan="2">Foto KTP</th>  
+                  <th rowspan="2">Foto KK</th>   
+                  <th rowspan="2">edit</th>  
         </tr>
       </thead>
-       <tbody id="tbodytabel">
+      <tbody id="tbodytabel">
         @php
         $no=1
         @endphp
@@ -206,18 +207,19 @@
             <td>{{ $data_penduduk->Nama }}</td>
             <td>{{ $data_penduduk->Nomor_KK }}</td>
             <td>{{ $data_penduduk->NIK }}</td>
-            <td>{{ $data_penduduk->Jenis_Kelamin }}</td>
+            <td>{{ $data_penduduk->jenis_kelamin }}</td>
             <td>{{ $data_penduduk->Tempat_Lahir }}</td>
             <td>{{ $data_penduduk->Tanggal_Lahir }}</td>
-            <td>{{ $data_penduduk->Agama }}</td>
-            <td>{{ $data_penduduk->Pendidikan }}</td>
-            <td>{{ $data_penduduk->Jenis_Pekerjaan }}</td>
-            <td>{{ $data_penduduk->Status_Perkawinan }}</td>
-            <td>{{ $data_penduduk->Status_Hubungan_Dalam_Keluarga }}</td>
-            <td>{{ $data_penduduk->Kewarganegaraan }}</td>
+            <td>{{ $data_penduduk->Usia }}</td>
+            <td>{{ $data_penduduk->agama }}</td>
+            <td>{{ $data_penduduk->pendidikan }}</td>
+            <td>{{ $data_penduduk->jenis_pekerjaan }}</td>
+            <td>{{ $data_penduduk->status_perkawinan }}</td>
+            <td>{{ $data_penduduk->status_hubungan_dalam_keluarga }}</td>
+            <td>{{ $data_penduduk->kewarganegaraan }}</td>
             <td>{{ $data_penduduk->Nama_Ayah }}</td>
             <td>{{ $data_penduduk->Nama_Ibu }}</td>
-            <td>{{ $data_penduduk->Golongan_Darah }}</td>
+            <td>{{ $data_penduduk->golongan_darah }}</td>
             <td>{{ $data_penduduk->Akta_Lahir }}</td>
             <td>{{ $data_penduduk->No_Paspor }}</td>
             <td>{{ $data_penduduk->Tanggal_akhir_Paspor }}</td>
@@ -233,12 +235,26 @@
             <td>{{ $data_penduduk->Hamil }}</td>
             <td>{{ $data_penduduk->Status_kependudukan }}</td>
             <td>{{ $data_penduduk->Keterangan }}</td>
-            <td>{{ $data_penduduk->Usia }}</td>
             <td>{{ $data_penduduk->tempat_mendapatkan_air_bersih }}</td>
             <td>{{ $data_penduduk->status_gizi_balita }}</td>
             <td>{{ $data_penduduk->kebiasaan_berobat_bila_sakit }}</td>
-            
-            <td><a href="formeditdatapendudukwarga/{{ $data_penduduk->NIK }}/{{ $kode_area_dusuns[0]->id_dusun }}">edit</a></td>
+            @if($data_penduduk->foto_ktp==null && $data_penduduk->foto_kk==null )
+            <td ><a href="{{$data_penduduk->foto_ktp}}"></a></td>        
+            <td ><a href="{{$data_penduduk->foto_kk}}"></a></td>
+            @endif
+            @if($data_penduduk->foto_ktp==null && $data_penduduk->foto_kk!=null)
+            <td ><a href="{{$data_penduduk->foto_ktp}}"></a></td>        
+            <td ><a href="{{$data_penduduk->foto_kk}}">lihat</a></td>
+            @endif
+            @if($data_penduduk->foto_ktp!=null && $data_penduduk->foto_kk==null)
+            <td ><a href="{{$data_penduduk->foto_ktp}}">lihat</a></td>        
+            <td ><a href="{{$data_penduduk->foto_kk}}"></a></td>
+            @endif
+            @if($data_penduduk->foto_ktp!=null && $data_penduduk->foto_kk!=null)
+            <td ><a href="{{$data_penduduk->foto_ktp}}">lihat</a></td>        
+            <td ><a href="{{$data_penduduk->foto_kk}}">lihat</a></td>
+            @endif      
+            <td><a href="formeditdatapendudukkadus/{{ $data_penduduk->NIK }}">edit</a></td>
           </tr>
         @endforeach
       </tbody>

@@ -1549,6 +1549,7 @@ public function addSOTK(Request $request)
         $tabel_pendidikan_defaults=tabel_pendidikan::where('id',$data_penduduks[0]->Pendidikan)->get();
         $tabel_status_perkawinan_defaults=tabel_status_perkawinan::where('id',$data_penduduks[0]->Status_Perkawinan)->get();
         $tabel_jenis_kelamin_defaults=tabel_jenis_kelamin::where('id',$data_penduduks[0]->Jenis_Kelamin)->get();
+        $tabel_status_hubungan_dalam_keluarga_defaults=tabel_status_hubungan_dalam_keluarga::where('id',$data_penduduks[0]->Status_Hubungan_Dalam_Keluarga)->get();
         $kode_area_dusuns=kode_area_dusun::where('Id_Dusun','!=',$id2)->get();
         $tabel_agamas= tabel_agama::where('id','!=',$data_penduduks[0]->Agama)->where('id','!=',0)->get();
         $tabel_golongan_darahs= tabel_golongan_darah::where('id','!=',$data_penduduks[0]->Golongan_Darah)->where('id','!=',0)->get();
@@ -1557,7 +1558,8 @@ public function addSOTK(Request $request)
         $tabel_pendidikans= tabel_pendidikan::where('id','!=',$data_penduduks[0]->Pendidikan)->where('id','!=',0)->get();
         $tabel_status_perkawinans= tabel_status_perkawinan::where('id','!=',$data_penduduks[0]->Status_Perkawinan)->where('id','!=',0)->get();
         $tabel_jenis_kelamins= tabel_jenis_kelamin::where('id','!=',$data_penduduks[0]->Jenis_Kelamin)->where('id','!=',0)->get();
-        return view('adminCRUD/editdatapendudukkades',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults,'tabel_agamas'=> $tabel_agamas,'tabel_agama_defaults'=> $tabel_agama_defaults,'tabel_golongan_darahs'=> $tabel_golongan_darahs,'tabel_golongan_darah_defaults'=> $tabel_golongan_darah_defaults,'tabel_jenis_pekerjaans'=> $tabel_jenis_pekerjaans,'tabel_jenis_pekerjaan_defaults'=> $tabel_jenis_pekerjaan_defaults,'tabel_kewarganegaraans'=> $tabel_kewarganegaraans,'tabel_kewarganegaraan_defaults'=> $tabel_kewarganegaraan_defaults,'tabel_pendidikans'=> $tabel_pendidikans,'tabel_pendidikan_defaults'=> $tabel_pendidikan_defaults,'tabel_status_perkawinans'=> $tabel_status_perkawinans,'tabel_status_perkawinan_defaults'=> $tabel_status_perkawinan_defaults,'tabel_jenis_kelamins'=> $tabel_jenis_kelamins,'tabel_jenis_kelamin_defaults'=> $tabel_jenis_kelamin_defaults]);
+        $tabel_status_hubungan_dalam_keluargas= tabel_status_hubungan_dalam_keluarga::where('id','!=',$data_penduduks[0]->status_hubungan_dalam_keluarga)->where('id','!=',0)->get();
+        return view('adminCRUD/editdatapendudukkades',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults,'tabel_agamas'=> $tabel_agamas,'tabel_agama_defaults'=> $tabel_agama_defaults,'tabel_golongan_darahs'=> $tabel_golongan_darahs,'tabel_golongan_darah_defaults'=> $tabel_golongan_darah_defaults,'tabel_jenis_pekerjaans'=> $tabel_jenis_pekerjaans,'tabel_jenis_pekerjaan_defaults'=> $tabel_jenis_pekerjaan_defaults,'tabel_kewarganegaraans'=> $tabel_kewarganegaraans,'tabel_kewarganegaraan_defaults'=> $tabel_kewarganegaraan_defaults,'tabel_pendidikans'=> $tabel_pendidikans,'tabel_pendidikan_defaults'=> $tabel_pendidikan_defaults,'tabel_status_perkawinans'=> $tabel_status_perkawinans,'tabel_status_perkawinan_defaults'=> $tabel_status_perkawinan_defaults,'tabel_jenis_kelamins'=> $tabel_jenis_kelamins,'tabel_jenis_kelamin_defaults'=> $tabel_jenis_kelamin_defaults,'tabel_status_hubungan_dalam_keluargas'=> $tabel_status_hubungan_dalam_keluargas,'tabel_status_hubungan_dalam_keluarga_defaults'=> $tabel_status_hubungan_dalam_keluarga_defaults]);
         }else{
         
             return redirect('admin');
@@ -1571,8 +1573,24 @@ public function addSOTK(Request $request)
         if(Auth::user()->roles == "member"){
         $data_penduduks=data_penduduk::where('Id_Dusun',$id2)->where('NIK',$id)->get();
         $kode_area_dusun_defaults=kode_area_dusun::where('Id_Dusun',$id2)->get();
+        $tabel_agama_defaults=tabel_agama::where('id',$data_penduduks[0]->Agama)->get();
+        $tabel_golongan_darah_defaults=tabel_golongan_darah::where('id',$data_penduduks[0]->Golongan_Darah)->get();
+        $tabel_jenis_pekerjaan_defaults=tabel_jenis_pekerjaan::where('id',$data_penduduks[0]->Jenis_Pekerjaan)->get();
+        $tabel_kewarganegaraan_defaults=tabel_kewarganegaraan::where('id',$data_penduduks[0]->Kewarganegaraan)->get();
+        $tabel_pendidikan_defaults=tabel_pendidikan::where('id',$data_penduduks[0]->Pendidikan)->get();
+        $tabel_status_perkawinan_defaults=tabel_status_perkawinan::where('id',$data_penduduks[0]->Status_Perkawinan)->get();
+        $tabel_jenis_kelamin_defaults=tabel_jenis_kelamin::where('id',$data_penduduks[0]->Jenis_Kelamin)->get();
+        $tabel_status_hubungan_dalam_keluarga_defaults=tabel_status_hubungan_dalam_keluarga::where('id',$data_penduduks[0]->Status_Hubungan_Dalam_Keluarga)->get();
         $kode_area_dusuns=kode_area_dusun::where('Id_Dusun','!=',$id2)->get();
-        return view('adminCRUD/editdatapendudukwarga',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults]);
+        $tabel_agamas= tabel_agama::where('id','!=',$data_penduduks[0]->Agama)->where('id','!=',0)->get();
+        $tabel_golongan_darahs= tabel_golongan_darah::where('id','!=',$data_penduduks[0]->Golongan_Darah)->where('id','!=',0)->get();
+        $tabel_jenis_pekerjaans= tabel_jenis_pekerjaan::where('id','!=',$data_penduduks[0]->Jenis_Pekerjaan)->where('id','!=',0)->get();
+        $tabel_kewarganegaraans= tabel_kewarganegaraan::where('id','!=',$data_penduduks[0]->Kewarganegaraan)->where('id','!=',0)->get();
+        $tabel_pendidikans= tabel_pendidikan::where('id','!=',$data_penduduks[0]->Pendidikan)->where('id','!=',0)->get();
+        $tabel_status_perkawinans= tabel_status_perkawinan::where('id','!=',$data_penduduks[0]->Status_Perkawinan)->where('id','!=',0)->get();
+        $tabel_jenis_kelamins= tabel_jenis_kelamin::where('id','!=',$data_penduduks[0]->Jenis_Kelamin)->where('id','!=',0)->get();
+        $tabel_status_hubungan_dalam_keluargas= tabel_status_hubungan_dalam_keluarga::where('id','!=',$data_penduduks[0]->status_hubungan_dalam_keluarga)->where('id','!=',0)->get();
+        return view('adminCRUD/editdatapendudukwarga',['data_penduduks' => $data_penduduks,'kode_area_dusuns'=> $kode_area_dusuns,'kode_area_dusun_defaults'=> $kode_area_dusun_defaults,'tabel_agamas'=> $tabel_agamas,'tabel_agama_defaults'=> $tabel_agama_defaults,'tabel_golongan_darahs'=> $tabel_golongan_darahs,'tabel_golongan_darah_defaults'=> $tabel_golongan_darah_defaults,'tabel_jenis_pekerjaans'=> $tabel_jenis_pekerjaans,'tabel_jenis_pekerjaan_defaults'=> $tabel_jenis_pekerjaan_defaults,'tabel_kewarganegaraans'=> $tabel_kewarganegaraans,'tabel_kewarganegaraan_defaults'=> $tabel_kewarganegaraan_defaults,'tabel_pendidikans'=> $tabel_pendidikans,'tabel_pendidikan_defaults'=> $tabel_pendidikan_defaults,'tabel_status_perkawinans'=> $tabel_status_perkawinans,'tabel_status_perkawinan_defaults'=> $tabel_status_perkawinan_defaults,'tabel_jenis_kelamins'=> $tabel_jenis_kelamins,'tabel_jenis_kelamin_defaults'=> $tabel_jenis_kelamin_defaults,'tabel_status_hubungan_dalam_keluargas'=> $tabel_status_hubungan_dalam_keluargas,'tabel_status_hubungan_dalam_keluarga_defaults'=> $tabel_status_hubungan_dalam_keluarga_defaults]);
         }else{
         
             return redirect('admin');
