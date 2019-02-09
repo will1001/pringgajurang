@@ -5,6 +5,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
+      @if ($errors->any())
+        <h3 class="text-center text-danger">{{ implode('', $errors->all(':message')) }}</h3>
+        @endif
      <form action="{{url('adddatapendudukkades')}}" method="post" enctype="multipart/form-data" style="padding-top: 100px;">
           {{ csrf_field() }}
           Alamat :<br>
@@ -28,7 +31,7 @@
           <input type="text" name="NIK" placeholder="NIK"><br><br>
           Jenis Kelamin :<br>
           <select name="jenis_kelamin">
-               <option selected="true" disabled="disabled">Jenis Kelamin</option>                 
+               <option value="0" selected="true" disabled="disabled">Jenis Kelamin</option>                 
                @foreach ($tabel_jenis_kelamins as $tabel_jenis_kelamin)
                     <option value="{{ $tabel_jenis_kelamin->id }}">{{ $tabel_jenis_kelamin->jenis_kelamin }}</option>
                  @endforeach
@@ -39,42 +42,42 @@
            <input type="date" id="formattanggal" name="Tanggal_Lahir" placeholder="Tanggal Lahir"><br><br>
           Agama :<br>
           <select name="Agama">
-            <option selected="true" disabled="disabled">Agama</option>                 
+            <option value="0" selected="true" disabled="disabled">Agama</option>                 
                @foreach ($tabel_agamas as $tabel_agama)
                     <option value="{{ $tabel_agama->id }}">{{ $tabel_agama->agama }}</option>
                  @endforeach
           </select><br><br>
           Pendidikan :<br>
           <select name="Pendidikan">
-            <option selected="true" disabled="disabled">Pendidikan</option>                 
+            <option value="0" selected="true" disabled="disabled">Pendidikan</option>                 
                @foreach ($tabel_pendidikans as $tabel_pendidikan)
                     <option value="{{ $tabel_pendidikan->id }}">{{ $tabel_pendidikan->pendidikan }}</option>
                  @endforeach
           </select><br><br>
           Jenis Pekerjaan :<br>
           <select name="Jenis_Pekerjaan">
-            <option selected="true" disabled="disabled">Jenis Pekerjaan</option>                 
+            <option value="0" selected="true" disabled="disabled">Jenis Pekerjaan</option>                 
                @foreach ($tabel_jenis_pekerjaans as $tabel_jenis_pekerjaan)
                     <option value="{{ $tabel_jenis_pekerjaan->id }}">{{ $tabel_jenis_pekerjaan->jenis_pekerjaan }}</option>
                  @endforeach
           </select><br><br>
           Status Perkawinan :<br>
           <select name="Status_Perkawinan">
-            <option selected="true" disabled="disabled">Status Perkawinan</option>                 
+            <option value="0" selected="true" disabled="disabled">Status Perkawinan</option>                 
                @foreach ($tabel_status_perkawinans as $tabel_status_perkawinan)
                     <option value="{{ $tabel_status_perkawinan->id }}">{{ $tabel_status_perkawinan->status_perkawinan }}</option>
                  @endforeach
           </select><br><br>
-          Status Hubungan Dalam Keluarga :<br>
-          <option selected="true" disabled="disabled">Status Hubungan Dalam Keluarga</option>                 
+          Status Hubungan Dalam Keluarga :<br>                 
           <select name="Status_Hubungan_Dalam_Keluarga">
+            <option selected="true" disabled="disabled">Status Hubungan Dalam Keluarga</option>
                <option value="Kepala Keluarga">Kepala Keluarga</option>
                <option value="Istri">Istri</option>
                <option value="Anak">Anak</option>
           </select><br><br>
           Kewarganegaraan :<br>
           <select name="Kewarganegaraan">
-            <option selected="true" disabled="disabled">Kewarganegaraan</option>
+            <option value="0" selected="true" disabled="disabled">Kewarganegaraan</option>
                 @foreach ($tabel_kewarganegaraans as $tabel_kewarganegaraan)
                     <option value="{{ $tabel_kewarganegaraan->id }}">{{ $tabel_kewarganegaraan->kewarganegaraan }}</option>
                  @endforeach
@@ -85,7 +88,7 @@
           <input type="text" name="Nama_Ibu" placeholder="Nama Ibu"><br><br>
           Golongan darah :<br>
           <select name="Golongan_Darah">
-            <option selected="true" disabled="disabled">Golongan Darah</option>                 
+            <option value="0" selected="true" disabled="disabled">Golongan Darah</option>                 
                 @foreach ($tabel_golongan_darahs as $tabel_golongan_darah)
                     <option value="{{ $tabel_golongan_darah->id }}">{{ $tabel_golongan_darah->golongan_darah }}</option>
                  @endforeach
@@ -114,21 +117,22 @@
           <input type="text" name="Cacat" placeholder="Cacat"><br><br>
           Cara KB :<br>
           <select name="Cara_KB">
-              <option value="PAM">Pil</option>
-              <option value="PAM">IUD</option>
-              <option value="PAM">Suntik</option>
-              <option value="PAM">Kondom</option>
-              <option value="PAM">Susuk KB</option>
-              <option value="PAM">Sterilisasi Wanita</option>
-              <option value="PAM">Sterilisasi Pria</option>
+               <option selected="true" disabled="disabled">Cara KB</option>                 
+              <option value="Pil">Pil</option>
+              <option value="IUD">IUD</option>
+              <option value="Suntik">Suntik</option>
+              <option value="Kondom">Kondom</option>
+              <option value="Susuk KB">Susuk KB</option>
+              <option value="Sterilisasi Wanita">Sterilisasi Wanita</option>
+              <option value="Sterilisasi Pria">Sterilisasi Pria</option>
                </select><br><br>
           Hamil :<br>
           <input type="text" name="Hamil" placeholder="Hamil"><br><br>
           Tempat Mendapaykan Air Bersih :<br>
           <select name="tempat_mendapatkan_air_bersih">
-               <option selected="true" disabled="disabled">Tempat Mendapaykan Air Bersih</option>                 
+               <option selected="true" disabled="disabled">Tempat Mendapatkan Air Bersih</option>                 
                <option value="PAM">PAM</option>
-               <option value="Aumur Gali">Aumur Gali</option>
+               <option value="Sumur Gali">Sumur Gali</option>
                <option value="Penampungan air hujan">Penampungan air hujan</option>
                <option value="Air sungai">Air sungai</option>
                <option value="Embung">Embung</option>
@@ -163,9 +167,7 @@
 
           <input type="submit" value="Submit">
         </form>
-        @if ($errors->any())
-        <h3 class="text-center text-danger">{{ implode('', $errors->all(':message')) }}</h3>
-        @endif
+        
     </div>
   </div>
 </div>

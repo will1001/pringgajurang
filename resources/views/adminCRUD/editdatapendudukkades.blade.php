@@ -7,6 +7,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
+      @if ($errors->any())
+        <h3 class="text-center text-danger">{{ implode('', $errors->all(':message')) }}</h3>
+        @endif
      <form action="{{ url('editdatapendudukkades/' .  $data_penduduks[0]->NIK .'/'.$data_penduduks[0]->Id_Dusun ) }}" method="post" enctype="multipart/form-data" style="padding-top: 100px;">
           {{ csrf_field() }}
           Alamat :<br>
@@ -117,21 +120,21 @@
           Cara KB :<br>     
           <select name="Cara_KB">
             <option selected="true" value="{{$data_penduduks[0]->Cara_KB}}">{{$data_penduduks[0]->Cara_KB}}</option>
-              <option value="PAM">Pil</option>
-              <option value="PAM">IUD</option>
-              <option value="PAM">Suntik</option>
-              <option value="PAM">Kondom</option>
-              <option value="PAM">Susuk KB</option>
-              <option value="PAM">Sterilisasi Wanita</option>
-              <option value="PAM">Sterilisasi Pria</option>
+              <option value="Pil">Pil</option>
+              <option value="IUD">IUD</option>
+              <option value="Suntik">Suntik</option>
+              <option value="Kondom">Kondom</option>
+              <option value="Susuk KB">Susuk KB</option>
+              <option value="Sterilisasi Wanita">Sterilisasi Wanita</option>
+              <option value="Sterilisasi Pria">Sterilisasi Pria</option>
                </select><br><br>
           Hamil :<br>
           <input type="text" name="Hamil" value="{{$data_penduduks[0]->Hamil}}"><br><br>
-          Tempat Mendapaykan Air Bersih :<br>
+          Tempat Mendapatkan Air Bersih :<br>
           <select name="tempat_mendapatkan_air_bersih">
                <option selected="true" value="{{$data_penduduks[0]->tempat_mendapatkan_air_bersih}}">{{$data_penduduks[0]->tempat_mendapatkan_air_bersih}}</option>                 
                <option value="PAM">PAM</option>
-               <option value="Aumur Gali">Aumur Gali</option>
+               <option value="Sumur Gali">Sumur Gali</option>
                <option value="Penampungan air hujan">Penampungan air hujan</option>
                <option value="Air sungai">Air sungai</option>
                <option value="Embung">Embung</option>
@@ -169,9 +172,7 @@
           
           <input type="submit" value="Submit">
         </form>
-        @if ($errors->any())
-        <h3 class="text-center text-danger">{{ implode('', $errors->all(':message')) }}</h3>
-        @endif
+        
     </div>
   </div>
 </div>
