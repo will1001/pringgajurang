@@ -351,7 +351,8 @@
     @media only screen and (min-width: 320px) and (max-width: 479px) {
     
     html{
-        background-image: url("/images/bg.jpg");
+        background-image: url("/images/bg2.jpg");
+        background-attachment: fixed;
         font-size: 13px;
         width: 100%;
     }
@@ -499,14 +500,15 @@
     }
 
     .pasaronlineslideshow img.card-img-top {
-    margin: 0px 0px;
+    margin: 5px 16px;
     width: 102px;
     height: 90px;
     }
 
     .pasaronlineslideshow .card{
-        margin: 4px -5px;
-        width: 103px;
+        margin: 4px 0px;
+    width: 136px;
+    height: 188px;
     }
 
     .pasaronlineslideshow .carousel-control-next {
@@ -522,17 +524,22 @@
 
     h5.card-title {
     font-size: 11px;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     }
 
     #kotak1 h3{
      font-size: 19px
+     
     }
 
     #kotak1 p{
     margin: 0px 0px;
     font-size: 12px;
     }
+
+    .kotak1halamanbisnis {
+      padding: 5px 5px;
+     }
 
 
 }
