@@ -134,7 +134,7 @@ function loadTabelDataPenduduk(data) {
         $('#Pendidikan'+j+'').append(this.pendidikan);
         $('#Jenis_Pekerjaan'+j+'').append(this.jenis_pekerjaan);
         $('#Status_Perkawinan'+j+'').append(this.status_perkawinan);
-        $('#Status_Hubungan_Dalam_Keluarga'+j+'').append(this.Status_Hubungan_Dalam_Keluarga);
+        $('#Status_Hubungan_Dalam_Keluarga'+j+'').append(this.status_hubungan_dalam_keluarga);
         $('#Kewarganegaraan'+j+'').append(this.kewarganegaraan);
         $('#Nama_Ayah'+j+'').append(this.Nama_Ayah);
         $('#Nama_Ibu'+j+'').append(this.Nama_Ibu);

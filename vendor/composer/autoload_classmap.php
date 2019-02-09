@@ -64,6 +64,7 @@ return array(
     'App\\statpendidikanpend' => $baseDir . '/app/statpendidikanpend.php',
     'App\\tabel_agama' => $baseDir . '/app/tabel_agama.php',
     'App\\tabel_golongan_darah' => $baseDir . '/app/tabel_golongan_darah.php',
+    'App\\tabel_jenis_kelamin' => $baseDir . '/app/tabel_jenis_kelamin.php',
     'App\\tabel_jenis_pekerjaan' => $baseDir . '/app/tabel_jenis_pekerjaan.php',
     'App\\tabel_kewarganegaraan' => $baseDir . '/app/tabel_kewarganegaraan.php',
     'App\\tabel_pendidikan' => $baseDir . '/app/tabel_pendidikan.php',

@@ -416,6 +416,7 @@ class ComposerStaticInit4e84650865bdc67c8574f2cebcef2828
         'App\\statpendidikanpend' => __DIR__ . '/../..' . '/app/statpendidikanpend.php',
         'App\\tabel_agama' => __DIR__ . '/../..' . '/app/tabel_agama.php',
         'App\\tabel_golongan_darah' => __DIR__ . '/../..' . '/app/tabel_golongan_darah.php',
+        'App\\tabel_jenis_kelamin' => __DIR__ . '/../..' . '/app/tabel_jenis_kelamin.php',
         'App\\tabel_jenis_pekerjaan' => __DIR__ . '/../..' . '/app/tabel_jenis_pekerjaan.php',
         'App\\tabel_kewarganegaraan' => __DIR__ . '/../..' . '/app/tabel_kewarganegaraan.php',
         'App\\tabel_pendidikan' => __DIR__ . '/../..' . '/app/tabel_pendidikan.php',

@@ -70,10 +70,10 @@
           </select><br><br>
           Status Hubungan Dalam Keluarga :<br>                 
           <select name="Status_Hubungan_Dalam_Keluarga">
-            <option selected="true" disabled="disabled">Status Hubungan Dalam Keluarga</option>
-               <option value="Kepala Keluarga">Kepala Keluarga</option>
-               <option value="Istri">Istri</option>
-               <option value="Anak">Anak</option>
+            <option value="0" selected="true" disabled="disabled">Status Hubungan Dalam Keluarga</option>
+               @foreach ($tabel_status_hubungan_dalam_keluargas as $tabel_status_hubungan_dalam_keluarga)
+                    <option value="{{ $tabel_status_hubungan_dalam_keluarga->id }}">{{ $tabel_status_hubungan_dalam_keluarga->status_hubungan_dalam_keluarga }}</option>
+                 @endforeach
           </select><br><br>
           Kewarganegaraan :<br>
           <select name="Kewarganegaraan">
