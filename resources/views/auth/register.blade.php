@@ -94,7 +94,9 @@
                         </div>
                     </form>
                 </div>
-                <p class="text-center text-danger">{{ session('pesan') }}</p>
+                @if ($errors->any())
+        <h3 class="text-center text-danger">{{ implode('', $errors->all(':message')) }}</h3>
+        @endif
             </div>
         </div>
     </div>
