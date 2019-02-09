@@ -146,42 +146,54 @@
         <col width="1000px">
         <col width="1000px">
         <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
         <tr>
-                  <th>No</th>
-                  <th>Alamat</th>
-                  <th>RW</th>
-                  <th>RT</th>
-                  <th>Nama</th>
-                  <th>Nomor KK</th>
-                  <th>Nomor NIK</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Tempat Lahir</th>
-                  <th>Tanggal Lahir</th>
-                  <th>Agama</th>
-                  <th>Pendidikan</th>
-                  <th>Jenis Pekerjaan</th> 
-                  <th>Status Perkawinan</th> 
-                  <th>Status Hubungan Dalam Keluarga</th> 
-                  <th>Kewarganegaraan</th> 
-                  <th>Nama Ayah</th> 
-                  <th>Nama Ibu</th> 
-                  <th>Golongan Darah</th> 
-                  <th>Akta Lahir</th> 
-                  <th>Nomor Dokumen Paspor</th>
-                  <th>Tanggal Akhir Paspor</th>  
-                  <th>Nomor Dokumen KITAS</th>             
-                  <th>NIK Ayah</th> 
-                  <th>NIK Ibu</th> 
-                  <th>No Akta Perkawinan</th> 
-                  <th>Tanggal Perkawinan</th> 
-                  <th>No Akta Perceraian</th> 
-                  <th>Tanggal Perceraian</th> 
-                  <th>Cacat</th> 
-                  <th>Cara KB</th> 
-                  <th>Hamil</th> 
-                  <th>Status kependudukan</th> 
-                  <th>Keterangan</th> 
-                  <th>edit</th>  
+                  <th rowspan="2">No</th>
+                  <th rowspan="2">Alamat</th>
+                  <th rowspan="2">RW</th>
+                  <th rowspan="2">RT</th>
+                  <th rowspan="2">Nama</th>
+                  <th rowspan="2">Nomor KK</th>
+                  <th rowspan="2">Nomor NIK</th>
+                  <th rowspan="2">Jenis Kelamin</th>
+                  <th rowspan="2">Tempat Lahir</th>
+                  <th rowspan="2">Tanggal Lahir</th>
+                  <th rowspan="2">Usia</th>
+                  <th rowspan="2">Agama</th>
+                  <th rowspan="2">Pendidikan</th>
+                  <th rowspan="2">Jenis Pekerjaan</th> 
+                  <th rowspan="2">Status Perkawinan</th> 
+                  <th rowspan="2">Status Hubungan Dalam Keluarga</th> 
+                  <th rowspan="2">Kewarganegaraan</th> 
+                  <th rowspan="2">Nama Ayah</th> 
+                  <th rowspan="2">Nama Ibu</th> 
+                  <th rowspan="2">Golongan Darah</th> 
+                  <th rowspan="2">Akta Lahir</th> 
+                  <th rowspan="2">Nomor Dokumen Paspor</th>
+                  <th rowspan="2">Tanggal Akhir Paspor</th>  
+                  <th rowspan="2">Nomor Dokumen KITAS</th>             
+                  <th rowspan="2">NIK Ayah</th> 
+                  <th rowspan="2">NIK Ibu</th> 
+                  <th rowspan="2">No Akta Perkawinan</th> 
+                  <th rowspan="2">Tanggal Perkawinan</th> 
+                  <th rowspan="2">No Akta Perceraian</th> 
+                  <th rowspan="2">Tanggal Perceraian</th> 
+                  <th rowspan="2">Cacat</th> 
+                  <th rowspan="2">Cara KB</th> 
+                  <th rowspan="2">Hamil</th> 
+                  <th rowspan="2">Status kependudukan</th> 
+                  <th rowspan="2">Keterangan</th>  
+                  <th rowspan="2">Tempat Mendapatkan Air Bersih</th>  
+                  <th rowspan="2">Status Gizi Balita</th>  
+                  <th rowspan="2">Kebiasaan Berobat Bila Sakit</th>   
+                  <!-- <th colspan="5">Pendapatan Perkapita</th>    -->
+                  <!-- <th colspan="5">Pendapatan Rill Keluarga</th>    -->
+                  <th rowspan="2">Foto KTP</th>  
+                  <th rowspan="2">Foto KK</th>   
+                  <th rowspan="2">edit</th> 
+                  <th rowspan="2">hapus</th> 
         </tr>
       </thead>
       <tbody id="tbodytabel">
