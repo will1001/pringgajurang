@@ -189,7 +189,7 @@
                             <a href="{{ url('/barangdesa') }}">
                                 <img src="/images/ntp-pangan.jpg" alt="">
                             <div class="inner1 d-flex flex-last">
-                                <h3 class="mt-auto">PRODUK WARGA</h3>
+                                <h3 class="mt-auto">PASAR ONLINE</h3>
                             </div>
                             </a>
                         </div>

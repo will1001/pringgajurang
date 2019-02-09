@@ -643,7 +643,13 @@ public function addSOTK(Request $request)
 
             }else{
                
-                return redirect('formeditpengumuman')->with('message', 'Tolong upload gambar');
+                SOTK::find($id)->update([
+            'Nama' => $request->Nama,
+            'Jabatan' => $request->Jabatan,
+         ]);    
+
+            
+            return redirect('admin')->with('message', 'data berhasil di simpan');
             }
 
         }else{
@@ -981,7 +987,13 @@ public function addSOTK(Request $request)
 
             }else{
                
-                return redirect('formeditberita')->with('message', 'Tolong upload gambar');
+                berita::find($id)->update([
+            'judulberita' => $request->judul_berita,
+            'deskripsi' => $request->isi_berita,
+         ]);    
+
+            
+            return redirect('admin')->with('message', 'data berhasil di simpan');
             }
 
         }else{
@@ -1025,7 +1037,16 @@ public function addSOTK(Request $request)
 
         }else{
             
-            return redirect('formeditbarangdesa')->with('message', 'Tolong upload gambar');
+                barangdesa::find($id)->update([
+                'nama' => $request->nama_barang,
+                'kategori' => $request->get('kategori'),
+                'harga' => $request->harga,
+                'jumlah' => $request->jumlah,
+                'deskripsi' => $request->deskripsi_barang,
+                
+                ]);
+            
+            return redirect('admin')->with('message', 'data berhasil di simpan');
 
         }
         
@@ -1122,7 +1143,13 @@ public function addSOTK(Request $request)
 
             }else{
                
-                return redirect('adminCRUD/editpengumuman')->with('message', 'Tolong upload gambar');
+                pengumumandesa::find($id)->update([
+            'judulpengumuman' => $request->judul_pengumuman,
+            'deskripsi' => $request->isi_pengumuman,
+         ]);    
+
+            
+            return redirect('admin')->with('message', 'data berhasil di simpan');
             }
 
         }else{

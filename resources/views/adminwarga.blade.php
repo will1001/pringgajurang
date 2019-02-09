@@ -56,7 +56,7 @@
                           </li>
                     @else
                            <li class="nav-item dropdown">
-                              <a class="nav-link mt-4" href="{{ url('formeditnmrhp/'.$data_penduduks[0]->Nomor_KK) }}">edit nomor HP</a>
+                              <a class="nav-link mt-4" href="{{ url('formeditnmrhp/'.$data_penduduks[0]->Nomor_KK) }}">UBAH NOMOR HP</a>
                           </li>
                         
                           <li class="nav-item dropdown">
