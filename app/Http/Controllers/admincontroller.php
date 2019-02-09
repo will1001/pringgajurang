@@ -1484,7 +1484,7 @@ public function addSOTK(Request $request)
         if(Auth::user()->roles == "kades"){
 
             $kode_area_dusuns=kode_area_dusun::all();
-        $tabel_agamas= where('id','!=',0)->get();
+        $tabel_agamas= tabel_agama::where('id','!=',0)->get();
         $tabel_golongan_darahs= tabel_golongan_darah::where('id','!=',0)->get();
         $tabel_jenis_pekerjaans= tabel_jenis_pekerjaan::where('id','!=',0)->get();
         $tabel_kewarganegaraans= tabel_kewarganegaraan::where('id','!=',0)->get();
