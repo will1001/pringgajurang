@@ -19,9 +19,9 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/admin.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/detailhalaman.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/barangdesa.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/responsiveadmin.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/responsivedetailhalaman.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lemon">
 </head>
 

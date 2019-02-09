@@ -100,7 +100,7 @@ class webcontroller extends Controller
        $beritas= berita::orderBy("created_at","desc")->take(3)->skip(0)->get();
        $beritas2= berita::orderBy("created_at","desc")->take(2)->skip(3)->get();
        $beritas3= berita::orderBy("created_at","desc")->take(2)->skip(5)->get();
-       $pengumumans= pengumumandesa::orderBy("created_at","desc")->take(3)->skip(0)->get();
+       $pengumumans= pengumumandesa::orderBy("created_at","desc")->take(3)->get();
        $SOTKs= SOTK::all();
        $barangdesas = barangdesa::orderBy("created_at","desc")->take(4)->get();
        $barangdesas2 = barangdesa::orderBy("created_at","desc")->take(4)->skip(4)->get();

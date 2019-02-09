@@ -131,9 +131,9 @@
                                 @if($key > 0)
                                 <div class="carousel-item">
                                   <h2>Berita Terbaru</h2>
-                                    <h3><a href="{{ url('detailberitadesa/' .  $beritas[0]->judulberita ) }}">{{ substr($beritas[0]->judulberita,0,100) }}</a></h3>
+                                    <h3><a href="{{ url('detailberitadesa/' .  $berita->judulberita ) }}">{{ substr($berita->judulberita,0,100) }}</a></h3>
                                     <br>
-                                    <p class="text-right footsign">admin,{{ date("d F Y", strtotime($beritas[0]->created_at)) }}</p>
+                                    <p class="text-right footsign">admin,{{ date("d F Y", strtotime($berita->created_at)) }}</p>
                                 </div>
                              @endif
                              @endforeach
@@ -160,8 +160,8 @@
                                 @foreach($pengumumans as $key => $pengumuman)
                                 @if($key > 0)
                                 <div class="carousel-item">
-                                  <h2>{{ $pengumumans[0]->judulpengumuman }}</h2>
-                                    <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumuman->judulpengumuman) }}">{{ substr($pengumumans[0]->deskripsi,0,100) }}</a></p>
+                                  <h2>{{ $pengumuman->judulpengumuman }}</h2>
+                                    <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumuman->judulpengumuman) }}">{{ substr($pengumuman->deskripsi,0,100) }}</a></p>
                                 </div>
                              @endif
                              @endforeach
