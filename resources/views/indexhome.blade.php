@@ -123,7 +123,7 @@
                               <div class="carousel-inner">
                                 <div class="carousel-item active">
                                   <h2>Berita Terbaru</h2>
-                                    <h3><a href="{{ url('detailberitadesa/' .  $beritas[0]->judulberita ) }}">{{ substr($beritas[0]->judulberita,0,100) }}</a></h3>
+                                    <h3><a href="{{ url('beritadesa') }}">{{ substr($beritas[0]->judulberita,0,100) }}</a></h3>
                                     <br>
                                     <p class="text-right footsign">admin,{{ date("d F Y", strtotime($beritas[0]->created_at)) }}</p>
                                 </div>
@@ -131,7 +131,7 @@
                                 @if($key > 0)
                                 <div class="carousel-item">
                                   <h2>Berita Terbaru</h2>
-                                    <h3><a href="{{ url('detailberitadesa/' .  $berita->judulberita ) }}">{{ substr($berita->judulberita,0,100) }}</a></h3>
+                                    <h3><a href="{{ url('beritadesa') }}">{{ substr($berita->judulberita,0,100) }}</a></h3>
                                     <br>
                                     <p class="text-right footsign">admin,{{ date("d F Y", strtotime($berita->created_at)) }}</p>
                                 </div>

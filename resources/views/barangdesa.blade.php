@@ -22,7 +22,7 @@
               <a href="{{ url('detailbarangdesa/' .  $barangdesa->id ) }}">
                 <div class="card">
                   <img class="card-img-top" src="{{$barangdesa->urlgambar}}" alt="Card image cap">
-                  <div class="card-body text-center">
+                  <div class="card-body text-left">
                     <h5 class="card-title">{{ substr($barangdesa->nama,0,23) }}</h5>
                     <p class="card-text">{{$barangdesa->harga}}</p>
                     
