@@ -114,7 +114,7 @@
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="tentang_desa inner text-center">
                             <h2>Selayang Pandang</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus et voluptatem aliquid, culpa doloribus illum consectetur omnis quia autem? Ipsa maxime facilis saepe eveniet laboriosam, ducimus, commodi aspernatur quam neque.</p>
+                            <p>Desa Pringgajurang terletak di ke Kecamatan Montong Gading, Kabupaten Lombok Timur, NTB. Desa ini berada tidak jauh dari objek Wisata Otak Kokok-Joben. Desa ini dapat diakses dari Bandara Internasional Lombok, Pelabuhan Lembar, Kota Matar . . .</p>
                         </div>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
