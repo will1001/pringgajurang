@@ -9,11 +9,14 @@
 
       <div class="row">
         <div class="col-md-12">
-            <img src="{{ $beritas->urlgambar }}" alt="" width="400px" height="250px">
-            <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/{{$beritas->urlvideo}}">
-            </iframe>
-            <h3>{{$beritas->judulberita }}</h3>
+          @if($beritas->urlgambar != null)
+            <img src="{{ $beritas->urlgambar }}" alt="" width="420px" height="315px">
+            @endif
+            @if($beritas->urlvideo != null)
+               <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/{{$beritas->urlvideo}}">
+               </iframe>
+            @endif
             <p style="white-space: pre-line;white-space: pre-wrap;">{{$beritas->deskripsi }}</p><br>
              
         </div>
