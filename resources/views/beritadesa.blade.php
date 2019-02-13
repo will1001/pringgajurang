@@ -13,7 +13,7 @@
             @endif
             @if($berita->urlgambar == null && $berita->urlvideo != null)
             <iframe width="400" height="250"
-                src="https://www.youtube.com/embed/{{$beritas->urlvideo}}">
+                src="https://www.youtube.com/embed/{{$berita->urlvideo}}">
                </iframe>
             @endif
             @if($berita->urlgambar != null && $berita->urlvideo == null)
