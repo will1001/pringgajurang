@@ -473,7 +473,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="kotak2bidangpemerintahan">
-                      <component  :is="currentViewlembagaidex" class="wow zoomIn"  keep-alive></component>
+                      <component  :is="currentViewlembagaidex" class="wow fadeIn"  keep-alive></component>
                     </div>
                 </div>
             </div>
