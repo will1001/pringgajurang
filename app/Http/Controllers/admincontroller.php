@@ -780,8 +780,12 @@ public function addSOTK(Request $request)
             return redirect()->back()->withErrors($validator->errors());;
              }
             
-            $video_id = explode("?v=", $request->urlvideo);
-            $video_id = substr($video_id[1],0,11);
+            if($request->urlvideo != null){
+                $video_id = explode("?v=", $request->urlvideo);
+                $video_id = substr($video_id[1],0,11);
+            }else{
+                $video_id=null;
+            }
             $data = new berita();
             $data->judulberita = $request->judul_berita;
             $data->deskripsi = $request->isi_berita;
@@ -797,8 +801,12 @@ public function addSOTK(Request $request)
 
         }else{
             
-            $video_id = explode("?v=", $request->urlvideo);
-            $video_id = substr($video_id[1],0,11);
+            if($request->urlvideo != null){
+                $video_id = explode("?v=", $request->urlvideo);
+                $video_id = substr($video_id[1],0,11);
+            }else{
+                $video_id=null;
+            }
             $data = new berita();
             $data->judulberita = $request->judul_berita;
             $data->deskripsi = $request->isi_berita;
@@ -999,8 +1007,12 @@ public function addSOTK(Request $request)
             $fileName = $request->url_gambar->getClientOriginalName();
             $path = public_path().'/uploadsgambar';
             $upload = $request->url_gambar->move($path,$fileName);
-            $video_id = explode("?v=", $request->urlvideo);
-            $video_id = substr($video_id[1],0,11);
+            if($request->urlvideo != null){
+                $video_id = explode("?v=", $request->urlvideo);
+                $video_id = substr($video_id[1],0,11);
+            }else{
+                $video_id=null;
+            }
             berita::find($id)->update([
             'judulberita' => $request->judul_berita,
             'deskripsi' => $request->isi_berita,
@@ -1012,8 +1024,12 @@ public function addSOTK(Request $request)
             return redirect('admin')->with('message', 'data berhasil di simpan');
 
             }else{
-               $video_id = explode("?v=", $request->urlvideo);
-            $video_id = substr($video_id[1],0,11);
+               if($request->urlvideo != null){
+                $video_id = explode("?v=", $request->urlvideo);
+                $video_id = substr($video_id[1],0,11);
+            }else{
+                $video_id=null;
+            }
                 berita::find($id)->update([
             'judulberita' => $request->judul_berita,
             'deskripsi' => $request->isi_berita,
