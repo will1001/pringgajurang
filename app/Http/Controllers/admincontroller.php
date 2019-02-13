@@ -785,7 +785,7 @@ public function addSOTK(Request $request)
             $data = new berita();
             $data->judulberita = $request->judul_berita;
             $data->deskripsi = $request->isi_berita;
-            $data->urlvideo = $video_id;
+            $data->urlvideo = substr($video_id,0,11);
             $fileName = $request->url_gambar->getClientOriginalName();
             $path = public_path().'/uploadsgambar';
             $upload = $request->url_gambar->move($path,$fileName);
@@ -802,7 +802,7 @@ public function addSOTK(Request $request)
             $data = new berita();
             $data->judulberita = $request->judul_berita;
             $data->deskripsi = $request->isi_berita;
-            $data->urlvideo = $video_id;
+            $data->urlvideo = substr($video_id,0,11);
             $data->save();
 
            
