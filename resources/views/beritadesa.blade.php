@@ -8,7 +8,18 @@
       @foreach($beritas as $berita)
       <div class="row">
         <div class="col-md-12">
+          @if($beritas->urlgambar != null && $beritas->urlvideo != null)
             <img src="{{ $berita->urlgambar }}" alt="" width="400px" height="250px">
+            @endif
+            @if($beritas->urlgambar == null && $beritas->urlvideo != null)
+            <iframe width="400" height="250"
+                src="https://www.youtube.com/embed/{{$beritas->urlvideo}}">
+               </iframe>
+            @endif
+            @if($beritas->urlgambar != null && $beritas->urlvideo == null)
+            <img src="{{ $berita->urlgambar }}" alt="" width="400px" height="250px">
+            @endif
+
             <h3>{{ $berita->judulberita }}</h3>
             <p>{{ substr($berita->deskripsi,0,510) }} . . . </p><br>
             <a class="button white " href="{{ url('detailberitadesa/' .  $berita->judulberita ) }}">Selengkapnya>></a>

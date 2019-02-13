@@ -40,6 +40,11 @@ margin: 27px 0px;
     margin: 10px 10px;
 }
 
+#detail_berita iframe{
+    float: left;
+    margin: 10px 10px;
+}
+
 
 
 footer{
