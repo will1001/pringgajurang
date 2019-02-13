@@ -781,11 +781,11 @@ public function addSOTK(Request $request)
              }
             
             $video_id = explode("?v=", $request->urlvideo);
-            $video_id = $video_id[1];
+            $video_id = substr($video_id[1],0,11);
             $data = new berita();
             $data->judulberita = $request->judul_berita;
             $data->deskripsi = $request->isi_berita;
-            $data->urlvideo = substr($video_id,0,11);
+            $data->urlvideo = $video_id;
             $fileName = $request->url_gambar->getClientOriginalName();
             $path = public_path().'/uploadsgambar';
             $upload = $request->url_gambar->move($path,$fileName);
@@ -798,11 +798,11 @@ public function addSOTK(Request $request)
         }else{
             
             $video_id = explode("?v=", $request->urlvideo);
-            $video_id = $video_id[1];
+            $video_id = substr($video_id[1],0,11);
             $data = new berita();
             $data->judulberita = $request->judul_berita;
             $data->deskripsi = $request->isi_berita;
-            $data->urlvideo = substr($video_id,0,11);
+            $data->urlvideo = $video_id;
             $data->save();
 
            
@@ -1000,7 +1000,7 @@ public function addSOTK(Request $request)
             $path = public_path().'/uploadsgambar';
             $upload = $request->url_gambar->move($path,$fileName);
             $video_id = explode("?v=", $request->urlvideo);
-            $video_id = $video_id[1];
+            $video_id = substr($video_id[1],0,11);
             berita::find($id)->update([
             'judulberita' => $request->judul_berita,
             'deskripsi' => $request->isi_berita,
@@ -1013,7 +1013,7 @@ public function addSOTK(Request $request)
 
             }else{
                $video_id = explode("?v=", $request->urlvideo);
-            $video_id = $video_id[1];
+            $video_id = substr($video_id[1],0,11);
                 berita::find($id)->update([
             'judulberita' => $request->judul_berita,
             'deskripsi' => $request->isi_berita,
