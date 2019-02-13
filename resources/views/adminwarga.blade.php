@@ -343,6 +343,9 @@
                   </tr>
                 </thead>
                  <tbody>
+                   @php
+                   $no=1
+                   @endphp
                   @foreach($barangdesas as $barangdesa)
                     <tr>
                         <td>{{ $no++ }}</td>

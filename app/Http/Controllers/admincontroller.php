@@ -682,6 +682,7 @@ public function addSOTK(Request $request)
             $data->nama = $request->nama_barang;
             $data->harga = $request->harga;
             $data->jumlah = $request->jumlah;
+            $data->kategori = $request->get('kategori');
             $data->id_pemilik = Auth::user()->id;
             $data->deskripsi = $request->deskripsi_barang;
             $fileName = $request->url_gambar->getClientOriginalName();
@@ -695,7 +696,17 @@ public function addSOTK(Request $request)
 
         }else{
             
-            return redirect('formaddbarangdesa')->with('message', 'Tolong upload gambar');
+            $data = new barangdesa();
+            $data->nama = $request->nama_barang;
+            $data->harga = $request->harga;
+            $data->jumlah = $request->jumlah;
+            $data->kategori = $request->get('kategori');
+            $data->id_pemilik = Auth::user()->id;
+            $data->deskripsi = $request->deskripsi_barang;
+            $data->save();
+
+           
+            return redirect('admin')->with('message', 'data berhasil di simpan');
 
         }
         
@@ -769,7 +780,7 @@ public function addSOTK(Request $request)
             return redirect()->back()->withErrors($validator->errors());;
              }
             
-            $video_id = explode("?v=", $request->urlvideo);
+            $video_id = explode("?v=", $request->urlvideo,11);
             $video_id = $video_id[1];
             $data = new berita();
             $data->judulberita = $request->judul_berita;
@@ -786,7 +797,16 @@ public function addSOTK(Request $request)
 
         }else{
             
-            return redirect('formaddberita')->with('message', 'Tolong upload gambar');
+            $video_id = explode("?v=", $request->urlvideo,11);
+            $video_id = $video_id[1];
+            $data = new berita();
+            $data->judulberita = $request->judul_berita;
+            $data->deskripsi = $request->isi_berita;
+            $data->urlvideo = $video_id;
+            $data->save();
+
+           
+            return redirect('admin')->with('message', 'data berhasil di simpan');
 
         }
         
@@ -979,7 +999,7 @@ public function addSOTK(Request $request)
             $fileName = $request->url_gambar->getClientOriginalName();
             $path = public_path().'/uploadsgambar';
             $upload = $request->url_gambar->move($path,$fileName);
-            $video_id = explode("?v=", $request->urlvideo);
+            $video_id = explode("?v=", $request->urlvideo,11);
             $video_id = $video_id[1];
             berita::find($id)->update([
             'judulberita' => $request->judul_berita,
@@ -992,13 +1012,13 @@ public function addSOTK(Request $request)
             return redirect('admin')->with('message', 'data berhasil di simpan');
 
             }else{
-               $video_id = explode("?v=", $request->urlvideo);
+               $video_id = explode("?v=", $request->urlvideo,11);
             $video_id = $video_id[1];
                 berita::find($id)->update([
             'judulberita' => $request->judul_berita,
             'deskripsi' => $request->isi_berita,
             'urlvideo' => $video_id,
-            
+
          ]);    
 
             
