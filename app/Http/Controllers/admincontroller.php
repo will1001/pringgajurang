@@ -780,7 +780,7 @@ public function addSOTK(Request $request)
             return redirect()->back()->withErrors($validator->errors());;
              }
             
-            $video_id = explode("?v=", $request->urlvideo,11);
+            $video_id = explode("?v=", substr($request->urlvideo,0,11));
             $video_id = $video_id[1];
             $data = new berita();
             $data->judulberita = $request->judul_berita;
@@ -797,7 +797,7 @@ public function addSOTK(Request $request)
 
         }else{
             
-            $video_id = explode("?v=", $request->urlvideo,11);
+            $video_id = explode("?v=", substr($request->urlvideo,0,11));
             $video_id = $video_id[1];
             $data = new berita();
             $data->judulberita = $request->judul_berita;
@@ -999,7 +999,7 @@ public function addSOTK(Request $request)
             $fileName = $request->url_gambar->getClientOriginalName();
             $path = public_path().'/uploadsgambar';
             $upload = $request->url_gambar->move($path,$fileName);
-            $video_id = explode("?v=", $request->urlvideo,11);
+            $video_id = explode("?v=", substr($request->urlvideo,0,11));
             $video_id = $video_id[1];
             berita::find($id)->update([
             'judulberita' => $request->judul_berita,
@@ -1012,7 +1012,7 @@ public function addSOTK(Request $request)
             return redirect('admin')->with('message', 'data berhasil di simpan');
 
             }else{
-               $video_id = explode("?v=", $request->urlvideo,11);
+               $video_id = explode("?v=", substr($request->urlvideo,0,11));
             $video_id = $video_id[1];
                 berita::find($id)->update([
             'judulberita' => $request->judul_berita,
