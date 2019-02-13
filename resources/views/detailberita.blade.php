@@ -12,6 +12,9 @@
             <img src="{{ $beritas->urlgambar }}" alt="" width="400px" height="250px">
             <h3></h3>
             <p style="white-space: pre-line;white-space: pre-wrap;">{{$beritas->deskripsi }}</p><br>
+             <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/{{$beritas->urlvideo}}">
+            </iframe>
         </div>
 
       </div>

@@ -575,7 +575,7 @@ public function addSOTK(Request $request)
 
         if(Auth::user()->roles == "kades"){
             $validator = Validator::make(request()->all(), [
-                'url_gambar' => 'required|image|max:1000',
+                'url_gambar' => 'image|max:1000',
             ]);
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;
@@ -668,7 +668,7 @@ public function addSOTK(Request $request)
 
         if(Auth::user()->roles == "member"){
              $validator = Validator::make(request()->all(), [
-                'url_gambar' => 'required|image|max:1000',
+                'url_gambar' => 'image|max:1000',
             ]);
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;
@@ -713,7 +713,7 @@ public function addSOTK(Request $request)
 
         if(Auth::user()->roles == "kades"){
              $validator = Validator::make(request()->all(), [
-                'url_gambar' => 'required|image|max:1000',
+                'url_gambar' => 'image|max:1000',
             ]);
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;
@@ -763,15 +763,18 @@ public function addSOTK(Request $request)
             if($request->hasfile('url_gambar')){
 
             $validator = Validator::make(request()->all(), [
-                'url_gambar' => 'required|image|max:1000',
+                'url_gambar' => 'image|max:1000',
             ]);
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;
              }
-                       
+            
+            $video_id = explode("?v=", $request->urlvideo);
+            $video_id = $video_id[1];
             $data = new berita();
             $data->judulberita = $request->judul_berita;
             $data->deskripsi = $request->isi_berita;
+            $data->urlvideo = $video_id;
             $fileName = $request->url_gambar->getClientOriginalName();
             $path = public_path().'/uploadsgambar';
             $upload = $request->url_gambar->move($path,$fileName);
@@ -805,7 +808,7 @@ public function addSOTK(Request $request)
             if($request->hasfile('url_gambar')){
             
             $validator = Validator::make(request()->all(), [
-                'url_gambar' => 'required|image|max:1000',
+                'url_gambar' => 'image|max:1000',
             ]);
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;
@@ -962,7 +965,7 @@ public function addSOTK(Request $request)
 
         if(Auth::user()->roles == "kades"){
             $validator = Validator::make(request()->all(), [
-                'url_gambar' => 'required|image|max:1000',
+                'url_gambar' => 'image|max:1000',
             ]);
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;
@@ -976,9 +979,12 @@ public function addSOTK(Request $request)
             $fileName = $request->url_gambar->getClientOriginalName();
             $path = public_path().'/uploadsgambar';
             $upload = $request->url_gambar->move($path,$fileName);
+            $video_id = explode("?v=", $request->urlvideo);
+            $video_id = $video_id[1];
             berita::find($id)->update([
             'judulberita' => $request->judul_berita,
             'deskripsi' => $request->isi_berita,
+            'urlvideo' => $video_id,
             'urlgambar' => '/uploadsgambar/'.$fileName
          ]);    
 
@@ -986,10 +992,13 @@ public function addSOTK(Request $request)
             return redirect('admin')->with('message', 'data berhasil di simpan');
 
             }else{
-               
+               $video_id = explode("?v=", $request->urlvideo);
+            $video_id = $video_id[1];
                 berita::find($id)->update([
             'judulberita' => $request->judul_berita,
             'deskripsi' => $request->isi_berita,
+            'urlvideo' => $video_id,
+            
          ]);    
 
             
@@ -1012,7 +1021,7 @@ public function addSOTK(Request $request)
             if($request->hasfile('url_gambar')){
 
             $validator = Validator::make(request()->all(), [
-                'url_gambar' => 'required|image|max:1000',
+                'url_gambar' => 'image|max:1000',
             ]);
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;
@@ -1071,7 +1080,7 @@ public function addSOTK(Request $request)
             if($request->hasfile('url_gambar')){
 
             $validator = Validator::make(request()->all(), [
-                'url_gambar' => 'required|image|max:1000',
+                'url_gambar' => 'image|max:1000',
             ]);
             if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());;

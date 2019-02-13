@@ -13,6 +13,8 @@
           <input type="text" name="judul_berita" value="{{ $beritas->judulberita }}"><br><br>
           Isi Berita:<br>
           <textarea  rows="30" cols="200" name="isi_berita">{{ $beritas->deskripsi }}</textarea><br><br>
+          URL video:<br>
+          <input type="text" name="urlvideo" value="https://www.youtube.com/watch?v={{$beritas->urlvideo}}"><br><br>
           Gambar : <br><br>
           <input type="file" name="url_gambar" id="url_gambar">
           <br><br>

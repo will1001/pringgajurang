@@ -11,6 +11,8 @@
           <input type="text" name="judul_berita" placeholder="Judul Berita"><br><br>
           Isi Berita:<br>
           <textarea name="isi_berita" placeholder="isi berita"></textarea><br><br>
+           URL video:<br>
+          <input type="text" name="urlvideo" placeholder="URL Video"><br><br>
           Upload gambar : <br><br>
           <input type="file" name="url_gambar" id="url_gambar">
           <br><br>
