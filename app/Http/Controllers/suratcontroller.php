@@ -71,7 +71,7 @@ class suratcontroller extends Controller
           $doc -> setValue('nama_kecamatan',$kopsurats[0]->Nama_Kecamatan);
           $doc -> setValue('nama_desa',$kopsurats[0]->Nama_Desa);
           $doc -> setValue('alamat_desa',$kopsurats[0]->Alamat_Desa);
-          $doc -> setValue('tahun',$data_penduduks[0]->year);
+          $doc -> setValue('tahun',$mytime->year);
           $doc -> setValue('nama',$data_penduduks[0]->Nama);
           $doc -> setValue('no_ktp',$data_penduduks[0]->NIK);
           $doc -> setValue('no_KK',$data_penduduks[0]->Nomor_KK);
