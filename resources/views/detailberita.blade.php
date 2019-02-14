@@ -10,10 +10,10 @@
       <div class="row">
         <div class="col-md-12">
           @if($beritas->urlgambar != null)
-            <img src="{{ $beritas->urlgambar }}" alt="" width="420px" height="315px">
+            <img src="{{ $beritas->urlgambar }}" alt="">
             @endif
             @if($beritas->urlvideo != null)
-               <iframe width="420" height="315"
+               <iframe
                 src="https://www.youtube.com/embed/{{$beritas->urlvideo}}">
                </iframe>
             @endif

@@ -350,10 +350,25 @@
         margin: 5px 0px;
     }
 
-    #detail_berita img {
-        width: 100%;
-        height: auto;
-    }
+    #berita-desa img{
+    width:100%;
+    height:250px;
+}
+
+#berita-desa iframe{
+    width:100%;
+    height:250px;
+}
+
+#detail_berita img{
+    width :100%;
+    height:315px;
+}
+
+#detail_berita iframe{
+    width :100%;
+    height:315px;
+}
     
 
 }

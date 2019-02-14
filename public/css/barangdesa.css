@@ -33,21 +33,29 @@ margin: 27px 0px;
 #berita-desa img{
     float: left;
     margin: 10px 10px;
+    width:400px;
+    height:250px;
 }
 
 #berita-desa iframe{
     float: left;
     margin: 10px 10px;
+    width:400px;
+    height:250px;
 }
 
 #detail_berita img{
     float: left;
     margin: 10px 10px;
+    width :420px;
+    height:315px;
 }
 
 #detail_berita iframe{
     float: left;
     margin: 10px 10px;
+    width :420px;
+    height:315px;
 }
 
 
