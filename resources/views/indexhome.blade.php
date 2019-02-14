@@ -106,6 +106,10 @@
             
 </div>
 
+
+<template id="profildesa">
+  
+</template>
 <template id="indexpage">
     <div>
             <section id="kotak1">
@@ -253,7 +257,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="kotak2bidangpemerintahan">
-                      <component  :is="currentViewBidangPemerintahan" class="wow zoomIn"  keep-alive></component>
+                      <component  :is="currentViewBidangPemerintahan" class="wow fadeIn"  keep-alive></component>
                     </div>
                 </div>
             </div>
@@ -536,29 +540,613 @@
 
 {{-- //sub componen pemerintahan --}}
 <template id="Pemerintahan">
-    <h3>Pemerintahan</h3>
+    <div class="bidangpanel">
+    <div style="overflow: auto;max-height: 400px;position: relative;">
+      <table>
+      <thead>
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <tr>
+                  <th>No</th>
+                  <th>Nama Kegiatan</th>
+                  <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbodytabel">
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    </div>
 </template>
 
 <template id="Kesejahteraan">
-    <h3>Kesejahteraan</h3>
+     <div class="bidangpanel">
+    <div style="overflow: auto;max-height: 400px;position: relative;">
+      <table>
+      <thead>
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <tr>
+                  <th>No</th>
+                  <th>Nama Kegiatan</th>
+                  <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbodytabel">
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    </div>
 </template>
 <template id="Pelayanan">
-    <h3>Pelayanan</h3>
+     <div class="bidangpanel">
+    <div style="overflow: auto;max-height: 400px;position: relative;">
+      <table>
+      <thead>
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <tr>
+                  <th>No</th>
+                  <th>Nama Kegiatan</th>
+                  <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbodytabel">
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    </div>
 </template>
 <template id="Tata_Usaha_dan_Umum">
-    <h3>Tata Usaha dan Umum</h3>
+     <div class="bidangpanel">
+    <div style="overflow: auto;max-height: 400px;position: relative;">
+      <table>
+      <thead>
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <tr>
+                  <th>No</th>
+                  <th>Nama Kegiatan</th>
+                  <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbodytabel">
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    </div>
 </template>
 <template id="Keuangan">
-    <h3>Keuangan</h3>
+     <div class="bidangpanel">
+    <div style="overflow: auto;max-height: 400px;position: relative;">
+      <table>
+      <thead>
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <tr>
+                  <th>No</th>
+                  <th>Nama Kegiatan</th>
+                  <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbodytabel">
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    </div>
 </template>
 <template id="Perencanaan">
-    <h3>Perencanaan</h3>
+     <div class="bidangpanel">
+    <div style="overflow: auto;max-height: 400px;position: relative;">
+      <table>
+      <thead>
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <tr>
+                  <th>No</th>
+                  <th>Nama Kegiatan</th>
+                  <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbodytabel">
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    </div>
 </template>
 <template id="Kewilayahan">
-    <h3>Kewilayahan</h3>
+     <div class="bidangpanel">
+    <div style="overflow: auto;max-height: 400px;position: relative;">
+      <table>
+      <thead>
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <tr>
+                  <th>No</th>
+                  <th>Nama Kegiatan</th>
+                  <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbodytabel">
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    </div>
 </template>
 <template id="Pembangunan">
-    <h3>Pembangunan</h3>
+     <div class="bidangpanel">
+    <div style="overflow: auto;max-height: 400px;position: relative;">
+      <table>
+      <thead>
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <tr>
+                  <th>No</th>
+                  <th>Nama Kegiatan</th>
+                  <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbodytabel">
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+        <tr>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+          <td>asdfghj</td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    </div>
 </template>
 
 <footer>
