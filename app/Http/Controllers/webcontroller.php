@@ -116,7 +116,7 @@ class webcontroller extends Controller
     public function beritadesa()
     {
         # code...
-        $beritas = berita::paginate(5);
+        $beritas = berita::orderBy("created_at","desc")->paginate(5);
         return view('beritadesa',['beritas' => $beritas]);
     }
 
