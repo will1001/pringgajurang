@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-6">                
                 <h2>{{$barangdesas->nama}}</h2>
-                <p><strong>Kategori : </strong>{{$barangdesas->kategori}}</p>
+                <!-- <p><strong>Kategori : </strong>{{$barangdesas->kategori}}</p> -->
                 <!-- <p><strong>Penjual : </strong>{{$data_penduduks[0]->Nama}}</p> -->
                 <p><strong>No HP : </strong>{{$users->No_HP}}</p>
                 <p><strong>Alamat : </strong>{{$users->Alamat}}</p>
