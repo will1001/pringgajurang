@@ -1,6 +1,6 @@
 @extends('layouts.layouthalamanlain')
 @section('content')
- <section id="barang-desa">
+ <section id="detail_barang_desa">
       <div class="container">
         <div class="row">
             <div class="col-md-6">

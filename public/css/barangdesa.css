@@ -19,6 +19,9 @@ a{
     height: 179px;
     margin-bottom: 15px;
 }
+#detail_barang_desa img{
+    width: 100%;
+}
 
 
 #kotakbarang{
