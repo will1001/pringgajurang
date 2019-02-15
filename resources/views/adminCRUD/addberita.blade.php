@@ -10,7 +10,7 @@
           Judul Berita:<br>
           <input type="text" name="judul_berita" placeholder="Judul Berita"><br><br>
           Isi Berita:<br>
-          <textarea name="isi_berita" placeholder="isi berita"></textarea><br><br>
+          <textarea rows="30" cols="200" name="isi_berita" placeholder="isi berita"></textarea><br><br>
            URL video:<br>
           <input type="text" name="urlvideo" placeholder="URL Video"><br><br>
           Upload gambar : <br><br>

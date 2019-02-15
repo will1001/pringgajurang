@@ -11,7 +11,7 @@
           Judul Pengumuman:<br>
           <input type="text" name="judul_pengumuman" value="judul_pengumuman"><br><br>
           Isi Pengumuman:<br>
-          <textarea name="isi_pengumuman" value="isi_pengumuman"></textarea><br><br>
+          <textarea rows="30" cols="200" name="isi_pengumuman" value="isi_pengumuman"></textarea><br><br>
           Gambar : <br><br>
           <input type="file" name="url_gambar" id="url_gambar">
           <br><br>
