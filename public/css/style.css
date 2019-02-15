@@ -237,11 +237,7 @@ footer{
   width: 315px
 }
 
-.kotak5Pengunjung,.kotak6Pengunjung{
-  margin: 0px -25px;
-}
-
-.kotak3Bhalamanbisnis li a{
+.kotak3Ahalamanbisnis li a,.kotak3Bhalamanbisnis li a,.kotak2Bhalamanbisnis li a{
   font-size: 19px;
   text-decoration: none;
   color: #000000;

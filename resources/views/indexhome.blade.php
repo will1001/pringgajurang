@@ -367,9 +367,9 @@
                 <div class="kotak2Bhalamanbisnis">
                 <h2>Panduan Bisnis</h2>
                 <ul>
-                    <li>Panduan mungurus UD,CV,dan PT</li>
-                    <li>Panduan mengurus SIUP,dan TDP</li>
-                    <li>Panduan Membayar Pajak Secara Online</li>
+                    <li><a href="#">Panduan mungurus UD,CV,dan PT</a></li>
+                    <li><a href="#">Panduan mengurus SIUP,dan TDP</a></li>
+                    <li><a href="#">Panduan Membayar Pajak Secara Online</a></li>
                 </ul>
                 </div>
             </div>
@@ -378,6 +378,12 @@
             <div class="col-md-8">
                 <div class="kotak3Ahalamanbisnis">
                 <h2>Potensi Penanaman Modal</h2>
+                <ul>
+                    <li><a target="_blank" href="#">Potensi Air</a></li>
+                    <li><a target="_blank" href="#">Potensi Pertanian</a></li>
+                    <li><a target="_blank" href="#">Potensi Wisata</a></li>
+                    <li><a target="_blank" href="#">Potensi Peternakan</a></li>
+                </ul>
                 </div>
             </div>
             <div class="col-md-4">
@@ -423,7 +429,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="kotak3APengunjung">
-                            <h3>Masjid</h3>
+                            <h3>Sarana Ibadah</h3>
                         </div>
                     </div>
                 </div>
@@ -439,18 +445,26 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="kotak4Pengunjung">
-                <h3>Aktivitas Menarik</h3>
+                    <h3>Aktifitas Menarik</h3>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="kotak5Pengunjung">
-               <h3>Taman Bermain</h3>
-               </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="kotak5Pengunjung">
+                        <h3>Taman Bermain</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
-                <div class="kotak6Pengunjung">
-               <h3>Lesehan</h3>
-               </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="kotak6Pengunjung">
+                            <h3>Warung Makan</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -502,41 +516,7 @@
         </div>
 </template>
 
-<template id="halamanbisnis">
-    <div class="container" style="padding-top: 40px;">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="kotak1halamanbisnis">
-                    <h2 class="text-center">Pasar Online :</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="kotak2Ahalamanbisnis">
-                <h2>Pelaku Usaha :</h2>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="kotak2Bhalamanbisnis">
-                <h2>Panduan :</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="kotak3Ahalamanbisnis">
-                <h2>Potensi Penanaman Modal</h2>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="kotak3Bhalamanbisnis">
-                <h2>Lowongan Kerja</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</template>
+
 
 {{-- //sub componen pemerintahan --}}
 <template id="Pemerintahan">
