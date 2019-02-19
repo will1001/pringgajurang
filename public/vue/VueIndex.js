@@ -72,6 +72,34 @@ Vue.component('panduanpenduduk',{
 	    			title:'Panduan BPJS',
 	    			link:'https://www.bpjs-kesehatan.go.id/bpjs/',
 	    		},
+	    		{
+	    			title:'Petunjuk penempatan TKI perorangan',
+	    			link:'http://www.bnp2tki.go.id/read/8998/Petunjuk-Penempatan-TKI-Perseorangan.html',
+	    		},
+	    		{
+	    			title:'Panduang mengurus administrasi setelah menikah',
+	    			link:'https://www.bridestory.com/id/blog/panduan-mengurus-5-administrasi-penting-setelah-menikah',
+	    		},
+	    		{
+	    			title:'Mengurus akta nikah',
+	    			link:'https://www.finansialku.com/mengurus-catatan-sipil-akta-nikah/amp/',
+	    		},
+	    		{
+	    			title:'Cara mengurus SIUP (Surat Izin Usaha Perdagangan)',
+	    			link:'https://www.cermati.com/artikel/cara-membuat-siup-surat-izin-usaha-perdagangan',
+	    		},
+	    		{
+	    			title:'Cara bayar pajak online',
+	    			link:'https://www.online-pajak.com/e-billing-pajak-cara-bayar-pajak-online',
+	    		},
+	    		{
+	    			title:'E-billing pajak',
+	    			link:'http://www.pajak.go.id/content/e-billing',
+	    		},
+	    		{
+	    			title:'Pasang meter listrik',
+	    			link:'https://www.pln.co.id',
+	    		},
 	    	]
 	  	}
 	},

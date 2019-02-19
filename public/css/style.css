@@ -325,3 +325,6 @@ color: #fff;
 transition:1s;
 
 }
+.kotak2APengunjung,.kotak2BPengunjung,.kotak3APengunjung,.kotak3BPengunjung,.kotak5Pengunjung,.kotak6Pengunjung li{
+  font-size: 17px;
+}

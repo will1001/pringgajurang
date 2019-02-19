@@ -285,17 +285,7 @@
                           <ul>
                             <li v-for="panduan in panduans"><a v-bind:href="panduan.link" target="_blank">@{{ panduan.title }}</a></li>
                           </ul>
-                         <!--  <ul>
-                            <li><a target="_blank" href="https://www.lpdp.kemenkeu.go.id">Panduan Beasiswa LPDP</a></li>
-                            <li><a target="_blank" href="https://www.bpjs-kesehatan.go.id/bpjs/">Panduan BPJS</a></li>
-                            <li><a target="_blank" href="http://www.bnp2tki.go.id/read/8998/Petunjuk-Penempatan-TKI-Perseorangan.html">Petunjuk penempatan TKI perorangan</a></li>
-                            <li><a target="_blank" href="https://www.bridestory.com/id/blog/panduan-mengurus-5-administrasi-penting-setelah-menikah">Panduang mengurus administrasi setelah menikah</a></li>
-                            <li><a target="_blank" href="https://www.finansialku.com/mengurus-catatan-sipil-akta-nikah/amp/">Mengurus akta nikah</a></li>
-                            <li><a target="_blank" href="https://www.cermati.com/artikel/cara-membuat-siup-surat-izin-usaha-perdagangan">Cara mengurus SIUP (Surat Izin Usaha Perdagangan)</a></li>
-                            <li><a target="_blank" href="https://www.online-pajak.com/e-billing-pajak-cara-bayar-pajak-online">Cara bayar pajak online</a></li>
-                            <li><a target="_blank" href="http://www.pajak.go.id/content/e-billing">E-billing pajak</a></li>
-                            <li><a target="_blank" href="https://www.pln.co.id">Pasang meter listrik</a></li>
-                          </ul> -->
+                        
                     </div>
                 </div>
             </div>
@@ -435,6 +425,13 @@
                     <div class="col-md-12">
                         <div class="kotak2APengunjung">
                         <h3>Tempat Wisata Terdekat</h3>
+                        <ul>
+                          <li>Zona Ekowisata Loang Pantung</li>
+                          <li>Taman Nasional Gunung Rinjani</li>
+                          <li>Air terjun Otak Kokok - Joben</li>
+                          <li>Tete Batu</li>
+                          <li>Danau Biru</li>
+                        </ul>
                         </div>
                     </div>
                 </div>
@@ -442,6 +439,15 @@
                     <div class="col-md-12">
                         <div class="kotak2BPengunjung">
                         <h3>Sekolah</h3>
+                        <ul>
+                          <li>SDN 1 Pringgajurang</li>
+                          <li>MI NW Pringgajurang</li>
+                          <li>SDN 2 Pringgajurang</li>
+                          <li>SDN 3 Pringgajurang</li>
+                          <li>SMPN 3 Montong Gading</li>
+                          <li>MTs NW Pringgajurang</li>
+                          <li>MA NW Filkhoir Desa Pringgajurang</li>
+                        </ul>
                         </div>
                     </div>
                 </div>
@@ -451,6 +457,11 @@
                     <div class="col-md-12">
                         <div class="kotak3APengunjung">
                             <h3>Sarana Ibadah</h3>
+                            <ul>
+                              <li>Masjid Hidayatussalikin Desa Pringgajurang</li>
+                              <li>Masjid Pengembur</li>
+                              <li>Masjid Kayulian</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -458,6 +469,9 @@
                     <div class="col-md-12">
                         <div class="kotak3BPengunjung">
                         <h3>Pondok Pesantren</h3>
+                        <ul>
+                          <li>Pondok Pesantren Al Ikhsan Desa Pringgajurang</li>
+                        </ul>
                         </div>
                     </div>
                 </div>
@@ -467,6 +481,7 @@
             <div class="col-md-4">
                 <div class="kotak4Pengunjung">
                     <h3>Homestay</h3>
+                    <img src="/images/photo6296362974822115431.jpg" alt="" width="100%" height="100%">
                 </div>
             </div>
             <div class="col-md-4">
@@ -474,6 +489,10 @@
                     <div class="col-md-12">
                         <div class="kotak5Pengunjung">
                         <h3>Taman Bermain</h3>
+                        <ul>
+                          <li>TK PKK Rinjani Pringgajurang</li>
+                          <li>Embung Desa Pringgajurang</li>
+                        </ul>
                         </div>
                     </div>
                 </div>
@@ -483,6 +502,10 @@
                     <div class="col-md-12">
                         <div class="kotak6Pengunjung">
                             <h3>Warung Makan</h3>
+                            <ul>
+                              <li>Warung Soto Pringgajurang</li>
+                              <li>Nasi Kotaraja</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

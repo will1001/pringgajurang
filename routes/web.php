@@ -40,9 +40,7 @@ Route::get('/reloadtabeldatapendudukajax/{id}/{skipdata}',function($id,$skipdata
 Route::get('/cari/{kategori}/{id}',function($kategori,$id)
 {
 	if(Request::ajax()){
-	 $data_penduduk_kadus_ajax=App\data_penduduk::where($kategori,'LIKE','%'.$id.'%')->get();
-
-        return $data_penduduk_kadus_ajax = DB::table('data_penduduks')
+	 $data_penduduk_kadus_ajax=DB::table('data_penduduks')
 	            ->join('tabel_agamas', 'data_penduduks.Agama', '=', 'tabel_agamas.id')
 	            ->join('tabel_jenis_pekerjaans', 'data_penduduks.Jenis_Pekerjaan', '=', 'tabel_jenis_pekerjaans.id')
 	            ->join('tabel_golongan_darahs', 'data_penduduks.Golongan_Darah', '=', 'tabel_golongan_darahs.id')
@@ -51,7 +49,9 @@ Route::get('/cari/{kategori}/{id}',function($kategori,$id)
 	            ->join('tabel_pendidikans', 'data_penduduks.Pendidikan', '=', 'tabel_pendidikans.id')
 	            ->join('tabel_jenis_kelamins', 'data_penduduks.Jenis_Kelamin', '=', 'tabel_jenis_kelamins.id')
 	            ->join('tabel_status_hubungan_dalam_keluargas', 'data_penduduks.Status_Hubungan_Dalam_Keluarga', '=', 'tabel_status_hubungan_dalam_keluargas.id')
-	            ->select('data_penduduks.*', 'tabel_agamas.agama','tabel_jenis_pekerjaans.jenis_pekerjaan','tabel_golongan_darahs.golongan_darah','tabel_kewarganegaraans.kewarganegaraan','tabel_status_perkawinans.status_perkawinan','tabel_pendidikans.pendidikan','tabel_jenis_kelamins.jenis_kelamin','tabel_status_hubungan_dalam_keluargas.status_hubungan_dalam_keluarga')->get();
+	            ->select('data_penduduks.*', 'tabel_agamas.agama','tabel_jenis_pekerjaans.jenis_pekerjaan','tabel_golongan_darahs.golongan_darah','tabel_kewarganegaraans.kewarganegaraan','tabel_status_perkawinans.status_perkawinan','tabel_pendidikans.pendidikan','tabel_jenis_kelamins.jenis_kelamin','tabel_status_hubungan_dalam_keluargas.status_hubungan_dalam_keluarga')->where($kategori,'LIKE','%'.$id.'%')->get();
+
+        return $data_penduduk_kadus_ajax;
 	}
 });
 
@@ -60,9 +60,7 @@ Route::get('/caridatakadus/{kategori}/{id}',function($kategori,$id)
 	
 	if(Request::ajax()){
 		// $kode_area_dusuns=App\kode_area_dusun::where('id_kadus',Auth::user()->id)->get();
-	 $data_penduduk_kadus_ajax=App\data_penduduk::where($kategori,'LIKE','%'.$id.'%')->get();
-
-        return $data_penduduk_kadus_ajax = DB::table('data_penduduks')
+	 $data_penduduk_kadus_ajax=DB::table('data_penduduks')
 	            ->join('tabel_agamas', 'data_penduduks.Agama', '=', 'tabel_agamas.id')
 	            ->join('tabel_jenis_pekerjaans', 'data_penduduks.Jenis_Pekerjaan', '=', 'tabel_jenis_pekerjaans.id')
 	            ->join('tabel_golongan_darahs', 'data_penduduks.Golongan_Darah', '=', 'tabel_golongan_darahs.id')
@@ -71,7 +69,9 @@ Route::get('/caridatakadus/{kategori}/{id}',function($kategori,$id)
 	            ->join('tabel_pendidikans', 'data_penduduks.Pendidikan', '=', 'tabel_pendidikans.id')
 	            ->join('tabel_jenis_kelamins', 'data_penduduks.Jenis_Kelamin', '=', 'tabel_jenis_kelamins.id')
 	            ->join('tabel_status_hubungan_dalam_keluargas', 'data_penduduks.Status_Hubungan_Dalam_Keluarga', '=', 'tabel_status_hubungan_dalam_keluargas.id')
-	            ->select('data_penduduks.*', 'tabel_agamas.agama','tabel_jenis_pekerjaans.jenis_pekerjaan','tabel_golongan_darahs.golongan_darah','tabel_kewarganegaraans.kewarganegaraan','tabel_status_perkawinans.status_perkawinan','tabel_pendidikans.pendidikan','tabel_jenis_kelamins.jenis_kelamin','tabel_status_hubungan_dalam_keluargas.status_hubungan_dalam_keluarga')->get();
+	            ->select('data_penduduks.*', 'tabel_agamas.agama','tabel_jenis_pekerjaans.jenis_pekerjaan','tabel_golongan_darahs.golongan_darah','tabel_kewarganegaraans.kewarganegaraan','tabel_status_perkawinans.status_perkawinan','tabel_pendidikans.pendidikan','tabel_jenis_kelamins.jenis_kelamin','tabel_status_hubungan_dalam_keluargas.status_hubungan_dalam_keluarga')->where($kategori,'LIKE','%'.$id.'%')->get();where($kategori,'LIKE','%'.$id.'%')->get();
+
+        return $data_penduduk_kadus_ajax;
 	}
 
 });
