@@ -116,7 +116,7 @@
                 <div class="container">
                 <div class="row">
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
-                        <div class="tentang_desa inner text-center">
+                        <div class="tentang_desa inner text-left">
                             <h2>Selayang Pandang</h2>
                             <p>Desa Pringgajurang terletak di ke Kecamatan Montong Gading, Kabupaten Lombok Timur, NTB. Desa ini berada tidak jauh dari objek Wisata Otak Kokok-Joben. Desa ini dapat diakses dari Bandara Internasional Lombok, Pelabuhan Lembar, Kota Matar . . .</p>
                         </div>
@@ -126,7 +126,7 @@
                             <div id="carouselExampleControls" class="carousel slide my-carousel" data-ride="carousel">
                               <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                  <h2>Berita Terbaru</h2>
+                                  <h2 class="text-left">Berita Terbaru</h2>
                                     <h3><a href="{{ url('beritadesa') }}">{{ substr($beritas[0]->judulberita,0,100) }}</a></h3>
                                     <br>
                                     <p class="text-right footsign">admin,{{ date("d F Y", strtotime($beritas[0]->created_at)) }}</p>
@@ -134,7 +134,7 @@
                                 @foreach($beritas as $key => $berita)
                                 @if($key > 0)
                                 <div class="carousel-item">
-                                  <h2>Berita Terbaru</h2>
+                                  <h2 class="text-left">Berita Terbaru</h2>
                                     <h3><a href="{{ url('beritadesa') }}">{{ substr($berita->judulberita,0,100) }}</a></h3>
                                     <br>
                                     <p class="text-right footsign">admin,{{ date("d F Y", strtotime($berita->created_at)) }}</p>
@@ -158,13 +158,13 @@
                                 <div id="carouselExampleControls2" class="carousel slide my-carousel" data-ride="carousel">
                               <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                  <h2>{{ $pengumumans[0]->judulpengumuman }}</h2>
+                                  <h2 class="text-left">{{ $pengumumans[0]->judulpengumuman }}</h2>
                                     <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumumans[0]->judulpengumuman) }}">{{ substr($pengumumans[0]->deskripsi,0,100) }} . . .</a></p>
                                 </div>
                                 @foreach($pengumumans as $key => $pengumuman)
                                 @if($key > 0)
                                 <div class="carousel-item">
-                                  <h2>{{ $pengumuman->judulpengumuman }}</h2>
+                                  <h2 class="text-left">{{ $pengumuman->judulpengumuman }}</h2>
                                     <p><a class="text-dark" href="{{ url('detailpengumuman/' .  $pengumuman->judulpengumuman) }}">{{ substr($pengumuman->deskripsi,0,100) }}</a></p>
                                 </div>
                              @endif
@@ -200,7 +200,7 @@
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-2">
                         <div class="outter2">
-                            <a href="#">
+                            <a href="{{url('transparansi/apbd')}}">
                                 <img src="/images/Screenshot from 2018-10-16 17-11-07.jpg" alt="">
                             <div class="inner2 d-flex flex-last">
                                 <h3 class="mt-auto">DANA DESA</h3>
@@ -271,11 +271,22 @@
                 <div class="col-md-12">
                     <div class="kotakpanduanpenduduk">
                         <h1>Panduan Penduduk</h1>
-                        <form action="{{url('caripanduanpenduduk')}}" method="post" accept-charset="utf-8">
+                        <!-- <form action="{{url('caripanduanpenduduk')}}" method="post" accept-charset="utf-8">
                               {{ csrf_field() }}
                               <input type="text"  id="search" name="search" placeholder="cari panduan" >
                               <input type="submit" value="Search" id="tombol_search_panduan">
-                          </form>
+                          </form> -->
+                          <ul>
+                            <li><a target="_blank" href="https://www.lpdp.kemenkeu.go.id">Panduan Beasiswa LPDP</a></li>
+                            <li><a target="_blank" href="https://www.bpjs-kesehatan.go.id/bpjs/">Panduan BPJS</a></li>
+                            <li><a target="_blank" href="http://www.bnp2tki.go.id/read/8998/Petunjuk-Penempatan-TKI-Perseorangan.html">Petunjuk penempatan TKI perorangan</a></li>
+                            <li><a target="_blank" href="https://www.bridestory.com/id/blog/panduan-mengurus-5-administrasi-penting-setelah-menikah">Panduang mengurus administrasi setelah menikah</a></li>
+                            <li><a target="_blank" href="https://www.finansialku.com/mengurus-catatan-sipil-akta-nikah/amp/">Mengurus akta nikah</a></li>
+                            <li><a target="_blank" href="https://www.cermati.com/artikel/cara-membuat-siup-surat-izin-usaha-perdagangan">Cara mengurus SIUP (Surat Izin Usaha Perdagangan)</a></li>
+                            <li><a target="_blank" href="https://www.online-pajak.com/e-billing-pajak-cara-bayar-pajak-online">Cara bayar pajak online</a></li>
+                            <li><a target="_blank" href="http://www.pajak.go.id/content/e-billing">E-billing pajak</a></li>
+                            <li><a target="_blank" href="https://www.pln.co.id">Pasang meter listrik</a></li>
+                          </ul>
                     </div>
                 </div>
             </div>
@@ -445,7 +456,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="kotak4Pengunjung">
-                    <h3>Aktifitas Menarik</h3>
+                    <h3>Homestay</h3>
                 </div>
             </div>
             <div class="col-md-4">

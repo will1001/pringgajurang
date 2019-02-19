@@ -1,4 +1,13 @@
-.mainmenu-area {
+
+body{
+	background-image: none;
+}
+
+.bg-light{
+    background-color: #138FC2!important;
+}
+
+.mainmenu-area {	
 	background-color: #138fc2;
 }
 

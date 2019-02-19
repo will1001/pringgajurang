@@ -313,3 +313,9 @@ footer{
 .bidangpanel{
   margin: 0px 10px;
 }
+
+.kotakpanduanpenduduk a{
+color: #000;
+font-size: 23px;
+text-decoration: none;
+}
