@@ -276,7 +276,16 @@
                               <input type="text"  id="search" name="search" placeholder="cari panduan" >
                               <input type="submit" value="Search" id="tombol_search_panduan">
                           </form> -->
+
+                          <div class="cari">
+                            <input type="text" name="Cari" class="cari_text"
+                               v-model="caritext"
+                               placeholder="Cari Panduan"/>
+                          </div>
                           <ul>
+                            <li v-for="panduan in panduans"><a v-bind:href="panduan.link" target="_blank">@{{ panduan.title }}</a></li>
+                          </ul>
+                         <!--  <ul>
                             <li><a target="_blank" href="https://www.lpdp.kemenkeu.go.id">Panduan Beasiswa LPDP</a></li>
                             <li><a target="_blank" href="https://www.bpjs-kesehatan.go.id/bpjs/">Panduan BPJS</a></li>
                             <li><a target="_blank" href="http://www.bnp2tki.go.id/read/8998/Petunjuk-Penempatan-TKI-Perseorangan.html">Petunjuk penempatan TKI perorangan</a></li>
@@ -286,7 +295,7 @@
                             <li><a target="_blank" href="https://www.online-pajak.com/e-billing-pajak-cara-bayar-pajak-online">Cara bayar pajak online</a></li>
                             <li><a target="_blank" href="http://www.pajak.go.id/content/e-billing">E-billing pajak</a></li>
                             <li><a target="_blank" href="https://www.pln.co.id">Pasang meter listrik</a></li>
-                          </ul>
+                          </ul> -->
                     </div>
                 </div>
             </div>

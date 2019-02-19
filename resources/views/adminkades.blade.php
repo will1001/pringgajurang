@@ -176,6 +176,17 @@
         <col width="1000px">
         <col width="1000px">
         <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
+        <col width="1000px">
         <tr>
                   <th rowspan="2">No</th>
                   <th rowspan="2">Alamat</th>
@@ -217,8 +228,19 @@
                   <th rowspan="2">Kebiasaan Berobat Bila Sakit</th>   
                   <!-- <th colspan="5">Pendapatan Perkapita</th>    -->
                   <!-- <th colspan="5">Pendapatan Rill Keluarga</th>    -->
+                  <th rowspan="2">Jumlah Penghasilan Perbulan</th>   
+                  <th rowspan="2">Jumlah Pengeluaran Perbulan</th>   
+                  <th rowspan="2">Sumber Air Minum</th>   
+                  <th rowspan="2">Kualitas Air Minum</th>   
+                  <th rowspan="2">Kualitas Ibu Hamil</th>   
+                  <th rowspan="2">Kualitas Bayi</th>   
+                  <th rowspan="2">Tempat Persalinan</th>   
+                  <th rowspan="2">Portolongan Persalinan</th>   
+                  <th rowspan="2">Cakupan Imunisasi</th>   
+                  <th rowspan="2">Perilaku Hidup Bersih</th>   
+                  <th rowspan="2">Pola Makan</th>
                   <th rowspan="2">Foto KTP</th>  
-                  <th rowspan="2">Foto KK</th>   
+                  <th rowspan="2">Foto KK</th>       
                   <th rowspan="2">edit</th> 
                   <th rowspan="2">hapus</th> 
         </tr>

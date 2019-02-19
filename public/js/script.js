@@ -98,6 +98,17 @@ function loadTabelDataPenduduk(data) {
         $('#trtabel'+j+'').append('<td id="tempat_mendapatkan_air_bersih'+j+'"></td>');        
         $('#trtabel'+j+'').append('<td id="status_gizi_balita'+j+'"></td>');        
         $('#trtabel'+j+'').append('<td id="kebiasaan_berobat_bila_sakit'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
 
         if(this.foto_ktp==null && this.foto_kk==null ){
         $('#trtabel'+j+'').append('<td id="foto_ktp'+j+'"><a href="'+this.foto_ktp+'"></a></td>');        

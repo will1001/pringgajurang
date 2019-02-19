@@ -60,8 +60,22 @@ Vue.component('Pembangunan',{
 
 Vue.component('panduanpenduduk',{
 	template : '#panduanpenduduk',
+	data:function () {
+  		return {
+  			caritext:'',
+	    	panduans:[
+	    		{
+	    			title: 'Panduan Beasiswa LPDP',
+	    			link:'https://www.lpdp.kemenkeu.go.id',
+	    		},
+	    		{
+	    			title:'Panduan BPJS',
+	    			link:'https://www.bpjs-kesehatan.go.id/bpjs/',
+	    		},
+	    	]
+	  	}
+	},
 });
-
 
 Vue.component('halamanbisnis',{
 	template : '#halamanbisnis',
