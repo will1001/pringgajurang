@@ -41,8 +41,12 @@ class webcontroller extends Controller
     public function statistik()
     {
         # code...
-        $statistik_desas= statistik_desa::all();
-        return view("statistik",['statistik_desas' => $statistik_desas]);
+        // $statistik_desas= statistik_desa::all();
+        $data_penduduks= data_penduduk::all();
+        $jml_penduduk=$data_penduduks->count();
+
+
+        return view("statistik",['data_penduduks' => $data_penduduks]);
     } 
 
 

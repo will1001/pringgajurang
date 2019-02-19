@@ -13,7 +13,7 @@
 
     <div class="col-md-4">
      
-     <form action="{{url('adddatapendudukkades')}}" method="post" enctype="multipart/form-data">
+     <form action="{{url('adddatapendudukkades')}}" method="post" enctype="multipart/form-data" class="padding_form">
           {{ csrf_field() }}
           Alamat :<br>
           <input type="text" name="Alamat" placeholder="Alamat"><br><br>

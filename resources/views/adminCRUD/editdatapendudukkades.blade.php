@@ -16,7 +16,7 @@
 
     <div class="col-md-4">
       
-     <form action="{{ url('editdatapendudukkades/' .  $data_penduduks[0]->NIK .'/'.$data_penduduks[0]->Id_Dusun ) }}" method="post" enctype="multipart/form-data">
+     <form action="{{ url('editdatapendudukkades/' .  $data_penduduks[0]->NIK .'/'.$data_penduduks[0]->Id_Dusun ) }}" method="post" enctype="multipart/form-data" class="padding_form">
           {{ csrf_field() }}
           Alamat :<br>
           <input type="text" name="Alamat" value="{{$data_penduduks[0]->Alamat}}"><br><br>

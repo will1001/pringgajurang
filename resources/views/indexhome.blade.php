@@ -210,7 +210,7 @@
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="outter">
-                            <a href="#">
+                            <a href="{{url('statistik')}}">
                                 <img src="/images/Grafik-Bonus-Demografi.jpg" alt="">
                             <div class="inner1 d-flex flex-last">
                                 <h3 class="mt-auto">STATISTIK</h3>
