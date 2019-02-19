@@ -319,3 +319,9 @@ color: #000;
 font-size: 23px;
 text-decoration: none;
 }
+
+.kotakpanduanpenduduk a:hover{
+color: #fff;
+transition:1s;
+
+}

@@ -418,7 +418,7 @@
             <div class="col-md-4">
                 <div class="kotak1Pengunjung">
                     <h3>Local Life</h3>
-                    <iframe src="https://youtube.com/embed/alkEQnLee5w" width="100%" height="100%" allowfullscreen></iframe>
+                    <iframe src="https://youtube.com/embed/alkEQnLee5w" width="200px" height="200px" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="col-md-4">
