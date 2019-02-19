@@ -42,11 +42,27 @@ class webcontroller extends Controller
     {
         # code...
         // $statistik_desas= statistik_desa::all();
-        $data_penduduks= data_penduduk::all();
-        $jml_penduduk=$data_penduduks->count();
+        // $data_penduduks= data_penduduk::all();
+        $jml_penduduk=data_penduduk::all()->count();
+        $jml_penduduk_dusun_TEMILING=data_penduduk::where('Id_Dusun','=','1')->count();
+        $jml_penduduk_dusun_DALAM_DESA_UTARA=data_penduduk::where('Id_Dusun','=','2')->count();
+        $jml_penduduk_dusun_DALAM_DESA_SELATAN=data_penduduk::where('Id_Dusun','=','3')->count();
+        $jml_penduduk_dusun_KAYULIAN=data_penduduk::where('Id_Dusun','=','4')->count();
+        $jml_penduduk_dusun_DASAN_BARU=data_penduduk::where('Id_Dusun','=','5')->count();
+        $jml_penduduk_dusun_PENGEMBUR=data_penduduk::where('Id_Dusun','=','6')->count();
+        $jml_penduduk_tidak_sekolah=data_penduduk::where('Pendidikan','=','1')->count();
+        $jml_penduduk_blm_sd=data_penduduk::where('Pendidikan','=','2')->count();
+        $jml_penduduk_tamat_sd=data_penduduk::where('Pendidikan','=','3')->count();
+        $jml_penduduk_smp=data_penduduk::where('Pendidikan','=','4')->count();
+        $jml_penduduk_sma=data_penduduk::where('Pendidikan','=','5')->count();
+        $jml_penduduk_d1=data_penduduk::where('Pendidikan','=','6')->count();
+        $jml_penduduk_d3=data_penduduk::where('Pendidikan','=','7')->count();
+        $jml_penduduk_s1=data_penduduk::where('Pendidikan','=','8')->count();
+        $jml_penduduk_s2=data_penduduk::where('Pendidikan','=','9')->count();
+        $jml_penduduk_s3=data_penduduk::where('Pendidikan','=','10')->count();
 
 
-        return view("statistik",['data_penduduks' => $data_penduduks]);
+        return view("statistik",['jml_penduduk' => $jml_penduduk,'jml_penduduk_tidak_sekolah' => $jml_penduduk_tidak_sekolah,'jml_penduduk_blm_sd' => $jml_penduduk_blm_sd,'jml_penduduk_tamat_sd' => $jml_penduduk_tamat_sd,'jml_penduduk_smp' => $jml_penduduk_smp,'jml_penduduk_sma' => $jml_penduduk_sma,'jml_penduduk_d1' => $jml_penduduk_d1,'jml_penduduk_d3' => $jml_penduduk_d3,'jml_penduduk_s1' => $jml_penduduk_s1,'jml_penduduk_s2' => $jml_penduduk_s2,'jml_penduduk_s3' => $jml_penduduk_s3,'jml_penduduk_dusun_TEMILING' => $jml_penduduk_dusun_TEMILING,'jml_penduduk_dusun_DALAM_DESA_UTARA' => $jml_penduduk_dusun_DALAM_DESA_UTARA,'jml_penduduk_dusun_DALAM_DESA_SELATAN' => $jml_penduduk_dusun_DALAM_DESA_SELATAN,'jml_penduduk_dusun_KAYULIAN' => $jml_penduduk_dusun_KAYULIAN,'jml_penduduk_dusun_DASAN_BARU' => $jml_penduduk_dusun_DASAN_BARU,'jml_penduduk_dusun_PENGEMBUR' => $jml_penduduk_dusun_PENGEMBUR]);
     } 
 
 

@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lemon">
     <link rel="stylesheet" href="{{asset('css/transparansi.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsivedetailhalaman.css')}}">
+    <link rel="stylesheet" href="{{asset('css/table.css')}}">
     <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
 
     <!--[if lt IE 9]>
@@ -67,7 +68,7 @@
             <h1 class="text-center">Data Statistik Desa</h1><br><br>
         </div>
     </div>
-        <div style="overflow: auto;max-height: 400px;position: relative;  ">
+        <div style="overflow: auto;max-height: 100%;position: relative;  font-size: 21px; width: 100%;">
       <table id="tabeldatakadus">
       <thead>
         <col width="1000px">
@@ -116,20 +117,95 @@
       </thead>
       <tbody id="tbodytabel">
         @php
-        $no=0
+        $no=1
         @endphp
-       <!--  @foreach($data_penduduks as $data_penduduk) -->
           <tr>
-            <td>{{ $no+1 }}</td>
+            <td>{{ $no++ }}</td>
             <td>Jumlah Penduduk</td>
-            <td>{{$data_penduduks->count()}}</td>
+            <td>{{$jml_penduduk}}</td>
+          </tr>
+                    <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk Dusun TEMILING</td>
+            <td>{{$jml_penduduk_dusun_TEMILING}}</td>
           </tr>
           <tr>
-            <td>{{ $no+2 }}</td>
-            <td>Jumlah Penduduk tingkat sekolah </td>
-            <td>{{$data_penduduks->count()}}</td>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk Dusun DALAM DESA UTARA</td>
+            <td>{{$jml_penduduk_dusun_DALAM_DESA_UTARA}}</td>
           </tr>
-       <!--  @endforeach -->
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk Dusun DALAM DESA SELATAN</td>
+            <td>{{$jml_penduduk_dusun_DALAM_DESA_SELATAN}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk Dusun KAYULIAN</td>
+            <td>{{$jml_penduduk_dusun_KAYULIAN}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk Dusun DASAN BARU</td>
+            <td>{{$jml_penduduk_dusun_DASAN_BARU}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk Dusun PENGEMBUR</td>
+            <td>{{$jml_penduduk_dusun_PENGEMBUR}}</td>
+          </tr>
+
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang TIDAK / BELUM SEKOLAH</td>
+            <td>{{$jml_penduduk_tidak_sekolah}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang BELUM TAMAT SD / SEDERAJAT</td>
+            <td>{{$jml_penduduk_blm_sd}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang TAMAT SD / SEDERAJAT</td>
+            <td>{{$jml_penduduk_tamat_sd}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang SLTP / SEDERAJAT</td>
+            <td>{{$jml_penduduk_smp}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang SLTA / SEDERAJAT</td>
+            <td>{{$jml_penduduk_sma}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang DIPLOMA I // II</td>
+            <td>{{$jml_penduduk_d1}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang AKADEMI / DIPLOMA III / S.MUDA</td>
+            <td>{{$jml_penduduk_d3}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang DIPLOMA IV / STRATA I</td>
+            <td>{{$jml_penduduk_s1}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang STRATA II</td>
+            <td>{{$jml_penduduk_s2}}</td>
+          </tr>
+          <tr>
+            <td>{{ $no++ }}</td>
+            <td>Jumlah Penduduk yang STRATA III</td>
+            <td>{{$jml_penduduk_s3}}</td>
+          </tr>
+
       </tbody>
     </table>
           </div>
@@ -139,7 +215,7 @@
 
   
 
-  <footer style="">
+ <!--  <footer style="padding-top">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 text-light text-left">
@@ -160,7 +236,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 
 
 
