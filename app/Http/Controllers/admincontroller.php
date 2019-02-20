@@ -2422,7 +2422,7 @@ public function adddatapendudukkadus(Request $request)
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
             'foto_kk' => '/uploadsgambar/'.$fileNamekk,
-            'Usia' => $usia
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2480,7 +2480,7 @@ public function adddatapendudukkadus(Request $request)
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
-            'Usia' => $usia
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2538,7 +2538,7 @@ public function adddatapendudukkadus(Request $request)
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_kk' => '/uploadsgambar/'.$fileNamekk,
-            'Usia' => $usia
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2587,7 +2587,7 @@ public function adddatapendudukkadus(Request $request)
             'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
-            'Usia' => $usia
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2944,7 +2944,7 @@ public function adddatapendudukkadus(Request $request)
                 $usia = (($rumususia/365)*-1);
 
                  data_penduduk::where('id_dusun',$i)->update([
-                'Usia' => $usia            
+                'Usia' => floor($usia)            
              ]);  
             }
         }
