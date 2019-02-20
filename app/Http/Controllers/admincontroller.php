@@ -1901,7 +1901,7 @@ public function adddatapendudukkadus(Request $request)
             
             
             $validator = Validator::make(request()->all(), [
-                'NIK','Jenis_Kelamin', 'Agama','Pendidikan','Jenis_Pekerjaan','Status_Perkawinan','Kewarganegaraan','Golongan_Darah' ,'Id_Dusun','Status_Hubungan_Dalam_Keluarga' => 'required',
+                'NIK','Jenis_Kelamin', 'Agama','Pendidikan','Jenis_Pekerjaan','Status_Perkawinan','Kewarganegaraan','Golongan_Darah' ,'Id_Dusun','' => 'required',
                 
             ]);
             if ($validator->fails()) {
