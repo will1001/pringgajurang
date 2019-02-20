@@ -95,7 +95,7 @@ Route::get('/reloadtabeldusunurutnama/{id}/{pil}',function($id,$pil)
 
 
 Route::get('/profildesa', 'webcontroller@profildesa');
-Route::get('/export', 'webcontroller@export');
+Route::get('/export_data_penduduk', 'webcontroller@export_data_penduduk');
 Route::get('/bumdes', 'webcontroller@bumdes');
 Route::get('/statistik', 'webcontroller@statistik');
 Route::get('/artisancall', 'webcontroller@artisancall');

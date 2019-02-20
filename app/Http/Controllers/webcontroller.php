@@ -25,7 +25,7 @@ class webcontroller extends Controller
 {
     //
 
-    public function export() 
+    public function export_data_penduduk() 
     {
         return Excel::download(new UsersExport, 'Data Penduduk.xlsx');
     }

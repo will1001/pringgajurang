@@ -1703,6 +1703,8 @@ public function adddatapendudukkadus(Request $request)
 
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
+
+            
             
 
             $data = new data_penduduk();
