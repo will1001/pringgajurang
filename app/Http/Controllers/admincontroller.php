@@ -2379,7 +2379,7 @@ public function adddatapendudukkadus(Request $request)
 
             $data_penduduk=data_penduduk::where('NIK',$id)->get();
             
-            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
             $usia = (($rumususia/365)*-1);  
 
             
@@ -2439,7 +2439,7 @@ public function adddatapendudukkadus(Request $request)
 
             $data_penduduk=data_penduduk::where('NIK',$id)->get();
             
-            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
             $usia = (($rumususia/365)*-1);
             
 
@@ -2497,7 +2497,7 @@ public function adddatapendudukkadus(Request $request)
 
             $data_penduduk=data_penduduk::where('NIK',$id)->get();
             
-            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
             $usia = (($rumususia/365)*-1);
             
 
@@ -2548,7 +2548,7 @@ public function adddatapendudukkadus(Request $request)
             }else{
 
             $data_penduduk=data_penduduk::where('NIK',$id)->get();
-            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
             $usia = (($rumususia/365)*-1);
                
                 data_penduduk::where('NIK',$id)->update([
@@ -2940,7 +2940,7 @@ public function adddatapendudukkadus(Request $request)
 
             foreach ($data_penduduks as $data_penduduk) {
                 # code...
-                $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
+                $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
                 $usia = (($rumususia/365)*-1);
 
                  data_penduduk::where('id_dusun',$i)->update([
