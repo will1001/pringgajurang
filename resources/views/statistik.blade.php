@@ -105,7 +105,7 @@
             </table>
           </div>
 
-          <div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+          <div class="tablestatistik">
                   <div class="row">
                 <div class="col-md-12">
                     <h5 class="text-center">Jumlah Penduduk Dusun TEMILING</h5><br>
@@ -140,7 +140,7 @@
             </table>
           </div>
 
-<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+<div class="tablestatistik">
                   <div class="row">
                 <div class="col-md-12">
                     <h5 class="text-center">Jumlah Penduduk Dusun DALAM DESA UTARA</h5><br>
@@ -175,7 +175,7 @@
             </table>
           </div>
 
-<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+<div class="tablestatistik">
                   <div class="row">
                 <div class="col-md-12">
                     <h5 class="text-center">Jumlah Penduduk Dusun DALAM DESA SELATAN</h5><br>
@@ -210,7 +210,7 @@
             </table>
           </div>
 
-<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+<div class="tablestatistik">
                   <div class="row">
                 <div class="col-md-12">
                     <h5 class="text-center">Jumlah Penduduk Dusun KAYULIAN</h5><br>
@@ -245,7 +245,7 @@
             </table>
           </div>
 
-<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+<div class="tablestatistik">
                   <div class="row">
                 <div class="col-md-12">
                     <h5 class="text-center">Jumlah Penduduk Dusun DASAN BARU</h5><br>
@@ -280,7 +280,7 @@
             </table>
           </div>
 
-<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+<div class="tablestatistik">
                   <div class="row">
                 <div class="col-md-12">
                     <h5 class="text-center">Jumlah Penduduk Dusun PENGEMBUR</h5><br>
@@ -316,7 +316,7 @@
           </div>
 
 
-          <div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+          <div class="tablestatistik">
                   <div class="row">
                 <div class="col-md-12">
                     <h5 class="text-center">Statistik Pendidikan</h5><br>
