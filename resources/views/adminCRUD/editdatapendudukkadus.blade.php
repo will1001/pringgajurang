@@ -5,12 +5,16 @@
 
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
+   <div class="row">
+    <div class="col-md-12 text-center">
       @if ($errors->any())
         <h3 class="text-center text-danger">{{ implode('', $errors->all(':message')) }}</h3>
         @endif
-     <form action={{ url('editdatapendudukkadus/' .  $data_penduduks[0]->NIK ) }} method="post" enctype="multipart/form-data" style="padding-top: 100px;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+     <form action="{{ url('editdatapendudukkadus/' .  $data_penduduks[0]->NIK ) }}" method="post" enctype="multipart/form-data" class="padding_form">
           {{ csrf_field() }}
           Alamat :<br>
           <input type="text" name="Alamat" value="{{$data_penduduks[0]->Alamat}}"><br><br>
@@ -88,6 +92,8 @@
                     <option value="{{ $tabel_golongan_darah->id }}">{{ $tabel_golongan_darah->golongan_darah }}</option>
                  @endforeach
           </select><br><br>
+          </div>
+          <div class="col-md-4">
           Akta Lahir :<br>
           <input type="text" name="Akta_Lahir" value="{{$data_penduduks[0]->Akta_Lahir}}"><br><br>
           Nomor Dokumen Paspor :<br>
@@ -164,6 +170,30 @@
                <option value="Paranormal">Paranormal</option>
                <option value="Tidak berobat">Tidak berobat</option>
           </select><br><br>
+          Jumlah Penghasilan Perbulan :<br>
+          <input type="text" name="Jumlah Penghasilan Perbulan" placeholder="Jumlah Penghasilan Perbulan"><br><br>
+          Jumlah Pengeluaran Perbulan :<br>
+          <input type="text" name="Jumlah Pengeluaran Perbulan" placeholder="Jumlah Pengeluaran Perbulan"><br><br>
+           </div>
+          <div class="col-md-4">
+          Sumber Air Minum :<br>
+          <input type="text" name="Sumber Air Minum" placeholder="Sumber Air Minum"><br><br>
+          Kualitas Air Minum :<br>
+          <input type="text" name="Kualitas Air Minum" placeholder="Kualitas Air Minum"><br><br>
+          Kualitas Ibu Hamil :<br>
+          <input type="text" name="Kualitas Ibu Hamil" placeholder="Kualitas Ibu Hamil"><br><br>
+          Kualitas Bayi :<br>
+          <input type="text" name="Kualitas Bayi" placeholder="Kualitas Bayi"><br><br>
+          Tempat Persalinan :<br>
+          <input type="text" name="Tempat Persalinan" placeholder="Tempat Persalinan"><br><br>
+          Portolongan Persalinan :<br>
+          <input type="text" name="Portolongan Persalinan" placeholder="Portolongan Persalinan"><br><br>
+          Cakupan Imunisasi :<br>
+          <input type="text" name="Cakupan Imunisasi" placeholder="Cakupan Imunisasi"><br><br>
+          Perilaku Hidup Bersih :<br>
+          <input type="text" name="Perilaku Hidup Bersih" placeholder="Perilaku Hidup Bersih"><br><br>
+          Pola Makan :<br>
+          <input type="text" name="Pola Makan" placeholder="Pola Makan"><br><br>
           Upload foto KTP : <br><br>
           <input type="file" name="foto_ktp" id="foto_ktp"><br><br>
           Upload foto KK : <br><br>

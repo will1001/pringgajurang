@@ -61,154 +61,338 @@
 
 
 
-    <section id="statistik" class="section-padding">
+    <section id="statistik" style="padding-top: 31px;">
       <div class="container">
+
         <div class="row">
-        <div class="col-md-12">
+          <div class="col-md-12">
             <h1 class="text-center">Data Statistik Desa</h1><br><br>
-        </div>
-    </div>
-        <div style="overflow: auto;max-height: 100%;position: relative;  font-size: 21px; width: 100%;">
-      <table id="tabeldatakadus">
-      <thead>
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <col width="1000px">
-        <tr>
-                  <th rowspan="2">No</th>
-                  <th rowspan="2">Deskripsi</th>
-                  <th rowspan="2">Jumlah</th>
-        </tr>
-      </thead>
-      <tbody id="tbodytabel">
-        @php
-        $no=1
-        @endphp
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk</td>
-            <td>{{$jml_penduduk}}</td>
-          </tr>
-                    <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk Dusun TEMILING</td>
-            <td>{{$jml_penduduk_dusun_TEMILING}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk Dusun DALAM DESA UTARA</td>
-            <td>{{$jml_penduduk_dusun_DALAM_DESA_UTARA}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk Dusun DALAM DESA SELATAN</td>
-            <td>{{$jml_penduduk_dusun_DALAM_DESA_SELATAN}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk Dusun KAYULIAN</td>
-            <td>{{$jml_penduduk_dusun_KAYULIAN}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk Dusun DASAN BARU</td>
-            <td>{{$jml_penduduk_dusun_DASAN_BARU}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk Dusun PENGEMBUR</td>
-            <td>{{$jml_penduduk_dusun_PENGEMBUR}}</td>
-          </tr>
-
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang TIDAK / BELUM SEKOLAH</td>
-            <td>{{$jml_penduduk_tidak_sekolah}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang BELUM TAMAT SD / SEDERAJAT</td>
-            <td>{{$jml_penduduk_blm_sd}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang TAMAT SD / SEDERAJAT</td>
-            <td>{{$jml_penduduk_tamat_sd}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang SLTP / SEDERAJAT</td>
-            <td>{{$jml_penduduk_smp}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang SLTA / SEDERAJAT</td>
-            <td>{{$jml_penduduk_sma}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang DIPLOMA I // II</td>
-            <td>{{$jml_penduduk_d1}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang AKADEMI / DIPLOMA III / S.MUDA</td>
-            <td>{{$jml_penduduk_d3}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang DIPLOMA IV / STRATA I</td>
-            <td>{{$jml_penduduk_s1}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang STRATA II</td>
-            <td>{{$jml_penduduk_s2}}</td>
-          </tr>
-          <tr>
-            <td>{{ $no++ }}</td>
-            <td>Jumlah Penduduk yang STRATA III</td>
-            <td>{{$jml_penduduk_s3}}</td>
-          </tr>
-
-      </tbody>
-    </table>
           </div>
+        </div>
+
+        <div style="overflow-x:hidden; max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+                  <div class="row">
+                <div class="col-md-12">
+                    <h5 class="text-center">Jumlah Penduduk</h5><br>
+                </div>
+            </div>
+              <table id="tabeldatakadus">
+              <thead>
+                <col width="1000px">
+                <col width="1000px">
+                <col width="1000px">
+                <tr>
+                          <th rowspan="2">No</th>
+                          <th rowspan="2">Jenis Kelamin</th>
+                          <th rowspan="2">Jumlah</th>
+                </tr>
+              </thead>
+              <tbody id="tbodytabel">
+                @php
+                $no=1
+                @endphp
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Laki - Laki</td>
+                    <td>{{$jml_penduduk_L}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Perempuan</td>
+                    <td>{{$jml_penduduk_P}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+                  <div class="row">
+                <div class="col-md-12">
+                    <h5 class="text-center">Jumlah Penduduk Dusun TEMILING</h5><br>
+                </div>
+            </div>
+              <table id="tabeldatakadus">
+              <thead>
+                <col width="1000px">
+                <col width="1000px">
+                <col width="1000px">
+                <tr>
+                          <th rowspan="2">No</th>
+                          <th rowspan="2">Jenis Kelamin</th>
+                          <th rowspan="2">Jumlah</th>
+                </tr>
+              </thead>
+              <tbody id="tbodytabel">
+                @php
+                $no=1
+                @endphp
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Laki - Laki</td>
+                    <td>{{$jml_penduduk_dusun_TEMILING_L}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Perempuan</td>
+                    <td>{{$jml_penduduk_dusun_TEMILING_P}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+                  <div class="row">
+                <div class="col-md-12">
+                    <h5 class="text-center">Jumlah Penduduk Dusun DALAM DESA UTARA</h5><br>
+                </div>
+            </div>
+              <table id="tabeldatakadus">
+              <thead>
+                <col width="1000px">
+                <col width="1000px">
+                <col width="1000px">
+                <tr>
+                          <th rowspan="2">No</th>
+                          <th rowspan="2">Jenis Kelamin</th>
+                          <th rowspan="2">Jumlah</th>
+                </tr>
+              </thead>
+              <tbody id="tbodytabel">
+                @php
+                $no=1
+                @endphp
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Laki - Laki</td>
+                    <td>{{$jml_penduduk_dusun_DALAM_DESA_UTARA_L}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Perempuan</td>
+                    <td>{{$jml_penduduk_dusun_DALAM_DESA_UTARA_P}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+                  <div class="row">
+                <div class="col-md-12">
+                    <h5 class="text-center">Jumlah Penduduk Dusun DALAM DESA SELATAN</h5><br>
+                </div>
+            </div>
+              <table id="tabeldatakadus">
+              <thead>
+                <col width="1000px">
+                <col width="1000px">
+                <col width="1000px">
+                <tr>
+                          <th rowspan="2">No</th>
+                          <th rowspan="2">Jenis Kelamin</th>
+                          <th rowspan="2">Jumlah</th>
+                </tr>
+              </thead>
+              <tbody id="tbodytabel">
+                @php
+                $no=1
+                @endphp
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Laki - Laki</td>
+                    <td>{{$jml_penduduk_dusun_DALAM_DESA_SELATAN_L}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Perempuan</td>
+                    <td>{{$jml_penduduk_dusun_DALAM_DESA_SELATAN_P}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+                  <div class="row">
+                <div class="col-md-12">
+                    <h5 class="text-center">Jumlah Penduduk Dusun KAYULIAN</h5><br>
+                </div>
+            </div>
+              <table id="tabeldatakadus">
+              <thead>
+                <col width="1000px">
+                <col width="1000px">
+                <col width="1000px">
+                <tr>
+                          <th rowspan="2">No</th>
+                          <th rowspan="2">Jenis Kelamin</th>
+                          <th rowspan="2">Jumlah</th>
+                </tr>
+              </thead>
+              <tbody id="tbodytabel">
+                @php
+                $no=1
+                @endphp
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Laki - Laki</td>
+                    <td>{{$jml_penduduk_dusun_KAYULIAN_L}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Perempuan</td>
+                    <td>{{$jml_penduduk_dusun_KAYULIAN_P}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+                  <div class="row">
+                <div class="col-md-12">
+                    <h5 class="text-center">Jumlah Penduduk Dusun DASAN BARU</h5><br>
+                </div>
+            </div>
+              <table id="tabeldatakadus">
+              <thead>
+                <col width="1000px">
+                <col width="1000px">
+                <col width="1000px">
+                <tr>
+                          <th rowspan="2">No</th>
+                          <th rowspan="2">Jenis Kelamin</th>
+                          <th rowspan="2">Jumlah</th>
+                </tr>
+              </thead>
+              <tbody id="tbodytabel">
+                @php
+                $no=1
+                @endphp
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Laki - Laki</td>
+                    <td>{{$jml_penduduk_dusun_DASAN_BARU_L}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Perempuan</td>
+                    <td>{{$jml_penduduk_dusun_DASAN_BARU_P}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+<div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+                  <div class="row">
+                <div class="col-md-12">
+                    <h5 class="text-center">Jumlah Penduduk Dusun PENGEMBUR</h5><br>
+                </div>
+            </div>
+              <table id="tabeldatakadus">
+              <thead>
+                <col width="1000px">
+                <col width="1000px">
+                <col width="1000px">
+                <tr>
+                          <th rowspan="2">No</th>
+                          <th rowspan="2">Jenis Kelamin</th>
+                          <th rowspan="2">Jumlah</th>
+                </tr>
+              </thead>
+              <tbody id="tbodytabel">
+                @php
+                $no=1
+                @endphp
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Laki - Laki</td>
+                    <td>{{$jml_penduduk_dusun_PENGEMBUR_L}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>Perempuan</td>
+                    <td>{{$jml_penduduk_dusun_PENGEMBUR_P}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div style="overflow-x:hidden;max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+                  <div class="row">
+                <div class="col-md-12">
+                    <h5 class="text-center">Statistik Pendidikan</h5><br>
+                </div>
+            </div>
+              <table id="tabeldatakadus">
+              <thead>
+                <col width="1000px">
+                <col width="1000px">
+                <col width="1000px">
+                <tr>
+                          <th rowspan="2">No</th>
+                          <th rowspan="2">Pendidikan</th>
+                          <th rowspan="2">Jumlah</th>
+                </tr>
+              </thead>
+              <tbody id="tbodytabel">
+                @php
+                $no=1
+                @endphp
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>TIDAK / BELUM SEKOLAH</td>
+                    <td>{{$jml_penduduk_tidak_sekolah_L+$jml_penduduk_tidak_sekolah_P}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>BELUM TAMAT SD / SEDERAJAT</td>
+                    <td>{{$jml_penduduk_blm_sd_L+$jml_penduduk_blm_sd_P}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>TAMAT SD / SEDERAJAT</td>
+                    <td>{{$jml_penduduk_tamat_sd_L+$jml_penduduk_tamat_sd_P}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>SLTP / SEDERAJAT</td>
+                    <td>{{$jml_penduduk_smp_L+$jml_penduduk_smp_P}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>SLTA / SEDERAJAT</td>
+                    <td>{{$jml_penduduk_sma_L+$jml_penduduk_sma_P}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>DIPLOMA I // II</td>
+                    <td>{{$jml_penduduk_d1_L+$jml_penduduk_d1_P}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>AKADEMI / DIPLOMA III / S.MUDA</td>
+                    <td>{{$jml_penduduk_d3_L+$jml_penduduk_d3_P}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>DIPLOMA IV / STRATA I</td>
+                    <td>{{$jml_penduduk_s1_L+$jml_penduduk_s1_P}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>STRATA II</td>
+                    <td>{{$jml_penduduk_s2_L+$jml_penduduk_s2_P}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>STRATA III</td>
+                    <td>{{$jml_penduduk_s3_L+$jml_penduduk_s3_P}}</td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+
       </div>
     </section>
 

@@ -43,26 +43,79 @@ class webcontroller extends Controller
         # code...
         // $statistik_desas= statistik_desa::all();
         // $data_penduduks= data_penduduk::all();
-        $jml_penduduk=data_penduduk::all()->count();
-        $jml_penduduk_dusun_TEMILING=data_penduduk::where('Id_Dusun','=','1')->count();
-        $jml_penduduk_dusun_DALAM_DESA_UTARA=data_penduduk::where('Id_Dusun','=','2')->count();
-        $jml_penduduk_dusun_DALAM_DESA_SELATAN=data_penduduk::where('Id_Dusun','=','3')->count();
-        $jml_penduduk_dusun_KAYULIAN=data_penduduk::where('Id_Dusun','=','4')->count();
-        $jml_penduduk_dusun_DASAN_BARU=data_penduduk::where('Id_Dusun','=','5')->count();
-        $jml_penduduk_dusun_PENGEMBUR=data_penduduk::where('Id_Dusun','=','6')->count();
-        $jml_penduduk_tidak_sekolah=data_penduduk::where('Pendidikan','=','1')->count();
-        $jml_penduduk_blm_sd=data_penduduk::where('Pendidikan','=','2')->count();
-        $jml_penduduk_tamat_sd=data_penduduk::where('Pendidikan','=','3')->count();
-        $jml_penduduk_smp=data_penduduk::where('Pendidikan','=','4')->count();
-        $jml_penduduk_sma=data_penduduk::where('Pendidikan','=','5')->count();
-        $jml_penduduk_d1=data_penduduk::where('Pendidikan','=','6')->count();
-        $jml_penduduk_d3=data_penduduk::where('Pendidikan','=','7')->count();
-        $jml_penduduk_s1=data_penduduk::where('Pendidikan','=','8')->count();
-        $jml_penduduk_s2=data_penduduk::where('Pendidikan','=','9')->count();
-        $jml_penduduk_s3=data_penduduk::where('Pendidikan','=','10')->count();
+        $jml_penduduk_L=data_penduduk::where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_P=data_penduduk::where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_dusun_TEMILING_L=data_penduduk::where('Id_Dusun','=','1')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_dusun_TEMILING_P=data_penduduk::where('Id_Dusun','=','1')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_dusun_DALAM_DESA_UTARA_L=data_penduduk::where('Id_Dusun','=','2')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_dusun_DALAM_DESA_UTARA_P=data_penduduk::where('Id_Dusun','=','2')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_dusun_DALAM_DESA_SELATAN_L=data_penduduk::where('Id_Dusun','=','3')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_dusun_DALAM_DESA_SELATAN_P=data_penduduk::where('Id_Dusun','=','3')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_dusun_KAYULIAN_L=data_penduduk::where('Id_Dusun','=','4')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_dusun_KAYULIAN_P=data_penduduk::where('Id_Dusun','=','4')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_dusun_DASAN_BARU_L=data_penduduk::where('Id_Dusun','=','5')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_dusun_DASAN_BARU_P=data_penduduk::where('Id_Dusun','=','5')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_dusun_PENGEMBUR_L=data_penduduk::where('Id_Dusun','=','6')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_dusun_PENGEMBUR_P=data_penduduk::where('Id_Dusun','=','6')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_tidak_sekolah_L=data_penduduk::where('Pendidikan','=','1')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_tidak_sekolah_P=data_penduduk::where('Pendidikan','=','1')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_blm_sd_L=data_penduduk::where('Pendidikan','=','2')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_blm_sd_P=data_penduduk::where('Pendidikan','=','2')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_tamat_sd_L=data_penduduk::where('Pendidikan','=','3')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_tamat_sd_P=data_penduduk::where('Pendidikan','=','3')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_smp_L=data_penduduk::where('Pendidikan','=','4')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_smp_P=data_penduduk::where('Pendidikan','=','4')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_sma_L=data_penduduk::where('Pendidikan','=','5')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_sma_P=data_penduduk::where('Pendidikan','=','5')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_d1_L=data_penduduk::where('Pendidikan','=','6')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_d1_P=data_penduduk::where('Pendidikan','=','6')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_d3_L=data_penduduk::where('Pendidikan','=','7')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_d3_P=data_penduduk::where('Pendidikan','=','7')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_s1_L=data_penduduk::where('Pendidikan','=','8')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_s1_P=data_penduduk::where('Pendidikan','=','8')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_s2_L=data_penduduk::where('Pendidikan','=','9')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_s2_P=data_penduduk::where('Pendidikan','=','9')->where('Jenis_Kelamin','=','2')->count();
+        $jml_penduduk_s3_L=data_penduduk::where('Pendidikan','=','10')->where('Jenis_Kelamin','=','1')->count();
+        $jml_penduduk_s3_P=data_penduduk::where('Pendidikan','=','10')->where('Jenis_Kelamin','=','2')->count();
 
 
-        return view("statistik",['jml_penduduk' => $jml_penduduk,'jml_penduduk_tidak_sekolah' => $jml_penduduk_tidak_sekolah,'jml_penduduk_blm_sd' => $jml_penduduk_blm_sd,'jml_penduduk_tamat_sd' => $jml_penduduk_tamat_sd,'jml_penduduk_smp' => $jml_penduduk_smp,'jml_penduduk_sma' => $jml_penduduk_sma,'jml_penduduk_d1' => $jml_penduduk_d1,'jml_penduduk_d3' => $jml_penduduk_d3,'jml_penduduk_s1' => $jml_penduduk_s1,'jml_penduduk_s2' => $jml_penduduk_s2,'jml_penduduk_s3' => $jml_penduduk_s3,'jml_penduduk_dusun_TEMILING' => $jml_penduduk_dusun_TEMILING,'jml_penduduk_dusun_DALAM_DESA_UTARA' => $jml_penduduk_dusun_DALAM_DESA_UTARA,'jml_penduduk_dusun_DALAM_DESA_SELATAN' => $jml_penduduk_dusun_DALAM_DESA_SELATAN,'jml_penduduk_dusun_KAYULIAN' => $jml_penduduk_dusun_KAYULIAN,'jml_penduduk_dusun_DASAN_BARU' => $jml_penduduk_dusun_DASAN_BARU,'jml_penduduk_dusun_PENGEMBUR' => $jml_penduduk_dusun_PENGEMBUR]);
+        return view("statistik",
+            [
+                'jml_penduduk_L' => $jml_penduduk_L,
+                'jml_penduduk_P' => $jml_penduduk_P,
+                'jml_penduduk_dusun_TEMILING_L' => $jml_penduduk_dusun_TEMILING_L,
+                'jml_penduduk_dusun_TEMILING_P' => $jml_penduduk_dusun_TEMILING_P,
+                'jml_penduduk_dusun_DALAM_DESA_UTARA_L' => $jml_penduduk_dusun_DALAM_DESA_UTARA_L,
+                'jml_penduduk_dusun_DALAM_DESA_UTARA_P' => $jml_penduduk_dusun_DALAM_DESA_UTARA_P,
+                'jml_penduduk_dusun_DALAM_DESA_SELATAN_L' => $jml_penduduk_dusun_DALAM_DESA_SELATAN_L,
+                'jml_penduduk_dusun_DALAM_DESA_SELATAN_P' => $jml_penduduk_dusun_DALAM_DESA_SELATAN_P,
+                'jml_penduduk_dusun_KAYULIAN_L' => $jml_penduduk_dusun_KAYULIAN_L,
+                'jml_penduduk_dusun_KAYULIAN_P' => $jml_penduduk_dusun_KAYULIAN_P,
+                'jml_penduduk_dusun_DASAN_BARU_L' => $jml_penduduk_dusun_DASAN_BARU_L,
+                'jml_penduduk_dusun_DASAN_BARU_P' => $jml_penduduk_dusun_DASAN_BARU_P,
+                'jml_penduduk_dusun_PENGEMBUR_L' => $jml_penduduk_dusun_PENGEMBUR_L,
+                'jml_penduduk_dusun_PENGEMBUR_P' => $jml_penduduk_dusun_PENGEMBUR_P,
+                'jml_penduduk_tidak_sekolah_L' => $jml_penduduk_tidak_sekolah_L,
+                'jml_penduduk_tidak_sekolah_P' => $jml_penduduk_tidak_sekolah_P,
+                'jml_penduduk_blm_sd_L' => $jml_penduduk_blm_sd_L,
+                'jml_penduduk_blm_sd_P' => $jml_penduduk_blm_sd_P,
+                'jml_penduduk_tamat_sd_L' => $jml_penduduk_tamat_sd_L,
+                'jml_penduduk_tamat_sd_P' => $jml_penduduk_tamat_sd_P,
+                'jml_penduduk_smp_L' => $jml_penduduk_smp_L,
+                'jml_penduduk_smp_P' => $jml_penduduk_smp_P,
+                'jml_penduduk_sma_L' => $jml_penduduk_sma_L,
+                'jml_penduduk_sma_P' => $jml_penduduk_sma_P,
+                'jml_penduduk_d1_L' => $jml_penduduk_d1_L,
+                'jml_penduduk_d1_P' => $jml_penduduk_d1_P,
+                'jml_penduduk_d3_L' => $jml_penduduk_d3_L,
+                'jml_penduduk_d3_P' => $jml_penduduk_d3_P,
+                'jml_penduduk_s1_L' => $jml_penduduk_s1_L,
+                'jml_penduduk_s1_P' => $jml_penduduk_s1_P,
+                'jml_penduduk_s2_L' => $jml_penduduk_s2_L,
+                'jml_penduduk_s2_P' => $jml_penduduk_s2_P,
+                'jml_penduduk_s3_L' => $jml_penduduk_s3_L,
+                'jml_penduduk_s3_P' => $jml_penduduk_s3_P,
+            ]);
     } 
 
 
