@@ -57,7 +57,7 @@
                     Export Data <span class="caret"></span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-bottom" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{url('export_data_penduduk')}}">Export Data Penduduk</a>
+                    <a class="dropdown-item" href="{{url('export_data_penduduk')}}">Export Data Penduduk Desa</a>
                     <div class="dropdown-divider"></div>
                     <!-- <a class="dropdown-item" href="{{url('formuploadapbd/rkp')}}">RKP Desa</a> -->
                     <!-- <div class="dropdown-divider"></div> -->
