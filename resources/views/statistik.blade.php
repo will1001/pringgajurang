@@ -70,7 +70,7 @@
           </div>
         </div>
 
-        <div style="overflow-x:hidden; max-height: 100%;position: relative;  font-size: 21px; width: 100%; margin-bottom : 55px;">
+        <div class="tablestatistik">
                   <div class="row">
                 <div class="col-md-12">
                     <h5 class="text-center">Jumlah Penduduk</h5><br>

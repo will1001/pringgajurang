@@ -21,4 +21,13 @@ body{
 	width: 100%;
 }
 
+.tablestatistik{
+	overflow-x:hidden; 
+	max-height: 100%;
+	position: relative;  
+	font-size: 21px; 
+	width: 100%;
+	margin-bottom : 55px;
+}
+
 
