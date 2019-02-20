@@ -47,6 +47,7 @@ a.nav-link {
         margin: 1px 1px;
         padding: 1px 1px;
         color: #000000 !important;
+        font-size: 13px;
     }
 
     a.dropdown-item:hover {
