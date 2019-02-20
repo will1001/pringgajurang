@@ -103,7 +103,7 @@
                   </tr>
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td> - </td>
+                    <td>Total</td>
                     <td>{{$jml_penduduk_P+$jml_penduduk_P}}</td>
                   </tr>
               </tbody>
@@ -143,7 +143,7 @@
                   </tr>
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td> - </td>
+                    <td>Total</td>
                     <td>{{$jml_penduduk_dusun_TEMILING_P+$jml_penduduk_dusun_TEMILING_P}}</td>
                   </tr>
               </tbody>
@@ -183,7 +183,7 @@
                   </tr>
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td> - </td>
+                    <td>Total</td>
                     <td>{{$jml_penduduk_dusun_DALAM_DESA_UTARA_P+$jml_penduduk_dusun_DALAM_DESA_UTARA_P}}</td>
                   </tr>
               </tbody>
@@ -223,7 +223,7 @@
                   </tr>
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td> - </td>
+                    <td>Total</td>
                     <td>{{$jml_penduduk_dusun_DALAM_DESA_SELATAN_P+$jml_penduduk_dusun_DALAM_DESA_SELATAN_P}}</td>
                   </tr>
               </tbody>
@@ -263,7 +263,7 @@
                   </tr>
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td> - </td>
+                    <td>Total</td>
                     <td>{{$jml_penduduk_dusun_KAYULIAN_P+$jml_penduduk_dusun_KAYULIAN_P}}</td>
                   </tr>
               </tbody>
@@ -303,7 +303,7 @@
                   </tr>
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td> - </td>
+                    <td>Total</td>
                     <td>{{$jml_penduduk_dusun_DASAN_BARU_P+$jml_penduduk_dusun_DASAN_BARU_P}}</td>
                   </tr>
               </tbody>
@@ -343,7 +343,7 @@
                   </tr>
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td> - </td>
+                    <td>Total</td>
                     <td>{{$jml_penduduk_dusun_PENGEMBUR_P+$jml_penduduk_dusun_PENGEMBUR_P}}</td>
                   </tr>
               </tbody>
