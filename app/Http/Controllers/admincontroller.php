@@ -2377,6 +2377,8 @@ public function adddatapendudukkadus(Request $request)
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
 
+            data_penduduk::where('NIK',$id)->get();
+            
             $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
             $usia = (($rumususia/365)*-1);  
 
@@ -2435,6 +2437,8 @@ public function adddatapendudukkadus(Request $request)
             $pathktp = public_path().'/uploadsgambar';
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
 
+            data_penduduk::where('NIK',$id)->get();
+            
             $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
             $usia = (($rumususia/365)*-1);
             
@@ -2491,6 +2495,8 @@ public function adddatapendudukkadus(Request $request)
             $pathkk = public_path().'/uploadsgambar';
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
 
+            data_penduduk::where('NIK',$id)->get();
+            
             $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
             $usia = (($rumususia/365)*-1);
             
@@ -2541,7 +2547,8 @@ public function adddatapendudukkadus(Request $request)
 
             }else{
 
-                $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
+            data_penduduk::where('NIK',$id)->get();
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
             $usia = (($rumususia/365)*-1);
                
                 data_penduduk::where('NIK',$id)->update([
