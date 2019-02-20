@@ -52,8 +52,21 @@
               <li class="nav-item">
                 <a class="nav-link setkopsurat" href="{{url('formsettingkopsurat')}}" >Setting Kop Surat</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link setkopsurat" href="{{url('export_data_penduduk')}}" >Export Data Penduduk</a>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    Export Data <span class="caret"></span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-bottom" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{url('formuploadapbd/apbd')}}">Export Data Penduduk</a>
+                    <div class="dropdown-divider"></div>
+                    <!-- <a class="dropdown-item" href="{{url('formuploadapbd/rkp')}}">RKP Desa</a> -->
+                    <!-- <div class="dropdown-divider"></div> -->
+                    <!-- <a class="dropdown-item" href="{{url('formuploadapbd/rpjm')}}">RPJM Desa</a> -->
+                    <!-- <div class="dropdown-divider"></div> -->
+                    <!-- <a class="dropdown-item" href="{{url('formuploadprofildesa')}}">Profil Desa</a> -->
+                    <!-- <div class="dropdown-divider"></div> -->
+                    {{-- <a class="dropdown-item" href="{{url('formuploadstatistikdesa')}}">Statistik Desa</a> --}}
+                  </div>
               </li>
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
