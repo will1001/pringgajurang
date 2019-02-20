@@ -2351,6 +2351,7 @@ public function adddatapendudukkadus(Request $request)
         if(Auth::user()->roles == "member"){
             
 
+
             $validator = Validator::make(request()->all(), [
                 'NIK' => 'required',
                 'Id_Dusun' => 'required',
@@ -2375,6 +2376,9 @@ public function adddatapendudukkadus(Request $request)
 
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
+
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
+            $usia = (($rumususia/365)*-1);  
 
             
 
@@ -2415,7 +2419,8 @@ public function adddatapendudukkadus(Request $request)
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
-            'foto_kk' => '/uploadsgambar/'.$fileNamekk
+            'foto_kk' => '/uploadsgambar/'.$fileNamekk,
+            'Usia' => $usia
             
          ]);   
 
