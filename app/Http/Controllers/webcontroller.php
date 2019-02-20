@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -22,6 +24,11 @@ use Artisan;
 class webcontroller extends Controller
 {
     //
+
+    public function export() 
+    {
+        return Excel::download(new UsersExport, 'Data Penduduk.xlsx');
+    }
 
     public function bumdes()
     {

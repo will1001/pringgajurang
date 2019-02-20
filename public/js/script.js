@@ -109,6 +109,7 @@ function loadTabelDataPenduduk(data) {
         $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
         $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
         $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
+        $('#trtabel'+j+'').append('<td id="asd'+j+'"></td>');  
 
         if(this.foto_ktp==null && this.foto_kk==null ){
         $('#trtabel'+j+'').append('<td id="foto_ktp'+j+'"><a href="'+this.foto_ktp+'"></a></td>');        

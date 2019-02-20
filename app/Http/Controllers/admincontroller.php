@@ -2138,6 +2138,10 @@ public function adddatapendudukkadus(Request $request)
 
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
+            $data_penduduk=data_penduduk::where('NIK',$id)->get();
+            
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+            $usia = (($rumususia/365)*-1); 
 
             
 
@@ -2178,7 +2182,8 @@ public function adddatapendudukkadus(Request $request)
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
-            'foto_kk' => '/uploadsgambar/'.$fileNamekk
+            'foto_kk' => '/uploadsgambar/'.$fileNamekk,
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2192,6 +2197,10 @@ public function adddatapendudukkadus(Request $request)
             $fileNamektp = $request->foto_ktp->getClientOriginalName();
             $pathktp = public_path().'/uploadsgambar';
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
+            $data_penduduk=data_penduduk::where('NIK',$id)->get();
+            
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+            $usia = (($rumususia/365)*-1); 
             
 
            data_penduduk::where('NIK',$id)->update([
@@ -2230,7 +2239,8 @@ public function adddatapendudukkadus(Request $request)
             'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
-            'foto_ktp' => '/uploadsgambar/'.$fileNamektp
+            'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2244,6 +2254,10 @@ public function adddatapendudukkadus(Request $request)
             $fileNamekk = $request->foto_kk->getClientOriginalName();
             $pathkk = public_path().'/uploadsgambar';
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
+            $data_penduduk=data_penduduk::where('NIK',$id)->get();
+            
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+            $usia = (($rumususia/365)*-1); 
             
 
            data_penduduk::where('NIK',$id)->update([
@@ -2282,7 +2296,8 @@ public function adddatapendudukkadus(Request $request)
             'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
-            'foto_kk' => '/uploadsgambar/'.$fileNamekk
+            'foto_kk' => '/uploadsgambar/'.$fileNamekk,
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2290,6 +2305,10 @@ public function adddatapendudukkadus(Request $request)
             return redirect('admin')->with('key', $var);
 
             }else{
+                $data_penduduk=data_penduduk::where('NIK',$id)->get();
+            
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+            $usia = (($rumususia/365)*-1); 
                
                 data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
@@ -2327,6 +2346,7 @@ public function adddatapendudukkadus(Request $request)
             'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2638,6 +2658,12 @@ public function adddatapendudukkadus(Request $request)
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
 
+            $data_penduduk=data_penduduk::where('NIK',$id)->get();
+            
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+            $usia = (($rumususia/365)*-1); 
+
+
             
 
            data_penduduk::where('NIK',$id)->update([
@@ -2677,7 +2703,8 @@ public function adddatapendudukkadus(Request $request)
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
             'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
-            'foto_kk' => '/uploadsgambar/'.$fileNamekk
+            'foto_kk' => '/uploadsgambar/'.$fileNamekk,
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2691,6 +2718,12 @@ public function adddatapendudukkadus(Request $request)
             $fileNamektp = $request->foto_ktp->getClientOriginalName();
             $pathktp = public_path().'/uploadsgambar';
             $uploadktp = $request->foto_ktp->move($pathktp,$fileNamektp);
+
+            $data_penduduk=data_penduduk::where('NIK',$id)->get();
+            
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+            $usia = (($rumususia/365)*-1); 
+
             
 
            data_penduduk::where('NIK',$id)->update([
@@ -2729,7 +2762,8 @@ public function adddatapendudukkadus(Request $request)
             'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
-            'foto_ktp' => '/uploadsgambar/'.$fileNamektp
+            'foto_ktp' => '/uploadsgambar/'.$fileNamektp,
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2743,6 +2777,12 @@ public function adddatapendudukkadus(Request $request)
             $fileNamekk = $request->foto_kk->getClientOriginalName();
             $pathkk = public_path().'/uploadsgambar';
             $uploadkk = $request->foto_kk->move($pathkk,$fileNamekk);
+
+            $data_penduduk=data_penduduk::where('NIK',$id)->get();
+            
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+            $usia = (($rumususia/365)*-1); 
+
             
 
            data_penduduk::where('NIK',$id)->update([
@@ -2781,7 +2821,8 @@ public function adddatapendudukkadus(Request $request)
             'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
-            'foto_kk' => '/uploadsgambar/'.$fileNamekk
+            'foto_kk' => '/uploadsgambar/'.$fileNamekk,
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2789,6 +2830,12 @@ public function adddatapendudukkadus(Request $request)
             return redirect('admin')->with('key', $var);
 
             }else{
+
+                $data_penduduk=data_penduduk::where('NIK',$id)->get();
+            
+            $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+            $usia = (($rumususia/365)*-1); 
+
                
                 data_penduduk::where('NIK',$id)->update([
             'Alamat' => $request->Alamat,
@@ -2826,6 +2873,7 @@ public function adddatapendudukkadus(Request $request)
             'tempat_mendapatkan_air_bersih' => $request->get('tempat_mendapatkan_air_bersih'),
             'status_gizi_balita' => $request->get('status_gizi_balita'),
             'kebiasaan_berobat_bila_sakit' => $request->get('kebiasaan_berobat_bila_sakit'),
+            'Usia' => floor($usia)
             
          ]);   
 
@@ -2932,15 +2980,16 @@ public function adddatapendudukkadus(Request $request)
     public function updateumur()
     {
         # code...
+            $kode_area_dusuns=kode_area_dusun::all();
         
 
-        for($i=1;$i<=10;$i++){
+       for($i=1;$i<=$kode_area_dusuns->count();$i++){
             
             $data_penduduks=data_penduduk::where('id_dusun',$i)->get();
 
             foreach ($data_penduduks as $data_penduduk) {
                 # code...
-                $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+                $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
                 $usia = (($rumususia/365)*-1);
 
                  data_penduduk::where('id_dusun',$i)->update([

@@ -194,6 +194,8 @@
           <input type="text" name="Perilaku Hidup Bersih" placeholder="Perilaku Hidup Bersih"><br><br>
           Pola Makan :<br>
           <input type="text" name="Pola Makan" placeholder="Pola Makan"><br><br>
+          Penyakit yang di derita :<br>
+          <input type="text" name="Penyakit yang di derita" placeholder="Penyakit yang di derita"><br><br>
           Upload foto KTP : <br><br>
           <input type="file" name="foto_ktp" id="foto_ktp"><br><br>
           Upload foto KK : <br><br>

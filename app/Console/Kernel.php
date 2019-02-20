@@ -39,7 +39,7 @@ class Kernel extends ConsoleKernel
 
             foreach ($data_penduduks as $data_penduduk) {
                 # code...
-                $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk[0]->Tanggal_Lahir, false);
+                $rumususia = Carbon\Carbon::now()->diffInDays($data_penduduk->Tanggal_Lahir, false);
                 $usia = (($rumususia/365)*-1);
 
                  data_penduduk::where('id_dusun',$i)->update([

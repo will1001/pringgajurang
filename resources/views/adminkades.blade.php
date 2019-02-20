@@ -239,6 +239,7 @@
                   <th rowspan="2">Cakupan Imunisasi</th>   
                   <th rowspan="2">Perilaku Hidup Bersih</th>   
                   <th rowspan="2">Pola Makan</th>
+                  <th rowspan="2">Penyakit yang di derita</th>
                   <th rowspan="2">Foto KTP</th>  
                   <th rowspan="2">Foto KK</th>       
                   <th rowspan="2">edit</th> 

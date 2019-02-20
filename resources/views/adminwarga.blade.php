@@ -197,7 +197,9 @@
                   <th rowspan="2">Portolongan Persalinan</th>   
                   <th rowspan="2">Cakupan Imunisasi</th>   
                   <th rowspan="2">Perilaku Hidup Bersih</th>   
-                  <th rowspan="2">Pola Makan</th>   
+                  <th rowspan="2">Pola Makan</th>  
+                  <th rowspan="2">Penyakit yang di derita</th>
+                   
                   <!-- <th colspan="5">Pendapatan Perkapita</th>    -->
                   <!-- <th colspan="5">Pendapatan Rill Keluarga</th>    -->
                   <th rowspan="2">Foto KTP</th>  
@@ -249,6 +251,7 @@
             <td>{{ $data_penduduk->tempat_mendapatkan_air_bersih }}</td>
             <td>{{ $data_penduduk->status_gizi_balita }}</td>
             <td>{{ $data_penduduk->kebiasaan_berobat_bila_sakit }}</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
