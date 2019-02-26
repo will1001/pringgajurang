@@ -150,6 +150,12 @@ class webcontroller extends Controller
     {
         # code...
         return view("karangtaruna");
+    } 
+
+    public function galery()
+    {
+        # code...
+        return view("galery");
     }  
 
 

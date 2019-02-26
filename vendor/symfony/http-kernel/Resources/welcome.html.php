@@ -32,7 +32,7 @@
         }
     </style>
 </head>
-<body onload="startTime()">
+<body>
 <div id="wrapper">
     <div id="container">
         <div id="welcome">

@@ -59,6 +59,13 @@ class FormRequest extends Request implements ValidatesWhenResolved
     protected $errorBag = 'default';
 
     /**
+     * The validator instance.
+     *
+     * @var \Illuminate\Contracts\Validation\Validator
+     */
+    protected $validator;
+
+    /**
      * Get the validator instance for the request.
      *
      * @return \Illuminate\Contracts\Validation\Validator
@@ -77,7 +84,9 @@ class FormRequest extends Request implements ValidatesWhenResolved
             $this->withValidator($validator);
         }
 
-        return $validator;
+        $this->setValidator($validator);
+
+        return $this->validator;
     }
 
     /**
@@ -172,7 +181,7 @@ class FormRequest extends Request implements ValidatesWhenResolved
      */
     public function validated()
     {
-        return $this->getValidatorInstance()->validate();
+        return $this->validator->validated();
     }
 
     /**
@@ -182,10 +191,7 @@ class FormRequest extends Request implements ValidatesWhenResolved
      */
     public function messages()
     {
-        return [
-            'url_gambar.required' => 'A title is required',
-
-        ];
+        return [];
     }
 
     /**
@@ -196,6 +202,19 @@ class FormRequest extends Request implements ValidatesWhenResolved
     public function attributes()
     {
         return [];
+    }
+
+    /**
+     * Set the Validator instance.
+     *
+     * @param  \Illuminate\Contracts\Validation\Validator  $validator
+     * @return $this
+     */
+    public function setValidator(Validator $validator)
+    {
+        $this->validator = $validator;
+
+        return $this;
     }
 
     /**

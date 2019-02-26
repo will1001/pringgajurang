@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" datatype="plaintext" original="file.ext">
-    <body onload="startTime()">
+    <body>
       <trans-unit id="1" resname="foo">
         <source></source>
         <target>bar</target>
@@ -13,6 +13,9 @@
       <trans-unit id="3">
         <source>baz</source>
         <target>foo</target>
+      </trans-unit>
+      <trans-unit id="4" resname="qux">
+        <source>qux source</source>
       </trans-unit>
     </body>
   </file>

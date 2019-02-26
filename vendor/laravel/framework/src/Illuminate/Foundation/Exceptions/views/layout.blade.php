@@ -7,6 +7,7 @@
         <title>@yield('title')</title>
 
         <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -44,7 +45,7 @@
             }
         </style>
     </head>
-    <body onload="startTime()">
+    <body>
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title">

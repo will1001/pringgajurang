@@ -58,10 +58,12 @@ trait AuthenticatesUsers
      *
      * @param  \Illuminate\Http\Request  $request
      * @return void
+     *
+     * @throws \Illuminate\Validation\ValidationException
      */
     protected function validateLogin(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
             $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
@@ -144,11 +146,6 @@ trait AuthenticatesUsers
         return 'email';
     }
 
-    public function NIKlogin()
-    {
-        return 'NIK';
-    }
-
     /**
      * Log the user out of the application.
      *
@@ -161,7 +158,7 @@ trait AuthenticatesUsers
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect('/login');
+        return $this->loggedOut($request) ?: redirect('/');
     }
 
     /**

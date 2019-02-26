@@ -66,7 +66,7 @@
   </div>
    </div>
 </nav>
-    <component  :is="currentView" class="wow fadeIn"  keep-alive></component>
+    <component  :is="currentView" class="wow fadeIn" @clicked="updatecurrentview" keep-alive></component>
     <section id="kotak3" v-if="!isHidden">
                 <div class="container">
                 <div class="row">
@@ -104,22 +104,23 @@
             </div>
             </section>
             
+            
 </div>
 
 
-<template id="profildesa">
-  
-</template>
+
 <template id="indexpage">
     <div>
             <section id="kotak1">
                 <div class="container">
                 <div class="row">
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
-                        <div class="tentang_desa inner text-left">
+                        <a href="#" @click="showselayangpandang()" :value="value">
+                          <div class="tentang_desa inner text-left">
                             <h2>Selayang Pandang</h2>
                             <p>Desa Pringgajurang terletak di ke Kecamatan Montong Gading, Kabupaten Lombok Timur, NTB. Desa ini berada tidak jauh dari objek Wisata Otak Kokok-Joben. Desa ini dapat diakses dari Bandara Internasional Lombok, Pelabuhan Lembar, Kota Matar . . .</p>
                         </div>
+                        </a>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
                         <div class="berita_terbaru inner text-center">
@@ -220,7 +221,7 @@
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-md-2">
                         <div class="outter2">
-                            <a href="#">
+                            <a href="{{url('galery')}}">
                                 <img src="/images/kopi.jpg" alt="">
                             <div class="inner2 d-flex flex-last">
                                 <h3 class="mt-auto">GALERY</h3>
@@ -1171,6 +1172,24 @@
     </table>
     </div>
     </div>
+</template>
+
+<template id="selayangpandang">
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-uppercase text-center">Selayang Pandang</h1>
+          <p>Desa Pringgajurang terletak di ke Kecamatan Montong Gading, Kabupaten Lombok Timur, NTB. Desa ini berada tidak jauh dari objek Wisata Otak Kokok-Joben. Desa ini dapat diakses dari Bandara Internasional Lombok, Pelabuhan Lembar, Kota Mataram, dan kota-kota lainnya melalui jalan darat yang sudah beraspal halus. Secara geografis, desa ini termasuk wilayah yang berada di dataran tinggi dengan pendapatan terbesar masyarakat dari sektor pertanian. Bentang alam yang masih asri dengan latar belakang Gunung Rinjani yang indah, menjadikan desa ini begitu menenangkan.
+
+          Mulai tahun 2019, Desa Pringgajurang sudah menerapkan sistem informasi desa berbasis website. Dengan sistem ini, proses pendataan, perizinan, pengontrolan kinerja pegawai, transparansi, dan pengurusan administrasi lainnya dapat dilakukan secara online. Setiap kepala keluarga memiliki account sendiri yang memungkinkan mereka tetap memperbaharui data induk kependudukan mereka secara mandiri. Selai itu, sistem website desa ini dilengkapi dengan pasar online yang memungkinkan masyarakat menjajakan dagangannya. Fitur ini juga berfungsi sebagai data kolektor yang dapat memetakan potensi desa secara akurat. Selain itu, melalui website desa ini, penduduk dapat mengurus surat menyurat secara mandiri sehingga proses pengurusan administrasi menjadi jauh lebih cepat.
+
+          Nikmati ketenangan dan keramahan kami. Temukan lokasi, makanan, produk, dan aktivitas favorit anda disini.
+          Selamat Berselancar</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <footer>

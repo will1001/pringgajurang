@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" datatype="plaintext" original="file.ext">
-    <body onload="startTime()">
+    <body>
       <trans-unit id="1" resname="foo">
         <source>foo</source>
         <target>bär</target>

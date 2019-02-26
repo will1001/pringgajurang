@@ -47,7 +47,7 @@ final class HtmlResultPrinter extends ResultPrinter
             }
         </style>
     </head>
-    <body onload="startTime()">
+    <body>
 EOT;
 
     /**

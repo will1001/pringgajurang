@@ -4,7 +4,7 @@
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
-    <body onload="startTime()">
+    <body>
       <trans-unit id="LCa0a2j" resname="foo">
         <source>foo</source>
         <target state="needs-translation">bar</target>

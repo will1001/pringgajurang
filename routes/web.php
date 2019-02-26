@@ -94,7 +94,11 @@ Route::get('/reloadtabeldusunurutnama/{id}/{pil}',function($id,$pil)
 });
 
 
+Route::resource('datawarga','TasksController')->middleware('auth');
+
+
 Route::get('/profildesa', 'webcontroller@profildesa');
+Route::get('/galery', 'webcontroller@galery');
 Route::get('/export_data_penduduk', 'webcontroller@export_data_penduduk');
 Route::get('/bumdes', 'webcontroller@bumdes');
 Route::get('/statistik', 'webcontroller@statistik');
@@ -325,13 +329,24 @@ Auth::routes();
 Route::get('/admin', function(){
 	if(Auth::user()->roles == "kades" && Auth::user()->status == "aktif"){
 		$beritas= App\berita::all();
+		$data_penduduksjson= DB::table('data_penduduks')
+	            ->join('tabel_agamas', 'data_penduduks.Agama', '=', 'tabel_agamas.id')
+	            ->join('tabel_jenis_pekerjaans', 'data_penduduks.Jenis_Pekerjaan', '=', 'tabel_jenis_pekerjaans.id')
+	            ->join('tabel_golongan_darahs', 'data_penduduks.Golongan_Darah', '=', 'tabel_golongan_darahs.id')
+	            ->join('tabel_kewarganegaraans', 'data_penduduks.Kewarganegaraan', '=', 'tabel_kewarganegaraans.id')
+	            ->join('tabel_status_perkawinans', 'data_penduduks.Status_Perkawinan', '=', 'tabel_status_perkawinans.id')
+	            ->join('tabel_pendidikans', 'data_penduduks.Pendidikan', '=', 'tabel_pendidikans.id')
+	            ->join('tabel_jenis_kelamins', 'data_penduduks.Jenis_Kelamin', '=', 'tabel_jenis_kelamins.id')
+	            ->join('tabel_status_hubungan_dalam_keluargas', 'data_penduduks.Status_Hubungan_Dalam_Keluarga', '=', 'tabel_status_hubungan_dalam_keluargas.id')
+	            ->select('data_penduduks.*', 'tabel_agamas.agama','tabel_jenis_pekerjaans.jenis_pekerjaan','tabel_golongan_darahs.golongan_darah','tabel_kewarganegaraans.kewarganegaraan','tabel_status_perkawinans.status_perkawinan','tabel_pendidikans.pendidikan','tabel_jenis_kelamins.jenis_kelamin','tabel_status_hubungan_dalam_keluargas.status_hubungan_dalam_keluarga')->get()->toJson();
+		// dd($beritasjson);
         $pengumumandesas= App\pengumumandesa::all();
         $SOTKs= App\SOTK::all();
         $bumdess= App\bumdes::all();
         $jmlbarang=$bumdess->count();
         $users= App\User::orderBy('status', 'desc')->get();
         $kode_area_dusuns= App\kode_area_dusun::all();
-		return view('adminkades',['beritas' => $beritas, 'pengumumandesas' => $pengumumandesas,'SOTKs' => $SOTKs,'users' => $users,'kode_area_dusuns' => $kode_area_dusuns,'bumdess' => $bumdess,'jmlbarang' => $jmlbarang]);
+		return view('adminkades',['beritas' => $beritas,'data_penduduksjson' => $data_penduduksjson, 'pengumumandesas' => $pengumumandesas,'SOTKs' => $SOTKs,'users' => $users,'kode_area_dusuns' => $kode_area_dusuns,'bumdess' => $bumdess,'jmlbarang' => $jmlbarang]);
 	}elseif(Auth::user()->roles == "kadus" && Auth::user()->status == "aktif"){
 		$users= \App\User::find(Auth::user()->id);
         

@@ -41,7 +41,7 @@ PHPUnit %s by Sebastian Bergmann and contributors.
             }
         </style>
     </head>
-    <body onload="startTime()">
+    <body>
 
         <h2 id="BankAccountTest">BankAccount</h2>
         <ul>
