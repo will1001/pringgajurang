@@ -76,6 +76,35 @@ Vue.component('Pembangunan',{
 
 // ---------------------
 
+Vue.component('LKMD',{
+	template : '#LKMD',
+});
+
+Vue.component('BPD',{
+	template : '#BPD',
+});
+
+Vue.component('PKK',{
+	template : '#PKK',
+});
+
+Vue.component('Karang_Taruna',{
+	template : '#Karang_Taruna',
+});
+
+Vue.component('GAPOKTAN',{
+	template : '#GAPOKTAN',
+});
+
+Vue.component('POKDARWIS',{
+	template : '#POKDARWIS',
+});
+
+// sub component lembaga
+
+
+//-----------
+
 Vue.component('panduanpenduduk',{
 	template : '#panduanpenduduk',
 	data:function () {
@@ -136,7 +165,7 @@ Vue.component('lembagaindex',{
 	data:function () {
   		return {
 	    	active_elcomp: 0,
-	    	currentViewlembagaidex : "pemerintahan",
+	    	currentViewlembagaidex : "LKMD",
 	  	}
 	},
 	methods:{
@@ -149,8 +178,22 @@ Vue.component('lembagaindex',{
 
 Vue.component('statistikindex',{
 	template : '#statistikindex',
+	data:function () {
+  		return {
+  			caritext:'',
+	    	datadesas:[
+	    		{
+	    			title: 'Dana Desa',
+	    			link:'https://desapringgajurang.id/dokumen/Danat%20Desa.pdf',
+	    		},
+	    		{
+	    			title:'Profil Desa',
+	    			link:'https://desapringgajurang.id/dokumen/Profil%20Desa%20PRINGGAJURANG.pdf',
+	    		}
+	    	]
+	  	}
+	},
 });
-
 
 
 var vo = new Vue({

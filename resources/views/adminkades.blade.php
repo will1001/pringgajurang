@@ -66,9 +66,6 @@
     </nav>
 
 
-    <h1>Halaman Sedang Dalam Perbaikan</h1>
-<!-- 
-
 <div class="row" id="app">
   <div class="col-md-2">
 
@@ -76,22 +73,22 @@
         
          <ul class="navbar-nav ml-auto text-uppercase text-center">
               <li class="nav-item">
-                <a class="nav-link" @click="currentView='tabeldatapenduduk';" href="#">Data Penduduk</a>
+                <a class="nav-link" @click="swapComponent('tabeldatapenduduk');" href="#">Data Penduduk</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="currentView='tabelberita';" href="#">Data Berita</a>
+                <a class="nav-link" @click="swapComponent('tabelberita');" href="#">Data Berita</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="currentView='tabelpengumuman';" href="#">Data Pengumuman</a>
+                <a class="nav-link" @click="swapComponent('tabelpengumuman');" href="#">Data Pengumuman</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="currentView='tabelakunlogindesa';" href="#">Data Login web</a>
+                <a class="nav-link" @click="swapComponent('tabelakunlogindesa');" href="#">Data Login web</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="currentView='tabelSOTK';" href="#">Data SOTK</a>
+                <a class="nav-link" @click="swapComponent('tabelSOTK');" href="#">Data SOTK</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="currentView='buatsurat';" href="#">Buat Surat</a>
+                <a class="nav-link" @click="swapComponent('buatsurat');" href="#">Buat Surat</a>
               </li>
 
               <li class="nav-item">
@@ -106,42 +103,17 @@
               <li class="nav-item">
                 <a class="nav-link" @click="currentView='';" href="{{url('formuploadapbd/rpjm')}}">Upload RPJM Desa</a>
               </li>
-
-              <!-- <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    Export Data <span class="caret"></span>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-bottom" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{url('export_data_penduduk')}}">Export Data Penduduk Desa</a>
-                    <div class="dropdown-divider"></div>
-                  </div>
-              </li> -->
-             <!--  <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    upload dokumen <span class="caret"></span>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-bottom" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{url('formuploadapbd/apbd')}}">APBD Desa</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{url('formuploadapbd/rkp')}}">RKP Desa</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{url('formuploadapbd/rpjm')}}">RPJM Desa</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{url('formuploadprofildesa')}}">Profil Desa</a>
-                    <div class="dropdown-divider"></div>
-                    {{-- <a class="dropdown-item" href="{{url('formuploadstatistikdesa')}}">Statistik Desa</a> --}}
-                  </div>
-              </li> -->
        </ul>
       </nav>
   </div>
   <div class="col-md-10 text-center">
-    <component  :is="currentView" class="wow fadeIn"  keep-alive></component>
+    <!-- <component  :is="currentView" class="wow fadeIn"  keep-alive></component> -->
+    <div :is="currentComponent" class="wow fadeIn"  keep-alive></div>
 </div>
 </div>
 
 
-<template id="tabeldatapenduduk">
+<template id="tabeldatapendudukkita">
     <div>
       <section   class="section-padding">
       <div class="container-fluid">
@@ -153,7 +125,6 @@
         <div class="row">
           <div class="col-xs-12 col-12 col-sm-6 col-md-6">
             <select id="pilihankadus" @change="showperdusun($event.target.value)">
-              <!-- <select :value="value" ref= 'input' v-on:input="onChange($event.target.value)"> -->
                  <option selected="true" disabled="disabled">Dusun</option>
                  @foreach ($kode_area_dusuns as $kode_area_dusun)
                     <option value="{{ $kode_area_dusun->id_dusun }}">{{ $kode_area_dusun->Nama_Dusun }}</option>
@@ -310,10 +281,9 @@
       </thead>
        <tbody id="tbodytabel" v-model="iddusun">
         <tr></tr>
-        <!-- <tr v-for="data_penduduk in datapendudukjson.slice(0,3)" > -->
-          <!-- <td v-if="data_penduduk['Id_Dusun']=iddusun" >@{{ data_penduduk.Alamat }}</td> -->
-          <!-- <td v-if="data_penduduk['Id_Dusun']=iddusun" v-bind="iddusun,no">@{{ no }}</td> -->
-          <!-- <td v-if="data_penduduk['Id_Dusun']=iddusun" >@{{ data_penduduk['Alamat'] }}</td> -->
+        <tr v-for="data_penduduk in datapendudukjson.slice(0,3)" >
+          <td v-if="data_penduduk['Id_Dusun']=iddusun" >@{{ no }}</td>
+          <td v-if="data_penduduk['Id_Dusun']=iddusun" >@{{ data_penduduk['Alamat'] }}</td>
           <td v-if="data_penduduk['Id_Dusun']=iddusun" >@{{ data_penduduk['RW'] }}</td>
           <td v-if="data_penduduk['Id_Dusun']=iddusun" >@{{ data_penduduk['RT'] }}</td>
           <td v-if="data_penduduk['Id_Dusun']=iddusun" >@{{ data_penduduk['Nama'] }}</td>
@@ -371,8 +341,8 @@
       </tbody>
     </table>
           </div>
-          <!-- <a href="#" @click="prevpage(pagination)" v-bind="pagination" class="previous">&laquo; Previous</a> -->
-          <!-- <a href="#" @click="nextpage(pagination)" v-bind="pagination" class="next">Next &raquo;</a> -->
+          <a href="#" @click="prevpage(pagination)" v-bind="pagination" class="previous">&laquo; Previous</a>
+          <a href="#" @click="nextpage(pagination)" v-bind="pagination" class="next">Next &raquo;</a>
           <a href="{{url('formadddatapendudukkades')}}" class="tomboladd">Tambah Data</a>
         </div>
         </div>
@@ -604,19 +574,17 @@
             </div>
     </section>
   </div>
-</template> -->
+</template>
 
 
-    <!-- Optional JavaScript -->
+     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap-swipe-carousel.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
     <!-- <script type="text/javascript" src="{{asset('/js/script.js')}}"></script> -->
-    <script type="text/javascript" src="{{asset('/js/main.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/vue/vueadmin.js')}}"></script>
+    <script src="{{ asset('/js/wow.min.js') }}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
+    <!-- <script type="text/javascript" src="{{asset('/vue/vueadmin.js')}}"></script> -->
     
   </body>
 </html>

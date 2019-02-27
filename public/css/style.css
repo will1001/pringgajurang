@@ -328,3 +328,14 @@ transition:1s;
 .kotak2APengunjung,.kotak2BPengunjung,.kotak3APengunjung,.kotak3BPengunjung,.kotak5Pengunjung,.kotak6Pengunjung li{
   font-size: 17px;
 }
+
+.selayangpandangbody{
+  background-color: rgba(0,0,0,.5);
+  font-size: 21px;
+  color: #fff;
+}
+
+.selayangpandangbody p{
+ white-space: pre-line;
+ white-space: pre-wrap;
+}

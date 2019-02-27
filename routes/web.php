@@ -94,7 +94,12 @@ Route::get('/reloadtabeldusunurutnama/{id}/{pil}',function($id,$pil)
 });
 
 
-Route::resource('datawarga','TasksController')->middleware('auth');
+Route::resource('datadusun','APIkodedusunController')->middleware('auth');
+Route::resource('datawarga','APIdatapendudukController')->middleware('auth');
+Route::resource('databerita','APIdataberitaController')->middleware('auth');
+Route::resource('datapengumuman','APIdatapengumumanController')->middleware('auth');
+Route::resource('datalogin','APIdataloginController')->middleware('auth');
+Route::resource('dataSOTK','APIdataSOTKController')->middleware('auth');
 
 
 Route::get('/profildesa', 'webcontroller@profildesa');

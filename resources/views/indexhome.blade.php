@@ -78,7 +78,7 @@
                     </div>
                     <div class="col-4 col-xs-4 col-sm-4 col-md-2">
                         <div class="inner text-center">
-                            <a href="#"><i class="fa-2x fas fa-users"></i><br>
+                            <a href="{{url('/organisasi')}}"><i class="fa-2x fas fa-users"></i><br>
                             <h4><strong>SOTK</strong></h4></a>
                         </div>
                     </div>
@@ -103,8 +103,6 @@
                 </div>
             </div>
             </section>
-            
-            
 </div>
 
 
@@ -523,14 +521,12 @@
                 <div class="col-md-4">
                     <div class="kotak1bidangpemerintahan">
                         <ul>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(5);currentViewBidangPemerintahan='Pemerintahan'" :class="{ active : active_elcomp == 5 }">Pemerintahan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(6);currentViewBidangPemerintahan='Kesejahteraan'" :class="{ active : active_elcomp == 6 }">Kesejahteraan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(7);currentViewBidangPemerintahan='Pelayanan'" :class="{ active : active_elcomp == 7 }">Pelayanan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(8);currentViewBidangPemerintahan='Tata_Usaha_dan_Umum'" :class="{ active : active_elcomp == 8 }">Tata Usaha dan Umum</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(9);currentViewBidangPemerintahan='Keuangan'" :class="{ active : active_elcomp == 9 }">Keuangan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(10);currentViewBidangPemerintahan='Perencanaan'" :class="{ active : active_elcomp == 10 }">Perencanaan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(11);currentViewBidangPemerintahan='Kewilayahan'" :class="{ active : active_elcomp == 11 }">Kewilayahan</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(12);currentViewBidangPemerintahan='Pembangunan'" :class="{ active : active_elcomp == 12 }">Pembangunan</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(5);currentViewlembagaidex='LKMD'" :class="{ active : active_elcomp == 5 }">LKMD</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(6);currentViewlembagaidex='BPD'" :class="{ active : active_elcomp == 6 }">BPD</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(7);currentViewlembagaidex='PKK'" :class="{ active : active_elcomp == 7 }">PKK</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(8);currentViewlembagaidex='Karang_Taruna'" :class="{ active : active_elcomp == 8 }">Karang Taruna</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(9);currentViewlembagaidex='GAPOKTAN'" :class="{ active : active_elcomp == 9 }">GAPOKTAN</a></li>
+                        <li><a class="bidangpemerintahan_link" href="#" :active_elcomp="active_elcomp" @click="testing(10);currentViewlembagaidex='POKDARWIS'" :class="{ active : active_elcomp == 10 }">POKDARWIS</a></li>
                     </ul>
                     </div>
                 </div>
@@ -549,12 +545,20 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="kotakpanduanpenduduk">
-                        <h1>Panduan Penduduk</h1>
-                        <form action="{{url('caripanduanpenduduk')}}" method="post" accept-charset="utf-8">
+                        <h1>Data Desa</h1>
+                        <!-- <form action="{{url('caripanduanpenduduk')}}" method="post" accept-charset="utf-8">
                               {{ csrf_field() }}
                               <input type="text"  id="search" name="search" placeholder="cari panduan" >
                               <input type="submit" value="Search" id="tombol_search_panduan">
-                          </form>
+                          </form> -->
+                          <div class="cari">
+                            <input type="text" name="Cari" class="cari_text"
+                               v-model="caritext"
+                               placeholder="Cari Data"/>
+                          </div>
+                          <ul>
+                            <li v-for="datadesa in datadesas"><a v-bind:href="datadesa.link" target="_blank">@{{ datadesa.title }}</a></li>
+                          </ul>
                     </div>
                 </div>
             </div>
@@ -1174,18 +1178,74 @@
     </div>
 </template>
 
+<template id="LKMD">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center">LKMD</h3>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="BPD">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center">BPD</h3>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="PKK">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center">PKK</h3>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="Karang_Taruna">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center">Karang Taruna</h3>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="GAPOKTAN">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center">GAPOKTAN</h3>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="POKDARWIS">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center">POKDARWIS</h3>
+      </div>
+    </div>
+  </div>
+</template>
+
 <template id="selayangpandang">
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 selayangpandangbody">
           <h1 class="text-uppercase text-center">Selayang Pandang</h1>
-          <p>Desa Pringgajurang terletak di ke Kecamatan Montong Gading, Kabupaten Lombok Timur, NTB. Desa ini berada tidak jauh dari objek Wisata Otak Kokok-Joben. Desa ini dapat diakses dari Bandara Internasional Lombok, Pelabuhan Lembar, Kota Mataram, dan kota-kota lainnya melalui jalan darat yang sudah beraspal halus. Secara geografis, desa ini termasuk wilayah yang berada di dataran tinggi dengan pendapatan terbesar masyarakat dari sektor pertanian. Bentang alam yang masih asri dengan latar belakang Gunung Rinjani yang indah, menjadikan desa ini begitu menenangkan.
+          <p>
+          Desa Pringgajurang terletak di ke Kecamatan Montong Gading, Kabupaten Lombok Timur, NTB. Desa ini berada tidak jauh dari objek Wisata Otak Kokok-Joben. Desa ini dapat diakses dari Bandara Internasional Lombok, Pelabuhan Lembar, Kota Mataram, dan kota-kota lainnya melalui jalan darat yang sudah beraspal halus. Secara geografis, desa ini termasuk wilayah yang berada di dataran tinggi dengan pendapatan terbesar masyarakat dari sektor pertanian. Bentang alam yang masih asri dengan latar belakang Gunung Rinjani yang indah, menjadikan desa ini begitu menenangkan.
 
           Mulai tahun 2019, Desa Pringgajurang sudah menerapkan sistem informasi desa berbasis website. Dengan sistem ini, proses pendataan, perizinan, pengontrolan kinerja pegawai, transparansi, dan pengurusan administrasi lainnya dapat dilakukan secara online. Setiap kepala keluarga memiliki account sendiri yang memungkinkan mereka tetap memperbaharui data induk kependudukan mereka secara mandiri. Selai itu, sistem website desa ini dilengkapi dengan pasar online yang memungkinkan masyarakat menjajakan dagangannya. Fitur ini juga berfungsi sebagai data kolektor yang dapat memetakan potensi desa secara akurat. Selain itu, melalui website desa ini, penduduk dapat mengurus surat menyurat secara mandiri sehingga proses pengurusan administrasi menjadi jauh lebih cepat.
 
-          Nikmati ketenangan dan keramahan kami. Temukan lokasi, makanan, produk, dan aktivitas favorit anda disini.
-          Selamat Berselancar</p>
+          Nikmati ketenangan dan keramahan kami. Temukan lokasi, makanan, produk, dan aktivitas favorit anda disini.Selamat Berselancar
+        </p>
         </div>
       </div>
     </div>
