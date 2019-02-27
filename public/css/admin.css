@@ -10,6 +10,10 @@ nav a:hover{
     color: #000;
 }
 
+#sidebar a:hover{
+    color: #fff;
+}
+
 #logotext{
     text-transform: uppercase;
     font-weight: bold;
@@ -224,3 +228,6 @@ nav a:hover{
     
 
     
+.active{
+ color:#ffffff; 
+}

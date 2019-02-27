@@ -71,24 +71,24 @@
 
       <nav id="sidebar">
         
-         <ul class="navbar-nav ml-auto text-uppercase text-left">
+         <ul class="navbar-nav ml-1 text-uppercase text-left">
               <li class="nav-item">
-                <a class="nav-link" @click="swapComponent('tabeldatapenduduk');" href="#">Data Penduduk</a>
+                <a class="nav-link" @click="swapComponent('tabeldatapenduduk');activate(1);" :class="{ active : active_el == 1 }" href="#">Data Penduduk</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="swapComponent('tabelberita');" href="#">Data Berita</a>
+                <a class="nav-link" @click="swapComponent('tabelberita');activate(2);" :class="{ active : active_el == 2 }" href="#">Data Berita</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="swapComponent('tabelpengumuman');" href="#">Data Pengumuman</a>
+                <a class="nav-link" @click="swapComponent('tabelpengumuman');activate(3);" :class="{ active : active_el == 3 }" href="#">Data Pengumuman</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="swapComponent('tabelakunlogindesa');" href="#">Data Login web</a>
+                <a class="nav-link" @click="swapComponent('tabelakunlogindesa');activate(4);" :class="{ active : active_el == 4 }" href="#">Data Login web</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="swapComponent('tabelSOTK');" href="#">Data SOTK</a>
+                <a class="nav-link" @click="swapComponent('tabelSOTK');activate(5);" :class="{ active : active_el == 5 }" href="#">Data SOTK</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" @click="swapComponent('buatsurat');" href="#">Buat Surat</a>
+                <a class="nav-link" @click="swapComponent('buatsurat');activate(6);" :class="{ active : active_el == 6 }" href="#">Buat Surat</a>
               </li>
 
               <li class="nav-item">

@@ -17,11 +17,11 @@
 			            <select id="filter" @change="carikategori($event.target.value)" v-model="searchkategori">
 			                 <option selected="true" disabled="disabled">Cari Berdasarkan</option>
 			                  <option value="Nama">Nama</option>
-			                  <option value="NIK">NIK</option>
 			                  <option value="Nomor_KK">Nomor KK</option>
-			                  <option value="Pendidikan">Pendidikan</option>
-			                  <option value="Status_Perkawinan">status Perkawinan</option>
-			                  <option value="Golongan_Darah">Golongan Darah</option>
+			                  <option value="NIK">NIK</option>
+			                  <!-- <option value="Pendidikan">Pendidikan</option> -->
+			                  <!-- <option value="Status_Perkawinan">status Perkawinan</option> -->
+			                  <!-- <option value="Golongan_Darah">Golongan Darah</option> -->
 			            </select>
 		         	 </div>
 		        </div>
@@ -140,7 +140,7 @@
 							        </tr>
 							      </thead>
 							       <tbody v-model="iddusun,data_pendudukJSONfilterdusun,nomor,pagination">
-							        <tr v-for="data_penduduk in filteredbox.slice(pagination,pagination+10)">
+							        <tr v-for="data_penduduk in filteredbox.slice(pagination,pagination+50)">
 							          <td>{{ data_penduduk['Alamat'] }}</td>
 							          <td>{{ data_penduduk['RW'] }}</td>
 							          <td>{{ data_penduduk['RT'] }}</td>
@@ -198,8 +198,8 @@
 							      </tbody>
 							    </table>
 					       </div>
-					       <a href="#" @click="prevpage()" class="previous">&laquo; Previous</a>
-				           <a href="#" @click="nextpage()" class="next">Next &raquo;</a>
+					       <!-- <a href="#" @click="prevpage()" class="previous">&laquo; Previous</a> -->
+				           <!-- <a href="#" @click="nextpage()" class="next">Next &raquo;</a> -->
 				           <a href="formadddatapendudukkades" class="tomboladd">Tambah Data</a>
 				       </div>
         		</div>
@@ -216,7 +216,7 @@
 <script>
     export default {
         mounted() {
-        	this.$http.get("datawarga/"+this.iddusun).then(response => {this.data_pendudukJSONfilterdusun = response.data.data_pendudukdusuns});
+        	this.$http.get("datawarga").then(response => {this.data_pendudukJSONfilterdusun = response.data.data_pendudukdusuns});
         },
         data(){
         	return{

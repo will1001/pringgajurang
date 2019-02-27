@@ -2203,7 +2203,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    this.$http.get("datawarga/" + this.iddusun).then(function (response) {
+    this.$http.get("datawarga").then(function (response) {
       _this.data_pendudukJSONfilterdusun = response.data.data_pendudukdusuns;
     });
   },
@@ -38029,23 +38029,11 @@ var render = function() {
                 _vm._v(" "),
                 _c("option", { attrs: { value: "Nama" } }, [_vm._v("Nama")]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "NIK" } }, [_vm._v("NIK")]),
-                _vm._v(" "),
                 _c("option", { attrs: { value: "Nomor_KK" } }, [
                   _vm._v("Nomor KK")
                 ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "Pendidikan" } }, [
-                  _vm._v("Pendidikan")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "Status_Perkawinan" } }, [
-                  _vm._v("status Perkawinan")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "Golongan_Darah" } }, [
-                  _vm._v("Golongan Darah")
-                ])
+                _c("option", { attrs: { value: "NIK" } }, [_vm._v("NIK")])
               ]
             )
           ]
@@ -38086,7 +38074,7 @@ var render = function() {
                     }
                   },
                   _vm._l(
-                    _vm.filteredbox.slice(_vm.pagination, _vm.pagination + 10),
+                    _vm.filteredbox.slice(_vm.pagination, _vm.pagination + 50),
                     function(data_penduduk) {
                       return _c("tr", [
                         _c("td", [_vm._v(_vm._s(data_penduduk["Alamat"]))]),
@@ -38275,34 +38263,6 @@ var render = function() {
                 )
               ])
             ]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "previous",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.prevpage()
-                }
-              }
-            },
-            [_vm._v("« Previous")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "next",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.nextpage()
-                }
-              }
-            },
-            [_vm._v("Next »")]
           ),
           _vm._v(" "),
           _c(
@@ -52537,11 +52497,15 @@ var app = new Vue({
     tabelSOTK: _components_admincomponent_TabelSOTK_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   data: {
-    currentComponent: "tabeldatapenduduk"
+    currentComponent: "tabeldatapenduduk",
+    active_el: 1
   },
   methods: {
     swapComponent: function swapComponent(component) {
       this.currentComponent = component;
+    },
+    activate: function activate(el) {
+      this.active_el = el;
     }
   }
 });

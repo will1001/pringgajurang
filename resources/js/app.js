@@ -39,11 +39,15 @@ const app = new Vue({
     components : { tabeldatapenduduk,buatsurat,tabelakunlogindesa,tabelberita,tabelpengumuman,tabelSOTK },
     data:{
     	currentComponent : "tabeldatapenduduk",
+        active_el : 1,
     },
     methods: {
     swapComponent: function(component)
     {
       this.currentComponent = component;
-    }
+    },
+     activate:function(el){
+        this.active_el = el;
+    },
   }
 });
