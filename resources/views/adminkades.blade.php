@@ -28,7 +28,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       @guest
               <li>
@@ -60,16 +60,15 @@
                       @endguest
           @endguest
        </ul>
-    </ul>
-  </div>
+     </div>
    </div>
     </nav>
 
 
 <div class="row" id="app">
   <div class="col-md-2">
-
-      <nav id="sidebar">
+      <nav id="sidebar" >
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
         
          <ul class="navbar-nav ml-1 text-uppercase text-left">
               <li class="nav-item">
@@ -104,6 +103,7 @@
                 <a class="nav-link" @click="currentView='';" href="{{url('formuploadapbd/rpjm')}}">Upload RPJM Desa</a>
               </li>
        </ul>
+     </div>
       </nav>
   </div>
   <div class="col-md-10 text-center">

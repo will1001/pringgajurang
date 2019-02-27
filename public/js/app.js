@@ -2422,8 +2422,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("oke");
@@ -38660,90 +38658,80 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "section",
-    { staticClass: "section-padding", attrs: { id: "profildesaadmin" } },
-    [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c(
-              "div",
-              {
-                staticStyle: {
-                  overflow: "auto",
-                  "max-height": "400px",
-                  position: "relative"
-                }
-              },
-              [
-                _c("table", { attrs: { id: "tabeldatakadus" } }, [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c(
-                    "tbody",
-                    _vm._l(_vm.SOTKs, function(SOTK) {
-                      return _c("tr", [
-                        _c("td", [_vm._v(_vm._s(SOTK["Nama"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(SOTK["Jabatan"]))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("a", { attrs: { href: SOTK["urlgambar"] } }, [
-                            _vm._v("Lihat")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "a",
-                            { attrs: { href: "formeditSOTK/" + SOTK["id"] } },
-                            [_vm._v("edit")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "a",
-                            { attrs: { href: "deleteSOTK/" + SOTK["id"] } },
-                            [_vm._v("hapus")]
-                          )
+  return _c("section", { staticClass: "section-padding tabelSOTK" }, [
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("h1", [_vm._v("SOTK")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c(
+            "div",
+            {
+              staticStyle: {
+                overflow: "auto",
+                "max-height": "400px",
+                position: "relative"
+              }
+            },
+            [
+              _c("table", { attrs: { id: "tabeldatakadus" } }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.SOTKs, function(SOTK) {
+                    return _c("tr", [
+                      _c("td", [_vm._v(_vm._s(SOTK["Nama"]))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(SOTK["Jabatan"]))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("a", { attrs: { href: SOTK["urlgambar"] } }, [
+                          _vm._v("Lihat")
                         ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          { attrs: { href: "formeditSOTK/" + SOTK["id"] } },
+                          [_vm._v("edit")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          { attrs: { href: "deleteSOTK/" + SOTK["id"] } },
+                          [_vm._v("hapus")]
+                        )
                       ])
-                    }),
-                    0
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              { staticClass: "tomboladd", attrs: { href: "formaddSOTK" } },
-              [_vm._v("Tambah Data")]
-            )
-          ])
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            { staticClass: "tomboladd", attrs: { href: "formaddSOTK" } },
+            [_vm._v("Tambah Data")]
+          )
         ])
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center" }, [
-      _c("h2", [_vm._v("SOTK")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("thead", [
+      _c("col", { attrs: { width: "1000px" } }),
+      _vm._v(" "),
       _c("col", { attrs: { width: "1000px" } }),
       _vm._v(" "),
       _c("col", { attrs: { width: "1000px" } }),

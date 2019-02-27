@@ -1,14 +1,13 @@
 <template>
-  <section id="profildesaadmin" class="section-padding">
-      <div class="container">
-        <div class="text-center">
-           <h2>SOTK</h2>
-         </div>
+  <section class="section-padding tabelSOTK">
+      <div class="container-fluid">
+           <h1>SOTK</h1>
         <div class="row">
           <div class="col-md-12">
-            <div style="overflow: auto;max-height: 400px;position: relative;  ">
+            <div style="overflow: auto;max-height: 400px;position: relative;">
                 <table id="tabeldatakadus">
                 <thead>
+                  <col width="1000px">
                   <col width="1000px">
                   <col width="1000px">
                   <col width="1000px">
@@ -33,7 +32,6 @@
               </table>
           </div>
                 <a :href="'formaddSOTK'" class="tomboladd">Tambah Data</a>                      
-                
           </div>
         </div>
       </div>
