@@ -71,7 +71,7 @@
 
       <nav id="sidebar">
         
-         <ul class="navbar-nav ml-auto text-uppercase text-center">
+         <ul class="navbar-nav ml-auto text-uppercase text-left">
               <li class="nav-item">
                 <a class="nav-link" @click="swapComponent('tabeldatapenduduk');" href="#">Data Penduduk</a>
               </li>
