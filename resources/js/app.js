@@ -28,6 +28,8 @@ import tabelakunlogindesa from './components/admincomponent/TabelAkunLoginDesa.v
 import tabelberita from './components/admincomponent/TabelBerita.vue';
 import tabelpengumuman from './components/admincomponent/TabelPengumuman.vue';
 import tabelSOTK from './components/admincomponent/TabelSOTK.vue';
+import icondown from './components/admincomponent/IconDown.vue';
+import iconup from './components/admincomponent/IconUp.vue';
 
 
 Vue.http.headers.common['X-CSRF-TOKEN'] = $('meta[name="csrf-token"]').attr('content');
@@ -36,13 +38,24 @@ Vue.http.headers.common['X-CSRF-TOKEN'] = $('meta[name="csrf-token"]').attr('con
 
 const app = new Vue({
     el: '#app',
-    components : { tabeldatapenduduk,buatsurat,tabelakunlogindesa,tabelberita,tabelpengumuman,tabelSOTK },
+    components : { tabeldatapenduduk,buatsurat,tabelakunlogindesa,tabelberita,tabelpengumuman,tabelSOTK,icondown,iconup },
     data:{
-    	currentComponent : "tabeldatapenduduk",
+        currentComponent : "tabeldatapenduduk",
+    	currentIcon : "icondown",
         active_el : 1,
     },
     methods: {
-    swapComponent: function(component)
+    swapIcon: function()
+    {
+        if(this.currentIcon=="icondown"){
+          this.currentIcon = "iconup";
+          console.log(this.currentIcon);
+        }else{
+          this.currentIcon = "icondown";
+          console.log(this.currentIcon);
+        }
+    }
+    ,swapComponent: function(component)
     {
       this.currentComponent = component;
     },

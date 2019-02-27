@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/admin.css">
     <link rel="stylesheet" type="text/css" href="/css/table.css">
 
@@ -68,9 +69,14 @@
 <div class="row" id="app">
   <div class="col-md-2">
       <nav id="sidebar" >
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="text-center w-100" >
+          <a  @click="swapIcon();" class="btn w-100 " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <div :is="currentIcon"  keep-alive></div>
+  </a>
+        </div>
+<div class="collapse" id="collapseExample">
         
-         <ul class="navbar-nav ml-1 text-uppercase text-left">
+         <ul class="navbar-nav pd-2 text-uppercase text-left">
               <li class="nav-item">
                 <a class="nav-link" @click="swapComponent('tabeldatapenduduk');activate(1);" :class="{ active : active_el == 1 }" href="#">Data Penduduk</a>
               </li>

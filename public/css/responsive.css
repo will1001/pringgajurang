@@ -541,5 +541,14 @@
       padding: 5px 5px;
      }
 
+     .selayangpandangbody {
+    font-size: 12px;
+    margin-top: 43px;
+    }
+
+    .selayangpandangbody h1{
+    font-size: 19px;
+    }
+
 
 }
