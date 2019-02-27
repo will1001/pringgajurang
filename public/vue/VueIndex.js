@@ -184,7 +184,7 @@ Vue.component('statistikindex',{
 	    	datadesas:[
 	    		{
 	    			title: 'Dana Desa',
-	    			link:'https://desapringgajurang.id/dokumen/Danat%20Desa.pdf',
+	    			link:'https://desapringgajurang.id/dokumen/Dana_Desa.pdf',
 	    		},
 	    		{
 	    			title:'Profil Desa',

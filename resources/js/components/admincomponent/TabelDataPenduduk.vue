@@ -8,12 +8,7 @@
 		        </div>
 
 		        <div class="row">
-		        	<div class="col-xs-12 col-12 col-sm-6 col-md-6">
-			        	<select @change="showperdusun($event.target.value)">
-			                 <option selected="true" disabled="disabled">Dusun</option>
-			                 <option v-for="kodeareadusuns in kodeareadusun" :value="kodeareadusuns['id_dusun']">{{kodeareadusuns['Nama_Dusun']}}</option>
-			            </select>
-		        	</div>
+		        	
 
 		        	<div class="col-xs-12 col-12 col-sm-6 col-md-6 search-posisi">  
 			            <div class="search">
@@ -145,7 +140,7 @@
 							        </tr>
 							      </thead>
 							       <tbody v-model="iddusun,data_pendudukJSONfilterdusun,nomor,pagination">
-							        <tr v-for="data_penduduk in filteredbox.slice(pagination,pagination+25)">
+							        <tr v-for="data_penduduk in filteredbox.slice(pagination,pagination+10)">
 							          <td>{{ data_penduduk['Alamat'] }}</td>
 							          <td>{{ data_penduduk['RW'] }}</td>
 							          <td>{{ data_penduduk['RT'] }}</td>
@@ -291,10 +286,10 @@
         		
         	},
         	nextpage () {
-        	 	this.pagination=this.pagination+25;
+        	 	this.pagination=this.pagination+10;
              },
             prevpage () {
-        		this.pagination=this.pagination-25;
+        		this.pagination=this.pagination-10;
 	        },
         }
     }

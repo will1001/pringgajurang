@@ -2199,11 +2199,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var _this = this;
@@ -2296,10 +2291,10 @@ __webpack_require__.r(__webpack_exports__);
       this.searchkategori = even;
     },
     nextpage: function nextpage() {
-      this.pagination = this.pagination + 25;
+      this.pagination = this.pagination + 10;
     },
     prevpage: function prevpage() {
-      this.pagination = this.pagination - 25;
+      this.pagination = this.pagination - 10;
     }
   }
 });
@@ -37960,35 +37955,6 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-xs-12 col-12 col-sm-6 col-md-6" }, [
-          _c(
-            "select",
-            {
-              on: {
-                change: function($event) {
-                  return _vm.showperdusun($event.target.value)
-                }
-              }
-            },
-            [
-              _c(
-                "option",
-                { attrs: { selected: "true", disabled: "disabled" } },
-                [_vm._v("Dusun")]
-              ),
-              _vm._v(" "),
-              _vm._l(_vm.kodeareadusun, function(kodeareadusuns) {
-                return _c(
-                  "option",
-                  { domProps: { value: kodeareadusuns["id_dusun"] } },
-                  [_vm._v(_vm._s(kodeareadusuns["Nama_Dusun"]))]
-                )
-              })
-            ],
-            2
-          )
-        ]),
-        _vm._v(" "),
         _c(
           "div",
           { staticClass: "col-xs-12 col-12 col-sm-6 col-md-6 search-posisi" },
@@ -38120,7 +38086,7 @@ var render = function() {
                     }
                   },
                   _vm._l(
-                    _vm.filteredbox.slice(_vm.pagination, _vm.pagination + 25),
+                    _vm.filteredbox.slice(_vm.pagination, _vm.pagination + 10),
                     function(data_penduduk) {
                       return _c("tr", [
                         _c("td", [_vm._v(_vm._s(data_penduduk["Alamat"]))]),
