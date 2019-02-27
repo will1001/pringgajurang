@@ -282,7 +282,7 @@
                                placeholder="Cari Panduan"/>
                           </div>
                           <ul>
-                            <li v-for="panduan in panduans"><a v-bind:href="panduan.link" target="_blank">@{{ panduan.title }}</a></li>
+                            <li v-for="panduan in caripanduans"><a v-bind:href="panduan.link" target="_blank">@{{ panduan.title }}</a></li>
                           </ul>
                         
                     </div>
@@ -557,7 +557,7 @@
                                placeholder="Cari Data"/>
                           </div>
                           <ul>
-                            <li v-for="datadesa in datadesas"><a v-bind:href="datadesa.link" target="_blank">@{{ datadesa.title }}</a></li>
+                            <li v-for="datadesa in caridatadesas"><a v-bind:href="datadesa.link" target="_blank">@{{ datadesa.title }}</a></li>
                           </ul>
                     </div>
                 </div>

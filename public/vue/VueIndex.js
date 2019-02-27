@@ -150,6 +150,14 @@ Vue.component('panduanpenduduk',{
 	    	]
 	  	}
 	},
+	computed : {
+        	caripanduans:function(){
+        			return this.panduans.filter((panduan) => {
+        			return panduan.title.toLowerCase().match(this.caritext)
+        		   });
+
+        	}
+        },
 });
 
 Vue.component('halamanbisnis',{
@@ -193,6 +201,14 @@ Vue.component('statistikindex',{
 	    	]
 	  	}
 	},
+	computed : {
+        	caridatadesas:function(){
+        			return this.datadesas.filter((datadesa) => {
+        			return datadesa.title.toLowerCase().match(this.caritext)
+        		   });
+
+        	}
+        },
 });
 
 
