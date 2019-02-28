@@ -126,7 +126,7 @@
                     </div>
                     <div class="col-4 col-xs-4 col-sm-4 col-md-2">
                         <div class="inner text-center">
-                            <a href="'/organisasi'"><i class="fa-2x fas fa-users"></i><br>
+                            <a href="/organisasi"><i class="fa-2x fas fa-users"></i><br>
                             <h4><strong>SOTK</strong></h4></a>
                         </div>
                     </div>

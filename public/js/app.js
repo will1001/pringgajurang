@@ -43038,7 +43038,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-4 col-xs-4 col-sm-4 col-md-2" }, [
       _c("div", { staticClass: "inner text-center" }, [
-        _c("a", { attrs: { href: "'/organisasi'" } }, [
+        _c("a", { attrs: { href: "/organisasi" } }, [
           _c("i", { staticClass: "fa-2x fas fa-users" }),
           _c("br"),
           _vm._v(" "),
