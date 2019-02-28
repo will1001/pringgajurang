@@ -5,12 +5,12 @@
                 <div class="col-md-4">
                     <div class="kotak1bidangpemerintahan">
                         <ul>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_el_indexcomp="active_el_indexcomp" @click="testing(5);currentViewlembagaidex='LKMD'" :class="{ active : active_el_indexcomp == 5 }">LKMD</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_el_indexcomp="active_el_indexcomp" @click="testing(6);currentViewlembagaidex='BPD'" :class="{ active : active_el_indexcomp == 6 }">BPD</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_el_indexcomp="active_el_indexcomp" @click="testing(7);currentViewlembagaidex='PKK'" :class="{ active : active_el_indexcomp == 7 }">PKK</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_el_indexcomp="active_el_indexcomp" @click="testing(8);currentViewlembagaidex='Karang_Taruna'" :class="{ active : active_el_indexcomp == 8 }">Karang Taruna</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_el_indexcomp="active_el_indexcomp" @click="testing(9);currentViewlembagaidex='GAPOKTAN'" :class="{ active : active_el_indexcomp == 9 }">GAPOKTAN</a></li>
-                        <li><a class="bidangpemerintahan_link" href="#" :active_el_indexcomp="active_el_indexcomp" @click="testing(10);currentViewlembagaidex='POKDARWIS'" :class="{ active : active_el_indexcomp == 10 }">POKDARWIS</a></li>
+                        <li><a class="bidangpemerintahan_link" :href="'#'">LKMD</a></li>
+                        <li><a class="bidangpemerintahan_link" :href="'#'">BPD</a></li>
+                        <li><a class="bidangpemerintahan_link" :href="'#'">PKK</a></li>
+                        <li><a class="bidangpemerintahan_link" :href="'#'">Karang Taruna</a></li>
+                        <li><a class="bidangpemerintahan_link" :href="'#'">GAPOKTAN</a></li>
+                        <li><a class="bidangpemerintahan_link" :href="'#'">POKDARWIS</a></li>
                     </ul>
                     </div>
                 </div>
@@ -25,28 +25,24 @@
 </template>
 
 <script>
-import Pemerintahan from './BidangPemerintahanComponent/Pemerintahan.vue';
-import Kesejahteraan from './BidangPemerintahanComponent/Kesejahteraan.vue';
-import Pelayanan from './BidangPemerintahanComponent/Pelayanan.vue';
-import Tata_Usaha_dan_Umum from './BidangPemerintahanComponent/Tata_Usaha_dan_Umum.vue';
-import Keuangan from './BidangPemerintahanComponent/Keuangan.vue';
-import Perencanaan from './BidangPemerintahanComponent/Perencanaan.vue';
-import Kewilayahan from './BidangPemerintahanComponent/Kewilayahan.vue';
-import Pembangunan from './BidangPemerintahanComponent/Pembangunan.vue';
+import Pemerintahan from './LembagaIndex/LKMD.vue';
+import Kesejahteraan from './LembagaIndex/BPD.vue';
+import Pelayanan from './LembagaIndex/PKK.vue';
+import Tata_Usaha_dan_Umum from './LembagaIndex/Karang_Taruna.vue';
+import Keuangan from './LembagaIndex/GAPOKTAN.vue';
+import Perencanaan from './LembagaIndex/POKDARWIS.vue';
     export default {
         mounted() {
         console.log("oke pemerintahan");
             
         },
         components : { 
-          Pemerintahan,
-          Kesejahteraan,
-          Pelayanan,
-          Tata_Usaha_dan_Umum,
-          Keuangan,
-          Perencanaan,
-          Kewilayahan,
-          Pembangunan,
+          LKMD,
+          BPD,
+          PKK,
+          Karang_Taruna,
+          GAPOKTAN,
+          POKDARWIS,
         },
         data() {
             return {

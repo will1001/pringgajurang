@@ -4,7 +4,7 @@
                 <div class="container">
                 <div class="row">
                     <div class="col-12 col-xs-12 col-sm-12 col-md-4">
-                        <a href="#" @click="showselayangpandang()" :value="value">
+                        <a href="#" @click="childcallparent('selayangpandang')" :value="value">
                           <div class="tentang_desa inner text-left">
                             <h2>Selayang Pandang</h2>
                             <p>Desa Pringgajurang terletak di ke Kecamatan Montong Gading, Kabupaten Lombok Timur, NTB. Desa ini berada tidak jauh dari objek Wisata Otak Kokok-Joben. Desa ini dapat diakses dari Bandara Internasional Lombok, Pelabuhan Lembar, Kota Matar . . .</p>
@@ -120,7 +120,7 @@
                 <div class="row">
                     <div class="col-4 col-xs-4 col-sm-4 col-md-2 offset-md-1">
                         <div class="inner text-center">
-                            <a href="#" @click="currentView='lembagaindex';"><i class="fas fa-sitemap"></i><br>
+                            <a href="#" @click="childcallparent('lembagaindex')"><i class="fas fa-sitemap"></i><br>
                             <h4><strong>LEMBAGA</strong></h4></a>
                         </div>
                     </div>
@@ -138,13 +138,13 @@
                     </div>
                     <div class="col-4 col-xs-4 col-sm-4 col-md-2">
                         <div class="inner text-center">
-                            <a href="#" @click="currentView='agenda';"><i class="fas fa-calendar-alt"></i><br>
+                            <a href="#" @click="childcallparent('agenda')"><i class="fas fa-calendar-alt"></i><br>
                             <h4><strong>AGENDA</strong></h4></a>
                         </div>
                     </div>
                     <div class="col-4 col-xs-4 col-sm-4 col-md-2">
                         <div class="inner text-center">
-                            <a href="#" @click="currentView='statistikindex';"><i class="fas fa-chart-bar"></i><br>
+                            <a href="#" @click="childcallparent('datadesa')"><i class="fas fa-chart-bar"></i><br>
                             <h4><strong>DATA</strong></h4></a>
                         </div>
                     </div>
@@ -176,8 +176,8 @@
             this.fetchpengumumandesas();
         },
         methods:{
-          showselayangpandang(){
-            this.$emit('clicked', "selayangpandang");
+          childcallparent(even){
+            this.$emit('clicked', even);
           },
           fetchpengumumandesas(){
                 this.$http.get("datapengumuman").then(response => {this.pengumumandesas = response.data.pengumumandesas});
@@ -189,10 +189,7 @@
               this.active_el = el;
               console.log(this.active_el);
           },
-          updatecurrentview:function(el,el2){
-              this.currentView = el;
-              this.isHidden = el2;
-          },
+          
       }
     }
 </script>

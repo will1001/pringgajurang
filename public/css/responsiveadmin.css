@@ -159,6 +159,10 @@
         
     }
 
+ /*   h1{
+        font-size: 19px;
+        white-space: nowrap;
+    }*/
 
     nav.navbar.navbar-expand-lg.navbar-light.bg-light {
         margin: -29px 0px;

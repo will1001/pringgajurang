@@ -16,6 +16,17 @@ color: #000;
 }
 
 
+a.nav-link {
+    display: block;
+    font-weight: bold;
+    color: black;
+    width: auto;
+    margin: 5px 0px;
+    line-height: 16px;
+}
+
+
+
 
 #logotext{
     text-transform: uppercase;

@@ -19,8 +19,8 @@
                             <tbody id="tbodytabel">
                               <tr v-for="agenda in agendas">
                                 <td>1</td>
-                                <td>agenda['agenda']</td>
-                                <td>agenda['tgl_agenda']</td>
+                                <td>{{agenda['agenda']}}</td>
+                                <td>{{agenda['tgl_agenda']}}</td>
                               </tr>
                             </tbody>
                           </table>
@@ -35,6 +35,19 @@
     export default {
         mounted() {
             console.log('Component mounted.')
+        },
+        data(){
+            return{
+                agendas:[],
+            }
+        },
+        created(){
+            this.fetchagendas();
+        },
+        methods:{
+            fetchagendas(){
+                this.$http.get("dataagenda").then(response => {this.agendas = response.data.agendas});
+            },
         }
     }
 </script>

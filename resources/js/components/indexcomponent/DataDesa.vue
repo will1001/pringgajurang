@@ -15,7 +15,7 @@
                                placeholder="Cari Data"/>
                           </div>
                           <ul>
-                            <li v-for="datadesa in caridatadesas"><a v-bind:href="datadesa.link" target="_blank">@{{ datadesa.title }}</a></li>
+                            <li v-for="datadesa in caridatadesas"><a v-bind:href="datadesa.link" target="_blank">{{ datadesa.title }}</a></li>
                           </ul>
                     </div>
                 </div>
@@ -27,6 +27,29 @@
     export default {
         mounted() {
             console.log('Component mounted.')
-        }
+        },
+        data(){
+          return{
+            caritext:'',
+            datadesas:[
+              {
+                title: 'Dana Desa',
+                link:'https://desapringgajurang.id/dokumen/Dana_Desa.pdf',
+              },
+              {
+                title:'Profil Desa',
+                link:'https://desapringgajurang.id/dokumen/Profil%20Desa%20PRINGGAJURANG.pdf',
+              }
+            ]
+          }
+        },
+        computed : {
+          caridatadesas:function(){
+              return this.datadesas.filter((datadesa) => {
+              return datadesa.title.toLowerCase().match(this.caritext)
+               });
+
+          }
+        },
     }
 </script>
