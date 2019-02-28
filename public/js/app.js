@@ -2241,6 +2241,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   data: function data() {
@@ -2249,10 +2251,10 @@ __webpack_require__.r(__webpack_exports__);
       data_pendudukJSON: [],
       data_pendudukJSONfilterdusun: [],
       iddusun: 1,
-      nomor: 0,
+      nomor: 1,
       pagination: 0,
       searchQuery: '',
-      searchkategori: ""
+      searchkategori: "Cari Berdasarkan"
     };
   },
   created: function created() {
@@ -2297,6 +2299,8 @@ __webpack_require__.r(__webpack_exports__);
         return this.data_pendudukJSON.filter(function (data_penduduk) {
           return data_penduduk.golongan_darah.toLowerCase().match(_this.searchQuery);
         });
+      } else {
+        return this.data_pendudukJSON;
       }
     }
   },
@@ -2325,12 +2329,16 @@ __webpack_require__.r(__webpack_exports__);
     },
     carikategori: function carikategori(even) {
       this.searchkategori = even;
+      this.pagination = 0;
+      this.nomor = 1;
     },
     nextpage: function nextpage() {
       this.pagination = this.pagination + 10;
+      this.nomor = this.nomor + 10;
     },
     prevpage: function prevpage() {
       this.pagination = this.pagination - 10;
+      this.nomor = this.nomor - 10;
     }
   }
 });
@@ -39952,8 +39960,10 @@ var render = function() {
                   },
                   _vm._l(
                     _vm.filteredbox.slice(_vm.pagination, _vm.pagination + 10),
-                    function(data_penduduk) {
+                    function(data_penduduk, index) {
                       return _c("tr", [
+                        _c("td", [_vm._v(_vm._s(index + _vm.nomor))]),
+                        _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(data_penduduk["Alamat"]))]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(data_penduduk["RW"]))]),
@@ -40145,6 +40155,34 @@ var render = function() {
           _c(
             "a",
             {
+              staticClass: "previous",
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.prevpage()
+                }
+              }
+            },
+            [_vm._v("« Previous")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "next",
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.nextpage()
+                }
+              }
+            },
+            [_vm._v("Next »")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
               staticClass: "tomboladd",
               attrs: { href: "formadddatapendudukkades" }
             },
@@ -40270,6 +40308,8 @@ var staticRenderFns = [
       _c("col", { attrs: { width: "1000px" } }),
       _vm._v(" "),
       _c("tr", [
+        _c("th", { attrs: { rowspan: "2" } }, [_vm._v("No")]),
+        _vm._v(" "),
         _c("th", { attrs: { rowspan: "2" } }, [_vm._v("Alamat")]),
         _vm._v(" "),
         _c("th", { attrs: { rowspan: "2" } }, [_vm._v("RW")]),

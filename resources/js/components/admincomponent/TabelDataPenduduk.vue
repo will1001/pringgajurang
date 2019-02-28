@@ -82,6 +82,7 @@
 							        <col width="1000px">
 							        <col width="1000px">
 							        <tr>
+							                  <th rowspan="2">No</th>
 							                  <th rowspan="2">Alamat</th>
 							                  <th rowspan="2">RW</th>
 							                  <th rowspan="2">RT</th>
@@ -140,7 +141,8 @@
 							        </tr>
 							      </thead>
 							       <tbody v-model="iddusun,data_pendudukJSONfilterdusun,nomor,pagination">
-							        <tr v-for="data_penduduk in filteredbox.slice(pagination,pagination+10)">
+							        <tr v-for="(data_penduduk,index) in filteredbox.slice(pagination,pagination+10)">
+							          <td>{{ index+nomor }}</td>
 							          <td>{{ data_penduduk['Alamat'] }}</td>
 							          <td>{{ data_penduduk['RW'] }}</td>
 							          <td>{{ data_penduduk['RT'] }}</td>
@@ -198,8 +200,8 @@
 							      </tbody>
 							    </table>
 					       </div>
-					       <!-- <a href="#" @click="prevpage()" class="previous">&laquo; Previous</a> -->
-				           <!-- <a href="#" @click="nextpage()" class="next">Next &raquo;</a> -->
+					       <a href="#" @click="prevpage()" class="previous">&laquo; Previous</a>
+				           <a href="#" @click="nextpage()" class="next">Next &raquo;</a>
 				           <a href="formadddatapendudukkades" class="tomboladd">Tambah Data</a>
 				       </div>
         		</div>
@@ -223,10 +225,10 @@
         		data_pendudukJSON:[],
         		data_pendudukJSONfilterdusun:[],
         		iddusun:1,
-        		nomor:0,
+        		nomor:1,
         		pagination:0,
         		searchQuery: '',
-        		searchkategori:"" ,
+        		searchkategori:"Cari Berdasarkan" ,
         	}
         },
         created(){
@@ -239,31 +241,39 @@
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.Nama.toLowerCase().match(this.searchQuery)
         		   });
+
         		}
         		if(this.searchkategori=="Nomor_KK"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.Nomor_KK.toLowerCase().match(this.searchQuery)
         		   });
+
         		}
         		if(this.searchkategori=="NIK"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.NIK.toLowerCase().match(this.searchQuery)
         		   });
+
         		}
         		if(this.searchkategori=="Pendidikan"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.pendidikan.toLowerCase().match(this.searchQuery)
         		   });
+
         		}
         		if(this.searchkategori=="Status_Perkawinan"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.status_perkawinan.toLowerCase().match(this.searchQuery)
         		   });
+
         		}
         		if(this.searchkategori=="Golongan_Darah"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.golongan_darah.toLowerCase().match(this.searchQuery)
         		   });
+
+        		}else{
+        			return this.data_pendudukJSON;
         		}
 
         	}
@@ -282,13 +292,16 @@
         		
         	},carikategori(even){
         		this.searchkategori=even;
-        		
+        	 	   this.pagination=0;
+        	 	   this.nomor=1;
         	},
         	nextpage () {
         	 	this.pagination=this.pagination+10;
+        	 	this.nomor=this.nomor+10;
              },
             prevpage () {
         		this.pagination=this.pagination-10;
+        		this.nomor=this.nomor-10;
 	        },
         }
     }
