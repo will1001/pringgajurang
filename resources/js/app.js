@@ -38,7 +38,6 @@ import bidangpemerintahan from './components/indexcomponent/BidangPemerintahan.v
 import panduanpenduduk from './components/indexcomponent/PanduanPenduduk.vue';
 import halamanbisnis from './components/indexcomponent/HalamanBisnis.vue';
 import untukpengunjung from './components/indexcomponent/UntukPengunjung.vue';
-import lembagaindex from './components/indexcomponent/LembagaIndex.vue';
 import agenda from './components/indexcomponent/Agenda.vue';
 import datadesa from './components/indexcomponent/DataDesa.vue';
 
@@ -67,7 +66,6 @@ const app = new Vue({
       panduanpenduduk,
       halamanbisnis,
       untukpengunjung,
-      lembagaindex,
       agenda,
       datadesa,
     },
