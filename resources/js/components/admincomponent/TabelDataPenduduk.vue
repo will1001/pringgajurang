@@ -140,7 +140,7 @@
 							        </tr>
 							      </thead>
 							       <tbody v-model="iddusun,data_pendudukJSONfilterdusun,nomor,pagination">
-							        <tr v-for="data_penduduk in filteredbox.slice(pagination,pagination+50)">
+							        <tr v-for="data_penduduk in filteredbox.slice(pagination,pagination+10)">
 							          <td>{{ data_penduduk['Alamat'] }}</td>
 							          <td>{{ data_penduduk['RW'] }}</td>
 							          <td>{{ data_penduduk['RT'] }}</td>
@@ -216,7 +216,6 @@
 <script>
     export default {
         mounted() {
-        	this.$http.get("datawarga").then(response => {this.data_pendudukJSONfilterdusun = response.data.data_pendudukdusuns});
         },
         data(){
         	return{
@@ -227,7 +226,7 @@
         		nomor:0,
         		pagination:0,
         		searchQuery: '',
-        		searchkategori:"Nomor_KK" ,
+        		searchkategori:"" ,
         	}
         },
         created(){

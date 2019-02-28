@@ -2242,13 +2242,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    var _this = this;
-
-    this.$http.get("datawarga").then(function (response) {
-      _this.data_pendudukJSONfilterdusun = response.data.data_pendudukdusuns;
-    });
-  },
+  mounted: function mounted() {},
   data: function data() {
     return {
       kodeareadusun: [],
@@ -2258,7 +2252,7 @@ __webpack_require__.r(__webpack_exports__);
       nomor: 0,
       pagination: 0,
       searchQuery: '',
-      searchkategori: "Nomor_KK"
+      searchkategori: ""
     };
   },
   created: function created() {
@@ -2267,66 +2261,66 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     filteredbox: function filteredbox() {
-      var _this2 = this;
+      var _this = this;
 
       if (this.searchkategori == "Nama") {
         return this.data_pendudukJSON.filter(function (data_penduduk) {
-          return data_penduduk.Nama.toLowerCase().match(_this2.searchQuery);
+          return data_penduduk.Nama.toLowerCase().match(_this.searchQuery);
         });
       }
 
       if (this.searchkategori == "Nomor_KK") {
         return this.data_pendudukJSON.filter(function (data_penduduk) {
-          return data_penduduk.Nomor_KK.toLowerCase().match(_this2.searchQuery);
+          return data_penduduk.Nomor_KK.toLowerCase().match(_this.searchQuery);
         });
       }
 
       if (this.searchkategori == "NIK") {
         return this.data_pendudukJSON.filter(function (data_penduduk) {
-          return data_penduduk.NIK.toLowerCase().match(_this2.searchQuery);
+          return data_penduduk.NIK.toLowerCase().match(_this.searchQuery);
         });
       }
 
       if (this.searchkategori == "Pendidikan") {
         return this.data_pendudukJSON.filter(function (data_penduduk) {
-          return data_penduduk.pendidikan.toLowerCase().match(_this2.searchQuery);
+          return data_penduduk.pendidikan.toLowerCase().match(_this.searchQuery);
         });
       }
 
       if (this.searchkategori == "Status_Perkawinan") {
         return this.data_pendudukJSON.filter(function (data_penduduk) {
-          return data_penduduk.status_perkawinan.toLowerCase().match(_this2.searchQuery);
+          return data_penduduk.status_perkawinan.toLowerCase().match(_this.searchQuery);
         });
       }
 
       if (this.searchkategori == "Golongan_Darah") {
         return this.data_pendudukJSON.filter(function (data_penduduk) {
-          return data_penduduk.golongan_darah.toLowerCase().match(_this2.searchQuery);
+          return data_penduduk.golongan_darah.toLowerCase().match(_this.searchQuery);
         });
       }
     }
   },
   methods: {
     fetchkodeareadusun: function fetchkodeareadusun() {
-      var _this3 = this;
+      var _this2 = this;
 
       this.$http.get("datadusun").then(function (response) {
-        _this3.kodeareadusun = response.data.kode_area_dusuns;
+        _this2.kodeareadusun = response.data.kode_area_dusuns;
       });
     },
     fetchdata_penduduks: function fetchdata_penduduks() {
-      var _this4 = this;
+      var _this3 = this;
 
       this.$http.get("datawarga").then(function (response) {
-        _this4.data_pendudukJSON = response.data.data_penduduks;
+        _this3.data_pendudukJSON = response.data.data_penduduks;
       });
     },
     showperdusun: function showperdusun(even) {
-      var _this5 = this;
+      var _this4 = this;
 
       this.iddusun = even;
       this.$http.get("datawarga/" + even).then(function (response) {
-        _this5.data_pendudukJSONfilterdusun = response.data.data_pendudukdusuns;
+        _this4.data_pendudukJSONfilterdusun = response.data.data_pendudukdusuns;
       });
     },
     carikategori: function carikategori(even) {
@@ -39957,7 +39951,7 @@ var render = function() {
                     }
                   },
                   _vm._l(
-                    _vm.filteredbox.slice(_vm.pagination, _vm.pagination + 50),
+                    _vm.filteredbox.slice(_vm.pagination, _vm.pagination + 10),
                     function(data_penduduk) {
                       return _c("tr", [
                         _c("td", [_vm._v(_vm._s(data_penduduk["Alamat"]))]),
