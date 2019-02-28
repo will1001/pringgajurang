@@ -96,10 +96,12 @@ Route::get('/reloadtabeldusunurutnama/{id}/{pil}',function($id,$pil)
 
 Route::resource('datadusun','APIkodedusunController')->middleware('auth');
 Route::resource('datawarga','APIdatapendudukController')->middleware('auth');
-Route::resource('databerita','APIdataberitaController')->middleware('auth');
-Route::resource('datapengumuman','APIdatapengumumanController')->middleware('auth');
+Route::resource('databerita','APIdataberitaController');
+Route::resource('datapengumuman','APIdatapengumumanController');
 Route::resource('datalogin','APIdataloginController')->middleware('auth');
-Route::resource('dataSOTK','APIdataSOTKController')->middleware('auth');
+Route::resource('dataSOTK','APIdataSOTKController');
+Route::resource('dataagenda','APIdataagendaController');
+Route::resource('databarangdesa','APIdatabarangdesaController');
 
 
 Route::get('/profildesa', 'webcontroller@profildesa');
@@ -152,6 +154,7 @@ Route::post('/editnmrhp/{id}', 'admincontroller@editnmrhp')->middleware('auth');
 Route::get('/formeditnmrhp/{id}', 'admincontroller@formeditnmrhp')->middleware('auth');
 
 // form rute
+Route::get('/formaddagenda', 'admincontroller@formaddagenda')->middleware('auth');
 Route::get('/formaddberita', 'admincontroller@formaddberita')->middleware('auth');
 Route::get('/formaddpengumuman', 'admincontroller@formaddpengumuman')->middleware('auth');
 Route::get('/formaddjmlpend', 'admincontroller@formaddjmlpend')->middleware('auth');
@@ -171,6 +174,7 @@ Route::get('/formaddSOTK', 'admincontroller@formaddSOTK')->middleware('auth');
 
 
 
+Route::get('/formeditagenda/{id}', 'admincontroller@formeditagenda')->middleware('auth');
 Route::get('/formeditberita/{id}', 'admincontroller@formeditberita')->middleware('auth');
 Route::get('/formeditpengumuman/{id}', 'admincontroller@formeditpengumuman')->middleware('auth');
 Route::get('/formeditjmlpend/{id}', 'admincontroller@formeditjmlpend')->middleware('auth');
@@ -193,6 +197,7 @@ Route::get('/deleteSOTK/{id}', 'admincontroller@deleteSOTK');
 
 
 // delete rute
+Route::get('/deleteagenda/{id}', 'admincontroller@deleteagenda');
 Route::get('/deleteberita/{id}', 'admincontroller@deleteberita');
 Route::get('/deletepengumuman/{id}', 'admincontroller@deletepengumuman');
 Route::get('/deletejmlpend/{id}', 'admincontroller@deletejmlpend');
@@ -209,6 +214,7 @@ Route::get('/deletebarangdesa/{id}', 'admincontroller@deletebarangdesa');
 
 
 //post add rute
+Route::post('/addagenda', 'admincontroller@addagenda');
 Route::post('/addberita', 'admincontroller@addberita');
 Route::post('/addpengumuman', 'admincontroller@addpengumuman');
 Route::post('/addjmlpend', 'admincontroller@addjmlpend');
@@ -224,6 +230,7 @@ Route::post('/adddatapendudukkades', 'admincontroller@adddatapendudukkades');
 
 
 //post edit rute
+Route::post('/editagenda/{id}', 'admincontroller@editagenda');
 Route::post('/editberita/{id}', 'admincontroller@editberita');
 Route::post('/editpengumuman/{id}', 'admincontroller@editpengumuman');
 Route::post('/editjmlpend/{id}', 'admincontroller@editjmlpend');

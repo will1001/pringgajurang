@@ -53,7 +53,6 @@
         methods:{
             fetchberitas(){
                 this.$http.get("databerita").then(response => {this.beritas = response.data.beritas});
-
             },
         }
     }

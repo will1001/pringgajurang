@@ -32,17 +32,43 @@ import icondown from './components/admincomponent/IconDown.vue';
 import iconup from './components/admincomponent/IconUp.vue';
 
 
+import indexpage from './components/indexcomponent/IndexPage.vue';
+import selayangpandang from './components/indexcomponent/SelayangPandang.vue';
+import bidangpemerintahan from './components/indexcomponent/BidangPemerintahan.vue';
+import panduanpenduduk from './components/indexcomponent/PanduanPenduduk.vue';
+import halamanbisnis from './components/indexcomponent/HalamanBisnis.vue';
+
+
+
+
 Vue.http.headers.common['X-CSRF-TOKEN'] = $('meta[name="csrf-token"]').attr('content');
 
 
 
 const app = new Vue({
     el: '#app',
-    components : { tabeldatapenduduk,buatsurat,tabelakunlogindesa,tabelberita,tabelpengumuman,tabelSOTK,icondown,iconup },
+    components : { 
+      tabeldatapenduduk,
+      buatsurat,
+      tabelakunlogindesa,
+      tabelberita,
+      tabelpengumuman,
+      tabelSOTK,
+      icondown,
+      iconup, 
+      indexpage,
+      selayangpandang,
+      bidangpemerintahan,
+      panduanpenduduk,
+      halamanbisnis,
+    },
     data:{
-        currentComponent : "tabeldatapenduduk",
+      currentComponent : "tabeldatapenduduk",
     	currentIcon : "icondown",
-        active_el : 1,
+      active_el : 1,
+      active_el_index : 0,
+      currentView : "indexpage",
+      isHidden : false,
     },
     methods: {
     swapIcon: function()
@@ -61,6 +87,12 @@ const app = new Vue({
     },
      activate:function(el){
         this.active_el = el;
+    }
+    ,active_index:function(el){
+        this.active_el_index = el;
     },
+    updatecurrentview:function(el){
+        this.currentView = el;
+    }
   }
 });

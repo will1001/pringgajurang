@@ -14,6 +14,12 @@ class AgendaMigration extends Migration
     public function up()
     {
         //
+        Schema::create('agendas', function (Blueprint $table) {
+            $table->increments('id')->unique();;
+            $table->text('agenda');
+            $table->date('tgl_agenda');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -24,5 +30,7 @@ class AgendaMigration extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('agendas');
+
     }
 }
