@@ -47,7 +47,7 @@ import POKDARWIS from './LembagaIndex/POKDARWIS.vue';
         data() {
             return {
              active_elcomp: 1,
-             currentViewBidangPemerintahan : "Pemerintahan",
+             currentViewlembagaidex : "lkmd",
             }
         },
         methods:{
