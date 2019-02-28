@@ -586,8 +586,8 @@
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/bootstrap-swipe-carousel.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <!-- <script src="js/bootstrap-swipe-carousel.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script> -->
     <!-- <script type="text/javascript" src="{{asset('/js/script.js')}}"></script> -->
     <script src="{{ asset('/js/wow.min.js') }}" type="text/javascript"></script>
     <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>

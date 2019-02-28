@@ -25,19 +25,19 @@
 </template>
 
 <script>
-import Pemerintahan from './LembagaIndex/LKMD.vue';
-import Kesejahteraan from './LembagaIndex/BPD.vue';
-import Pelayanan from './LembagaIndex/PKK.vue';
-import Tata_Usaha_dan_Umum from './LembagaIndex/Karang_Taruna.vue';
-import Keuangan from './LembagaIndex/GAPOKTAN.vue';
-import Perencanaan from './LembagaIndex/POKDARWIS.vue';
+import lkmd from './LembagaIndex/LKMD.vue';
+import BPD from './LembagaIndex/BPD.vue';
+import PKK from './LembagaIndex/PKK.vue';
+import Karang_Taruna from './LembagaIndex/Karang_Taruna.vue';
+import GAPOKTAN from './LembagaIndex/GAPOKTAN.vue';
+import POKDARWIS from './LembagaIndex/POKDARWIS.vue';
     export default {
         mounted() {
         console.log("oke pemerintahan");
             
         },
         components : { 
-          LKMD,
+          lkmd,
           BPD,
           PKK,
           Karang_Taruna,
