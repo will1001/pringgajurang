@@ -274,7 +274,7 @@
         		   });
 
         		}else{
-        			return this.data_pendudukJSON;
+        			return this.data_pendudukJSON.slice(0,5);
         		}
 
         	}

@@ -2301,7 +2301,7 @@ __webpack_require__.r(__webpack_exports__);
           return data_penduduk.golongan_darah.toLowerCase().match(_this.searchQuery.toLowerCase());
         });
       } else {
-        return this.data_pendudukJSON;
+        return this.data_pendudukJSON.slice(0, 5);
       }
     }
   },
