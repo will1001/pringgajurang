@@ -43107,7 +43107,8 @@ var render = function() {
                                   _c("img", {
                                     staticClass: "card-img-top",
                                     attrs: {
-                                      src: "barangdesa['urlgambar']",
+                                      src:
+                                        "https://desapringgajurang.idbarangdesa['urlgambar']",
                                       alt: "Card image cap"
                                     }
                                   }),
@@ -43163,7 +43164,8 @@ var render = function() {
                                   _c("img", {
                                     staticClass: "card-img-top",
                                     attrs: {
-                                      src: "barangdesa['urlgambar']",
+                                      src:
+                                        "https://desapringgajurang.idbarangdesa['urlgambar']",
                                       alt: "Card image cap"
                                     }
                                   }),
@@ -43221,7 +43223,8 @@ var render = function() {
                                   _c("img", {
                                     staticClass: "card-img-top",
                                     attrs: {
-                                      src: "barangdesa['urlgambar']",
+                                      src:
+                                        "https://desapringgajurang.idbarangdesa['urlgambar']",
                                       alt: "Card image cap"
                                     }
                                   }),
