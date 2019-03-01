@@ -15,9 +15,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/admin.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/responsiveadmin.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/responsiveadminkades.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/table.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lemon">
 </head>
