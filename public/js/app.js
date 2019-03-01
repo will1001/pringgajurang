@@ -43107,7 +43107,7 @@ var render = function() {
                                   _c("img", {
                                     staticClass: "card-img-top",
                                     attrs: {
-                                      src: "'barangdesa['urlgambar']'",
+                                      src: barangdesa["urlgambar"],
                                       alt: "Card image cap"
                                     }
                                   }),
@@ -43163,7 +43163,7 @@ var render = function() {
                                   _c("img", {
                                     staticClass: "card-img-top",
                                     attrs: {
-                                      src: "'barangdesa['urlgambar']'",
+                                      src: barangdesa["urlgambar"],
                                       alt: "Card image cap"
                                     }
                                   }),
@@ -43221,7 +43221,7 @@ var render = function() {
                                   _c("img", {
                                     staticClass: "card-img-top",
                                     attrs: {
-                                      src: "'barangdesa['urlgambar']'",
+                                      src: barangdesa["urlgambar"],
                                       alt: "Card image cap"
                                     }
                                   }),
