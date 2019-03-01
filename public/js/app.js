@@ -58379,7 +58379,7 @@ var app = new Vue({
     datadesa: _components_indexcomponent_DataDesa_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
   },
   data: {
-    currentComponent: "kosong",
+    currentComponent: "",
     currentIcon: "icondown",
     active_el: 1,
     active_el_index: 0,

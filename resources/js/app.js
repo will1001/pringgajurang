@@ -72,7 +72,7 @@ const app = new Vue({
       datadesa,
     },
     data:{
-      currentComponent : "kosong",
+      currentComponent : "",
     	currentIcon : "icondown",
       active_el : 1,
       active_el_index : 0,

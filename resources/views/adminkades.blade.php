@@ -79,7 +79,7 @@
         
          <ul class="navbar-nav pd-2 text-uppercase text-left">
               <li class="nav-item">
-                <a class="nav-link" @click="swapComponent('kosong');activate(1);" :class="{ active : active_el == 1 }" href="#">Data Penduduk</a>
+                <a class="nav-link" @click="activate(1);" :class="{ active : active_el == 1 }" href="#">Data Penduduk</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" @click="swapComponent('tabelberita');activate(2);" :class="{ active : active_el == 2 }" href="#">Data Berita</a>
