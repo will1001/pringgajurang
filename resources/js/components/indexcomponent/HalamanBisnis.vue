@@ -10,7 +10,7 @@
                                                 <div class="col-xs-6 col-6 col-sm-6 col-md-3" v-for="barangdesa in barangdesas.slice(0,4)">
                                                     <a :href="'detailbarangdesa/' +  barangdesa['id']" class="tombol_produk">
                                                     <div class="card">
-                                                      <img class="card-img-top" src="https://desapringgajurang.idbarangdesa['urlgambar']" alt="Card image cap">
+                                                      <img class="card-img-top" src="'barangdesa['urlgambar']'" alt="Card image cap">
                                                       <div class="card-body text-left">
                                                         <h5 class="card-title">{{ barangdesa['nama'].substr(0,23) }}</h5>
                                                         <p class="card-text">Rp. {{barangdesa['harga']}}</p>
@@ -25,7 +25,7 @@
                                             <div class="col-xs-6 col-6 col-sm-6 col-md-3" v-for="barangdesa in barangdesas.slice(4,8)">
                                                     <a :href="'detailbarangdesa/' +  barangdesa['id'] " class="tombol_produk">
                                                     <div class="card">
-                                                      <img class="card-img-top" src="https://desapringgajurang.idbarangdesa['urlgambar']" alt="Card image cap">
+                                                      <img class="card-img-top" src="'barangdesa['urlgambar']'" alt="Card image cap">
                                                       <div class="card-body text-left">
                                                         <h5 class="card-title">{{ barangdesa['nama'].substr(0,23) }}</h5>
                                                         <p class="card-text">Rp. {{barangdesa['harga']}}</p>
@@ -40,7 +40,7 @@
                                             <div class="col-xs-6 col-6 col-sm-6 col-md-3" v-for="barangdesa in barangdesas.slice(8,12)">
                                                     <a :href="'detailbarangdesa/' +  barangdesa['id'] " class="tombol_produk">
                                                     <div class="card">
-                                                      <img class="card-img-top" src="https://desapringgajurang.idbarangdesa['urlgambar']" alt="Card image cap">
+                                                      <img class="card-img-top" src="'barangdesa['urlgambar']'" alt="Card image cap">
                                                       <div class="card-body text-left">
                                                         <h5 class="card-title">{{ barangdesa['nama'].substr(0,23) }}</h5>
                                                         <p class="card-text">Rp. {{barangdesa['harga']}}</p>
