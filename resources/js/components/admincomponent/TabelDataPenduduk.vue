@@ -240,37 +240,37 @@
         	filteredbox:function(){
         		if(this.searchkategori=="Nama"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.Nama.toLowerCase().match(this.searchQuery)
+        			return data_penduduk.Nama.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
         		}
         		if(this.searchkategori=="Nomor_KK"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.Nomor_KK.toLowerCase().match(this.searchQuery)
+        			return data_penduduk.Nomor_KK.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
         		}
         		if(this.searchkategori=="NIK"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.NIK.toLowerCase().match(this.searchQuery)
+        			return data_penduduk.NIK.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
         		}
         		if(this.searchkategori=="Pendidikan"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.pendidikan.toLowerCase().match(this.searchQuery)
+        			return data_penduduk.pendidikan.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
         		}
         		if(this.searchkategori=="Status_Perkawinan"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.status_perkawinan.toLowerCase().match(this.searchQuery)
+        			return data_penduduk.status_perkawinan.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
         		}
         		if(this.searchkategori=="Golongan_Darah"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.golongan_darah.toLowerCase().match(this.searchQuery)
+        			return data_penduduk.golongan_darah.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
         		}else{
