@@ -47,6 +47,11 @@ a.nav-link {
 #sidebar{
     background-color: #138FC2!important;
     height: 100%;
+    display: block;
+}
+
+.sidebar_ul{
+    list-style: none;
 }
 
 .bg-light{

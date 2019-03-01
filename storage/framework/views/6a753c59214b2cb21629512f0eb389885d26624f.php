@@ -70,15 +70,15 @@
 
 <div class="row" id="app">
   <div class="col-md-2">
-      <nav id="sidebar" >
+      <nav id="sidebar" class="navbar navbar-expand-lg">
         <div class="text-center w-100" >
-          <a  @click="swapIcon();" class="btn w-100 " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <a  @click="swapIcon();" class="btn w-100 navbar-toggler" data-toggle="collapse" href="#collapsesidebar" role="button" aria-expanded="false" aria-controls="collapsesidebar">
     <div :is="currentIcon"  keep-alive></div>
   </a>
         </div>
-<div class="collapse" id="collapseExample">
+<div class="collapse navbar-collapse" id="collapsesidebar">
         
-         <ul class="navbar-nav pd-2 text-uppercase text-left">
+         <ul class="sidebar_ul pd-2 text-uppercase text-left">
               <li class="nav-item">
                 <a class="nav-link" @click="swapComponent('kosong');activate(1);" :class="{ active : active_el == 1 }" href="#">Data Penduduk</a>
               </li>
