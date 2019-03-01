@@ -2333,12 +2333,30 @@ __webpack_require__.r(__webpack_exports__);
       this.nomor = 1;
     },
     nextpage: function nextpage() {
-      this.pagination = this.pagination + 10;
-      this.nomor = this.nomor + 10;
+      if (this.pagination < this.filteredbox.length) {
+        console.log(this.filteredbox.length - this.pagination);
+
+        if (this.filteredbox.length - this.pagination <= 10) {
+          this.pagination = this.pagination;
+          this.nomor = this.nomor;
+        } else {
+          this.pagination = this.pagination + 10;
+          this.nomor = this.nomor + 10;
+        }
+      } else {
+        console.log(this.filteredbox.length);
+      }
     },
     prevpage: function prevpage() {
-      this.pagination = this.pagination - 10;
-      this.nomor = this.nomor - 10;
+      console.log(this.filteredbox.length - this.pagination);
+
+      if (this.pagination >= 10) {
+        this.pagination = this.pagination - 10;
+        this.nomor = this.nomor - 10;
+      } else {
+        this.pagination = this.pagination;
+        this.nomor = this.nomor;
+      }
     }
   }
 });
