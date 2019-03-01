@@ -2274,13 +2274,13 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.searchkategori == "Nomor_KK") {
         return this.data_pendudukJSON.filter(function (data_penduduk) {
-          return data_penduduk.Nomor_KK.toLowerCase().match(_this.searchQuery.toLowerCase());
+          return data_penduduk.Nomor_KK.toLowerCase().match(_this.searchQuery);
         });
       }
 
       if (this.searchkategori == "NIK") {
         return this.data_pendudukJSON.filter(function (data_penduduk) {
-          return data_penduduk.NIK.toLowerCase().match(_this.searchQuery.toLowerCase());
+          return data_penduduk.NIK.toLowerCase().match(_this.searchQuery);
         });
       }
 

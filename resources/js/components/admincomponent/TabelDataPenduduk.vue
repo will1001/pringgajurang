@@ -246,13 +246,13 @@
         		}
         		if(this.searchkategori=="Nomor_KK"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.Nomor_KK.toLowerCase().match(this.searchQuery.toLowerCase())
+        			return data_penduduk.Nomor_KK.toLowerCase().match(this.searchQuery)
         		   });
 
         		}
         		if(this.searchkategori=="NIK"){
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.NIK.toLowerCase().match(this.searchQuery.toLowerCase())
+        			return data_penduduk.NIK.toLowerCase().match(this.searchQuery)
         		   });
 
         		}
