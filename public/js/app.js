@@ -2273,15 +2273,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              this.fetchdata_penduduks_limit();
               console.log("mounte");
 
-            case 2:
+            case 1:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, this);
+      }, _callee);
     }));
 
     function mounted() {
@@ -2304,8 +2303,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   created: function created() {
-    // this.fetchkodeareadusun();
-    // this.fetchdata_penduduks_limit();
+    this.fetchkodeareadusun();
+    this.fetchdata_penduduks_limit();
     console.log("created");
   },
   computed: {
@@ -2365,21 +2364,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         _this2.kodeareadusun = response.data.kode_area_dusuns;
       });
     },
-    fetchdata_penduduksearchs: function fetchdata_penduduksearchs(cariberdasarkan, cari) {
+    fetchdata_penduduks: function fetchdata_penduduks() {
       var _this3 = this;
 
-      this.$http.get("datawarga/searchdata/" + cariberdasarkan + "/" + cari).then(function (response) {
-        _this3.data_pendudukJSON = response.data.data_penduduksearchs;
+      this.$http.get("datawarga").then(function (response) {
+        _this3.data_pendudukJSON = response.data.data_penduduks;
       });
     },
     fetchdata_penduduks_limit: function fetchdata_penduduks_limit(even) {
       var _this4 = this;
 
-      this.$http.get("datawarga").then(function (response) {
-        _this4.data_pendudukJSON = response.data.data_penduduks;
+      this.$http.get("datawarga/" + this.pagination).then(function (response) {
+        _this4.data_pendudukJSON = response.data.data_pendudukdusuns;
       });
     },
     carikategori: function carikategori(even) {
+      this.fetchdata_penduduks();
       this.searchkategori = even;
       this.pagination = 0;
       this.nomor = 1;

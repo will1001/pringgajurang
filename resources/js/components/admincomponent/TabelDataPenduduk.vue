@@ -219,7 +219,6 @@
 <script>
     export default {
         async mounted() {
-        	this.fetchdata_penduduks_limit();
         	
         	console.log("mounte");
         },
@@ -237,8 +236,8 @@
         	}
         },
         created(){
-        	// this.fetchkodeareadusun();
-        	// this.fetchdata_penduduks_limit();
+        	this.fetchkodeareadusun();
+        	this.fetchdata_penduduks_limit();
         	console.log("created");
         	
         },
@@ -306,13 +305,14 @@
         		this.$http.get("datadusun").then(response => {this.kodeareadusun = response.data.kode_area_dusuns});
         	},
 
-        	fetchdata_penduduksearchs(cariberdasarkan,cari){
-        		this.$http.get("datawarga/searchdata/"+cariberdasarkan+"/"+cari).then(response => {this.data_pendudukJSON = response.data.data_penduduksearchs});
+        	fetchdata_penduduks(){
+        		this.$http.get("datawarga").then(response => {this.data_pendudukJSON = response.data.data_penduduks});
         	},
         	fetchdata_penduduks_limit(even){
-        		this.$http.get("datawarga").then(response => {this.data_pendudukJSON = response.data.data_penduduks});
+        		this.$http.get("datawarga/"+this.pagination).then(response => {this.data_pendudukJSON = response.data.data_pendudukdusuns});
         		
         	},carikategori(even){
+        		this.fetchdata_penduduks();
         		this.searchkategori=even;
         	 	   this.pagination=0;
         	 	   this.nomor=1;
