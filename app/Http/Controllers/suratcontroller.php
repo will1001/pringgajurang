@@ -1104,7 +1104,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('tempat_lahir',$data_penduduks[0]->Tempat_Lahir);
           $doc -> setValue('tanggal_lahir',date("d-m-Y", strtotime($data_penduduks[0]->Tanggal_Lahir)));
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -1163,7 +1163,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('tempat_lahir',$data_penduduks[0]->Tempat_Lahir);
           $doc -> setValue('tanggal_lahir',date("d-m-Y", strtotime($data_penduduks[0]->Tanggal_Lahir)));
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -1233,7 +1233,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('tempat_lahir',$data_penduduks[0]->Tempat_Lahir);
           $doc -> setValue('tanggal_lahir',date("d-m-Y", strtotime($data_penduduks[0]->Tanggal_Lahir)));
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
@@ -1293,7 +1293,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('tempat_lahir',$data_penduduks[0]->Tempat_Lahir);
           $doc -> setValue('tanggal_lahir',date("d-m-Y", strtotime($data_penduduks[0]->Tanggal_Lahir)));
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
@@ -1364,7 +1364,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('tempat_lahir',$data_penduduks[0]->Tempat_Lahir);
           $doc -> setValue('tanggal_lahir',date("d-m-Y", strtotime($data_penduduks[0]->Tanggal_Lahir)));
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
@@ -1424,7 +1424,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('tempat_lahir',$data_penduduks[0]->Tempat_Lahir);
           $doc -> setValue('tanggal_lahir',date("d-m-Y", strtotime($data_penduduks[0]->Tanggal_Lahir)));
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
@@ -1706,7 +1706,7 @@ class suratcontroller extends Controller
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('pendidikan',$data_penduduks[0]->pendidikan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -1765,7 +1765,7 @@ class suratcontroller extends Controller
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('pendidikan',$data_penduduks[0]->pendidikan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -1831,7 +1831,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -1886,7 +1886,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -1952,7 +1952,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2007,7 +2007,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2073,7 +2073,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2128,7 +2128,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2195,7 +2195,7 @@ class suratcontroller extends Controller
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2251,7 +2251,7 @@ class suratcontroller extends Controller
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2318,7 +2318,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2373,7 +2373,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2534,7 +2534,7 @@ class suratcontroller extends Controller
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('pendidikan',$data_penduduks[0]->pendidikan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2593,7 +2593,7 @@ class suratcontroller extends Controller
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('pendidikan',$data_penduduks[0]->pendidikan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
           $doc -> setValue('rw',$data_penduduks[0]->RW);
@@ -2899,7 +2899,7 @@ class suratcontroller extends Controller
           $doc -> setValue('tanggal_lahir',date("d-m-Y", strtotime($data_penduduks[0]->Tanggal_Lahir)));
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -2954,7 +2954,7 @@ class suratcontroller extends Controller
           $doc -> setValue('tanggal_lahir',date("d-m-Y", strtotime($data_penduduks[0]->Tanggal_Lahir)));
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3023,7 +3023,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3079,7 +3079,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3149,7 +3149,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3207,7 +3207,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3275,7 +3275,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('umur',$data_penduduks[0]->Usia);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3331,7 +3331,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('umur',$data_penduduks[0]->Usia);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3399,7 +3399,7 @@ class suratcontroller extends Controller
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('umur',$data_penduduks[0]->Usia);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3456,7 +3456,7 @@ class suratcontroller extends Controller
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('status_perkawinan',$data_penduduks[0]->status_perkawinan);
           $doc -> setValue('umur',$data_penduduks[0]->Usia);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3524,7 +3524,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('umur',$data_penduduks[0]->Usia);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3580,7 +3580,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('umur',$data_penduduks[0]->Usia);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3646,7 +3646,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('umur',$data_penduduks[0]->Usia);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);
@@ -3702,7 +3702,7 @@ class suratcontroller extends Controller
           $doc -> setValue('jenis_kelamin',$data_penduduks[0]->jenis_kelamin);
           $doc -> setValue('agama',$data_penduduks[0]->agama);
           $doc -> setValue('umur',$data_penduduks[0]->Usia);
-          $doc -> setValue('warganegara',$data_penduduks[0]->Kewarganegaraan);
+          $doc -> setValue('warganegara',$data_penduduks[0]->kewarganegaraan);
           $doc -> setValue('pekerjaan',$data_penduduks[0]->jenis_pekerjaan);
           $doc -> setValue('alamat',$data_penduduks[0]->Alamat);
           $doc -> setValue('rt',$data_penduduks[0]->RT);

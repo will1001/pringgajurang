@@ -17,9 +17,9 @@
 			                  <option value="Nama">Nama</option>
 			                  <option value="Nomor_KK">Nomor KK</option>
 			                  <option value="NIK">NIK</option>
-			                  <!-- <option value="Pendidikan">Pendidikan</option> -->
-			                  <!-- <option value="Status_Perkawinan">status Perkawinan</option> -->
-			                  <!-- <option value="Golongan_Darah">Golongan Darah</option> -->
+			                  <option value="pendidikan">Pendidikan</option>
+			                  <option value="status_perkawinan">status Perkawinan</option>
+			                  <option value="golongan_darah">Golongan Darah</option>
 			            </select>
 			            <div class="search">
 			            	<input type="text" v-model="searchQuery" id="search" name="search" placeholder=". . .">              
@@ -218,7 +218,10 @@
 
 <script>
     export default {
-        mounted() {
+        async mounted() {
+        	this.fetchdata_penduduks_limit();
+        	
+        	console.log("mounte");
         },
         data(){
         	return{
@@ -230,51 +233,70 @@
         		pagination:0,
         		searchQuery: '',
         		searchkategori:"Cari Berdasarkan" ,
+        		skipdata:10 ,
         	}
         },
         created(){
-        	this.fetchkodeareadusun();
-        	this.fetchdata_penduduks();
+        	// this.fetchkodeareadusun();
+        	// this.fetchdata_penduduks_limit();
+        	console.log("created");
+        	
         },
         computed : {
         	filteredbox:function(){
+        		
         		if(this.searchkategori=="Nama"){
+        			// this.fetchdata_penduduksearchs(this.searchkategori,this.searchQuery);
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.Nama.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
-
         		}
         		if(this.searchkategori=="Nomor_KK"){
+        			// this.fetchdata_penduduksearchs(this.searchkategori,this.searchQuery);
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.Nomor_KK.toLowerCase().match(this.searchQuery)
+        			return data_penduduk.Nomor_KK.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
+
+        			
 
         		}
         		if(this.searchkategori=="NIK"){
+        			// this.fetchdata_penduduksearchs(this.searchkategori,this.searchQuery);
         			return this.data_pendudukJSON.filter((data_penduduk) => {
-        			return data_penduduk.NIK.toLowerCase().match(this.searchQuery)
+        			return data_penduduk.NIK.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
+        			
+
         		}
-        		if(this.searchkategori=="Pendidikan"){
+        		if(this.searchkategori=="pendidikan"){
+        			// this.fetchdata_penduduksearchs(this.searchkategori,this.searchQuery);
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.pendidikan.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
+        			
+
         		}
-        		if(this.searchkategori=="Status_Perkawinan"){
+        		if(this.searchkategori=="status_perkawinan"){
+        			// this.fetchdata_penduduksearchs(this.searchkategori,this.searchQuery);
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.status_perkawinan.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
+        			
+
         		}
-        		if(this.searchkategori=="Golongan_Darah"){
+        		if(this.searchkategori=="golongan_darah"){
+        			// this.fetchdata_penduduksearchs(this.searchkategori,this.searchQuery);
         			return this.data_pendudukJSON.filter((data_penduduk) => {
         			return data_penduduk.golongan_darah.toLowerCase().match(this.searchQuery.toLowerCase())
         		   });
 
+        			
+
         		}else{
-        			return this.data_pendudukJSON.slice(0,5);
+        			return this.data_pendudukJSON;
         		}
 
         	}
@@ -284,12 +306,11 @@
         		this.$http.get("datadusun").then(response => {this.kodeareadusun = response.data.kode_area_dusuns});
         	},
 
-        	fetchdata_penduduks(){
-        		this.$http.get("datawarga").then(response => {this.data_pendudukJSON = response.data.data_penduduks});
+        	fetchdata_penduduksearchs(cariberdasarkan,cari){
+        		this.$http.get("datawarga/searchdata/"+cariberdasarkan+"/"+cari).then(response => {this.data_pendudukJSON = response.data.data_penduduksearchs});
         	},
-        	showperdusun(even){
-        		this.iddusun=even;
-        		this.$http.get("datawarga/"+even).then(response => {this.data_pendudukJSONfilterdusun = response.data.data_pendudukdusuns});
+        	fetchdata_penduduks_limit(even){
+        		this.$http.get("datawarga").then(response => {this.data_pendudukJSON = response.data.data_penduduks});
         		
         	},carikategori(even){
         		this.searchkategori=even;
