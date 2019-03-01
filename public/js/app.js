@@ -2243,6 +2243,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   data: function data() {
@@ -39862,34 +39863,6 @@ var render = function() {
           "div",
           { staticClass: "col-xs-12 col-12 col-sm-6 col-md-6 search-posisi" },
           [
-            _c("div", { staticClass: "search" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.searchQuery,
-                    expression: "searchQuery"
-                  }
-                ],
-                attrs: {
-                  type: "text",
-                  id: "search",
-                  name: "search",
-                  placeholder: ". . ."
-                },
-                domProps: { value: _vm.searchQuery },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.searchQuery = $event.target.value
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
             _c(
               "select",
               {
@@ -39938,7 +39911,35 @@ var render = function() {
                 _vm._v(" "),
                 _c("option", { attrs: { value: "NIK" } }, [_vm._v("NIK")])
               ]
-            )
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "search" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.searchQuery,
+                    expression: "searchQuery"
+                  }
+                ],
+                attrs: {
+                  type: "text",
+                  id: "search",
+                  name: "search",
+                  placeholder: ". . ."
+                },
+                domProps: { value: _vm.searchQuery },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.searchQuery = $event.target.value
+                  }
+                }
+              })
+            ])
           ]
         )
       ]),

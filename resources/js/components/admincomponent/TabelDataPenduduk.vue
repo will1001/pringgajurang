@@ -11,9 +11,7 @@
 		        	
 
 		        	<div class="col-xs-12 col-12 col-sm-6 col-md-6 search-posisi">  
-			            <div class="search">
-			            	<input type="text" v-model="searchQuery" id="search" name="search" placeholder=". . .">              
-			            </div>
+			            
 			            <select id="filter" @change="carikategori($event.target.value)" v-model="searchkategori">
 			                 <option selected="true" disabled="disabled">Cari Berdasarkan</option>
 			                  <option value="Nama">Nama</option>
@@ -23,6 +21,9 @@
 			                  <!-- <option value="Status_Perkawinan">status Perkawinan</option> -->
 			                  <!-- <option value="Golongan_Darah">Golongan Darah</option> -->
 			            </select>
+			            <div class="search">
+			            	<input type="text" v-model="searchQuery" id="search" name="search" placeholder=". . .">              
+			            </div>
 		         	 </div>
 		        </div>
 

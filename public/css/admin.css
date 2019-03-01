@@ -174,7 +174,7 @@ a.nav-link {
    
 
     .search {
-    float: right;
+    float: left;
     border: 1px solid #000;
     position: relative;
     top: 4px;
@@ -225,7 +225,7 @@ a.nav-link {
    }
 
    #filter{
-    float: right;
+    float: left;
     margin: 4px 5px;
     height: 24px;
    }
