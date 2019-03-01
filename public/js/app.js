@@ -2304,7 +2304,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   created: function created() {
     this.fetchkodeareadusun();
-    this.fetchdata_penduduks_limit();
+    this.fetchdata_penduduks();
     console.log("created");
   },
   computed: {
@@ -2379,7 +2379,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     carikategori: function carikategori(even) {
-      this.fetchdata_penduduks();
       this.searchkategori = even;
       this.pagination = 0;
       this.nomor = 1;

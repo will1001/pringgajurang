@@ -237,7 +237,7 @@
         },
         created(){
         	this.fetchkodeareadusun();
-        	this.fetchdata_penduduks_limit();
+        	this.fetchdata_penduduks();
         	console.log("created");
         	
         },
@@ -312,7 +312,6 @@
         		this.$http.get("datawarga/"+this.pagination).then(response => {this.data_pendudukJSON = response.data.data_pendudukdusuns});
         		
         	},carikategori(even){
-        		this.fetchdata_penduduks();
         		this.searchkategori=even;
         	 	   this.pagination=0;
         	 	   this.nomor=1;
