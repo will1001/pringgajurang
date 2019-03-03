@@ -41,6 +41,11 @@ import untukpengunjung from './components/indexcomponent/UntukPengunjung.vue';
 import lembagaindex from './components/indexcomponent/LembagaIndex.vue';
 import agenda from './components/indexcomponent/Agenda.vue';
 import datadesa from './components/indexcomponent/DataDesa.vue';
+import barchartcomponent from './components/indexcomponent/BarChartComponent.vue';
+import piechartcomponent from './components/indexcomponent/PieChartComponent.vue';
+import linechartcomponent from './components/indexcomponent/LineChartComponent.vue';
+
+
 
 
 
@@ -70,6 +75,9 @@ const app = new Vue({
       lembagaindex,
       agenda,
       datadesa,
+      barchartcomponent,
+      piechartcomponent,
+      linechartcomponent,
     },
     data:{
       currentComponent : "",

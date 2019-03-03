@@ -97,13 +97,16 @@ Route::get('/reloadtabeldusunurutnama/{id}/{pil}',function($id,$pil)
 Route::resource('datadusun','APIkodedusunController')->middleware('auth');
 Route::get('datawarga/searchdata/{kategori}/{id}','APIdatapendudukController@searchdata')->middleware('auth');
 Route::resource('datawarga','APIdatapendudukController')->middleware('auth');
-
 Route::resource('databerita','APIdataberitaController');
 Route::resource('datapengumuman','APIdatapengumumanController');
 Route::resource('datalogin','APIdataloginController')->middleware('auth');
 Route::resource('dataSOTK','APIdataSOTKController');
 Route::resource('dataagenda','APIdataagendaController');
 Route::resource('databarangdesa','APIdatabarangdesaController');
+Route::get('datastatistik/pendidikan/','APIdatastatistikController@pendidikan');
+Route::get('datastatistik/jenispekerjaan/','APIdatastatistikController@jenispekerjaan');
+Route::get('datastatistik/agama/','APIdatastatistikController@agama');
+Route::resource('datastatistik','APIdatastatistikController');
 
 
 Route::get('/profildesa', 'webcontroller@profildesa');
