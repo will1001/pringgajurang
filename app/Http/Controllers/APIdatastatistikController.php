@@ -94,21 +94,20 @@ class APIdatastatistikController extends Controller
 
     public function pendidikan()
     {
-        //
 
         $tabel_pendidikans=tabel_pendidikan::all();
 
-        // $data_pendidikans=data_penduduk::where('Pendidikan','=',$kategori)->where('Jenis_Kelamin','=',$kelamin)->count();
 
         for($i=0;$i<$tabel_pendidikans->count();$i++){
 
             $data_pendidikans_totals[$i]=data_penduduk::where('Pendidikan','=',$tabel_pendidikans[$i]->id)->count();
+            $data_pendidikans_L[$i]=data_penduduk::where('Pendidikan','=',$tabel_pendidikans[$i]->id)->where('Jenis_Kelamin','=',1)->count();
+            $data_pendidikans_P[$i]=data_penduduk::where('Pendidikan','=',$tabel_pendidikans[$i]->id)->where('Jenis_Kelamin','=',2)->count();
         }
 
-         // dd($data_pendidikans_totals);
 
 
-        return response()->json(["tabel_pendidikans" => $tabel_pendidikans,"data_pendidikans_totals" => $data_pendidikans_totals]);
+        return response()->json(["tabel_pendidikans" => $tabel_pendidikans,"data_pendidikans_totals" => $data_pendidikans_totals,"data_pendidikans_L" => $data_pendidikans_L,"data_pendidikans_P" => $data_pendidikans_P]);
     }
 
     public function agama()
@@ -116,16 +115,17 @@ class APIdatastatistikController extends Controller
 
         $tabel_agamas=tabel_agama::all();
 
-        // $data_agamas=data_penduduk::where('Agama','=',$kategori)->where('Jenis_Kelamin','=',$kelamin)->count();
 
         for($i=0;$i<$tabel_agamas->count();$i++){
 
             $tabel_agamas_totals[$i]=data_penduduk::where('Agama','=',$tabel_agamas[$i]->id)->count();
+            $data_agamas_L[$i]=data_penduduk::where('Agama','=',$tabel_agamas[$i]->id)->where('Jenis_Kelamin','=',1)->count();
+            $data_agamas_P[$i]=data_penduduk::where('Agama','=',$tabel_agamas[$i]->id)->where('Jenis_Kelamin','=',2)->count();
         }
 
 
 
-        return response()->json(["tabel_agamas" => $tabel_agamas,"tabel_agamas_totals" => $tabel_agamas_totals]);
+        return response()->json(["tabel_agamas" => $tabel_agamas,"tabel_agamas_totals" => $tabel_agamas_totals,"data_agamas_L" => $data_agamas_L,"data_agamas_P" => $data_agamas_P]);
     }
 
 
@@ -134,16 +134,17 @@ class APIdatastatistikController extends Controller
 
         $tabel_jenis_pekerjaans=tabel_jenis_pekerjaan::all();
 
-        // $data_jenis_pekerjaans=data_penduduk::where('jenis_pekerjaan','=',$kategori)->where('Jenis_Kelamin','=',$kelamin)->count();
 
         for($i=0;$i<$tabel_jenis_pekerjaans->count();$i++){
 
-            $tabel_jenis_pekerjaans_totals[$i]=data_penduduk::where('jenis_pekerjaan','=',$tabel_jenis_pekerjaans[$i]->id)->count();
+            $tabel_jenis_pekerjaans_totals[$i]=data_penduduk::where('Jenis_Pekerjaan','=',$tabel_jenis_pekerjaans[$i]->id)->count();
+            $data_jenis_pekerjaans_L[$i]=data_penduduk::where('Jenis_Pekerjaan','=',$tabel_jenis_pekerjaans[$i]->id)->where('Jenis_Kelamin','=',1)->count();
+            $data_jenis_pekerjaans_P[$i]=data_penduduk::where('Jenis_Pekerjaan','=',$tabel_jenis_pekerjaans[$i]->id)->where('Jenis_Kelamin','=',2)->count();
         }
 
 
 
-        return response()->json(["tabel_jenis_pekerjaans" => $tabel_jenis_pekerjaans,"tabel_jenis_pekerjaans_totals" => $tabel_jenis_pekerjaans_totals]);
+        return response()->json(["tabel_jenis_pekerjaans" => $tabel_jenis_pekerjaans,"tabel_jenis_pekerjaans_totals" => $tabel_jenis_pekerjaans_totals,"data_jenis_pekerjaans_L" => $data_jenis_pekerjaans_L,"data_jenis_pekerjaans_P" => $data_jenis_pekerjaans_P]);
     }
 
     public function jenis_kelamin()
@@ -155,12 +156,14 @@ class APIdatastatistikController extends Controller
 
         for($i=0;$i<$tabel_jenis_kelamins->count();$i++){
 
-            $tabel_jenis_kelamins_totals[$i]=data_penduduk::where('jenis_kelamin','=',$tabel_jenis_kelamins[$i]->id)->count();
+            $tabel_jenis_kelamins_totals[$i]=data_penduduk::where('Jenis_Kelamin','=',$tabel_jenis_kelamins[$i]->id)->count();
+            $data_jenis_kelamins_L[$i]=data_penduduk::where('Jenis_Kelamin','=',$tabel_jenis_kelamins[$i]->id)->count();
+            $data_jenis_kelamins_P[$i]=data_penduduk::where('Jenis_Kelamin','=',$tabel_jenis_kelamins[$i]->id)->count();
         }
 
 
 
-        return response()->json(["tabel_jenis_kelamins" => $tabel_jenis_kelamins,"tabel_jenis_kelamins_totals" => $tabel_jenis_kelamins_totals]);
+        return response()->json(["tabel_jenis_kelamins" => $tabel_jenis_kelamins,"tabel_jenis_kelamins_totals" => $tabel_jenis_kelamins_totals,"data_jenis_kelamins_L" => $data_jenis_kelamins_L,"data_jenis_kelamins_P" => $data_jenis_kelamins_P]);
     }
 
     public function golongan_darah()
@@ -168,16 +171,17 @@ class APIdatastatistikController extends Controller
 
         $tabel_golongan_darahs=tabel_golongan_darah::all();
 
-        // $data_golongan_darahs=data_penduduk::where('golongan_darah','=',$kategori)->where('Jenis_Kelamin','=',$kelamin)->count();
 
         for($i=0;$i<$tabel_golongan_darahs->count();$i++){
 
-            $tabel_golongan_darahs_totals[$i]=data_penduduk::where('golongan_darah','=',$tabel_golongan_darahs[$i]->id)->count();
+            $tabel_golongan_darahs_totals[$i]=data_penduduk::where('Golongan_Darah','=',$tabel_golongan_darahs[$i]->id)->count();
+            $data_golongan_darahs_L[$i]=data_penduduk::where('Golongan_Darah','=',$tabel_golongan_darahs[$i]->id)->where('Jenis_Kelamin','=',1)->count();
+            $data_golongan_darahs_P[$i]=data_penduduk::where('Golongan_Darah','=',$tabel_golongan_darahs[$i]->id)->where('Jenis_Kelamin','=',2)->count();
         }
 
 
 
-        return response()->json(["tabel_golongan_darahs" => $tabel_golongan_darahs,"tabel_golongan_darahs_totals" => $tabel_golongan_darahs_totals]);
+        return response()->json(["tabel_golongan_darahs" => $tabel_golongan_darahs,"tabel_golongan_darahs_totals" => $tabel_golongan_darahs_totals,"data_golongan_darahs_L" => $data_golongan_darahs_L,"data_golongan_darahs_P" => $data_golongan_darahs_P]);
     }
 
     public function kelompok_umur()
@@ -190,6 +194,8 @@ class APIdatastatistikController extends Controller
         for($i=0;$i<$tabel_kelompok_umurs->count();$i++){
 
             $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('kelompok_umur','=',$tabel_kelompok_umurs[$i]->id)->count();
+            $data_pendidikans_L=data_penduduk::where('Pendidikan','=',$kategori)->where('Jenis_Kelamin','=',1)->count();
+            $data_pendidikans_P=data_penduduk::where('Pendidikan','=',$kategori)->where('Jenis_Kelamin','=',2)->count();
         }
 
 

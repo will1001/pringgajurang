@@ -2661,6 +2661,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2671,7 +2707,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       datacollection: null,
       pendidikans: 1,
       jenis_kelamins: 1,
-      dataAPI: [],
+      dataAPI: [{
+        kelompok: "",
+        jumlah: "",
+        jumlahpersen: "",
+        lakilaki: "",
+        lakilakipersen: "",
+        perempuan: "",
+        perempuanpersen: ""
+      }],
       datakirim: [],
       loaded: false
     };
@@ -2704,12 +2748,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.loaded = false;
 
       try {
+        var jumlahpersentotal = 0;
+        var datatabelapi = [{
+          kelompok: "",
+          jumlah: "",
+          jumlahpersen: "",
+          lakilaki: "",
+          lakilakipersen: "",
+          perempuan: "",
+          perempuanpersen: ""
+        }];
+        var datachartapi = {
+          labels: [],
+          datasets: []
+        };
+
         if (even == "Data Pendidikan") {
           this.$http.get("datastatistik/pendidikan/").then(function (response) {
-            var datachartapi = {
-              labels: [],
-              datasets: []
-            };
+            response.data.data_pendidikans_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.data_pendidikans_totals[index];
+            });
             response.data.tabel_pendidikans.forEach(function (data, index) {
               datachartapi.datasets[index] = {
                 label: data.pendidikan,
@@ -2718,38 +2776,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }(Math, '0123456789ABCDEF', 4),
                 data: [response.data.data_pendidikans_totals[index]]
               };
-            });
-            datachartapi.datasets.shift();
-            _this.datacollection = datachartapi;
-          });
-        }
-
-        if (even == "Data Pekerjaan") {
-          this.$http.get("datastatistik/jenis_pekerjaan/").then(function (response) {
-            var datachartapi = {
-              labels: [],
-              datasets: []
-            };
-            response.data.tabel_jenis_pekerjaans.forEach(function (data, index) {
-              datachartapi.datasets[index] = {
-                label: data.jenis_pekerjaan,
-                backgroundColor: '#' + function lol(m, s, c) {
-                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
-                }(Math, '0123456789ABCDEF', 4),
-                data: [response.data.tabel_jenis_pekerjaans_totals[index]]
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_pendidikans[index].pendidikan,
+                jumlah: response.data.data_pendidikans_totals[index],
+                jumlahpersen: (response.data.data_pendidikans_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_pendidikans_L[index],
+                lakilakipersen: (response.data.data_pendidikans_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_pendidikans_P[index],
+                perempuanpersen: (response.data.data_pendidikans_P[index] / jumlahpersentotal * 100).toFixed(2)
               };
-            });
-            datachartapi.datasets.shift();
+            }); // datachartapi.datasets.shift();
+            // datatabelapi.shift();
+
             _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
           });
         }
 
         if (even == "Data Agama") {
           this.$http.get("datastatistik/agama/").then(function (response) {
-            var datachartapi = {
-              labels: [],
-              datasets: []
-            };
+            response.data.tabel_agamas_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_agamas_totals[index];
+            });
             response.data.tabel_agamas.forEach(function (data, index) {
               datachartapi.datasets[index] = {
                 label: data.agama,
@@ -2758,18 +2806,54 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }(Math, '0123456789ABCDEF', 4),
                 data: [response.data.tabel_agamas_totals[index]]
               };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_agamas[index].agama,
+                jumlah: response.data.tabel_agamas_totals[index],
+                jumlahpersen: (response.data.tabel_agamas_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_agamas_L[index],
+                lakilakipersen: (response.data.data_agamas_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_agamas_P[index],
+                perempuanpersen: (response.data.data_agamas_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
             });
-            datachartapi.datasets.shift();
             _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
+          });
+        }
+
+        if (even == "Data Pekerjaan") {
+          this.$http.get("datastatistik/jenis_pekerjaan/").then(function (response) {
+            response.data.tabel_jenis_pekerjaans_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_jenis_pekerjaans_totals[index];
+            });
+            response.data.tabel_jenis_pekerjaans.forEach(function (data, index) {
+              datachartapi.datasets[index] = {
+                label: data.jenis_pekerjaan,
+                backgroundColor: '#' + function lol(m, s, c) {
+                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+                }(Math, '0123456789ABCDEF', 4),
+                data: [response.data.tabel_jenis_pekerjaans_totals[index]]
+              };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_jenis_pekerjaans[index].jenis_pekerjaan,
+                jumlah: response.data.tabel_jenis_pekerjaans_totals[index],
+                jumlahpersen: (response.data.tabel_jenis_pekerjaans_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_jenis_pekerjaans_L[index],
+                lakilakipersen: (response.data.data_jenis_pekerjaans_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_jenis_pekerjaans_P[index],
+                perempuanpersen: (response.data.data_jenis_pekerjaans_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
+            });
+            _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
           });
         }
 
         if (even == "Data Jenis Kelamin") {
           this.$http.get("datastatistik/jenis_kelamin/").then(function (response) {
-            var datachartapi = {
-              labels: [],
-              datasets: []
-            };
+            response.data.tabel_jenis_kelamins_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_jenis_kelamins_totals[index];
+            });
             response.data.tabel_jenis_kelamins.forEach(function (data, index) {
               datachartapi.datasets[index] = {
                 label: data.jenis_kelamin,
@@ -2778,18 +2862,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }(Math, '0123456789ABCDEF', 4),
                 data: [response.data.tabel_jenis_kelamins_totals[index]]
               };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_jenis_kelamins[index].jenis_kelamin,
+                jumlah: response.data.tabel_jenis_kelamins_totals[index],
+                jumlahpersen: (response.data.tabel_jenis_kelamins_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_jenis_kelamins_L[index],
+                lakilakipersen: (response.data.data_jenis_kelamins_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_jenis_kelamins_P[index],
+                perempuanpersen: (response.data.data_jenis_kelamins_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
             });
-            datachartapi.datasets.shift();
             _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
           });
         }
 
         if (even == "Data Golongan Darah") {
           this.$http.get("datastatistik/golongan_darah/").then(function (response) {
-            var datachartapi = {
-              labels: [],
-              datasets: []
-            };
+            response.data.tabel_golongan_darahs_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_golongan_darahs_totals[index];
+            });
             response.data.tabel_golongan_darahs.forEach(function (data, index) {
               datachartapi.datasets[index] = {
                 label: data.golongan_darah,
@@ -2798,31 +2890,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }(Math, '0123456789ABCDEF', 4),
                 data: [response.data.tabel_golongan_darahs_totals[index]]
               };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_golongan_darahs[index].golongan_darah,
+                jumlah: response.data.tabel_golongan_darahs_totals[index],
+                jumlahpersen: (response.data.tabel_golongan_darahs_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_golongan_darahs_L[index],
+                lakilakipersen: (response.data.data_golongan_darahs_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_golongan_darahs_P[index],
+                perempuanpersen: (response.data.data_golongan_darahs_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
             });
-            datachartapi.datasets.shift();
             _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
           });
         }
 
-        if (even == "Data Kelompok Umur") {//    this.$http.get("datastatistik/agama/")
-          //  .then(response => {
-          //    let datachartapi ={
-          //    labels: [],
-          //    datasets: []
-          //   }; 
-          //    response.data.tabel_agamas.forEach(function(data, index) {
-          //      datachartapi.datasets[index] = 
-          //      {
-          //        label: data.agama,
-          //        backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
-          //                          (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
-          //        data: [response.data.tabel_agamas_totals[index]]
-          //      };
-          //    });
-          //    datachartapi.datasets.shift();
-          //    this.datacollection=datachartapi;
-          // });
-        }
+        if (even == "Data Kelompok Umur") {}
 
         this.loaded = true;
       } catch (e) {
@@ -4508,7 +4591,58 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PieChart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PieChart.js */ "./resources/js/components/indexcomponent/PieChart.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _PieChart_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PieChart.js */ "./resources/js/components/indexcomponent/PieChart.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4521,23 +4655,226 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    JenisChart: _PieChart_js__WEBPACK_IMPORTED_MODULE_0__["default"]
+    JenisChart: _PieChart_js__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
-      chartData: {
-        labels: ["Green", "Red", "Blue"],
-        datasets: [{
-          label: "Data One",
-          backgroundColor: ["#41B883", "#E46651", "#00D8FF"],
-          data: [1, 10, 5]
-        }]
-      }
+      datacollection: null,
+      pendidikans: 1,
+      jenis_kelamins: 1,
+      dataAPI: [{
+        kelompok: "",
+        jumlah: "",
+        jumlahpersen: "",
+        lakilaki: "",
+        lakilakipersen: "",
+        perempuan: "",
+        perempuanpersen: ""
+      }],
+      datakirim: [],
+      loaded: false
     };
   },
-  mounted: function mounted() {},
+  mounted: function () {
+    var _mounted = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    function mounted() {
+      return _mounted.apply(this, arguments);
+    }
+
+    return mounted;
+  }(),
   methods: {
-    downloadchart: function downloadchart(ref) {
+    chartfunction: function chartfunction(even) {
+      var _this = this;
+
+      this.loaded = false;
+
+      try {
+        var jumlahpersentotal = 0;
+        var datatabelapi = [{
+          kelompok: "",
+          jumlah: "",
+          jumlahpersen: "",
+          lakilaki: "",
+          lakilakipersen: "",
+          perempuan: "",
+          perempuanpersen: ""
+        }];
+        var datachartapi = {
+          labels: [],
+          datasets: []
+        };
+
+        if (even == "Data Pendidikan") {
+          this.$http.get("datastatistik/pendidikan/").then(function (response) {
+            response.data.data_pendidikans_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.data_pendidikans_totals[index];
+            });
+            response.data.tabel_pendidikans.forEach(function (data, index) {
+              datachartapi.datasets[index] = {
+                label: data.pendidikan,
+                backgroundColor: '#' + function lol(m, s, c) {
+                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+                }(Math, '0123456789ABCDEF', 4),
+                data: [response.data.data_pendidikans_totals[index]]
+              };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_pendidikans[index].pendidikan,
+                jumlah: response.data.data_pendidikans_totals[index],
+                jumlahpersen: (response.data.data_pendidikans_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_pendidikans_L[index],
+                lakilakipersen: (response.data.data_pendidikans_L / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_pendidikans_P[index],
+                perempuanpersen: (response.data.data_pendidikans_P / jumlahpersentotal * 100).toFixed(2)
+              };
+            }); // datachartapi.datasets.shift();
+            // datatabelapi.shift();
+
+            _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
+          });
+        }
+
+        if (even == "Data Agama") {
+          this.$http.get("datastatistik/agama/").then(function (response) {
+            response.data.tabel_agamas_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_agamas_totals[index];
+            });
+            response.data.tabel_agamas.forEach(function (data, index) {
+              datachartapi.datasets[index] = {
+                label: data.agama,
+                backgroundColor: '#' + function lol(m, s, c) {
+                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+                }(Math, '0123456789ABCDEF', 4),
+                data: [response.data.tabel_agamas_totals[index]]
+              };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_agamas[index].agama,
+                jumlah: response.data.tabel_agamas_totals[index],
+                jumlahpersen: (response.data.tabel_agamas_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_agamas_L[index],
+                lakilakipersen: (response.data.data_agamas_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_agamas_P[index],
+                perempuanpersen: (response.data.data_agamas_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
+            });
+            _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
+          });
+        }
+
+        if (even == "Data Pekerjaan") {
+          this.$http.get("datastatistik/jenis_pekerjaan/").then(function (response) {
+            response.data.tabel_jenis_pekerjaans_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_jenis_pekerjaans_totals[index];
+            });
+            response.data.tabel_jenis_pekerjaans.forEach(function (data, index) {
+              datachartapi.datasets[index] = {
+                label: data.jenis_pekerjaan,
+                backgroundColor: '#' + function lol(m, s, c) {
+                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+                }(Math, '0123456789ABCDEF', 4),
+                data: [response.data.tabel_jenis_pekerjaans_totals[index]]
+              };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_jenis_pekerjaans[index].jenis_pekerjaan,
+                jumlah: response.data.tabel_jenis_pekerjaans_totals[index],
+                jumlahpersen: (response.data.tabel_jenis_pekerjaans_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_jenis_pekerjaans_L[index],
+                lakilakipersen: (response.data.data_jenis_pekerjaans_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_jenis_pekerjaans_P[index],
+                perempuanpersen: (response.data.data_jenis_pekerjaans_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
+            });
+            _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
+          });
+        }
+
+        if (even == "Data Jenis Kelamin") {
+          this.$http.get("datastatistik/jenis_kelamin/").then(function (response) {
+            response.data.tabel_jenis_kelamins_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_jenis_kelamins_totals[index];
+            });
+            response.data.tabel_jenis_kelamins.forEach(function (data, index) {
+              datachartapi.datasets[index] = {
+                label: data.jenis_kelamin,
+                backgroundColor: '#' + function lol(m, s, c) {
+                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+                }(Math, '0123456789ABCDEF', 4),
+                data: [response.data.tabel_jenis_kelamins_totals[index]]
+              };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_jenis_kelamins[index].jenis_kelamin,
+                jumlah: response.data.tabel_jenis_kelamins_totals[index],
+                jumlahpersen: (response.data.tabel_jenis_kelamins_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_jenis_kelamins_L[index],
+                lakilakipersen: (response.data.data_jenis_kelamins_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_jenis_kelamins_P[index],
+                perempuanpersen: (response.data.data_jenis_kelamins_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
+            });
+            _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
+          });
+        }
+
+        if (even == "Data Golongan Darah") {
+          this.$http.get("datastatistik/golongan_darah/").then(function (response) {
+            response.data.tabel_golongan_darahs_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_golongan_darahs_totals[index];
+            });
+            response.data.tabel_golongan_darahs.forEach(function (data, index) {
+              datachartapi.datasets[index] = {
+                label: data.golongan_darah,
+                backgroundColor: '#' + function lol(m, s, c) {
+                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+                }(Math, '0123456789ABCDEF', 4),
+                data: [response.data.tabel_golongan_darahs_totals[index]]
+              };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_golongan_darahs[index].golongan_darah,
+                jumlah: response.data.tabel_golongan_darahs_totals[index],
+                jumlahpersen: (response.data.tabel_golongan_darahs_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_golongan_darahs_L[index],
+                lakilakipersen: (response.data.data_golongan_darahs_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_golongan_darahs_P[index],
+                perempuanpersen: (response.data.data_golongan_darahs_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
+            });
+            _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
+          });
+        }
+
+        if (even == "Data Kelompok Umur") {}
+
+        this.loaded = true;
+      } catch (e) {
+        console.error(e);
+      }
+    },
+    fetchdata_pendidikans: function fetchdata_pendidikans() {
+      var _this2 = this;
+
+      this.$http.get("datastatistik/pendidikan/" + this.pendidikans + "/" + this.jenis_kelamins).then(function (response) {
+        _this2.tabel_pendidikans = response.data.data_chart;
+      });
+    },
+    saveImage: function saveImage(ref) {
       var component = this.$refs[ref];
       var canvas = component.$refs.canvas;
       canvas.toBlob(function (blob) {
@@ -24220,7 +24557,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.small {\n  max-width: 600px;\n  margin:  150px auto;\n}\n", ""]);
+exports.push([module.i, "\n.barchart {\n  width: 100%;\n  height: auto;\n  margin:31px auto;\n  background-color: white;\n}\n.tombol_download{\n  border: 1px gray solid;\n  background-color: transparent;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n.tombol_download:hover{\n  background-color: gray;\n  box-shadow: 5px 5px 5px #000;\n  transition: 1s;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n", ""]);
 
 // exports
 
@@ -75712,12 +76049,93 @@ var render = function() {
             ref: "canvasChart",
             attrs: { "chart-data": _vm.datacollection }
           })
-        : _vm._e()
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticStyle: {
+            overflow: "auto",
+            "max-height": "auto",
+            position: "relative",
+            margin: "5px 25px"
+          }
+        },
+        [
+          _c("table", [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              { attrs: { id: "tbodytabel" } },
+              _vm._l(_vm.dataAPI, function(data, index) {
+                return _c("tr", [
+                  _c("td", [_vm._v(_vm._s(index + 1))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.kelompok))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.jumlah))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.jumlahpersen))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.lakilaki))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.lakilakipersen))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.perempuan))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.perempuanpersen))])
+                ])
+              }),
+              0
+            )
+          ])
+        ]
+      )
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("col", { attrs: { width: "1000px" } }),
+      _vm._v(" "),
+      _c("col", { attrs: { width: "1000px" } }),
+      _vm._v(" "),
+      _c("col", { attrs: { width: "1000px" } }),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", { attrs: { rowspan: "2" } }, [_vm._v("No")]),
+        _vm._v(" "),
+        _c("th", { attrs: { rowspan: "2" } }, [_vm._v("Kelompok")]),
+        _vm._v(" "),
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Jumlah")]),
+        _vm._v(" "),
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Laki-Laki")]),
+        _vm._v(" "),
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Perempuan")])
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", [_vm._v("n")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("%")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("n")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("%")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("n")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("%")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -78565,43 +78983,159 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "small" },
+    {
+      staticClass: "barchart text-center",
+      model: {
+        value: _vm.datakirim,
+        callback: function($$v) {
+          _vm.datakirim = $$v
+        },
+        expression: "datakirim"
+      }
+    },
     [
-      _c("jenis-chart", {
-        ref: "canvasChart",
-        attrs: { "chart-data": _vm.chartData }
-      }),
-      _vm._v(" "),
       _c(
         "button",
         {
+          staticClass: "tombol_download",
           on: {
             click: function($event) {
-              return _vm.fillData()
+              return _vm.saveImage("canvasChart")
             }
           }
         },
-        [_vm._v("Randomize")]
+        [_vm._v("Download Grafik data    ")]
       ),
       _vm._v(" "),
       _c(
-        "button",
+        "select",
         {
+          attrs: { id: "filter" },
           on: {
-            click: function($event) {
-              return _vm.downloadchart("canvasChart")
+            change: function($event) {
+              return _vm.chartfunction($event.target.value)
             }
           }
         },
-        [_vm._v("Save Image!")]
+        [
+          _c("option", { attrs: { selected: "true", disabled: "disabled" } }, [
+            _vm._v("Data Grafik")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Data Pendidikan" } }, [
+            _vm._v("Data Pendidikan")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Data Pekerjaan" } }, [
+            _vm._v("Data Pekerjaan")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Data Agama" } }, [
+            _vm._v("Data Agama")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Data Jenis Kelamin" } }, [
+            _vm._v("Data Jenis Kelamin")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Data Golongan Darah" } }, [
+            _vm._v("Data Golongan Darah")
+          ])
+        ]
       ),
       _vm._v(" "),
-      _c("img", { attrs: { src: "", alt: "" } })
+      _vm.loaded
+        ? _c("jenis-chart", {
+            ref: "canvasChart",
+            attrs: { "chart-data": _vm.datacollection }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticStyle: {
+            overflow: "auto",
+            "max-height": "auto",
+            position: "relative",
+            margin: "5px 25px"
+          }
+        },
+        [
+          _c("table", [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              { attrs: { id: "tbodytabel" } },
+              _vm._l(_vm.dataAPI, function(data, index) {
+                return _c("tr", [
+                  _c("td", [_vm._v(_vm._s(index + 1))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.kelompok))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.jumlah))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.jumlahpersen))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.lakilaki))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.lakilakipersen))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.perempuan))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(data.perempuanpersen))])
+                ])
+              }),
+              0
+            )
+          ])
+        ]
+      )
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("col", { attrs: { width: "1000px" } }),
+      _vm._v(" "),
+      _c("col", { attrs: { width: "1000px" } }),
+      _vm._v(" "),
+      _c("col", { attrs: { width: "1000px" } }),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", { attrs: { rowspan: "2" } }, [_vm._v("No")]),
+        _vm._v(" "),
+        _c("th", { attrs: { rowspan: "2" } }, [_vm._v("Kelompok")]),
+        _vm._v(" "),
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Jumlah")]),
+        _vm._v(" "),
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Laki-Laki")]),
+        _vm._v(" "),
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Perempuan")])
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", [_vm._v("n")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("%")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("n")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("%")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("n")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("%")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -93343,15 +93877,14 @@ var reactiveProp = vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["mixins"].reactivePr
 /*!**********************************************************************!*\
   !*** ./resources/js/components/indexcomponent/BarChartComponent.vue ***!
   \**********************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BarChartComponent_vue_vue_type_template_id_f84f4b8e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BarChartComponent.vue?vue&type=template&id=f84f4b8e& */ "./resources/js/components/indexcomponent/BarChartComponent.vue?vue&type=template&id=f84f4b8e&");
 /* harmony import */ var _BarChartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BarChartComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/indexcomponent/BarChartComponent.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _BarChartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _BarChartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _BarChartComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BarChartComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/indexcomponent/BarChartComponent.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _BarChartComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BarChartComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/indexcomponent/BarChartComponent.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -93383,7 +93916,7 @@ component.options.__file = "resources/js/components/indexcomponent/BarChartCompo
 /*!***********************************************************************************************!*\
   !*** ./resources/js/components/indexcomponent/BarChartComponent.vue?vue&type=script&lang=js& ***!
   \***********************************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

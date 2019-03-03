@@ -11,6 +11,42 @@
         <!-- <option value="Data Kelompok Umur" >Data Kelompok Umur</option> -->
     </select>
     <jenis-chart v-if="loaded" :chart-data="datacollection" ref="canvasChart"></jenis-chart>
+    <div style="overflow: auto;max-height: auto;position: relative;margin: 5px 25px;">
+                            <table>
+                            <thead>
+                              <col width="1000px">
+                              <col width="1000px">
+                              <col width="1000px">
+                              <tr>
+                                        <th rowspan="2">No</th>
+                                        <th rowspan="2">Kelompok</th>
+                                        <th colspan="2">Jumlah</th>
+                                        <th colspan="2">Laki-Laki</th>
+                                        <th colspan="2">Perempuan</th>
+                              </tr>
+                              <tr>
+                                <th>n</th>
+                                <th>%</th>
+                                <th>n</th>
+                                <th>%</th>
+                                <th>n</th>
+                                <th>%</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tbodytabel">
+                              <tr v-for="(data,index) in dataAPI">
+                                  <td>{{index+1}}</td>
+                                  <td>{{data.kelompok}}</td>
+                                  <td>{{data.jumlah}}</td>
+                                  <td>{{data.jumlahpersen}}</td>
+                                  <td>{{data.lakilaki}}</td>
+                                  <td>{{data.lakilakipersen}}</td>
+                                  <td>{{data.perempuan}}</td>
+                                  <td>{{data.perempuanpersen}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
   </div>
 </template>
 
@@ -27,7 +63,17 @@
         datacollection: null,
         pendidikans:1,
         jenis_kelamins:1,
-        dataAPI:[],
+        dataAPI:[
+          {
+            kelompok:"",
+            jumlah:"",
+            jumlahpersen:"",
+            lakilaki:"",
+            lakilakipersen:"",
+            perempuan:"",
+            perempuanpersen:"",
+          }
+        ],
         datakirim:[],
         loaded: false,
       }
@@ -39,17 +85,45 @@
        this.loaded = false
       try {
 
+        let jumlahpersentotal=0;
+
+        let datatabelapi = [
+              {
+                kelompok:"",
+                jumlah:"",
+                jumlahpersen:"",
+                lakilaki:"",
+                lakilakipersen:"",
+                perempuan:"",
+                perempuanpersen:"",
+              }
+            ];
+
+            let datachartapi = {
+              labels: [],
+              datasets: []
+             };
+
+
+
+
         if(even=="Data Pendidikan"){
 
               this.$http.get("datastatistik/pendidikan/")
             .then(response => {
 
-              let datachartapi ={
-              labels: [],
-              datasets: []
-             }; 
+              
 
-              response.data.tabel_pendidikans.forEach(function(data, index) {
+             
+
+              response.data.data_pendidikans_totals.forEach(function(data, index) {
+                jumlahpersentotal=jumlahpersentotal+response.data.data_pendidikans_totals[index];
+              });
+
+
+
+                response.data.tabel_pendidikans.forEach(function(data, index) {
+
                 datachartapi.datasets[index] = 
                 {
                   label: data.pendidikan,
@@ -57,49 +131,45 @@
                                     (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
                   data: [response.data.data_pendidikans_totals[index]]
                 };
-              });
 
-              datachartapi.datasets.shift();
-
-              this.datacollection=datachartapi;
-              
-           });
-
-        }if(even=="Data Pekerjaan"){
-
-              this.$http.get("datastatistik/jenis_pekerjaan/")
-            .then(response => {
-
-              let datachartapi ={
-              labels: [],
-              datasets: []
-             }; 
-
-              response.data.tabel_jenis_pekerjaans.forEach(function(data, index) {
-                datachartapi.datasets[index] = 
+                datatabelapi[index] = 
                 {
-                  label: data.jenis_pekerjaan,
-                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
-                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
-                  data: [response.data.tabel_jenis_pekerjaans_totals[index]]
+                  kelompok:response.data.tabel_pendidikans[index].pendidikan,
+                  jumlah:response.data.data_pendidikans_totals[index],
+                  jumlahpersen:(response.data.data_pendidikans_totals[index]/jumlahpersentotal*100).toFixed(2),
+                  lakilaki:response.data.data_pendidikans_L[index],
+                  lakilakipersen:(response.data.data_pendidikans_L[index]/jumlahpersentotal*100).toFixed(2),
+                  perempuan:response.data.data_pendidikans_P[index],
+                  perempuanpersen:(response.data.data_pendidikans_P[index]/jumlahpersentotal*100).toFixed(2),
                 };
+
+
               });
 
-              datachartapi.datasets.shift();
+              // datachartapi.datasets.shift();
+              // datatabelapi.shift();
+              
 
               this.datacollection=datachartapi;
+              this.dataAPI=datatabelapi;
               
            });
+
+            
 
         }if(even=="Data Agama"){
 
               this.$http.get("datastatistik/agama/")
             .then(response => {
 
-              let datachartapi ={
-              labels: [],
-              datasets: []
-             }; 
+
+              response.data.tabel_agamas_totals.forEach(function(data, index) {
+                jumlahpersentotal=jumlahpersentotal+response.data.tabel_agamas_totals[index];
+              });
+
+
+
+               
 
               response.data.tabel_agamas.forEach(function(data, index) {
                 datachartapi.datasets[index] = 
@@ -109,11 +179,65 @@
                                     (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
                   data: [response.data.tabel_agamas_totals[index]]
                 };
+
+                datatabelapi[index] = 
+                {
+                  kelompok:response.data.tabel_agamas[index].agama,
+                  jumlah:response.data.tabel_agamas_totals[index],
+                  jumlahpersen:(response.data.tabel_agamas_totals[index]/jumlahpersentotal*100).toFixed(2),
+                  lakilaki:response.data.data_agamas_L[index],
+                  lakilakipersen:(response.data.data_agamas_L[index]/jumlahpersentotal*100).toFixed(2),
+                  perempuan:response.data.data_agamas_P[index],
+                  perempuanpersen:(response.data.data_agamas_P[index]/jumlahpersentotal*100).toFixed(2),
+                };
               });
 
-              datachartapi.datasets.shift();
 
               this.datacollection=datachartapi;
+              this.dataAPI=datatabelapi;
+              
+           });
+
+        }if(even=="Data Pekerjaan"){
+
+              this.$http.get("datastatistik/jenis_pekerjaan/")
+            .then(response => {
+
+              
+
+
+             response.data.tabel_jenis_pekerjaans_totals.forEach(function(data, index) {
+                jumlahpersentotal=jumlahpersentotal+response.data.tabel_jenis_pekerjaans_totals[index];
+              });
+
+              response.data.tabel_jenis_pekerjaans.forEach(function(data, index) {
+
+                datachartapi.datasets[index] = 
+                {
+                  label: data.jenis_pekerjaan,
+                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
+                  data: [response.data.tabel_jenis_pekerjaans_totals[index]]
+                };
+
+                datatabelapi[index] = 
+                {
+                  kelompok:response.data.tabel_jenis_pekerjaans[index].jenis_pekerjaan,
+                  jumlah:response.data.tabel_jenis_pekerjaans_totals[index],
+                  jumlahpersen:(response.data.tabel_jenis_pekerjaans_totals[index]/jumlahpersentotal*100).toFixed(2),
+                  lakilaki:response.data.data_jenis_pekerjaans_L[index],
+                  lakilakipersen:(response.data.data_jenis_pekerjaans_L[index]/jumlahpersentotal*100).toFixed(2),
+                  perempuan:response.data.data_jenis_pekerjaans_P[index],
+                  perempuanpersen:(response.data.data_jenis_pekerjaans_P[index]/jumlahpersentotal*100).toFixed(2),
+                };
+
+              });
+
+              
+              
+
+              this.datacollection=datachartapi;
+              this.dataAPI=datatabelapi;
               
            });
 
@@ -123,10 +247,10 @@
             .then(response => {
 
 
-              let datachartapi ={
-              labels: [],
-              datasets: []
-             }; 
+              response.data.tabel_jenis_kelamins_totals.forEach(function(data, index) {
+                jumlahpersentotal=jumlahpersentotal+response.data.tabel_jenis_kelamins_totals[index];
+              });
+               
 
               response.data.tabel_jenis_kelamins.forEach(function(data, index) {
                 datachartapi.datasets[index] = 
@@ -136,11 +260,24 @@
                                     (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
                   data: [response.data.tabel_jenis_kelamins_totals[index]]
                 };
+
+                datatabelapi[index] = 
+                {
+                  kelompok:response.data.tabel_jenis_kelamins[index].jenis_kelamin,
+                  jumlah:response.data.tabel_jenis_kelamins_totals[index],
+                  jumlahpersen:(response.data.tabel_jenis_kelamins_totals[index]/jumlahpersentotal*100).toFixed(2),
+                  lakilaki:response.data.data_jenis_kelamins_L[index],
+                  lakilakipersen:(response.data.data_jenis_kelamins_L[index]/jumlahpersentotal*100).toFixed(2),
+                  perempuan:response.data.data_jenis_kelamins_P[index],
+                  perempuanpersen:(response.data.data_jenis_kelamins_P[index]/jumlahpersentotal*100).toFixed(2),
+                };
               });
 
-              datachartapi.datasets.shift();
+              
+              
 
               this.datacollection=datachartapi;
+              this.dataAPI=datatabelapi;
               
            });
 
@@ -149,10 +286,11 @@
               this.$http.get("datastatistik/golongan_darah/")
             .then(response => {
 
-              let datachartapi ={
-              labels: [],
-              datasets: []
-             }; 
+
+              response.data.tabel_golongan_darahs_totals.forEach(function(data, index) {
+                jumlahpersentotal=jumlahpersentotal+response.data.tabel_golongan_darahs_totals[index];
+              });
+               
 
               response.data.tabel_golongan_darahs.forEach(function(data, index) {
                 datachartapi.datasets[index] = 
@@ -162,39 +300,28 @@
                                     (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
                   data: [response.data.tabel_golongan_darahs_totals[index]]
                 };
+
+                datatabelapi[index] = 
+                {
+                  kelompok:response.data.tabel_golongan_darahs[index].golongan_darah,
+                  jumlah:response.data.tabel_golongan_darahs_totals[index],
+                  jumlahpersen:(response.data.tabel_golongan_darahs_totals[index]/jumlahpersentotal*100).toFixed(2),
+                  lakilaki:response.data.data_golongan_darahs_L[index],
+                  lakilakipersen:(response.data.data_golongan_darahs_L[index]/jumlahpersentotal*100).toFixed(2),
+                  perempuan:response.data.data_golongan_darahs_P[index],
+                  perempuanpersen:(response.data.data_golongan_darahs_P[index]/jumlahpersentotal*100).toFixed(2),
+                };
               });
 
-              datachartapi.datasets.shift();
+              
+              
 
               this.datacollection=datachartapi;
+              this.dataAPI=datatabelapi;
               
            });
 
         }if(even=="Data Kelompok Umur"){
-
-           //    this.$http.get("datastatistik/agama/")
-           //  .then(response => {
-
-           //    let datachartapi ={
-           //    labels: [],
-           //    datasets: []
-           //   }; 
-
-           //    response.data.tabel_agamas.forEach(function(data, index) {
-           //      datachartapi.datasets[index] = 
-           //      {
-           //        label: data.agama,
-           //        backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
-           //                          (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
-           //        data: [response.data.tabel_agamas_totals[index]]
-           //      };
-           //    });
-
-           //    datachartapi.datasets.shift();
-
-           //    this.datacollection=datachartapi;
-              
-           // });
 
         }
         
