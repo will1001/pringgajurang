@@ -16,7 +16,7 @@ class APIdatabarangdesaController extends Controller
     public function index()
     {
         //
-        $barangdesas=barangdesa::all();
+        $barangdesas=barangdesa::orderBy("created_at","desc")->get();
         return response()->json(["barangdesas" => $barangdesas]);
     }
 
