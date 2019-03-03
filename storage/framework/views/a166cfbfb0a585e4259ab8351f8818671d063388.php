@@ -63,13 +63,18 @@
 
 
 
-    <section id="statistik">
+    <section id="statistik" style="margin-top: 31px;">
       <div class="container" id="app">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-11">
             <h1 class="text-center">Data statistik Desa</h1>
-              <barchartcomponent></barchartcomponent>
+              <!-- <barchartcomponent></barchartcomponent> -->
               <!-- <piechartcomponent></piechartcomponent> -->
+               
+              <div :is="currentchart" class="wow fadeIn"  @clicked="gantichart" keep-alive></div>
+
+          </div>
+          <div class="col-md-1">
           </div>
         </div>
       </div>

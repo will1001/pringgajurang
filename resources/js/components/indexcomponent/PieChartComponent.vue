@@ -1,6 +1,10 @@
 <template>
-  <div class="barchart text-center" v-model="datakirim">
-    <button class="tombol_download" @click="saveImage('canvasChart')">Download Grafik data    </button>
+  <div class="Piechart text-center" v-model="datakirim">
+    <select id="filter" @change="gantichart($event.target.value)">
+        <option selected="true" disabled="disabled">Jenis Chart</option>
+        <option value="barchartcomponent" >Bar</option>
+        <option value="piechartcomponent" >Pie</option>
+    </select>
     <select id="filter" @change="chartfunction($event.target.value)">
         <option selected="true" disabled="disabled">Data Grafik</option>
         <option value="Data Pendidikan" >Data Pendidikan</option>
@@ -10,8 +14,9 @@
         <option value="Data Golongan Darah" >Data Golongan Darah</option>
         <!-- <option value="Data Kelompok Umur" >Data Kelompok Umur</option> -->
     </select>
-    <jenis-chart v-if="loaded" :chart-data="datacollection" ref="canvasChart"></jenis-chart>
-    <div style="overflow: auto;max-height: auto;position: relative;margin: 5px 25px;">
+    <button class="tombol_download" @click="saveImage('canvasChart')">Download Grafik data    </button>
+    <jenis-chart v-if="loaded" :chart-data="datacollection" ref="canvasChart" class="chartnya text-center"></jenis-chart>
+    <div style="overflow: auto;max-height: auto;position: relative;margin: 5px 25px;" class="text-center">
                             <table>
                             <thead>
                               <col width="1000px">
@@ -61,6 +66,8 @@
     data () {
       return {
         datacollection: null,
+        tinggi: 600,
+        lePie: 600,
         pendidikans:1,
         jenis_kelamins:1,
         dataAPI:[
@@ -101,7 +108,13 @@
 
             let datachartapi = {
               labels: [],
-              datasets: []
+              datasets: [
+                {
+                  label: [],
+                  backgroundColor: [],
+                  data: []
+                }
+              ]
              };
 
 
@@ -124,13 +137,15 @@
 
                 response.data.tabel_pendidikans.forEach(function(data, index) {
 
-                datachartapi.datasets[index] = 
-                {
-                  label: data.pendidikan,
-                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
-                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
-                  data: [response.data.data_pendidikans_totals[index]]
-                };
+                datachartapi.labels[index]=data.pendidikan;
+
+                datachartapi.datasets[0].backgroundColor[index] ='#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+                                                                  (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4);
+
+                datachartapi.datasets[0].data[index] =response.data.data_pendidikans_totals[index];
+
+
+          
 
                 datatabelapi[index] = 
                 {
@@ -138,9 +153,9 @@
                   jumlah:response.data.data_pendidikans_totals[index],
                   jumlahpersen:(response.data.data_pendidikans_totals[index]/jumlahpersentotal*100).toFixed(2),
                   lakilaki:response.data.data_pendidikans_L[index],
-                  lakilakipersen:(response.data.data_pendidikans_L/jumlahpersentotal*100).toFixed(2),
+                  lakilakipersen:(response.data.data_pendidikans_L[index]/jumlahpersentotal*100).toFixed(2),
                   perempuan:response.data.data_pendidikans_P[index],
-                  perempuanpersen:(response.data.data_pendidikans_P/jumlahpersentotal*100).toFixed(2),
+                  perempuanpersen:(response.data.data_pendidikans_P[index]/jumlahpersentotal*100).toFixed(2),
                 };
 
 
@@ -172,13 +187,13 @@
                
 
               response.data.tabel_agamas.forEach(function(data, index) {
-                datachartapi.datasets[index] = 
-                {
-                  label: data.agama,
-                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
-                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
-                  data: [response.data.tabel_agamas_totals[index]]
-                };
+                datachartapi.labels[index]=data.agama;
+
+                datachartapi.datasets[0].backgroundColor[index] ='#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+                                                                  (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4);
+
+                datachartapi.datasets[0].data[index] =response.data.tabel_agamas_totals[index];
+
 
                 datatabelapi[index] = 
                 {
@@ -200,6 +215,8 @@
 
         }if(even=="Data Pekerjaan"){
 
+              this.lePie=1000;
+
               this.$http.get("datastatistik/jenis_pekerjaan/")
             .then(response => {
 
@@ -212,13 +229,13 @@
 
               response.data.tabel_jenis_pekerjaans.forEach(function(data, index) {
 
-                datachartapi.datasets[index] = 
-                {
-                  label: data.jenis_pekerjaan,
-                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
-                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
-                  data: [response.data.tabel_jenis_pekerjaans_totals[index]]
-                };
+                datachartapi.labels[index]=data.jenis_pekerjaan;
+
+                datachartapi.datasets[0].backgroundColor[index] ='#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+                                                                  (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4);
+
+                datachartapi.datasets[0].data[index] =response.data.tabel_jenis_pekerjaans_totals[index];
+
 
                 datatabelapi[index] = 
                 {
@@ -253,13 +270,12 @@
                
 
               response.data.tabel_jenis_kelamins.forEach(function(data, index) {
-                datachartapi.datasets[index] = 
-                {
-                  label: data.jenis_kelamin,
-                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
-                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
-                  data: [response.data.tabel_jenis_kelamins_totals[index]]
-                };
+                datachartapi.labels[index]=data.jenis_kelamin;
+
+                datachartapi.datasets[0].backgroundColor[index] ='#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+                                                                  (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4);
+
+                datachartapi.datasets[0].data[index] =response.data.tabel_jenis_kelamins_totals[index];
 
                 datatabelapi[index] = 
                 {
@@ -293,13 +309,13 @@
                
 
               response.data.tabel_golongan_darahs.forEach(function(data, index) {
-                datachartapi.datasets[index] = 
-                {
-                  label: data.golongan_darah,
-                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
-                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
-                  data: [response.data.tabel_golongan_darahs_totals[index]]
-                };
+                datachartapi.labels[index]=data.golongan_darah;
+
+                datachartapi.datasets[0].backgroundColor[index] ='#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+                                                                  (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4);
+
+                datachartapi.datasets[0].data[index] =response.data.tabel_golongan_darahs_totals[index];
+
 
                 datatabelapi[index] = 
                 {
@@ -350,14 +366,17 @@
         },'grafikchart.png');
 
 
-        }
+        },
+        gantichart(even){
+          this.$emit('clicked', even);
+        },
     }
   }
 </script>
 
 <style>
-  .barchart {
-    width: 100%;
+  .Piechart {
+    overflow:auto; 
     height: auto;
     margin:31px auto;
     background-color: white;
@@ -376,4 +395,15 @@
     border-radius: 25px;
     padding: 5px 5px;
   }
+
+  .chartnya {
+    width: 100%;
+   }
+
+   @media only screen and (min-width: 320px) and (max-width: 479px) {
+      .chartnya {
+        width: 800px;
+     }
+
+   }
 </style>

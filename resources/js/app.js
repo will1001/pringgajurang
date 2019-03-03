@@ -81,7 +81,8 @@ const app = new Vue({
     },
     data:{
       currentComponent : "",
-    	currentIcon : "icondown",
+      currentIcon : "icondown",
+    	currentchart : "piechartcomponent",
       active_el : 1,
       active_el_index : 0,
       currentView : "indexpage",
@@ -110,6 +111,9 @@ const app = new Vue({
     },
     updatecurrentview:function(el){
         this.currentView = el;
-    }
+    },
+    gantichart:function(el){
+        this.currentchart = el;
+    },
   }
 });

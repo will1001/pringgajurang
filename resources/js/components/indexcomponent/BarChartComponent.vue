@@ -1,6 +1,10 @@
 <template>
   <div class="barchart text-center" v-model="datakirim">
-    <button class="tombol_download" @click="saveImage('canvasChart')">Download Grafik data    </button>
+    <select id="filter" @change="gantichart($event.target.value)">
+        <option selected="true" disabled="disabled">Jenis Chart</option>
+        <option value="barchartcomponent" >Bar</option>
+        <option value="piechartcomponent" >Pie</option>
+    </select>
     <select id="filter" @change="chartfunction($event.target.value)">
         <option selected="true" disabled="disabled">Data Grafik</option>
         <option value="Data Pendidikan" >Data Pendidikan</option>
@@ -10,8 +14,9 @@
         <option value="Data Golongan Darah" >Data Golongan Darah</option>
         <!-- <option value="Data Kelompok Umur" >Data Kelompok Umur</option> -->
     </select>
-    <jenis-chart v-if="loaded" :chart-data="datacollection" ref="canvasChart"></jenis-chart>
-    <div style="overflow: auto;max-height: auto;position: relative;margin: 5px 25px;">
+    <button class="tombol_download" @click="saveImage('canvasChart')">Download Grafik data    </button>
+    <jenis-chart v-if="loaded" :chart-data="datacollection" ref="canvasChart" class="chartnya text-center"></jenis-chart>
+    <div style="overflow: auto;max-height: auto;position: relative;margin: 5px 25px;" class="text-center">
                             <table>
                             <thead>
                               <col width="1000px">
@@ -61,6 +66,8 @@
     data () {
       return {
         datacollection: null,
+        tinggi: 600,
+        lebar: 600,
         pendidikans:1,
         jenis_kelamins:1,
         dataAPI:[
@@ -199,6 +206,8 @@
            });
 
         }if(even=="Data Pekerjaan"){
+
+              this.lebar=1000;
 
               this.$http.get("datastatistik/jenis_pekerjaan/")
             .then(response => {
@@ -350,14 +359,16 @@
         },'grafikchart.png');
 
 
-        }
+        },gantichart(even){
+          this.$emit('clicked', even);
+        },
     }
   }
 </script>
 
 <style>
   .barchart {
-    width: 100%;
+    overflow:auto; 
     height: auto;
     margin:31px auto;
     background-color: white;
@@ -376,4 +387,15 @@
     border-radius: 25px;
     padding: 5px 5px;
   }
+
+  .chartnya {
+    width: 100%;
+   }
+
+   @media only screen and (min-width: 320px) and (max-width: 479px) {
+      .chartnya {
+        width: 800px;
+     }
+
+   }
 </style>

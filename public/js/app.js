@@ -2697,6 +2697,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2705,6 +2710,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       datacollection: null,
+      tinggi: 600,
+      lebar: 600,
       pendidikans: 1,
       jenis_kelamins: 1,
       dataAPI: [{
@@ -2822,6 +2829,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
 
         if (even == "Data Pekerjaan") {
+          this.lebar = 1000;
           this.$http.get("datastatistik/jenis_pekerjaan/").then(function (response) {
             response.data.tabel_jenis_pekerjaans_totals.forEach(function (data, index) {
               jumlahpersentotal = jumlahpersentotal + response.data.tabel_jenis_pekerjaans_totals[index];
@@ -2928,6 +2936,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         a.href = URL.createObjectURL(blob);
         a.click();
       }, 'grafikchart.png');
+    },
+    gantichart: function gantichart(even) {
+      this.$emit('clicked', even);
     }
   }
 });
@@ -4652,6 +4663,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -4660,6 +4676,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       datacollection: null,
+      tinggi: 600,
+      lePie: 600,
       pendidikans: 1,
       jenis_kelamins: 1,
       dataAPI: [{
@@ -4715,7 +4733,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }];
         var datachartapi = {
           labels: [],
-          datasets: []
+          datasets: [{
+            label: [],
+            backgroundColor: [],
+            data: []
+          }]
         };
 
         if (even == "Data Pendidikan") {
@@ -4724,21 +4746,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               jumlahpersentotal = jumlahpersentotal + response.data.data_pendidikans_totals[index];
             });
             response.data.tabel_pendidikans.forEach(function (data, index) {
-              datachartapi.datasets[index] = {
-                label: data.pendidikan,
-                backgroundColor: '#' + function lol(m, s, c) {
-                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
-                }(Math, '0123456789ABCDEF', 4),
-                data: [response.data.data_pendidikans_totals[index]]
-              };
+              datachartapi.labels[index] = data.pendidikan;
+
+              datachartapi.datasets[0].backgroundColor[index] = '#' + function lol(m, s, c) {
+                return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+              }(Math, '0123456789ABCDEF', 4);
+
+              datachartapi.datasets[0].data[index] = response.data.data_pendidikans_totals[index];
               datatabelapi[index] = {
                 kelompok: response.data.tabel_pendidikans[index].pendidikan,
                 jumlah: response.data.data_pendidikans_totals[index],
                 jumlahpersen: (response.data.data_pendidikans_totals[index] / jumlahpersentotal * 100).toFixed(2),
                 lakilaki: response.data.data_pendidikans_L[index],
-                lakilakipersen: (response.data.data_pendidikans_L / jumlahpersentotal * 100).toFixed(2),
+                lakilakipersen: (response.data.data_pendidikans_L[index] / jumlahpersentotal * 100).toFixed(2),
                 perempuan: response.data.data_pendidikans_P[index],
-                perempuanpersen: (response.data.data_pendidikans_P / jumlahpersentotal * 100).toFixed(2)
+                perempuanpersen: (response.data.data_pendidikans_P[index] / jumlahpersentotal * 100).toFixed(2)
               };
             }); // datachartapi.datasets.shift();
             // datatabelapi.shift();
@@ -4754,13 +4776,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               jumlahpersentotal = jumlahpersentotal + response.data.tabel_agamas_totals[index];
             });
             response.data.tabel_agamas.forEach(function (data, index) {
-              datachartapi.datasets[index] = {
-                label: data.agama,
-                backgroundColor: '#' + function lol(m, s, c) {
-                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
-                }(Math, '0123456789ABCDEF', 4),
-                data: [response.data.tabel_agamas_totals[index]]
-              };
+              datachartapi.labels[index] = data.agama;
+
+              datachartapi.datasets[0].backgroundColor[index] = '#' + function lol(m, s, c) {
+                return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+              }(Math, '0123456789ABCDEF', 4);
+
+              datachartapi.datasets[0].data[index] = response.data.tabel_agamas_totals[index];
               datatabelapi[index] = {
                 kelompok: response.data.tabel_agamas[index].agama,
                 jumlah: response.data.tabel_agamas_totals[index],
@@ -4777,18 +4799,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
 
         if (even == "Data Pekerjaan") {
+          this.lePie = 1000;
           this.$http.get("datastatistik/jenis_pekerjaan/").then(function (response) {
             response.data.tabel_jenis_pekerjaans_totals.forEach(function (data, index) {
               jumlahpersentotal = jumlahpersentotal + response.data.tabel_jenis_pekerjaans_totals[index];
             });
             response.data.tabel_jenis_pekerjaans.forEach(function (data, index) {
-              datachartapi.datasets[index] = {
-                label: data.jenis_pekerjaan,
-                backgroundColor: '#' + function lol(m, s, c) {
-                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
-                }(Math, '0123456789ABCDEF', 4),
-                data: [response.data.tabel_jenis_pekerjaans_totals[index]]
-              };
+              datachartapi.labels[index] = data.jenis_pekerjaan;
+
+              datachartapi.datasets[0].backgroundColor[index] = '#' + function lol(m, s, c) {
+                return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+              }(Math, '0123456789ABCDEF', 4);
+
+              datachartapi.datasets[0].data[index] = response.data.tabel_jenis_pekerjaans_totals[index];
               datatabelapi[index] = {
                 kelompok: response.data.tabel_jenis_pekerjaans[index].jenis_pekerjaan,
                 jumlah: response.data.tabel_jenis_pekerjaans_totals[index],
@@ -4810,13 +4833,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               jumlahpersentotal = jumlahpersentotal + response.data.tabel_jenis_kelamins_totals[index];
             });
             response.data.tabel_jenis_kelamins.forEach(function (data, index) {
-              datachartapi.datasets[index] = {
-                label: data.jenis_kelamin,
-                backgroundColor: '#' + function lol(m, s, c) {
-                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
-                }(Math, '0123456789ABCDEF', 4),
-                data: [response.data.tabel_jenis_kelamins_totals[index]]
-              };
+              datachartapi.labels[index] = data.jenis_kelamin;
+
+              datachartapi.datasets[0].backgroundColor[index] = '#' + function lol(m, s, c) {
+                return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+              }(Math, '0123456789ABCDEF', 4);
+
+              datachartapi.datasets[0].data[index] = response.data.tabel_jenis_kelamins_totals[index];
               datatabelapi[index] = {
                 kelompok: response.data.tabel_jenis_kelamins[index].jenis_kelamin,
                 jumlah: response.data.tabel_jenis_kelamins_totals[index],
@@ -4838,13 +4861,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               jumlahpersentotal = jumlahpersentotal + response.data.tabel_golongan_darahs_totals[index];
             });
             response.data.tabel_golongan_darahs.forEach(function (data, index) {
-              datachartapi.datasets[index] = {
-                label: data.golongan_darah,
-                backgroundColor: '#' + function lol(m, s, c) {
-                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
-                }(Math, '0123456789ABCDEF', 4),
-                data: [response.data.tabel_golongan_darahs_totals[index]]
-              };
+              datachartapi.labels[index] = data.golongan_darah;
+
+              datachartapi.datasets[0].backgroundColor[index] = '#' + function lol(m, s, c) {
+                return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+              }(Math, '0123456789ABCDEF', 4);
+
+              datachartapi.datasets[0].data[index] = response.data.tabel_golongan_darahs_totals[index];
               datatabelapi[index] = {
                 kelompok: response.data.tabel_golongan_darahs[index].golongan_darah,
                 jumlah: response.data.tabel_golongan_darahs_totals[index],
@@ -4883,6 +4906,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         a.href = URL.createObjectURL(blob);
         a.click();
       }, 'grafikchart.png');
+    },
+    gantichart: function gantichart(even) {
+      this.$emit('clicked', even);
     }
   }
 });
@@ -24519,7 +24545,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.barchart {\n  width: 100%;\n  height: auto;\n  margin:31px auto;\n  background-color: white;\n}\n.tombol_download{\n  border: 1px gray solid;\n  background-color: transparent;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n.tombol_download:hover{\n  background-color: gray;\n  box-shadow: 5px 5px 5px #000;\n  transition: 1s;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n", ""]);
+exports.push([module.i, "\n.barchart {\n  overflow:auto; \n  height: auto;\n  margin:31px auto;\n  background-color: white;\n}\n.tombol_download{\n  border: 1px gray solid;\n  background-color: transparent;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n.tombol_download:hover{\n  background-color: gray;\n  box-shadow: 5px 5px 5px #000;\n  transition: 1s;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n.chartnya {\n  width: 100%;\n}\n@media only screen and (min-width: 320px) and (max-width: 479px) {\n.chartnya {\n      width: 800px;\n}\n}\n", ""]);
 
 // exports
 
@@ -24557,7 +24583,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.barchart {\n  width: 100%;\n  height: auto;\n  margin:31px auto;\n  background-color: white;\n}\n.tombol_download{\n  border: 1px gray solid;\n  background-color: transparent;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n.tombol_download:hover{\n  background-color: gray;\n  box-shadow: 5px 5px 5px #000;\n  transition: 1s;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n", ""]);
+exports.push([module.i, "\n.Piechart {\n  overflow:auto; \n  height: auto;\n  margin:31px auto;\n  background-color: white;\n}\n.tombol_download{\n  border: 1px gray solid;\n  background-color: transparent;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n.tombol_download:hover{\n  background-color: gray;\n  box-shadow: 5px 5px 5px #000;\n  transition: 1s;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n.chartnya {\n  width: 100%;\n}\n@media only screen and (min-width: 320px) and (max-width: 479px) {\n.chartnya {\n      width: 800px;\n}\n}\n", ""]);
 
 // exports
 
@@ -75995,16 +76021,28 @@ var render = function() {
     },
     [
       _c(
-        "button",
+        "select",
         {
-          staticClass: "tombol_download",
+          attrs: { id: "filter" },
           on: {
-            click: function($event) {
-              return _vm.saveImage("canvasChart")
+            change: function($event) {
+              return _vm.gantichart($event.target.value)
             }
           }
         },
-        [_vm._v("Download Grafik data    ")]
+        [
+          _c("option", { attrs: { selected: "true", disabled: "disabled" } }, [
+            _vm._v("Jenis Chart")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "barchartcomponent" } }, [
+            _vm._v("Bar")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "piechartcomponent" } }, [
+            _vm._v("Pie")
+          ])
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -76044,9 +76082,23 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "tombol_download",
+          on: {
+            click: function($event) {
+              return _vm.saveImage("canvasChart")
+            }
+          }
+        },
+        [_vm._v("Download Grafik data    ")]
+      ),
+      _vm._v(" "),
       _vm.loaded
         ? _c("jenis-chart", {
             ref: "canvasChart",
+            staticClass: "chartnya text-center",
             attrs: { "chart-data": _vm.datacollection }
           })
         : _vm._e(),
@@ -76054,6 +76106,7 @@ var render = function() {
       _c(
         "div",
         {
+          staticClass: "text-center",
           staticStyle: {
             overflow: "auto",
             "max-height": "auto",
@@ -78984,7 +79037,7 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "barchart text-center",
+      staticClass: "Piechart text-center",
       model: {
         value: _vm.datakirim,
         callback: function($$v) {
@@ -78995,16 +79048,28 @@ var render = function() {
     },
     [
       _c(
-        "button",
+        "select",
         {
-          staticClass: "tombol_download",
+          attrs: { id: "filter" },
           on: {
-            click: function($event) {
-              return _vm.saveImage("canvasChart")
+            change: function($event) {
+              return _vm.gantichart($event.target.value)
             }
           }
         },
-        [_vm._v("Download Grafik data    ")]
+        [
+          _c("option", { attrs: { selected: "true", disabled: "disabled" } }, [
+            _vm._v("Jenis Chart")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "barchartcomponent" } }, [
+            _vm._v("Bar")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "piechartcomponent" } }, [
+            _vm._v("Pie")
+          ])
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -79044,9 +79109,23 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "tombol_download",
+          on: {
+            click: function($event) {
+              return _vm.saveImage("canvasChart")
+            }
+          }
+        },
+        [_vm._v("Download Grafik data    ")]
+      ),
+      _vm._v(" "),
       _vm.loaded
         ? _c("jenis-chart", {
             ref: "canvasChart",
+            staticClass: "chartnya text-center",
             attrs: { "chart-data": _vm.datacollection }
           })
         : _vm._e(),
@@ -79054,6 +79133,7 @@ var render = function() {
       _c(
         "div",
         {
+          staticClass: "text-center",
           staticStyle: {
             overflow: "auto",
             "max-height": "auto",
@@ -93139,6 +93219,7 @@ var app = new Vue({
   data: {
     currentComponent: "",
     currentIcon: "icondown",
+    currentchart: "piechartcomponent",
     active_el: 1,
     active_el_index: 0,
     currentView: "indexpage",
@@ -93165,6 +93246,9 @@ var app = new Vue({
     },
     updatecurrentview: function updatecurrentview(el) {
       this.currentView = el;
+    },
+    gantichart: function gantichart(el) {
+      this.currentchart = el;
     }
   }
 });
