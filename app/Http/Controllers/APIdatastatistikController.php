@@ -7,6 +7,8 @@ use App\tabel_pendidikan;
 use App\data_penduduk;
 use App\tabel_agama;
 use App\tabel_jenis_pekerjaan;
+use App\tabel_jenis_kelamin;
+use App\tabel_golongan_darah;
 
 class APIdatastatistikController extends Controller
 {
@@ -127,7 +129,7 @@ class APIdatastatistikController extends Controller
     }
 
 
-    public function jenispekerjaan()
+    public function jenis_pekerjaan()
     {
 
         $tabel_jenis_pekerjaans=tabel_jenis_pekerjaan::all();
@@ -142,6 +144,57 @@ class APIdatastatistikController extends Controller
 
 
         return response()->json(["tabel_jenis_pekerjaans" => $tabel_jenis_pekerjaans,"tabel_jenis_pekerjaans_totals" => $tabel_jenis_pekerjaans_totals]);
+    }
+
+    public function jenis_kelamin()
+    {
+
+        $tabel_jenis_kelamins=tabel_jenis_kelamin::all();
+
+        // $data_jenis_kelamins=data_penduduk::where('jenis_kelamin','=',$kategori)->where('Jenis_Kelamin','=',$kelamin)->count();
+
+        for($i=0;$i<$tabel_jenis_kelamins->count();$i++){
+
+            $tabel_jenis_kelamins_totals[$i]=data_penduduk::where('jenis_kelamin','=',$tabel_jenis_kelamins[$i]->id)->count();
+        }
+
+
+
+        return response()->json(["tabel_jenis_kelamins" => $tabel_jenis_kelamins,"tabel_jenis_kelamins_totals" => $tabel_jenis_kelamins_totals]);
+    }
+
+    public function golongan_darah()
+    {
+
+        $tabel_golongan_darahs=tabel_golongan_darah::all();
+
+        // $data_golongan_darahs=data_penduduk::where('golongan_darah','=',$kategori)->where('Jenis_Kelamin','=',$kelamin)->count();
+
+        for($i=0;$i<$tabel_golongan_darahs->count();$i++){
+
+            $tabel_golongan_darahs_totals[$i]=data_penduduk::where('golongan_darah','=',$tabel_golongan_darahs[$i]->id)->count();
+        }
+
+
+
+        return response()->json(["tabel_golongan_darahs" => $tabel_golongan_darahs,"tabel_golongan_darahs_totals" => $tabel_golongan_darahs_totals]);
+    }
+
+    public function kelompok_umur()
+    {
+
+        $tabel_kelompok_umurs=tabel_kelompok_umur::all();
+
+        // $data_kelompok_umurs=data_penduduk::where('kelompok_umur','=',$kategori)->where('Jenis_Kelamin','=',$kelamin)->count();
+
+        for($i=0;$i<$tabel_kelompok_umurs->count();$i++){
+
+            $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('kelompok_umur','=',$tabel_kelompok_umurs[$i]->id)->count();
+        }
+
+
+
+        return response()->json(["tabel_kelompok_umurs" => $tabel_kelompok_umurs,"tabel_kelompok_umurs_totals" => $tabel_kelompok_umurs_totals]);
     }
 
 

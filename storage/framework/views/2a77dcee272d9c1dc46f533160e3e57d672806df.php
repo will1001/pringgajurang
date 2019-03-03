@@ -69,9 +69,7 @@
    </div>
 </nav>
     <!-- <component  :is="currentView" class="wow fadeIn" @clicked="updatecurrentview" keep-alive></component> -->
-    <barchartcomponent></barchartcomponent>
-    <piechartcomponent></piechartcomponent>
-    <!-- <div :is="currentView" class="wow fadeIn" @clicked="updatecurrentview" keep-alive></div> -->
+    <div :is="currentView" class="wow fadeIn" @clicked="updatecurrentview" keep-alive></div>
     
 </div>
 

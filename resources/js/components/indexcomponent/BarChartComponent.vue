@@ -11,7 +11,7 @@
         <option value="Data Agama" >Data Agama</option>
         <option value="Data Jenis Kelamin" >Data Jenis Kelamin</option>
         <option value="Data Golongan Darah" >Data Golongan Darah</option>
-        <option value="Data Kelompok Umur" >Data Kelompok Umur</option>
+        <!-- <option value="Data Kelompok Umur" >Data Kelompok Umur</option> -->
     </select>
     <img src="" alt="">
   </div>
@@ -70,7 +70,7 @@
 
         }if(even=="Data Pekerjaan"){
 
-              this.$http.get("datastatistik/jenispekerjaan/")
+              this.$http.get("datastatistik/jenis_pekerjaan/")
             .then(response => {
 
               let datachartapi ={
@@ -120,6 +120,85 @@
               
            });
 
+        }if(even=="Data Jenis Kelamin"){
+
+              this.$http.get("datastatistik/jenis_kelamin/")
+            .then(response => {
+
+
+              let datachartapi ={
+              labels: [],
+              datasets: []
+             }; 
+
+              response.data.tabel_jenis_kelamins.forEach(function(data, index) {
+                datachartapi.datasets[index] = 
+                {
+                  label: data.jenis_kelamin,
+                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
+                  data: [response.data.tabel_jenis_kelamins_totals[index]]
+                };
+              });
+
+              datachartapi.datasets.shift();
+
+              this.datacollection=datachartapi;
+              
+           });
+
+        }if(even=="Data Golongan Darah"){
+
+              this.$http.get("datastatistik/golongan_darah/")
+            .then(response => {
+
+              let datachartapi ={
+              labels: [],
+              datasets: []
+             }; 
+
+              response.data.tabel_golongan_darahs.forEach(function(data, index) {
+                datachartapi.datasets[index] = 
+                {
+                  label: data.golongan_darah,
+                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
+                  data: [response.data.tabel_golongan_darahs_totals[index]]
+                };
+              });
+
+              datachartapi.datasets.shift();
+
+              this.datacollection=datachartapi;
+              
+           });
+
+        }if(even=="Data Kelompok Umur"){
+
+           //    this.$http.get("datastatistik/agama/")
+           //  .then(response => {
+
+           //    let datachartapi ={
+           //    labels: [],
+           //    datasets: []
+           //   }; 
+
+           //    response.data.tabel_agamas.forEach(function(data, index) {
+           //      datachartapi.datasets[index] = 
+           //      {
+           //        label: data.agama,
+           //        backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+           //                          (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
+           //        data: [response.data.tabel_agamas_totals[index]]
+           //      };
+           //    });
+
+           //    datachartapi.datasets.shift();
+
+           //    this.datacollection=datachartapi;
+              
+           // });
+
         }
         
 
@@ -154,7 +233,7 @@
 
 <style>
   .small {
-    max-width: 600px;
+    max-width: 100%;
     margin:  150px auto;
     background-color: white;
   }

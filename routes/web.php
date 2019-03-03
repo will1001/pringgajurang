@@ -104,8 +104,10 @@ Route::resource('dataSOTK','APIdataSOTKController');
 Route::resource('dataagenda','APIdataagendaController');
 Route::resource('databarangdesa','APIdatabarangdesaController');
 Route::get('datastatistik/pendidikan/','APIdatastatistikController@pendidikan');
-Route::get('datastatistik/jenispekerjaan/','APIdatastatistikController@jenispekerjaan');
+Route::get('datastatistik/jenis_pekerjaan/','APIdatastatistikController@jenis_pekerjaan');
 Route::get('datastatistik/agama/','APIdatastatistikController@agama');
+Route::get('datastatistik/jenis_kelamin/','APIdatastatistikController@jenis_kelamin');
+Route::get('datastatistik/golongan_darah/','APIdatastatistikController@golongan_darah');
 Route::resource('datastatistik','APIdatastatistikController');
 
 

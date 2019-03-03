@@ -2728,7 +2728,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
 
         if (even == "Data Pekerjaan") {
-          this.$http.get("datastatistik/jenispekerjaan/").then(function (response) {
+          this.$http.get("datastatistik/jenis_pekerjaan/").then(function (response) {
             var datachartapi = {
               labels: [],
               datasets: []
@@ -2765,6 +2765,66 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             datachartapi.datasets.shift();
             _this.datacollection = datachartapi;
           });
+        }
+
+        if (even == "Data Jenis Kelamin") {
+          this.$http.get("datastatistik/jenis_kelamin/").then(function (response) {
+            var datachartapi = {
+              labels: [],
+              datasets: []
+            };
+            response.data.tabel_jenis_kelamins.forEach(function (data, index) {
+              datachartapi.datasets[index] = {
+                label: data.jenis_kelamin,
+                backgroundColor: '#' + function lol(m, s, c) {
+                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+                }(Math, '0123456789ABCDEF', 4),
+                data: [response.data.tabel_jenis_kelamins_totals[index]]
+              };
+            });
+            datachartapi.datasets.shift();
+            _this.datacollection = datachartapi;
+          });
+        }
+
+        if (even == "Data Golongan Darah") {
+          this.$http.get("datastatistik/golongan_darah/").then(function (response) {
+            var datachartapi = {
+              labels: [],
+              datasets: []
+            };
+            response.data.tabel_golongan_darahs.forEach(function (data, index) {
+              datachartapi.datasets[index] = {
+                label: data.golongan_darah,
+                backgroundColor: '#' + function lol(m, s, c) {
+                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+                }(Math, '0123456789ABCDEF', 4),
+                data: [response.data.tabel_golongan_darahs_totals[index]]
+              };
+            });
+            datachartapi.datasets.shift();
+            _this.datacollection = datachartapi;
+          });
+        }
+
+        if (even == "Data Kelompok Umur") {//    this.$http.get("datastatistik/agama/")
+          //  .then(response => {
+          //    let datachartapi ={
+          //    labels: [],
+          //    datasets: []
+          //   }; 
+          //    response.data.tabel_agamas.forEach(function(data, index) {
+          //      datachartapi.datasets[index] = 
+          //      {
+          //        label: data.agama,
+          //        backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+          //                          (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
+          //        data: [response.data.tabel_agamas_totals[index]]
+          //      };
+          //    });
+          //    datachartapi.datasets.shift();
+          //    this.datacollection=datachartapi;
+          // });
         }
 
         this.loaded = true;
@@ -24125,7 +24185,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.small {\n  max-width: 600px;\n  margin:  150px auto;\n  background-color: white;\n}\n", ""]);
+exports.push([module.i, "\n.small {\n  max-width: 100%;\n  margin:  150px auto;\n  background-color: white;\n}\n", ""]);
 
 // exports
 
@@ -75676,10 +75736,6 @@ var render = function() {
           _vm._v(" "),
           _c("option", { attrs: { value: "Data Golongan Darah" } }, [
             _vm._v("Data Golongan Darah")
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Data Kelompok Umur" } }, [
-            _vm._v("Data Kelompok Umur")
           ])
         ]
       ),
