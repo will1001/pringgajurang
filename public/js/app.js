@@ -2661,9 +2661,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -75660,25 +75657,6 @@ var render = function() {
       }
     },
     [
-      _vm.loaded
-        ? _c("jenis-chart", {
-            ref: "canvasChart",
-            attrs: { "chart-data": _vm.datacollection }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          on: {
-            click: function($event) {
-              return _vm.fillData()
-            }
-          }
-        },
-        [_vm._v("Randomize")]
-      ),
-      _vm._v(" "),
       _c(
         "button",
         {
@@ -75688,19 +75666,7 @@ var render = function() {
             }
           }
         },
-        [_vm._v("Save Image!")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          on: {
-            click: function($event) {
-              return _vm.testdata()
-            }
-          }
-        },
-        [_vm._v("test data")]
+        [_vm._v("Download Grafik data")]
       ),
       _vm._v(" "),
       _c(
@@ -75740,7 +75706,12 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("img", { attrs: { src: "", alt: "" } })
+      _vm.loaded
+        ? _c("jenis-chart", {
+            ref: "canvasChart",
+            attrs: { "chart-data": _vm.datacollection }
+          })
+        : _vm._e()
     ],
     1
   )

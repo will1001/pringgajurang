@@ -1,9 +1,6 @@
 <template>
   <div class="small" v-model="datakirim">
-    <jenis-chart v-if="loaded" :chart-data="datacollection" ref="canvasChart"></jenis-chart>
-    <button @click="fillData()">Randomize</button>
-    <button @click="saveImage('canvasChart')">Save Image!</button>
-    <button @click="testdata()">test data</button>
+    <button @click="saveImage('canvasChart')">Download Grafik data</button>
     <select id="filter" @change="chartfunction($event.target.value)">
         <option selected="true" disabled="disabled">Data Grafik</option>
         <option value="Data Pendidikan" >Data Pendidikan</option>
@@ -13,7 +10,7 @@
         <option value="Data Golongan Darah" >Data Golongan Darah</option>
         <!-- <option value="Data Kelompok Umur" >Data Kelompok Umur</option> -->
     </select>
-    <img src="" alt="">
+    <jenis-chart v-if="loaded" :chart-data="datacollection" ref="canvasChart"></jenis-chart>
   </div>
 </template>
 
