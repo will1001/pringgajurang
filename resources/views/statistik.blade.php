@@ -63,10 +63,11 @@
 
 
 
-    <section id="statistik" style="padding-top: 31px;" >
+    <section id="statistik">
       <div class="container" id="app">
         <div class="row">
           <div class="col-md-12">
+            <h1 class="text-center">Data statistik Desa</h1>
               <barchartcomponent></barchartcomponent>
               <!-- <piechartcomponent></piechartcomponent> -->
           </div>

@@ -24182,7 +24182,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.small {\n  max-width: 100%;\n  margin:  150px auto;\n  background-color: white;\n}\n", ""]);
+exports.push([module.i, "\n.barchart {\n  width: 100%;\n  height: auto;\n  margin:31px auto;\n  background-color: white;\n}\n.tombol_download{\n  border: 1px gray solid;\n  background-color: transparent;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n.tombol_download:hover{\n  background-color: gray;\n  box-shadow: 5px 5px 5px #000;\n  transition: 1s;\n  border-radius: 25px;\n  padding: 5px 5px;\n}\n", ""]);
 
 // exports
 
@@ -75647,7 +75647,7 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "small",
+      staticClass: "barchart text-center",
       model: {
         value: _vm.datakirim,
         callback: function($$v) {
@@ -75660,13 +75660,14 @@ var render = function() {
       _c(
         "button",
         {
+          staticClass: "tombol_download",
           on: {
             click: function($event) {
               return _vm.saveImage("canvasChart")
             }
           }
         },
-        [_vm._v("Download Grafik data")]
+        [_vm._v("Download Grafik data    ")]
       ),
       _vm._v(" "),
       _c(

@@ -1,6 +1,6 @@
 <template>
-  <div class="small" v-model="datakirim">
-    <button @click="saveImage('canvasChart')">Download Grafik data</button>
+  <div class="barchart text-center" v-model="datakirim">
+    <button class="tombol_download" @click="saveImage('canvasChart')">Download Grafik data    </button>
     <select id="filter" @change="chartfunction($event.target.value)">
         <option selected="true" disabled="disabled">Data Grafik</option>
         <option value="Data Pendidikan" >Data Pendidikan</option>
@@ -229,9 +229,24 @@
 </script>
 
 <style>
-  .small {
-    max-width: 100%;
-    margin:  150px auto;
+  .barchart {
+    width: 100%;
+    height: auto;
+    margin:31px auto;
     background-color: white;
+  }
+
+  .tombol_download{
+    border: 1px gray solid;
+    background-color: transparent;
+    border-radius: 25px;
+    padding: 5px 5px;
+  }
+  .tombol_download:hover{
+    background-color: gray;
+    box-shadow: 5px 5px 5px #000;
+    transition: 1s;
+    border-radius: 25px;
+    padding: 5px 5px;
   }
 </style>
