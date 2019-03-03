@@ -16,7 +16,7 @@ class APIdataberitaController extends Controller
     public function index()
     {
         //
-        $beritas=berita::all();
+        $beritas=berita::orderBy("created_at","desc")->get();
         return response()->json(["beritas" => $beritas]);
     }
 

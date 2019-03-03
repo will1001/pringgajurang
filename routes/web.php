@@ -108,6 +108,7 @@ Route::get('datastatistik/jenis_pekerjaan/','APIdatastatistikController@jenis_pe
 Route::get('datastatistik/agama/','APIdatastatistikController@agama');
 Route::get('datastatistik/jenis_kelamin/','APIdatastatistikController@jenis_kelamin');
 Route::get('datastatistik/golongan_darah/','APIdatastatistikController@golongan_darah');
+Route::get('datastatistik/kelompok_umur/','APIdatastatistikController@kelompok_umur');
 Route::resource('datastatistik','APIdatastatistikController');
 
 

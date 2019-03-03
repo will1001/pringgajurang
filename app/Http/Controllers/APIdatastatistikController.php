@@ -187,15 +187,41 @@ class APIdatastatistikController extends Controller
     public function kelompok_umur()
     {
 
-        $tabel_kelompok_umurs=tabel_kelompok_umur::all();
+        $tabel_kelompok_umurs=[
+            'Di bawah 1 Tahun',
+            '2 s/d 4 Tahun',
+            '5 s/d 9 Tahun',
+            '10 s/d 14 Tahun',
+            '15 s/d 19 Tahun',
+            '20 s/d 24 Tahun',
+            '25 s/d 29 Tahun',
+            '30 s/d 34 Tahun',
+            '35 s/d 39 Tahun',
+            '40 s/d 44 Tahun',
+            '45 s/d 49 Tahun',
+            '50 s/d 54 Tahun',
+            '55 s/d 59 Tahun',
+            '60 s/d 64 Tahun',
+            '65 s/d 69 Tahun',
+            '70 s/d 74 Tahun',
+            'Di atas 75 Tahun'
+        ];
 
-        // $data_kelompok_umurs=data_penduduk::where('kelompok_umur','=',$kategori)->where('Jenis_Kelamin','=',$kelamin)->count();
+        $hit=0;
 
-        for($i=0;$i<$tabel_kelompok_umurs->count();$i++){
 
-            $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('kelompok_umur','=',$tabel_kelompok_umurs[$i]->id)->count();
-            $data_pendidikans_L=data_penduduk::where('Pendidikan','=',$kategori)->where('Jenis_Kelamin','=',1)->count();
-            $data_pendidikans_P=data_penduduk::where('Pendidikan','=',$kategori)->where('Jenis_Kelamin','=',2)->count();
+
+        for($i=0;$i<count($tabel_kelompok_umurs);$i++){
+
+            if($i==0){
+                $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('Usia','=',$i)->count();
+                // dd(data_penduduk::where('Usia','=',$i)->count());
+            }if($i>0 && $i<17){
+                $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('Usia','<=',2+$hit)->where('Usia','>=',4+$hit)->count();
+                $hit=$hit+5;
+            }if($i==17){
+                $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('Usia','>',75)->count();
+            }
         }
 
 
