@@ -214,19 +214,24 @@ class APIdatastatistikController extends Controller
         for($i=0;$i<count($tabel_kelompok_umurs);$i++){
 
             if($i==0){
-                $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('Usia','=',$i)->count();
-                // dd(data_penduduk::where('Usia','=',$i)->count());
+                $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('Usia','<',$i+1)->count();
+                $data_kelompok_umurs_L[$i]=data_penduduk::where('Usia','<',$i+1)->where('Jenis_Kelamin','=',1)->count();
+                $data_kelompok_umurs_P[$i]=data_penduduk::where('Usia','<',$i+1)->where('Jenis_Kelamin','=',2)->count();
             }if($i>0 && $i<17){
-                $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('Usia','<=',2+$hit)->where('Usia','>=',4+$hit)->count();
+                $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('Usia','>=',2+$hit)->where('Usia','<=',4+$hit)->count();
+                $data_kelompok_umurs_L[$i]=data_penduduk::where('Usia','>=',2+$hit)->where('Usia','<=',4+$hit)->where('Jenis_Kelamin','=',1)->count();
+                $data_kelompok_umurs_P[$i]=data_penduduk::where('Usia','>=',2+$hit)->where('Usia','<=',4+$hit)->where('Jenis_Kelamin','=',2)->count();
                 $hit=$hit+5;
             }if($i==17){
                 $tabel_kelompok_umurs_totals[$i]=data_penduduk::where('Usia','>',75)->count();
+                $data_kelompok_umurs_L[$i]=data_penduduk::where('Usia','>',75)->where('Jenis_Kelamin','=',1)->count();
+                $data_kelompok_umurs_P[$i]=data_penduduk::where('Usia','>',75)->where('Jenis_Kelamin','=',2)->count();
             }
         }
 
 
 
-        return response()->json(["tabel_kelompok_umurs" => $tabel_kelompok_umurs,"tabel_kelompok_umurs_totals" => $tabel_kelompok_umurs_totals]);
+        return response()->json(["tabel_kelompok_umurs" => $tabel_kelompok_umurs,"tabel_kelompok_umurs_totals" => $tabel_kelompok_umurs_totals,"data_kelompok_umurs_L" => $data_kelompok_umurs_L,"data_kelompok_umurs_P" => $data_kelompok_umurs_P]);
     }
 
 

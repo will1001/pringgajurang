@@ -12,7 +12,7 @@
         <option value="Data Agama" >Data Agama</option>
         <option value="Data Jenis Kelamin" >Data Jenis Kelamin</option>
         <option value="Data Golongan Darah" >Data Golongan Darah</option>
-        <!-- <option value="Data Kelompok Umur" >Data Kelompok Umur</option> -->
+        <option value="Data Kelompok Umur" >Data Kelompok Umur</option>
     </select>
     <button class="tombol_download" @click="saveImage('canvasChart')">Download Grafik data    </button>
     <jenis-chart v-if="loaded" :chart-data="datacollection" ref="canvasChart" class="chartnya text-center"></jenis-chart>
@@ -331,6 +331,44 @@
            });
 
         }if(even=="Data Kelompok Umur"){
+
+          this.$http.get("datastatistik/kelompok_umur/")
+            .then(response => {
+
+
+              response.data.tabel_kelompok_umurs_totals.forEach(function(data, index) {
+                jumlahpersentotal=jumlahpersentotal+response.data.tabel_kelompok_umurs_totals[index];
+              });
+               
+
+              response.data.tabel_kelompok_umurs.forEach(function(data, index) {
+                datachartapi.datasets[index] = 
+                {
+                  label: data,
+                  backgroundColor: '#'+(function lol(m,s,c){return s[m.floor(m.random() * s.length)] +
+                                    (c && lol(m,s,c-1));})(Math,'0123456789ABCDEF',4),
+                  data: [response.data.tabel_kelompok_umurs_totals[index]]
+                };
+
+                datatabelapi[index] = 
+                {
+                  kelompok:response.data.tabel_kelompok_umurs[index],
+                  jumlah:response.data.tabel_kelompok_umurs_totals[index],
+                  jumlahpersen:(response.data.tabel_kelompok_umurs_totals[index]/jumlahpersentotal*100).toFixed(2),
+                  lakilaki:response.data.data_kelompok_umurs_L[index],
+                  lakilakipersen:(response.data.data_kelompok_umurs_L[index]/jumlahpersentotal*100).toFixed(2),
+                  perempuan:response.data.data_kelompok_umurs_P[index],
+                  perempuanpersen:(response.data.data_kelompok_umurs_P[index]/jumlahpersentotal*100).toFixed(2),
+                };
+              });
+
+              
+              
+
+              this.datacollection=datachartapi;
+              this.dataAPI=datatabelapi;
+              
+           });
 
         }
         

@@ -2913,7 +2913,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           });
         }
 
-        if (even == "Data Kelompok Umur") {}
+        if (even == "Data Kelompok Umur") {
+          this.$http.get("datastatistik/kelompok_umur/").then(function (response) {
+            response.data.tabel_kelompok_umurs_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_kelompok_umurs_totals[index];
+            });
+            response.data.tabel_kelompok_umurs.forEach(function (data, index) {
+              datachartapi.datasets[index] = {
+                label: data,
+                backgroundColor: '#' + function lol(m, s, c) {
+                  return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+                }(Math, '0123456789ABCDEF', 4),
+                data: [response.data.tabel_kelompok_umurs_totals[index]]
+              };
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_kelompok_umurs[index],
+                jumlah: response.data.tabel_kelompok_umurs_totals[index],
+                jumlahpersen: (response.data.tabel_kelompok_umurs_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_kelompok_umurs_L[index],
+                lakilakipersen: (response.data.data_kelompok_umurs_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_kelompok_umurs_P[index],
+                perempuanpersen: (response.data.data_kelompok_umurs_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
+            });
+            _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
+          });
+        }
 
         this.loaded = true;
       } catch (e) {
@@ -4883,7 +4909,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           });
         }
 
-        if (even == "Data Kelompok Umur") {}
+        if (even == "Data Kelompok Umur") {
+          this.$http.get("datastatistik/kelompok_umur/").then(function (response) {
+            response.data.tabel_kelompok_umurs_totals.forEach(function (data, index) {
+              jumlahpersentotal = jumlahpersentotal + response.data.tabel_kelompok_umurs_totals[index];
+            });
+            response.data.tabel_kelompok_umurs.forEach(function (data, index) {
+              datachartapi.labels[index] = data;
+
+              datachartapi.datasets[0].backgroundColor[index] = '#' + function lol(m, s, c) {
+                return s[m.floor(m.random() * s.length)] + (c && lol(m, s, c - 1));
+              }(Math, '0123456789ABCDEF', 4);
+
+              datachartapi.datasets[0].data[index] = response.data.tabel_kelompok_umurs_totals[index];
+              datatabelapi[index] = {
+                kelompok: response.data.tabel_kelompok_umurs[index],
+                jumlah: response.data.tabel_kelompok_umurs_totals[index],
+                jumlahpersen: (response.data.tabel_kelompok_umurs_totals[index] / jumlahpersentotal * 100).toFixed(2),
+                lakilaki: response.data.data_kelompok_umurs_L[index],
+                lakilakipersen: (response.data.data_kelompok_umurs_L[index] / jumlahpersentotal * 100).toFixed(2),
+                perempuan: response.data.data_kelompok_umurs_P[index],
+                perempuanpersen: (response.data.data_kelompok_umurs_P[index] / jumlahpersentotal * 100).toFixed(2)
+              };
+            });
+            _this.datacollection = datachartapi;
+            _this.dataAPI = datatabelapi;
+          });
+        }
 
         this.loaded = true;
       } catch (e) {
@@ -76078,6 +76130,10 @@ var render = function() {
           _vm._v(" "),
           _c("option", { attrs: { value: "Data Golongan Darah" } }, [
             _vm._v("Data Golongan Darah")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Data Kelompok Umur" } }, [
+            _vm._v("Data Kelompok Umur")
           ])
         ]
       ),
@@ -79105,6 +79161,10 @@ var render = function() {
           _vm._v(" "),
           _c("option", { attrs: { value: "Data Golongan Darah" } }, [
             _vm._v("Data Golongan Darah")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Data Kelompok Umur" } }, [
+            _vm._v("Data Kelompok Umur")
           ])
         ]
       ),
