@@ -19,6 +19,7 @@ use App\bumdes;
 use App\profil_desa;
 use App\statistik_desa;
 use App\data_penduduk;
+use App\agenda;
 use Artisan;
 
 class webcontroller extends Controller
@@ -194,8 +195,9 @@ class webcontroller extends Controller
        $bumdess = bumdes::orderBy("created_at","desc")->take(4)->get();
        $bumdess2 = bumdes::orderBy("created_at","desc")->take(4)->skip(4)->get();
        $bumdess3 = bumdes::orderBy("created_at","desc")->take(4)->skip(8)->get();
+       $agendas = agenda::orderBy("created_at","desc")->get();
 
-       return view('indexhome', ['beritas' => $beritas,'beritas2' => $beritas2,'beritas3' => $beritas3, 'pengumumans' => $pengumumans, 'SOTKs' => $SOTKs, 'barangdesas' => $barangdesas, 'barangdesas2' => $barangdesas2, 'barangdesas3' => $barangdesas3,'bumdess' => $bumdess,'bumdess2' => $bumdess2,'bumdess3' => $bumdess3]);
+       return view('indexhome', ['beritas' => $beritas,'beritas2' => $beritas2,'beritas3' => $beritas3, 'pengumumans' => $pengumumans, 'SOTKs' => $SOTKs, 'barangdesas' => $barangdesas, 'barangdesas2' => $barangdesas2, 'barangdesas3' => $barangdesas3,'bumdess' => $bumdess,'bumdess2' => $bumdess2,'bumdess3' => $bumdess3,'agendas' => $agendas]);
     }
 
 

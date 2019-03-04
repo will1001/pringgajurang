@@ -165,20 +165,7 @@ Vue.component('halamanbisnis',{
 });
 
 Vue.component('agenda',{
-	template : '#agenda',
-	data(){
-            return{
-                agendas:[],
-            }
-        },
-        created(){
-            this.fetchberitas();
-        },
-        methods:{
-            fetchberitas(){
-                this.$http.get("dataagenda").then(response => {this.agendas = response.data.agenda});
-            },
-        }
+	template : '#agenda'
 });
 
 Vue.component('untukpengunjung',{
