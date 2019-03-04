@@ -2040,6 +2040,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue_json_excel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-json-excel */ "./node_modules/vue-json-excel/JsonExcel.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2264,6 +2267,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('downloadExcel', vue_json_excel__WEBPACK_IMPORTED_MODULE_2__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function () {
     var _mounted = _asyncToGenerator(
@@ -2292,6 +2313,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       kodeareadusun: [],
+      typefileexport: "",
       data_pendudukJSON: [],
       data_pendudukJSONfilterdusun: [],
       iddusun: 1,
@@ -2299,13 +2321,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       pagination: 0,
       searchQuery: '',
       searchkategori: "Cari Berdasarkan",
-      skipdata: 10
+      skipdata: 10,
+      json_data: [],
+      json_meta: [[{
+        'key': 'charset',
+        'value': 'utf-8'
+      }]]
     };
   },
   created: function created() {
     this.fetchkodeareadusun();
     this.fetchdata_penduduks();
-    console.log("created");
   },
   computed: {
     filteredbox: function filteredbox() {
@@ -2369,6 +2395,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       this.$http.get("datawarga").then(function (response) {
         _this3.data_pendudukJSON = response.data.data_penduduks;
+        _this3.json_data = response.data.data_penduduks_excel;
       });
     },
     fetchdata_penduduks_limit: function fetchdata_penduduks_limit(even) {
@@ -2408,6 +2435,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.pagination = this.pagination;
         this.nomor = this.nomor;
       }
+    },
+    typefile: function typefile(even) {
+      this.typefileexport = even;
     }
   }
 });
@@ -75866,269 +75896,329 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c(
-            "div",
-            {
-              staticStyle: {
-                overflow: "auto",
-                "max-height": "400px",
-                position: "relative"
-              }
-            },
-            [
-              _c("table", { attrs: { id: "tabeldatakadus" } }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "tbody",
-                  {
-                    model: {
-                      value: (_vm.iddusun,
-                      _vm.data_pendudukJSONfilterdusun,
-                      _vm.nomor,
-                      _vm.pagination),
-                      callback: function($$v) {
-                        _vm.iddusun,
-                          _vm.data_pendudukJSONfilterdusun,
-                          _vm.nomor,
-                          (_vm.pagination = $$v)
-                      },
-                      expression:
-                        "iddusun,data_pendudukJSONfilterdusun,nomor,pagination"
-                    }
-                  },
-                  _vm._l(
-                    _vm.filteredbox.slice(_vm.pagination, _vm.pagination + 10),
-                    function(data_penduduk, index) {
-                      return _c("tr", [
-                        _c("td", [_vm._v(_vm._s(index + _vm.nomor))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Alamat"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["RW"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["RT"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Nama"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Nomor_KK"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["NIK"]))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["jenis_kelamin"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["Tempat_Lahir"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["Tanggal_Lahir"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Usia"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["agama"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["pendidikan"]))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["jenis_pekerjaan"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["status_perkawinan"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            _vm._s(
-                              data_penduduk["status_hubungan_dalam_keluarga"]
+        _c(
+          "div",
+          { staticClass: "col-md-12" },
+          [
+            _c(
+              "div",
+              {
+                staticStyle: {
+                  overflow: "auto",
+                  "max-height": "400px",
+                  position: "relative"
+                }
+              },
+              [
+                _c("table", { attrs: { id: "tabeldatakadus" } }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    {
+                      model: {
+                        value: (_vm.iddusun,
+                        _vm.data_pendudukJSONfilterdusun,
+                        _vm.nomor,
+                        _vm.pagination),
+                        callback: function($$v) {
+                          _vm.iddusun,
+                            _vm.data_pendudukJSONfilterdusun,
+                            _vm.nomor,
+                            (_vm.pagination = $$v)
+                        },
+                        expression:
+                          "iddusun,data_pendudukJSONfilterdusun,nomor,pagination"
+                      }
+                    },
+                    _vm._l(
+                      _vm.filteredbox.slice(
+                        _vm.pagination,
+                        _vm.pagination + 10
+                      ),
+                      function(data_penduduk, index) {
+                        return _c("tr", [
+                          _c("td", [_vm._v(_vm._s(index + _vm.nomor))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["Alamat"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["RW"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["RT"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["Nama"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["Nomor_KK"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["NIK"]))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["jenis_kelamin"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["Tempat_Lahir"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["Tanggal_Lahir"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["Usia"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["agama"]))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["pendidikan"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["jenis_pekerjaan"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["status_perkawinan"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(
+                                data_penduduk["status_hubungan_dalam_keluarga"]
+                              )
                             )
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["kewarganegaraan"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Nama_Ayah"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Nama_Ibu"]))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["golongan_darah"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Akta_Lahir"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["No_Paspor"]))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["Tanggal_akhir_Paspor"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["No_KITAS"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["NIK_Ayah"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["NIK_Ibu"]))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["No_Akta_Perkawinan"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["Tanggal_Perkawinan"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["No_Akta_Perceraian"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["Tanggal_Perceraian"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Cacat"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Cara_KB"]))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Hamil"]))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["Status_kependudukan"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(data_penduduk["Keterangan"]))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            _vm._s(
-                              data_penduduk["tempat_mendapatkan_air_bersih"]
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["kewarganegaraan"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["Nama_Ayah"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["Nama_Ibu"]))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["golongan_darah"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["Akta_Lahir"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["No_Paspor"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(data_penduduk["Tanggal_akhir_Paspor"])
                             )
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(data_penduduk["status_gizi_balita"]))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            _vm._s(
-                              data_penduduk["kebiasaan_berobat_bila_sakit"]
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["No_KITAS"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["NIK_Ayah"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["NIK_Ibu"]))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["No_Akta_Perkawinan"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["Tanggal_Perkawinan"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["No_Akta_Perceraian"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["Tanggal_Perceraian"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["Cacat"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["Cara_KB"]))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(data_penduduk["Hamil"]))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["Status_kependudukan"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["Keterangan"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(
+                                data_penduduk["tempat_mendapatkan_air_bersih"]
+                              )
                             )
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(""))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                href:
-                                  "formeditdatapendudukkades/" +
-                                  data_penduduk["NIK"] +
-                                  "/" +
-                                  data_penduduk["Id_Dusun"]
-                              }
-                            },
-                            [_vm._v("edit")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                href:
-                                  "deletedatapendudukkades/" +
-                                  data_penduduk["NIK"] +
-                                  "/" +
-                                  data_penduduk["Id_Dusun"]
-                              }
-                            },
-                            [_vm._v("hapus")]
-                          )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(data_penduduk["status_gizi_balita"]))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(
+                                data_penduduk["kebiasaan_berobat_bila_sakit"]
+                              )
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(""))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href:
+                                    "formeditdatapendudukkades/" +
+                                    data_penduduk["NIK"] +
+                                    "/" +
+                                    data_penduduk["Id_Dusun"]
+                                }
+                              },
+                              [_vm._v("edit")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href:
+                                    "deletedatapendudukkades/" +
+                                    data_penduduk["NIK"] +
+                                    "/" +
+                                    data_penduduk["Id_Dusun"]
+                                }
+                              },
+                              [_vm._v("hapus")]
+                            )
+                          ])
                         ])
-                      ])
-                    }
-                  ),
-                  0
+                      }
+                    ),
+                    0
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "previous",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.prevpage()
+                  }
+                }
+              },
+              [_vm._v("« Previous")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "next",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.nextpage()
+                  }
+                }
+              },
+              [_vm._v("Next »")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "tomboladd",
+                attrs: { href: "formadddatapendudukkades" }
+              },
+              [_vm._v("Tambah Data")]
+            ),
+            _vm._v(" "),
+            _c(
+              "download-excel",
+              {
+                staticClass: "tombolexportdatapenduduk",
+                attrs: {
+                  data: _vm.json_data,
+                  type: _vm.typefileexport,
+                  name: "DataPenduduk.xls"
+                }
+              },
+              [
+                _vm._v(
+                  "\n\t\t\t\t\t\t \n\t\t\t\t\t\t    Export Data Penduduk\n\t\t\t\t\t\t \n\t\t\t\t\t\t   "
                 )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "previous",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.prevpage()
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                staticClass: "tipefileselect",
+                on: {
+                  change: function($event) {
+                    return _vm.typefile($event.target.value)
+                  }
                 }
-              }
-            },
-            [_vm._v("« Previous")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "next",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.nextpage()
-                }
-              }
-            },
-            [_vm._v("Next »")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "tomboladd",
-              attrs: { href: "formadddatapendudukkades" }
-            },
-            [_vm._v("Tambah Data")]
-          )
-        ])
+              },
+              [
+                _c(
+                  "option",
+                  { attrs: { selected: "true", disabled: "disabled" } },
+                  [_vm._v("Type File")]
+                ),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "xls" } }, [_vm._v("xls")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "csv" } }, [_vm._v("csv")])
+              ]
+            )
+          ],
+          1
+        )
       ])
     ])
   ])

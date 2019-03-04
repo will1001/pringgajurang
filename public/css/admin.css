@@ -65,7 +65,38 @@ a.nav-link {
         padding: 15px 15px;
         margin: 10px 10px;
         color: #000;
-        opacity: 
+    }
+
+    .tomboladd:hover{
+        transform: scale(1.1);
+        font-weight: bold;
+        color: #000;
+        text-decoration: none;
+        transition: 1s;
+    }
+
+
+    .tombolexportdatapenduduk{
+        float: right;
+        border: 1px gray solid;
+        background-color: transparent;
+        border-radius: 25px;
+        padding: 5px 5px;
+        font-size: 12px;
+        margin-top: 21px;
+    }
+
+    .tombolexportdatapenduduk:hover{
+        background-color: #138FC2;
+        box-shadow: 5px 5px 5px #000;
+        transition: 1s;
+        border-radius: 25px;
+        padding: 5px 5px;
+    }
+
+    .tipefileselect{
+        float: right;        
+        margin: 27px 7px;
     }
 
     .tomboledit{
@@ -108,13 +139,7 @@ a.nav-link {
       padding: 5px 1px;
     }
 
-    .tomboladd:hover{
-        transform: scale(1.1);
-        font-weight: bold;
-        color: #000;
-        text-decoration: none;
-        transition: 1s;
-    }
+    
 
     #barang-desa .card{
         text-align: center;

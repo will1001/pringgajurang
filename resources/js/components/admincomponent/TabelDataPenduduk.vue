@@ -203,7 +203,22 @@
 					       </div>
 					       <a href="#" @click="prevpage()" class="previous">&laquo; Previous</a>
 				           <a href="#" @click="nextpage()" class="next">Next &raquo;</a>
+				           
 				           <a href="formadddatapendudukkades" class="tomboladd">Tambah Data</a>
+				           <download-excel
+						    class   = "tombolexportdatapenduduk"
+						    :data   = "json_data"
+						    :type    = "typefileexport"
+						    name    = "DataPenduduk.xls">
+						 
+						    Export Data Penduduk
+						 
+						   </download-excel>
+						   <select class="tipefileselect" @change="typefile($event.target.value)">
+			                 <option selected="true" disabled="disabled">Type File</option>
+			                  <option value="xls">xls</option>
+			                  <option value="csv">csv</option>
+			            </select>
 				       </div>
         		</div>
 
@@ -217,6 +232,13 @@
 </template>
 
 <script>
+
+  import Vue from 'vue';
+
+  import JsonExcel from 'vue-json-excel';
+
+  Vue.component('downloadExcel', JsonExcel);
+
     export default {
         async mounted() {
         	
@@ -225,6 +247,7 @@
         data(){
         	return{
         		kodeareadusun:[],
+        		typefileexport:"",
         		data_pendudukJSON:[],
         		data_pendudukJSONfilterdusun:[],
         		iddusun:1,
@@ -233,13 +256,21 @@
         		searchQuery: '',
         		searchkategori:"Cari Berdasarkan" ,
         		skipdata:10 ,
+        		json_data: [],
+		        json_meta: [
+		            [
+		                {
+		                    'key': 'charset',
+		                    'value': 'utf-8'
+		                }
+		            ]
+		        ],
         	}
         },
         created(){
         	this.fetchkodeareadusun();
         	this.fetchdata_penduduks();
-        	console.log("created");
-        	
+
         },
         computed : {
         	filteredbox:function(){
@@ -306,7 +337,7 @@
         	},
 
         	fetchdata_penduduks(){
-        		this.$http.get("datawarga").then(response => {this.data_pendudukJSON = response.data.data_penduduks});
+        		this.$http.get("datawarga").then(response => {this.data_pendudukJSON = response.data.data_penduduks;this.json_data = response.data.data_penduduks_excel});
         	},
         	fetchdata_penduduks_limit(even){
         		this.$http.get("datawarga/"+this.pagination).then(response => {this.data_pendudukJSON = response.data.data_pendudukdusuns});
@@ -343,6 +374,8 @@
         				this.pagination=this.pagination;
         	 	        this.nomor=this.nomor;
         			}
+	        },typefile (even) {
+        		this.typefileexport=even;	
 	        },
         }
     }

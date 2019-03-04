@@ -16,7 +16,7 @@ class APIdatapengumumanController extends Controller
     public function index()
     {
         //
-        $pengumumandesas=pengumumandesa::orderBy("created_at","desc")->get()();
+        $pengumumandesas=pengumumandesa::orderBy("created_at","desc")->get();
         return response()->json(["pengumumandesas" => $pengumumandesas]);
     }
 
