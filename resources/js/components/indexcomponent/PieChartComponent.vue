@@ -15,6 +15,15 @@
         <option value="Data Kelompok Umur" >Data Kelompok Umur</option>
     </select>
     <button class="tombol_download" @click="saveImage('canvasChart')">Download Grafik data    </button>
+    <download-excel
+    class   = "btn btn-default"
+    :data   = "json_data"
+    worksheet = "My Worksheet"
+    name    = "Data.xls">
+ 
+    Download data Excel
+ 
+   </download-excel>
     <jenis-chart v-if="loaded" :chart-data="datacollection" ref="canvasChart" class="chartnya text-center"></jenis-chart>
     <div style="overflow: auto;max-height: auto;position: relative;margin: 5px 25px;" class="text-center">
                             <table>
@@ -43,11 +52,11 @@
                                   <td>{{index+1}}</td>
                                   <td>{{data.kelompok}}</td>
                                   <td>{{data.jumlah}}</td>
-                                  <td>{{data.jumlahpersen}}</td>
-                                  <td>{{data.lakilaki}}</td>
-                                  <td>{{data.lakilakipersen}}</td>
-                                  <td>{{data.perempuan}}</td>
-                                  <td>{{data.perempuanpersen}}</td>
+                                  <td>{{data.PersentaseJumlah}}</td>
+                                  <td>{{data.Laki_Laki}}</td>
+                                  <td>{{data.Persentase_Laki_Laki}}</td>
+                                  <td>{{data.Perempuan}}</td>
+                                  <td>{{data.Persentase_Perempuan}}</td>
                               </tr>
                             </tbody>
                           </table>
@@ -56,8 +65,12 @@
 </template>
 
 <script>
-
-  import JenisChart from './PieChart.js'
+  import Vue from 'vue';
+  
+  import JenisChart from './PieChart.js';
+  import JsonExcel from 'vue-json-excel';
+ 
+  Vue.component('downloadExcel', JsonExcel);
 
   export default {
     components: {
@@ -66,23 +79,27 @@
     data () {
       return {
         datacollection: null,
-        tinggi: 600,
-        lePie: 600,
-        pendidikans:1,
-        jenis_kelamins:1,
         dataAPI:[
           {
             kelompok:"",
             jumlah:"",
-            jumlahpersen:"",
-            lakilaki:"",
-            lakilakipersen:"",
-            perempuan:"",
-            perempuanpersen:"",
+            PersentaseJumlah:"",
+            Laki_Laki:"",
+            Persentase_Laki_Laki:"",
+            Perempuan:"",
+            Persentase_Perempuan:"",
           }
         ],
-        datakirim:[],
         loaded: false,
+        json_data: [],
+        json_meta: [
+            [
+                {
+                    'key': 'charset',
+                    'value': 'utf-8'
+                }
+            ]
+        ],
       }
     },
    async  mounted () {
@@ -92,17 +109,17 @@
        this.loaded = false
       try {
 
-        let jumlahpersentotal=0;
+        let PersentaseJumlahtotal=0;
 
         let datatabelapi = [
               {
                 kelompok:"",
                 jumlah:"",
-                jumlahpersen:"",
-                lakilaki:"",
-                lakilakipersen:"",
-                perempuan:"",
-                perempuanpersen:"",
+                PersentaseJumlah:"",
+                Laki_Laki:"",
+                Persentase_Laki_Laki:"",
+                Perempuan:"",
+                Persentase_Perempuan:"",
               }
             ];
 
@@ -130,7 +147,7 @@
              
 
               response.data.data_pendidikans_totals.forEach(function(data, index) {
-                jumlahpersentotal=jumlahpersentotal+response.data.data_pendidikans_totals[index];
+                PersentaseJumlahtotal=PersentaseJumlahtotal+response.data.data_pendidikans_totals[index];
               });
 
 
@@ -151,11 +168,11 @@
                 {
                   kelompok:response.data.tabel_pendidikans[index].pendidikan,
                   jumlah:response.data.data_pendidikans_totals[index],
-                  jumlahpersen:(response.data.data_pendidikans_totals[index]/jumlahpersentotal*100).toFixed(2),
-                  lakilaki:response.data.data_pendidikans_L[index],
-                  lakilakipersen:(response.data.data_pendidikans_L[index]/jumlahpersentotal*100).toFixed(2),
-                  perempuan:response.data.data_pendidikans_P[index],
-                  perempuanpersen:(response.data.data_pendidikans_P[index]/jumlahpersentotal*100).toFixed(2),
+                  PersentaseJumlah:(response.data.data_pendidikans_totals[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Laki_Laki:response.data.data_pendidikans_L[index],
+                  Persentase_Laki_Laki:(response.data.data_pendidikans_L[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Perempuan:response.data.data_pendidikans_P[index],
+                  Persentase_Perempuan:(response.data.data_pendidikans_P[index]/PersentaseJumlahtotal*100).toFixed(2),
                 };
 
 
@@ -167,6 +184,8 @@
 
               this.datacollection=datachartapi;
               this.dataAPI=datatabelapi;
+
+              this.json_data = datatabelapi;
               
            });
 
@@ -179,7 +198,7 @@
 
 
               response.data.tabel_agamas_totals.forEach(function(data, index) {
-                jumlahpersentotal=jumlahpersentotal+response.data.tabel_agamas_totals[index];
+                PersentaseJumlahtotal=PersentaseJumlahtotal+response.data.tabel_agamas_totals[index];
               });
 
 
@@ -199,17 +218,19 @@
                 {
                   kelompok:response.data.tabel_agamas[index].agama,
                   jumlah:response.data.tabel_agamas_totals[index],
-                  jumlahpersen:(response.data.tabel_agamas_totals[index]/jumlahpersentotal*100).toFixed(2),
-                  lakilaki:response.data.data_agamas_L[index],
-                  lakilakipersen:(response.data.data_agamas_L[index]/jumlahpersentotal*100).toFixed(2),
-                  perempuan:response.data.data_agamas_P[index],
-                  perempuanpersen:(response.data.data_agamas_P[index]/jumlahpersentotal*100).toFixed(2),
+                  PersentaseJumlah:(response.data.tabel_agamas_totals[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Laki_Laki:response.data.data_agamas_L[index],
+                  Persentase_Laki_Laki:(response.data.data_agamas_L[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Perempuan:response.data.data_agamas_P[index],
+                  Persentase_Perempuan:(response.data.data_agamas_P[index]/PersentaseJumlahtotal*100).toFixed(2),
                 };
               });
 
 
               this.datacollection=datachartapi;
               this.dataAPI=datatabelapi;
+              this.json_data = datatabelapi;
+
               
            });
 
@@ -224,7 +245,7 @@
 
 
              response.data.tabel_jenis_pekerjaans_totals.forEach(function(data, index) {
-                jumlahpersentotal=jumlahpersentotal+response.data.tabel_jenis_pekerjaans_totals[index];
+                PersentaseJumlahtotal=PersentaseJumlahtotal+response.data.tabel_jenis_pekerjaans_totals[index];
               });
 
               response.data.tabel_jenis_pekerjaans.forEach(function(data, index) {
@@ -241,11 +262,11 @@
                 {
                   kelompok:response.data.tabel_jenis_pekerjaans[index].jenis_pekerjaan,
                   jumlah:response.data.tabel_jenis_pekerjaans_totals[index],
-                  jumlahpersen:(response.data.tabel_jenis_pekerjaans_totals[index]/jumlahpersentotal*100).toFixed(2),
-                  lakilaki:response.data.data_jenis_pekerjaans_L[index],
-                  lakilakipersen:(response.data.data_jenis_pekerjaans_L[index]/jumlahpersentotal*100).toFixed(2),
-                  perempuan:response.data.data_jenis_pekerjaans_P[index],
-                  perempuanpersen:(response.data.data_jenis_pekerjaans_P[index]/jumlahpersentotal*100).toFixed(2),
+                  PersentaseJumlah:(response.data.tabel_jenis_pekerjaans_totals[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Laki_Laki:response.data.data_jenis_pekerjaans_L[index],
+                  Persentase_Laki_Laki:(response.data.data_jenis_pekerjaans_L[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Perempuan:response.data.data_jenis_pekerjaans_P[index],
+                  Persentase_Perempuan:(response.data.data_jenis_pekerjaans_P[index]/PersentaseJumlahtotal*100).toFixed(2),
                 };
 
               });
@@ -255,6 +276,8 @@
 
               this.datacollection=datachartapi;
               this.dataAPI=datatabelapi;
+              this.json_data = datatabelapi;
+
               
            });
 
@@ -265,7 +288,7 @@
 
 
               response.data.tabel_jenis_kelamins_totals.forEach(function(data, index) {
-                jumlahpersentotal=jumlahpersentotal+response.data.tabel_jenis_kelamins_totals[index];
+                PersentaseJumlahtotal=PersentaseJumlahtotal+response.data.tabel_jenis_kelamins_totals[index];
               });
                
 
@@ -281,11 +304,11 @@
                 {
                   kelompok:response.data.tabel_jenis_kelamins[index].jenis_kelamin,
                   jumlah:response.data.tabel_jenis_kelamins_totals[index],
-                  jumlahpersen:(response.data.tabel_jenis_kelamins_totals[index]/jumlahpersentotal*100).toFixed(2),
-                  lakilaki:response.data.data_jenis_kelamins_L[index],
-                  lakilakipersen:(response.data.data_jenis_kelamins_L[index]/jumlahpersentotal*100).toFixed(2),
-                  perempuan:response.data.data_jenis_kelamins_P[index],
-                  perempuanpersen:(response.data.data_jenis_kelamins_P[index]/jumlahpersentotal*100).toFixed(2),
+                  PersentaseJumlah:(response.data.tabel_jenis_kelamins_totals[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Laki_Laki:response.data.data_jenis_kelamins_L[index],
+                  Persentase_Laki_Laki:(response.data.data_jenis_kelamins_L[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Perempuan:response.data.data_jenis_kelamins_P[index],
+                  Persentase_Perempuan:(response.data.data_jenis_kelamins_P[index]/PersentaseJumlahtotal*100).toFixed(2),
                 };
               });
 
@@ -294,6 +317,8 @@
 
               this.datacollection=datachartapi;
               this.dataAPI=datatabelapi;
+              this.json_data = datatabelapi;
+
               
            });
 
@@ -304,7 +329,7 @@
 
 
               response.data.tabel_golongan_darahs_totals.forEach(function(data, index) {
-                jumlahpersentotal=jumlahpersentotal+response.data.tabel_golongan_darahs_totals[index];
+                PersentaseJumlahtotal=PersentaseJumlahtotal+response.data.tabel_golongan_darahs_totals[index];
               });
                
 
@@ -321,11 +346,11 @@
                 {
                   kelompok:response.data.tabel_golongan_darahs[index].golongan_darah,
                   jumlah:response.data.tabel_golongan_darahs_totals[index],
-                  jumlahpersen:(response.data.tabel_golongan_darahs_totals[index]/jumlahpersentotal*100).toFixed(2),
-                  lakilaki:response.data.data_golongan_darahs_L[index],
-                  lakilakipersen:(response.data.data_golongan_darahs_L[index]/jumlahpersentotal*100).toFixed(2),
-                  perempuan:response.data.data_golongan_darahs_P[index],
-                  perempuanpersen:(response.data.data_golongan_darahs_P[index]/jumlahpersentotal*100).toFixed(2),
+                  PersentaseJumlah:(response.data.tabel_golongan_darahs_totals[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Laki_Laki:response.data.data_golongan_darahs_L[index],
+                  Persentase_Laki_Laki:(response.data.data_golongan_darahs_L[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Perempuan:response.data.data_golongan_darahs_P[index],
+                  Persentase_Perempuan:(response.data.data_golongan_darahs_P[index]/PersentaseJumlahtotal*100).toFixed(2),
                 };
               });
 
@@ -334,6 +359,8 @@
 
               this.datacollection=datachartapi;
               this.dataAPI=datatabelapi;
+              this.json_data = datatabelapi;
+
               
            });
 
@@ -344,7 +371,7 @@
 
 
               response.data.tabel_kelompok_umurs_totals.forEach(function(data, index) {
-                jumlahpersentotal=jumlahpersentotal+response.data.tabel_kelompok_umurs_totals[index];
+                PersentaseJumlahtotal=PersentaseJumlahtotal+response.data.tabel_kelompok_umurs_totals[index];
               });
                
 
@@ -361,11 +388,11 @@
                 {
                   kelompok:response.data.tabel_kelompok_umurs[index],
                   jumlah:response.data.tabel_kelompok_umurs_totals[index],
-                  jumlahpersen:(response.data.tabel_kelompok_umurs_totals[index]/jumlahpersentotal*100).toFixed(2),
-                  lakilaki:response.data.data_kelompok_umurs_L[index],
-                  lakilakipersen:(response.data.data_kelompok_umurs_L[index]/jumlahpersentotal*100).toFixed(2),
-                  perempuan:response.data.data_kelompok_umurs_P[index],
-                  perempuanpersen:(response.data.data_kelompok_umurs_P[index]/jumlahpersentotal*100).toFixed(2),
+                  PersentaseJumlah:(response.data.tabel_kelompok_umurs_totals[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Laki_Laki:response.data.data_kelompok_umurs_L[index],
+                  Persentase_Laki_Laki:(response.data.data_kelompok_umurs_L[index]/PersentaseJumlahtotal*100).toFixed(2),
+                  Perempuan:response.data.data_kelompok_umurs_P[index],
+                  Persentase_Perempuan:(response.data.data_kelompok_umurs_P[index]/PersentaseJumlahtotal*100).toFixed(2),
                 };
               });
 
@@ -374,6 +401,8 @@
 
               this.datacollection=datachartapi;
               this.dataAPI=datatabelapi;
+              this.json_data = datatabelapi;
+
               
            });
 
@@ -425,8 +454,25 @@
     background-color: transparent;
     border-radius: 25px;
     padding: 5px 5px;
+    font-size: 12px;
   }
   .tombol_download:hover{
+    background-color: gray;
+    box-shadow: 5px 5px 5px #000;
+    transition: 1s;
+    border-radius: 25px;
+    padding: 5px 5px;
+  }
+
+  .btn-default{
+    border: 1px gray solid;
+    background-color: transparent;
+    border-radius: 25px;
+    padding: 5px 5px;
+    font-size: 12px;
+  }
+
+  .btn-default:hover{
     background-color: gray;
     box-shadow: 5px 5px 5px #000;
     transition: 1s;
