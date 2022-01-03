@@ -1558,14 +1558,14 @@ public function addSOTK(Request $request)
         if(Auth::user()->roles == "kades"){
 
             $kode_area_dusuns=kode_area_dusun::all();
-        $tabel_agamas= tabel_agama::where('id','!=',0)->get();
-        $tabel_golongan_darahs= tabel_golongan_darah::where('id','!=',0)->get();
-        $tabel_jenis_pekerjaans= tabel_jenis_pekerjaan::where('id','!=',0)->get();
-        $tabel_kewarganegaraans= tabel_kewarganegaraan::where('id','!=',0)->get();
-        $tabel_pendidikans= tabel_pendidikan::where('id','!=',0)->get();
-        $tabel_status_perkawinans= tabel_status_perkawinan::where('id','!=',0)->get();
-        $tabel_jenis_kelamins= tabel_jenis_kelamin::where('id','!=',0)->get();
-        $tabel_status_hubungan_dalam_keluargas= tabel_status_hubungan_dalam_keluarga::where('id','!=',0)->get();
+        $tabel_agamas= tabel_agama::where('id_agama','!=',0)->get();
+        $tabel_golongan_darahs= tabel_golongan_darah::where('id_golongan_darah','!=',0)->get();
+        $tabel_jenis_pekerjaans= tabel_jenis_pekerjaan::where('id_jenis_pekerjaan','!=',0)->get();
+        $tabel_kewarganegaraans= tabel_kewarganegaraan::where('id_kewarganegaraan','!=',0)->get();
+        $tabel_pendidikans= tabel_pendidikan::where('id_pendidikan','!=',0)->get();
+        $tabel_status_perkawinans= tabel_status_perkawinan::where('id_status_perkawinan','!=',0)->get();
+        $tabel_jenis_kelamins= tabel_jenis_kelamin::where('id_jenis_kelamin','!=',0)->get();
+        $tabel_status_hubungan_dalam_keluargas= tabel_status_hubungan_dalam_keluarga::where('id_status_hubungan_dalam_keluarga','!=',0)->get();
         
         return view('adminCRUD/adddatapendudukkades',['kode_area_dusuns'=> $kode_area_dusuns,'tabel_agamas' => $tabel_agamas,'tabel_golongan_darahs' => $tabel_golongan_darahs,'tabel_jenis_pekerjaans' => $tabel_jenis_pekerjaans,'tabel_kewarganegaraans' => $tabel_kewarganegaraans,'tabel_pendidikans' => $tabel_pendidikans,'tabel_status_perkawinans' => $tabel_status_perkawinans,'tabel_jenis_kelamins' => $tabel_jenis_kelamins,'tabel_status_hubungan_dalam_keluargas' => $tabel_status_hubungan_dalam_keluargas]);
     }else{
