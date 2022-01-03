@@ -37,7 +37,7 @@ XML;
     <head>
         <title>Home Page</title>
     </head>
-    <body onload="startTime()">
+    <body>
         <h1>Heading</h1>
         <p>Some text</p>
     </body>

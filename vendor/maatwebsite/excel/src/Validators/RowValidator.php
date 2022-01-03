@@ -2,12 +2,12 @@
 
 namespace Maatwebsite\Excel\Validators;
 
-use Illuminate\Support\Str;
 use Illuminate\Contracts\Validation\Factory;
+use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException as IlluminateValidationException;
 use Maatwebsite\Excel\Concerns\SkipsOnFailure;
 use Maatwebsite\Excel\Concerns\WithValidation;
 use Maatwebsite\Excel\Exceptions\RowSkippedException;
-use Illuminate\Validation\ValidationException as IlluminateValidationException;
 
 class RowValidator
 {
@@ -38,7 +38,13 @@ class RowValidator
         $attributes = $this->attributes($import);
 
         try {
-            $this->validator->make($rows, $rules, $messages, $attributes)->validate();
+            $validator = $this->validator->make($rows, $rules, $messages, $attributes);
+
+            if (method_exists($import, 'withValidator')) {
+                $import->withValidator($validator);
+            }
+
+            $validator->validate();
         } catch (IlluminateValidationException $e) {
             $failures = [];
             foreach ($e->errors() as $attribute => $messages) {
@@ -49,7 +55,8 @@ class RowValidator
                 $failures[] = new Failure(
                     $row,
                     $attributeName,
-                    str_replace($attribute, $attributeName, $messages)
+                    str_replace($attribute, $attributeName, $messages),
+                    $rows[$row]
                 );
             }
 
@@ -114,7 +121,7 @@ class RowValidator
     }
 
     /**
-     * @param string|array $rules
+     * @param string|object|callable|array $rules
      *
      * @return string|array
      */
@@ -126,6 +133,10 @@ class RowValidator
             }
 
             return $formatted ?? [];
+        }
+
+        if (is_object($rules) || is_callable($rules)) {
+            return $rules;
         }
 
         if (Str::contains($rules, 'required_if') && preg_match('/(.*):(.*),(.*)/', $rules, $matches)) {
